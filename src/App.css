@@ -3062,3 +3062,60 @@
   background: var(--slate-200);
 }
 
+.firestore-rules-box {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.rules-box-header {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #166534;
+  font-size: 0.88rem;
+}
+
+.rules-box-desc {
+  font-size: 0.8rem;
+  color: #15803d;
+}
+
+.code-rule-snippet {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border: 1px solid #86efac;
+  padding: 0.35rem 0.65rem;
+  border-radius: var(--radius-sm);
+}
+
+.code-rule-snippet code {
+  font-family: monospace;
+  font-weight: 700;
+  color: #14532d;
+  font-size: 0.85rem;
+}
+
+.btn-copy-rules {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #166534;
+  background: #dcfce7;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+}
+
+.btn-copy-rules:hover {
+  background: #bbf7d0;
+}
+
+

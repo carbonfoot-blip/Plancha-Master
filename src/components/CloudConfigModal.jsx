@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { X, Cloud, Check, Database, AlertCircle, RefreshCw, Key, HelpCircle, ExternalLink } from 'lucide-react';
+import React, { useState } from 'react';
+import { X, Cloud, Check, Database, AlertCircle, RefreshCw, Key, HelpCircle, ExternalLink, Copy, ShieldCheck } from 'lucide-react';
 import { getStoredFirebaseConfig, saveFirebaseConfig, resetAllRecipesToDefaults } from '../services/dbService';
 
 export default function CloudConfigModal({ isCloudActive, onConfigUpdated, onResetDefaults, onClose }) {
@@ -12,6 +12,22 @@ export default function CloudConfigModal({ isCloudActive, onConfigUpdated, onRes
   const [messagingSenderId, setMessagingSenderId] = useState(currentConfig?.messagingSenderId || '');
   const [appId, setAppId] = useState(currentConfig?.appId || '');
   const [savedSuccess, setSavedSuccess] = useState(false);
+  const [copiedRules, setCopiedRules] = useState(false);
+
+  const FIRESTORE_RULES_EXAMPLE = `rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if true;
+    }
+  }
+}`;
+
+  const handleCopyRules = () => {
+    navigator.clipboard.writeText(FIRESTORE_RULES_EXAMPLE);
+    setCopiedRules(true);
+    setTimeout(() => setCopiedRules(false), 2500);
+  };
 
   const handleSave = (e) => {
     e.preventDefault();
@@ -62,24 +78,35 @@ export default function CloudConfigModal({ isCloudActive, onConfigUpdated, onRes
           <div className={`cloud-status-banner ${isCloudActive ? 'status-connected' : 'status-local'}`}>
             <Database size={20} />
             <div>
-              <strong>{isCloudActive ? 'Connecté à Firebase Cloud Firestore' : 'Mode Stockage Local Actif (Hors-ligne / Navigateur)'}</strong>
+              <strong>{isCloudActive ? 'Connecté à Firebase Cloud Firestore' : 'Mode Stockage Local Actif (Secours automatique)'}</strong>
               <p>
                 {isCloudActive
-                  ? 'Toutes vos recettes ajoutées ou modifiées sont synchronisées en temps réel dans le Cloud.'
-                  : 'Vos recettes et modifications sont sauvegardées dans votre navigateur. Connectez Firebase ci-dessous pour les synchroniser sur tous vos appareils.'}
+                  ? 'Toutes vos recettes sont synchronisées en temps réel dans le Cloud (avec sauvegarde locale de sécurité).'
+                  : 'Vos recettes sont sauvegardées dans votre navigateur. Connectez Firebase ci-dessous pour les synchroniser sur tous vos appareils.'}
               </p>
             </div>
           </div>
 
-          <div className="cloud-guide-note">
-            <HelpCircle size={18} className="text-orange" />
-            <div>
-              <strong>Comment créer votre base de données Cloud gratuite ?</strong>
-              <p>
-                1. Rendez-vous sur <a href="https://console.firebase.google.com/" target="_blank" rel="noopener noreferrer" className="link-inline">console.firebase.google.com <ExternalLink size={12} /></a> (100% gratuit).<br/>
-                2. Créez un projet → Ajoutez une application Web → Activez <strong>Cloud Firestore</strong>.<br/>
-                3. Copiez les clés de configuration dans le formulaire ci-dessous :
-              </p>
+          {/* Guide des règles de sécurité Firestore */}
+          <div className="firestore-rules-box">
+            <div className="rules-box-header">
+              <ShieldCheck size={18} className="text-green" />
+              <strong>Règles de sécurité Firestore requises :</strong>
+            </div>
+            <p className="rules-box-desc">
+              Dans votre console Firebase sous <strong>Firestore Database → Règles (Rules)</strong>, assurez-vous d'autoriser la lecture et l'écriture :
+            </p>
+            <div className="code-rule-snippet">
+              <code>allow read, write: if true;</code>
+              <button
+                type="button"
+                className="btn-copy-rules"
+                onClick={handleCopyRules}
+                title="Copier les règles complètes"
+              >
+                {copiedRules ? <Check size={14} color="#16a34a" /> : <Copy size={14} />}
+                <span>{copiedRules ? 'Copié !' : 'Copier les règles'}</span>
+              </button>
             </div>
           </div>
 
@@ -161,9 +188,9 @@ export default function CloudConfigModal({ isCloudActive, onConfigUpdated, onRes
 
           {/* Section Réinitialisation */}
           <div className="cloud-reset-section">
-            <h4 className="reset-section-title">Réinitialiser les recettes de base</h4>
+            <h4 className="reset-section-title">Restaurer les 20 recettes d'origine</h4>
             <p className="reset-section-desc">
-              Si vous souhaitez restaurer les 20 recettes d'origine de l'application Plancha-Master :
+              Si des recettes manquent ou si vous souhaitez réinitialiser la base de données :
             </p>
             <button
               type="button"
@@ -171,7 +198,7 @@ export default function CloudConfigModal({ isCloudActive, onConfigUpdated, onRes
               onClick={onResetDefaults}
             >
               <RefreshCw size={14} />
-              <span>Restaurer les 20 recettes par défaut</span>
+              <span>Restaurer les 20 recettes complètes</span>
             </button>
           </div>
         </div>
