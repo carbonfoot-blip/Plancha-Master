@@ -16,10 +16,10 @@ export default function Navbar({
   onOpenNewRecipe
 }) {
   const steps = [
-    { id: 1, label: 'Choisir les repas', icon: UtensilsCrossed, badge: `${selectedCount}/5` },
-    { id: 2, label: 'Menu de la semaine', icon: Flame, badge: `${selectedCount} repas` },
-    { id: 3, label: 'Liste d\'épicerie', icon: ShoppingCart },
-    { id: 4, label: 'Commandes en ligne', icon: ExternalLink }
+    { id: 1, label: 'Choisir les repas', shortLabel: 'Repas', icon: UtensilsCrossed, badge: `${selectedCount}/5` },
+    { id: 2, label: 'Menu de la semaine', shortLabel: 'Menu', icon: Flame, badge: `${selectedCount}` },
+    { id: 3, label: 'Liste d\'épicerie', shortLabel: 'Épicerie', icon: ShoppingCart },
+    { id: 4, label: 'Commandes en ligne', shortLabel: 'Épiceries', icon: ExternalLink }
   ];
 
   return (
@@ -28,21 +28,21 @@ export default function Navbar({
         {/* Logo & Brand */}
         <div className="brand-section" onClick={() => setActiveStep(1)} role="button" tabIndex={0} id="nav-brand-logo">
           <div className="logo-badge">
-            <Flame className="logo-icon-flame" size={24} />
+            <Flame className="logo-icon-flame" size={22} />
           </div>
           <div className="brand-text">
             <div className="brand-title">
               Plancha<span className="brand-accent">Master</span>
             </div>
-            <div className="brand-subtitle">Repas Familiaux & Épicerie Québec</div>
+            <div className="brand-subtitle">Repas Familiaux & Épicerie</div>
           </div>
         </div>
 
         {/* Global Controls: Portions, Admin, Reset */}
         <div className="header-controls">
           {/* Portion Adjuster */}
-          <div className="portion-selector-pill" title="Ajuster le nombre de portions pour toutes les recettes et la liste d'épicerie">
-            <Users size={16} className="portion-icon" />
+          <div className="portion-selector-pill" title="Ajuster le nombre de portions">
+            <Users size={15} className="portion-icon" />
             <span className="portion-label">Portions :</span>
             <div className="portion-buttons">
               <button
@@ -72,31 +72,26 @@ export default function Navbar({
           {/* Admin Controls */}
           {isAdmin ? (
             <div className="admin-active-controls">
-              <span className="admin-status-badge" title="Mode Administrateur activé : vous pouvez ajouter et modifier les recettes">
-                <ShieldCheck size={14} className="text-green" />
-                <span>Admin</span>
-              </span>
-
               <button
                 type="button"
                 className="btn-nav-add-recipe"
                 onClick={onOpenNewRecipe}
                 id="btn-nav-create-recipe"
-                title="Créer une nouvelle recette personnalisée"
+                title="Créer une nouvelle recette"
               >
                 <Plus size={14} />
-                <span>Nouvelle Recette</span>
+                <span className="btn-text-hide-mobile">Nouvelle Recette</span>
               </button>
 
               <button
                 type="button"
                 className={`btn-cloud-status ${isCloudActive ? 'is-cloud-connected' : 'is-cloud-local'}`}
                 onClick={onOpenCloudConfig}
-                title={isCloudActive ? "Connecté à Firebase Cloud Firestore" : "Mode local actif. Cliquez pour voir la configuration"}
+                title={isCloudActive ? "Connecté à Firebase Cloud Firestore" : "Mode local actif"}
                 id="btn-nav-cloud-config"
               >
                 <span className="cloud-dot"></span>
-                <span className="cloud-btn-text">{isCloudActive ? "Cloud BD" : "BD Locale"}</span>
+                <span className="cloud-btn-text btn-text-hide-mobile">{isCloudActive ? "Cloud BD" : "BD Locale"}</span>
               </button>
 
               <button
@@ -115,11 +110,11 @@ export default function Navbar({
               type="button"
               className="btn-unlock-trigger"
               onClick={onOpenAdminAuth}
-              title="Accès Administrateur pour modifier ou ajouter des recettes"
+              title="Accès Administrateur"
               id="btn-nav-unlock-admin"
             >
               <Lock size={14} />
-              <span>Espace Admin</span>
+              <span className="admin-btn-text">Admin</span>
             </button>
           )}
 
@@ -128,11 +123,11 @@ export default function Navbar({
               type="button"
               className="btn-reset-light"
               onClick={onResetMenu}
-              title="Réinitialiser la sélection de la semaine"
+              title="Réinitialiser la sélection"
               id="btn-reset-selection"
             >
-              <RefreshCw size={14} />
-              <span className="btn-reset-text">Réinitialiser</span>
+              <RefreshCw size={13} />
+              <span className="btn-reset-text">Vider</span>
             </button>
           )}
         </div>
@@ -157,8 +152,9 @@ export default function Navbar({
                 <div className="step-number-circle">
                   {step.id}
                 </div>
-                <Icon size={18} className="step-icon" />
-                <span className="step-title">{step.label}</span>
+                <Icon size={16} className="step-icon" />
+                <span className="step-title step-title-full">{step.label}</span>
+                <span className="step-title step-title-short">{step.shortLabel}</span>
                 {step.badge && (
                   <span className={`step-badge ${selectedCount >= 5 ? 'badge-full' : ''}`}>
                     {step.badge}
