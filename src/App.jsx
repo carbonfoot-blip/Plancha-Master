@@ -1,6 +1,12 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import confetti from 'canvas-confetti';
 import { RECIPES_DATA } from './data/recipes';
+import {
+  loadRecipesFromDb,
+  saveRecipeToDb,
+  deleteRecipeFromDb,
+  resetAllRecipesToDefaults
+} from './services/dbService';
 import { buildGroceryList, getGroceryStats } from './utils/groceryEngine';
 import Navbar from './components/Navbar';
 import Step1Selection from './components/Step1Selection';
@@ -8,6 +14,8 @@ import Step2WeeklyMenu from './components/Step2WeeklyMenu';
 import Step3GroceryList from './components/Step3GroceryList';
 import Step4OnlineStores from './components/Step4OnlineStores';
 import RecipeDetailModal from './components/RecipeDetailModal';
+import RecipeEditorModal from './components/RecipeEditorModal';
+import CloudConfigModal from './components/CloudConfigModal';
 import './App.css';
 
 const LOCAL_STORAGE_KEY_RECIPES = 'plancha_menu_selected_recipes';
@@ -19,7 +27,17 @@ export default function App() {
   // Navigation entre les 4 étapes
   const [activeStep, setActiveStep] = useState(1);
 
-  // Recettes sélectionnées pour la semaine (initialisé avec 5 recettes par défaut pour une démo immédiate sensationnelle)
+  // État des recettes chargées depuis Cloud DB / Local Cache
+  const [recipes, setRecipes] = useState(RECIPES_DATA);
+  const [isCloudActive, setIsCloudActive] = useState(false);
+  const [isLoadingDb, setIsLoadingDb] = useState(true);
+
+  // Modals d'administration et de configuration
+  const [showCloudModal, setShowCloudModal] = useState(false);
+  const [recipeToEdit, setRecipeToEdit] = useState(null);
+  const [isCreatingNew, setIsCreatingNew] = useState(false);
+
+  // Recettes sélectionnées pour la semaine (initialisé avec 5 recettes par défaut)
   const [selectedRecipeIds, setSelectedRecipeIds] = useState(() => {
     try {
       const saved = localStorage.getItem(LOCAL_STORAGE_KEY_RECIPES);
@@ -27,7 +45,6 @@ export default function App() {
     } catch (e) {
       console.error('Erreur lecture localStorage:', e);
     }
-    // Sélection par défaut équilibrée : Brochettes Poulet, Porc haché sauté, Smash Burgers, Pavés de Saumon, Médaillons porc
     return ['rec-01', 'rec-02', 'rec-03', 'rec-04', 'rec-05'];
   });
 
@@ -64,10 +81,28 @@ export default function App() {
     return {};
   });
 
-  // Modal recette active
+  // Modal recette active (vue détaillée)
   const [activeModalRecipe, setActiveModalRecipe] = useState(null);
 
-  // Sauvegarde dans localStorage
+  // Charger les recettes depuis la BD Cloud au démarrage
+  const fetchRecipes = async () => {
+    setIsLoadingDb(true);
+    try {
+      const { recipes: loaded, isCloud } = await loadRecipesFromDb();
+      setRecipes(loaded);
+      setIsCloudActive(isCloud);
+    } catch (err) {
+      console.error('Erreur lors du chargement des recettes:', err);
+    } finally {
+      setIsLoadingDb(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchRecipes();
+  }, []);
+
+  // Sauvegarde dans localStorage pour les sélections utilisateur
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY_RECIPES, JSON.stringify(selectedRecipeIds));
   }, [selectedRecipeIds]);
@@ -87,9 +122,9 @@ export default function App() {
   // Recettes complètes sélectionnées
   const selectedRecipes = useMemo(() => {
     return selectedRecipeIds
-      .map(id => RECIPES_DATA.find(r => r.id === id))
+      .map(id => recipes.find(r => r.id === id))
       .filter(Boolean);
-  }, [selectedRecipeIds]);
+  }, [selectedRecipeIds, recipes]);
 
   // Moteur d'épicerie cumulée
   const groceryDepartments = useMemo(() => {
@@ -135,8 +170,7 @@ export default function App() {
 
   // Générateur aléatoire de 5 repas équilibrés
   const handleSelectRandom5 = () => {
-    // Choisir 5 recettes aléatoires variées
-    const shuffled = [...RECIPES_DATA].sort(() => 0.5 - Math.random());
+    const shuffled = [...recipes].sort(() => 0.5 - Math.random());
     const random5 = shuffled.slice(0, 5).map(r => r.id);
     setSelectedRecipeIds(random5);
 
@@ -145,6 +179,54 @@ export default function App() {
       spread: 80,
       origin: { y: 0.5 }
     });
+  };
+
+  // Sauvegarde (Création / Modification) d'une recette dans la BD
+  const handleSaveRecipe = async (recipeData) => {
+    const res = await saveRecipeToDb(recipeData);
+    if (res.success) {
+      setRecipes(res.allRecipes);
+      setRecipeToEdit(null);
+      setIsCreatingNew(false);
+
+      // Si la recette sauvegardée était ouverte dans le modal détail, mettre à jour
+      if (activeModalRecipe && activeModalRecipe.id === recipeData.id) {
+        setActiveModalRecipe(res.recipe);
+      }
+
+      confetti({
+        particleCount: 45,
+        spread: 60,
+        origin: { y: 0.6 }
+      });
+    } else {
+      alert('Erreur lors de la sauvegarde : ' + res.error);
+    }
+  };
+
+  // Suppression d'une recette de la BD
+  const handleDeleteRecipe = async (recipeId) => {
+    const res = await deleteRecipeFromDb(recipeId);
+    if (res.success) {
+      setRecipes(res.allRecipes);
+      setSelectedRecipeIds(prev => prev.filter(id => id !== recipeId));
+      setRecipeToEdit(null);
+      if (activeModalRecipe && activeModalRecipe.id === recipeId) {
+        setActiveModalRecipe(null);
+      }
+    } else {
+      alert('Erreur lors de la suppression.');
+    }
+  };
+
+  // Restaurer les 20 recettes par défaut
+  const handleResetDefaults = async () => {
+    if (window.confirm('Voulez-vous réinitialiser toutes les recettes avec les 20 recettes d\'origine ?')) {
+      const reset = await resetAllRecipesToDefaults();
+      setRecipes(reset);
+      setShowCloudModal(false);
+      alert('Les 20 recettes d\'origine ont été restaurées avec succès.');
+    }
   };
 
   // Gestion des cases à cocher de l'épicerie
@@ -186,7 +268,7 @@ export default function App() {
 
   return (
     <div className="app-layout">
-      {/* Barre de navigation principale avec étapes et portions */}
+      {/* Barre de navigation principale avec étapes, portions et contrôle Cloud */}
       <Navbar
         activeStep={activeStep}
         setActiveStep={goToStep}
@@ -194,17 +276,22 @@ export default function App() {
         portions={portions}
         setPortions={setPortions}
         onResetMenu={handleResetMenu}
+        isCloudActive={isCloudActive}
+        onOpenCloudConfig={() => setShowCloudModal(true)}
+        onOpenNewRecipe={() => setIsCreatingNew(true)}
       />
 
       {/* Corps principal selon l'étape active */}
       <main className="main-content-area">
         {activeStep === 1 && (
           <Step1Selection
-            recipes={RECIPES_DATA}
+            recipes={recipes}
             selectedRecipes={selectedRecipes}
             onToggleRecipe={handleToggleRecipe}
             onSelectRandom5={handleSelectRandom5}
             onViewRecipe={(r) => setActiveModalRecipe(r)}
+            onOpenNewRecipe={() => setIsCreatingNew(true)}
+            onEditRecipe={(r) => setRecipeToEdit(r)}
             onNextStep={() => goToStep(2)}
           />
         )}
@@ -255,7 +342,31 @@ export default function App() {
           portions={portions}
           isSelected={selectedRecipeIds.includes(activeModalRecipe.id)}
           onToggleSelect={handleToggleRecipe}
+          onEditRecipe={(r) => setRecipeToEdit(r)}
           onClose={() => setActiveModalRecipe(null)}
+        />
+      )}
+
+      {/* Modal Studio Éditeur / Créateur de Recette */}
+      {(recipeToEdit || isCreatingNew) && (
+        <RecipeEditorModal
+          recipeToEdit={recipeToEdit}
+          onSaveRecipe={handleSaveRecipe}
+          onDeleteRecipe={handleDeleteRecipe}
+          onClose={() => {
+            setRecipeToEdit(null);
+            setIsCreatingNew(false);
+          }}
+        />
+      )}
+
+      {/* Modal Configuration Cloud DB (Firebase) */}
+      {showCloudModal && (
+        <CloudConfigModal
+          isCloudActive={isCloudActive}
+          onConfigUpdated={fetchRecipes}
+          onResetDefaults={handleResetDefaults}
+          onClose={() => setShowCloudModal(false)}
         />
       )}
 
@@ -266,7 +377,7 @@ export default function App() {
             <strong>Plancha-Master</strong> — Planificateur de repas familiaux & épicerie hebdomadaire
           </div>
           <p className="footer-text">
-            Conçu pour le Québec • Recettes standardisées à 4 portions • Liens directs Super C, Maxi, IGA, Metro & Walmart
+            Conçu pour le Québec • Base de données Cloud & Studio de recettes • Liens directs Super C, Maxi, IGA, Metro & Walmart
           </p>
         </div>
       </footer>

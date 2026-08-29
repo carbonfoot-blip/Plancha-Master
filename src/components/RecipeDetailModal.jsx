@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { X, Flame, Zap, Clock, Users, AlertTriangle, CheckCircle2, ChefHat, Plus, Check } from 'lucide-react';
+import { X, Flame, Zap, Clock, Users, AlertTriangle, CheckCircle2, ChefHat, Plus, Check, Edit2 } from 'lucide-react';
 import { GROCERY_DEPARTMENTS } from '../data/recipes';
 
-export default function RecipeDetailModal({ recipe, portions, isSelected, onToggleSelect, onClose }) {
+export default function RecipeDetailModal({ recipe, portions, isSelected, onToggleSelect, onEditRecipe, onClose }) {
   const [completedSteps, setCompletedSteps] = useState({});
 
   if (!recipe) return null;
@@ -155,13 +155,30 @@ export default function RecipeDetailModal({ recipe, portions, isSelected, onTogg
 
         {/* Modal Bottom Action Footer */}
         <div className="modal-footer">
-          <button
-            type="button"
-            className="btn-modal-back"
-            onClick={onClose}
-          >
-            Fermer
-          </button>
+          <div className="modal-footer-left">
+            <button
+              type="button"
+              className="btn-modal-back"
+              onClick={onClose}
+            >
+              Fermer
+            </button>
+
+            {onEditRecipe && (
+              <button
+                type="button"
+                className="btn-modal-edit-recipe"
+                onClick={() => {
+                  onClose();
+                  onEditRecipe(recipe);
+                }}
+                id="btn-modal-edit-trigger"
+              >
+                <Edit2 size={16} />
+                <span>Modifier la recette</span>
+              </button>
+            )}
+          </div>
 
           <button
             type="button"

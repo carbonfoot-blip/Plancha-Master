@@ -1,7 +1,17 @@
 import React from 'react';
 import { Flame, UtensilsCrossed, ShoppingCart, ExternalLink, Sparkles, Users, RefreshCw } from 'lucide-react';
 
-export default function Navbar({ activeStep, setActiveStep, selectedCount, portions, setPortions, onResetMenu }) {
+export default function Navbar({
+  activeStep,
+  setActiveStep,
+  selectedCount,
+  portions,
+  setPortions,
+  onResetMenu,
+  isCloudActive,
+  onOpenCloudConfig,
+  onOpenNewRecipe
+}) {
   const steps = [
     { id: 1, label: 'Choisir les repas', icon: UtensilsCrossed, badge: `${selectedCount}/5` },
     { id: 2, label: 'Menu de la semaine', icon: Flame, badge: `${selectedCount} repas` },
@@ -54,6 +64,29 @@ export default function Navbar({ activeStep, setActiveStep, selectedCount, porti
               </button>
             </div>
           </div>
+
+          {/* Cloud Database Status & Config */}
+          <button
+            type="button"
+            className={`btn-cloud-status ${isCloudActive ? 'is-cloud-connected' : 'is-cloud-local'}`}
+            onClick={onOpenCloudConfig}
+            title={isCloudActive ? "Connecté à Firebase Cloud Firestore" : "Mode local actif. Cliquez pour connecter Firebase Cloud"}
+            id="btn-nav-cloud-config"
+          >
+            <span className="cloud-dot"></span>
+            <span className="cloud-btn-text">{isCloudActive ? "Cloud Actif" : "Base Cloud"}</span>
+          </button>
+
+          {/* New Recipe Button */}
+          <button
+            type="button"
+            className="btn-nav-add-recipe"
+            onClick={onOpenNewRecipe}
+            id="btn-nav-create-recipe"
+            title="Créer une nouvelle recette personnalisée"
+          >
+            + Nouvelle Recette
+          </button>
 
           {selectedCount > 0 && (
             <button

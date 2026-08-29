@@ -11,7 +11,9 @@ import {
   Eye,
   ArrowRight,
   ShieldAlert,
-  RotateCcw
+  RotateCcw,
+  Edit2,
+  ChefHat
 } from 'lucide-react';
 import { PROTEIN_TYPES, COOKING_MODES, TIME_CATEGORIES, ALLERGENS_LIST } from '../data/recipes';
 
@@ -21,6 +23,8 @@ export default function Step1Selection({
   onToggleRecipe,
   onSelectRandom5,
   onViewRecipe,
+  onOpenNewRecipe,
+  onEditRecipe,
   onNextStep
 }) {
   const [searchQuery, setSearchQuery] = useState('');
@@ -113,6 +117,17 @@ export default function Step1Selection({
             >
               <Sparkles size={18} className="sparkle-anim" />
               <span>Générateur Magique (5 repas variés)</span>
+            </button>
+
+            <button
+              type="button"
+              id="btn-hero-add-recipe"
+              className="btn-hero-create"
+              onClick={onOpenNewRecipe}
+              title="Ajouter une nouvelle recette personnalisée"
+            >
+              <Plus size={18} />
+              <span>Ajouter une Recette</span>
             </button>
 
             {selectedCount >= 5 && (
@@ -394,14 +409,27 @@ export default function Step1Selection({
 
                 {/* Card Footer Actions */}
                 <div className="card-footer">
-                  <button
-                    type="button"
-                    className="btn-card-details"
-                    onClick={() => onViewRecipe(recipe)}
-                    id={`btn-view-${recipe.id}`}
-                  >
-                    Détails & Cuisson
-                  </button>
+                  <div className="card-footer-left-btns">
+                    <button
+                      type="button"
+                      className="btn-card-details"
+                      onClick={() => onViewRecipe(recipe)}
+                      id={`btn-view-${recipe.id}`}
+                    >
+                      Détails
+                    </button>
+
+                    <button
+                      type="button"
+                      className="btn-card-edit-quick"
+                      onClick={() => onEditRecipe(recipe)}
+                      id={`btn-edit-${recipe.id}`}
+                      title="Modifier cette recette (titre, image, ingrédients, étapes...)"
+                    >
+                      <Edit2 size={14} />
+                      <span>Modifier</span>
+                    </button>
+                  </div>
 
                   <button
                     type="button"
