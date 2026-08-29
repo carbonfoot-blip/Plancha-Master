@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flame, UtensilsCrossed, ShoppingCart, ExternalLink, Sparkles, Users, RefreshCw } from 'lucide-react';
+import { Flame, UtensilsCrossed, ShoppingCart, ExternalLink, Sparkles, Users, RefreshCw, Lock, Unlock, ShieldCheck, Plus } from 'lucide-react';
 
 export default function Navbar({
   activeStep,
@@ -9,6 +9,9 @@ export default function Navbar({
   setPortions,
   onResetMenu,
   isCloudActive,
+  isAdmin,
+  onOpenAdminAuth,
+  onLockAdmin,
   onOpenCloudConfig,
   onOpenNewRecipe
 }) {
@@ -35,8 +38,9 @@ export default function Navbar({
           </div>
         </div>
 
-        {/* Global Controls: Portions & Reset */}
+        {/* Global Controls: Portions, Admin, Reset */}
         <div className="header-controls">
+          {/* Portion Adjuster */}
           <div className="portion-selector-pill" title="Ajuster le nombre de portions pour toutes les recettes et la liste d'épicerie">
             <Users size={16} className="portion-icon" />
             <span className="portion-label">Portions :</span>
@@ -65,28 +69,59 @@ export default function Navbar({
             </div>
           </div>
 
-          {/* Cloud Database Status & Config */}
-          <button
-            type="button"
-            className={`btn-cloud-status ${isCloudActive ? 'is-cloud-connected' : 'is-cloud-local'}`}
-            onClick={onOpenCloudConfig}
-            title={isCloudActive ? "Connecté à Firebase Cloud Firestore" : "Mode local actif. Cliquez pour connecter Firebase Cloud"}
-            id="btn-nav-cloud-config"
-          >
-            <span className="cloud-dot"></span>
-            <span className="cloud-btn-text">{isCloudActive ? "Cloud Actif" : "Base Cloud"}</span>
-          </button>
+          {/* Admin Controls */}
+          {isAdmin ? (
+            <div className="admin-active-controls">
+              <span className="admin-status-badge" title="Mode Administrateur activé : vous pouvez ajouter et modifier les recettes">
+                <ShieldCheck size={14} className="text-green" />
+                <span>Admin</span>
+              </span>
 
-          {/* New Recipe Button */}
-          <button
-            type="button"
-            className="btn-nav-add-recipe"
-            onClick={onOpenNewRecipe}
-            id="btn-nav-create-recipe"
-            title="Créer une nouvelle recette personnalisée"
-          >
-            + Nouvelle Recette
-          </button>
+              <button
+                type="button"
+                className="btn-nav-add-recipe"
+                onClick={onOpenNewRecipe}
+                id="btn-nav-create-recipe"
+                title="Créer une nouvelle recette personnalisée"
+              >
+                <Plus size={14} />
+                <span>Nouvelle Recette</span>
+              </button>
+
+              <button
+                type="button"
+                className={`btn-cloud-status ${isCloudActive ? 'is-cloud-connected' : 'is-cloud-local'}`}
+                onClick={onOpenCloudConfig}
+                title={isCloudActive ? "Connecté à Firebase Cloud Firestore" : "Mode local actif. Cliquez pour voir la configuration"}
+                id="btn-nav-cloud-config"
+              >
+                <span className="cloud-dot"></span>
+                <span className="cloud-btn-text">{isCloudActive ? "Cloud BD" : "BD Locale"}</span>
+              </button>
+
+              <button
+                type="button"
+                className="btn-lock-admin"
+                onClick={onLockAdmin}
+                title="Verrouiller le mode administrateur"
+                id="btn-nav-lock-admin"
+              >
+                <Unlock size={14} />
+                <span className="lock-text">Verrouiller</span>
+              </button>
+            </div>
+          ) : (
+            <button
+              type="button"
+              className="btn-unlock-trigger"
+              onClick={onOpenAdminAuth}
+              title="Accès Administrateur pour modifier ou ajouter des recettes"
+              id="btn-nav-unlock-admin"
+            >
+              <Lock size={14} />
+              <span>Espace Admin</span>
+            </button>
+          )}
 
           {selectedCount > 0 && (
             <button

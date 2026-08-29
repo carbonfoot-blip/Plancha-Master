@@ -1,4 +1,5 @@
 import { RECIPES_DATA } from '../data/recipes';
+import { DEFAULT_FIREBASE_CONFIG } from './firebaseConfig';
 
 const LOCAL_STORAGE_RECIPES_KEY = 'plancha_master_all_recipes_db';
 const LOCAL_STORAGE_FIREBASE_CONFIG_KEY = 'plancha_master_firebase_config';
@@ -16,7 +17,8 @@ export function getStoredFirebaseConfig() {
   } catch (e) {
     console.error('Erreur lecture config Firebase:', e);
   }
-  return null;
+  // Utiliser la configuration Firebase officielle par défaut
+  return DEFAULT_FIREBASE_CONFIG;
 }
 
 export function saveFirebaseConfig(config) {

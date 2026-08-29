@@ -25,6 +25,7 @@ export default function Step1Selection({
   onViewRecipe,
   onOpenNewRecipe,
   onEditRecipe,
+  isAdmin,
   onNextStep
 }) {
   const [searchQuery, setSearchQuery] = useState('');
@@ -119,16 +120,18 @@ export default function Step1Selection({
               <span>Générateur Magique (5 repas variés)</span>
             </button>
 
-            <button
-              type="button"
-              id="btn-hero-add-recipe"
-              className="btn-hero-create"
-              onClick={onOpenNewRecipe}
-              title="Ajouter une nouvelle recette personnalisée"
-            >
-              <Plus size={18} />
-              <span>Ajouter une Recette</span>
-            </button>
+            {isAdmin && (
+              <button
+                type="button"
+                id="btn-hero-add-recipe"
+                className="btn-hero-create"
+                onClick={onOpenNewRecipe}
+                title="Ajouter une nouvelle recette personnalisée"
+              >
+                <Plus size={18} />
+                <span>Ajouter une Recette</span>
+              </button>
+            )}
 
             {selectedCount >= 5 && (
               <button
@@ -419,16 +422,18 @@ export default function Step1Selection({
                       Détails
                     </button>
 
-                    <button
-                      type="button"
-                      className="btn-card-edit-quick"
-                      onClick={() => onEditRecipe(recipe)}
-                      id={`btn-edit-${recipe.id}`}
-                      title="Modifier cette recette (titre, image, ingrédients, étapes...)"
-                    >
-                      <Edit2 size={14} />
-                      <span>Modifier</span>
-                    </button>
+                    {isAdmin && (
+                      <button
+                        type="button"
+                        className="btn-card-edit-quick"
+                        onClick={() => onEditRecipe(recipe)}
+                        id={`btn-edit-${recipe.id}`}
+                        title="Modifier cette recette (titre, image, ingrédients, étapes...)"
+                      >
+                        <Edit2 size={14} />
+                        <span>Modifier</span>
+                      </button>
+                    )}
                   </div>
 
                   <button

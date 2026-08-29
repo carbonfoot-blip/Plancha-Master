@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { X, Flame, Zap, Clock, Users, AlertTriangle, CheckCircle2, ChefHat, Plus, Check, Edit2 } from 'lucide-react';
 import { GROCERY_DEPARTMENTS } from '../data/recipes';
 
-export default function RecipeDetailModal({ recipe, portions, isSelected, onToggleSelect, onEditRecipe, onClose }) {
+export default function RecipeDetailModal({ recipe, portions, isSelected, onToggleSelect, onEditRecipe, isAdmin, onClose }) {
   const [completedSteps, setCompletedSteps] = useState({});
 
   if (!recipe) return null;
@@ -164,7 +164,7 @@ export default function RecipeDetailModal({ recipe, portions, isSelected, onTogg
               Fermer
             </button>
 
-            {onEditRecipe && (
+            {isAdmin && onEditRecipe && (
               <button
                 type="button"
                 className="btn-modal-edit-recipe"

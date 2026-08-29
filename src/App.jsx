@@ -16,12 +16,14 @@ import Step4OnlineStores from './components/Step4OnlineStores';
 import RecipeDetailModal from './components/RecipeDetailModal';
 import RecipeEditorModal from './components/RecipeEditorModal';
 import CloudConfigModal from './components/CloudConfigModal';
+import AdminAuthModal from './components/AdminAuthModal';
 import './App.css';
 
 const LOCAL_STORAGE_KEY_RECIPES = 'plancha_menu_selected_recipes';
 const LOCAL_STORAGE_KEY_PORTIONS = 'plancha_menu_portions';
 const LOCAL_STORAGE_KEY_CHECKED = 'plancha_menu_checked_grocery';
 const LOCAL_STORAGE_KEY_CUSTOM = 'plancha_menu_custom_items';
+const LOCAL_STORAGE_KEY_IS_ADMIN = 'plancha_master_is_admin_logged';
 
 export default function App() {
   // Navigation entre les 4 étapes
@@ -31,6 +33,16 @@ export default function App() {
   const [recipes, setRecipes] = useState(RECIPES_DATA);
   const [isCloudActive, setIsCloudActive] = useState(false);
   const [isLoadingDb, setIsLoadingDb] = useState(true);
+
+  // État d'authentification Mode Administrateur
+  const [isAdmin, setIsAdmin] = useState(() => {
+    try {
+      return localStorage.getItem(LOCAL_STORAGE_KEY_IS_ADMIN) === 'true';
+    } catch (e) {
+      return false;
+    }
+  });
+  const [showAdminAuthModal, setShowAdminAuthModal] = useState(false);
 
   // Modals d'administration et de configuration
   const [showCloudModal, setShowCloudModal] = useState(false);
@@ -101,6 +113,26 @@ export default function App() {
   useEffect(() => {
     fetchRecipes();
   }, []);
+
+  // Gestion du statut Administrateur
+  const handleUnlockAdmin = () => {
+    setIsAdmin(true);
+    try {
+      localStorage.setItem(LOCAL_STORAGE_KEY_IS_ADMIN, 'true');
+    } catch (e) {}
+    confetti({
+      particleCount: 40,
+      spread: 60,
+      origin: { y: 0.2 }
+    });
+  };
+
+  const handleLockAdmin = () => {
+    setIsAdmin(false);
+    try {
+      localStorage.setItem(LOCAL_STORAGE_KEY_IS_ADMIN, 'false');
+    } catch (e) {}
+  };
 
   // Sauvegarde dans localStorage pour les sélections utilisateur
   useEffect(() => {
@@ -181,7 +213,7 @@ export default function App() {
     });
   };
 
-  // Sauvegarde (Création / Modification) d'une recette dans la BD
+  // Sauvegarde (Création / Modification) d'une recette dans la BD (ADMIN UNIQUEMENT)
   const handleSaveRecipe = async (recipeData) => {
     const res = await saveRecipeToDb(recipeData);
     if (res.success) {
@@ -204,7 +236,7 @@ export default function App() {
     }
   };
 
-  // Suppression d'une recette de la BD
+  // Suppression d'une recette de la BD (ADMIN UNIQUEMENT)
   const handleDeleteRecipe = async (recipeId) => {
     const res = await deleteRecipeFromDb(recipeId);
     if (res.success) {
@@ -268,7 +300,7 @@ export default function App() {
 
   return (
     <div className="app-layout">
-      {/* Barre de navigation principale avec étapes, portions et contrôle Cloud */}
+      {/* Barre de navigation principale avec étapes, portions, statut et contrôle Admin */}
       <Navbar
         activeStep={activeStep}
         setActiveStep={goToStep}
@@ -277,6 +309,9 @@ export default function App() {
         setPortions={setPortions}
         onResetMenu={handleResetMenu}
         isCloudActive={isCloudActive}
+        isAdmin={isAdmin}
+        onOpenAdminAuth={() => setShowAdminAuthModal(true)}
+        onLockAdmin={handleLockAdmin}
         onOpenCloudConfig={() => setShowCloudModal(true)}
         onOpenNewRecipe={() => setIsCreatingNew(true)}
       />
@@ -292,6 +327,7 @@ export default function App() {
             onViewRecipe={(r) => setActiveModalRecipe(r)}
             onOpenNewRecipe={() => setIsCreatingNew(true)}
             onEditRecipe={(r) => setRecipeToEdit(r)}
+            isAdmin={isAdmin}
             onNextStep={() => goToStep(2)}
           />
         )}
@@ -343,12 +379,13 @@ export default function App() {
           isSelected={selectedRecipeIds.includes(activeModalRecipe.id)}
           onToggleSelect={handleToggleRecipe}
           onEditRecipe={(r) => setRecipeToEdit(r)}
+          isAdmin={isAdmin}
           onClose={() => setActiveModalRecipe(null)}
         />
       )}
 
-      {/* Modal Studio Éditeur / Créateur de Recette */}
-      {(recipeToEdit || isCreatingNew) && (
+      {/* Modal Studio Éditeur / Créateur de Recette (Réservé Admin) */}
+      {isAdmin && (recipeToEdit || isCreatingNew) && (
         <RecipeEditorModal
           recipeToEdit={recipeToEdit}
           onSaveRecipe={handleSaveRecipe}
@@ -360,8 +397,17 @@ export default function App() {
         />
       )}
 
-      {/* Modal Configuration Cloud DB (Firebase) */}
-      {showCloudModal && (
+      {/* Modal Connexion / Authentification Admin (Code PIN) */}
+      {showAdminAuthModal && (
+        <AdminAuthModal
+          isOpen={showAdminAuthModal}
+          onUnlockSuccess={handleUnlockAdmin}
+          onClose={() => setShowAdminAuthModal(false)}
+        />
+      )}
+
+      {/* Modal Configuration Cloud DB (Firebase) - Réservé Admin */}
+      {isAdmin && showCloudModal && (
         <CloudConfigModal
           isCloudActive={isCloudActive}
           onConfigUpdated={fetchRecipes}
@@ -377,8 +423,17 @@ export default function App() {
             <strong>Plancha-Master</strong> — Planificateur de repas familiaux & épicerie hebdomadaire
           </div>
           <p className="footer-text">
-            Conçu pour le Québec • Base de données Cloud & Studio de recettes • Liens directs Super C, Maxi, IGA, Metro & Walmart
+            Base de données Cloud partagée • Protection par Mode Administrateur • Liens directs Super C, Maxi, IGA, Metro & Walmart
           </p>
+          {!isAdmin && (
+            <button
+              type="button"
+              className="footer-admin-link"
+              onClick={() => setShowAdminAuthModal(true)}
+            >
+              🔒 Espace Administrateur
+            </button>
+          )}
         </div>
       </footer>
     </div>
