@@ -19,7 +19,7 @@ export default function Navbar({ activeStep, setActiveStep, selectedCount, porti
           </div>
           <div className="brand-text">
             <div className="brand-title">
-              Plancha<span className="brand-accent">&</span>Éclair
+              Plancha<span className="brand-accent">Master</span>
             </div>
             <div className="brand-subtitle">Repas Familiaux & Épicerie Québec</div>
           </div>

@@ -263,7 +263,7 @@ export default function App() {
       <footer className="site-footer">
         <div className="footer-container">
           <div className="footer-brand">
-            <strong>Plancha & Éclair</strong> — Planificateur de repas familiaux & épicerie hebdomadaire
+            <strong>Plancha-Master</strong> — Planificateur de repas familiaux & épicerie hebdomadaire
           </div>
           <p className="footer-text">
             Conçu pour le Québec • Recettes standardisées à 4 portions • Liens directs Super C, Maxi, IGA, Metro & Walmart

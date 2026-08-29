@@ -1,16 +1,49 @@
-# React + Vite
+# 🔥 Plancha-Master
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Application interactive d'organisation des repas familiaux (4 portions standard) et de liste d'épicerie hebdomadaire intelligente, articulée autour de la **cuisine à la plancha** et de la **cuisine rapide de semaine**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🌟 Fonctionnalités Clés
 
-## React Compiler
+1. **Catalogue de Recettes Familiales** :
+   - Base de données riche de recettes québécoises et internationales (4 portions).
+   - Filtres par mode de cuisson (Plancha, Rapide, Mixte), temps (<20 min, 20-35 min), protéines et exclusion d'allergènes.
+   - Bouton magique aléatoire pour composer 5 repas équilibrés en 1 clic.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+2. **Menu de la Semaine & Conseils de Chef** :
+   - Vue sur 5 jours modulable (portions ajustables de 1 à 12 portions).
+   - Fiches recettes complètes avec étapes interactives à cocher.
+   - Encadrés spécifiques pour la cuisson à la plancha (températures, zones de saisie, déglaçage).
 
-## Expanding the Oxlint configuration
+3. **Liste d'Épicerie Intelligente** :
+   - Cumul automatique des ingrédients identiques.
+   - Organisation par rayons :
+     1. 🥦 Fruits et Légumes
+     2. 🥩 Viandes & Poissons
+     3. 🥫 Non Périssable (Allées & Garde-manger)
+     4. 🧀 Produits Laitiers & Frais
+     5. 🧊 Surgelés
+   - Checklist interactive, ajout d'articles personnalisés et impression PDF.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+4. **Commandes en Ligne Québec** :
+   - Intégration directe de **Super C**, **Maxi**, **IGA**, **Metro** et **Walmart**.
+   - Recherche d'articles en 1 clic pour chaque ingrédient.
+   - Exportation formatée pour le presse-papier.
+
+---
+
+## 🚀 Installation & Développement Local
+
+```bash
+npm install
+npm run dev
+```
+
+Ouvrez ensuite [http://localhost:5173](http://localhost:5173) dans votre navigateur.
+
+---
+
+## 🌐 Déploiement en Ligne
+
+Le projet inclut un workflow GitHub Actions automatique (`.github/workflows/deploy.yml`) pour GitHub Pages.

@@ -95,6 +95,6 @@ export function formatGroceryListForClipboard(departmentsResult, portions = 4, s
   });
 
   text += `--------------------------------------------------\n`;
-  text += `Généré via Mon Menu Plancha & Cuisine Rapide Québec`;
+  text += `Généré via Plancha-Master Québec`;
   return text;
 }
