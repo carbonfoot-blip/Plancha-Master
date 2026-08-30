@@ -10,6 +10,7 @@ import {
 import { buildGroceryList, getGroceryStats } from './utils/groceryEngine';
 import Navbar from './components/Navbar';
 import Step1Selection from './components/Step1Selection';
+import StepRabaisSemaine from './components/StepRabaisSemaine';
 import Step2WeeklyMenu from './components/Step2WeeklyMenu';
 import Step3GroceryList from './components/Step3GroceryList';
 import Step4OnlineStores from './components/Step4OnlineStores';
@@ -288,6 +289,21 @@ export default function App() {
     setCustomItems(prev => [...prev, newItem]);
   };
 
+  // Ajout d'un article en rabais de circulaire à la liste d'épicerie
+  const handleAddDealToGrocery = (deal) => {
+    const newItem = {
+      id: `deal-${Date.now()}-${deal.id}`,
+      name: deal.name,
+      quantity: 1,
+      unit: deal.unit?.includes('/') ? deal.unit.split('/')[0].trim() : 'unité',
+      department: deal.department || 'non_perissable',
+      storeBadge: `${deal.storeName} (${deal.promoPrice} $)`,
+      promoPrice: deal.promoPrice,
+      isDeal: true
+    };
+    setCustomItems(prev => [...prev, newItem]);
+  };
+
   const handleRemoveCustomItem = (itemId) => {
     setCustomItems(prev => prev.filter(item => item.id !== itemId));
   };
@@ -318,6 +334,17 @@ export default function App() {
 
       {/* Corps principal selon l'étape active */}
       <main className="main-content-area">
+        {activeStep === 0 && (
+          <StepRabaisSemaine
+            recipes={recipes}
+            selectedRecipeIds={selectedRecipeIds}
+            onToggleSelectRecipe={handleToggleRecipe}
+            onAddDealToGrocery={handleAddDealToGrocery}
+            onOpenRecipeDetail={(r) => setActiveModalRecipe(r)}
+            onGoToStep={goToStep}
+          />
+        )}
+
         {activeStep === 1 && (
           <Step1Selection
             recipes={recipes}
@@ -329,6 +356,7 @@ export default function App() {
             onEditRecipe={(r) => setRecipeToEdit(r)}
             isAdmin={isAdmin}
             onNextStep={() => goToStep(2)}
+            onGoToDeals={() => goToStep(0)}
           />
         )}
 

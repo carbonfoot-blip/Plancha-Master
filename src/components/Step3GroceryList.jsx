@@ -229,11 +229,15 @@ export default function Step3GroceryList({
 
                       <div className="item-name-sources">
                         <span className="item-display-name">{item.name}</span>
-                        {item.recipeSources && (
+                        {item.storeBadge ? (
+                          <span className="item-promo-store-tag">
+                            🏷️ Spécial {item.storeBadge} • {item.promoPrice} $
+                          </span>
+                        ) : item.recipeSources ? (
                           <span className="item-source-recipes">
                             {item.recipeSources.join(' + ')}
                           </span>
-                        )}
+                        ) : null}
                       </div>
 
                       <div className="item-quantity-pill">

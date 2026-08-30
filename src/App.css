@@ -3656,7 +3656,867 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}/* ==========================================================================
+   RABAIS DE LA SEMAINE & CIRCULAIRES QUÉBEC (Reebee Style)
+   ========================================================================== */
+
+/* Navbar Deals Tab */
+.step-deals-item {
+  position: relative;
 }
 
+.deals-circle {
+  background: linear-gradient(135deg, #ef4444, #f97316) !important;
+  color: #ffffff !important;
+  border-color: #f97316 !important;
+}
 
+.badge-deals-hot {
+  background: #ef4444 !important;
+  color: #ffffff !important;
+  font-weight: 800;
+  animation: pulse-glow 2s infinite ease-in-out;
+}
 
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.05); }
+}
+
+/* Step 1 Quick Deals Filter Button */
+.btn-filter-deals-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.85rem;
+  background: #fff7ed;
+  border: 1.5px solid #fed7aa;
+  border-radius: var(--radius-full);
+  color: #c2410c;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-filter-deals-toggle:hover {
+  background: #ffedd5;
+  border-color: #fb923c;
+}
+
+.btn-filter-deals-toggle.is-active {
+  background: linear-gradient(135deg, #ea580c, #c2410c);
+  color: #ffffff;
+  border-color: #ea580c;
+  box-shadow: 0 2px 8px rgba(234, 88, 12, 0.35);
+}
+
+.badge-deal-sale {
+  background: linear-gradient(135deg, #dc2626, #ea580c);
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-full);
+  box-shadow: 0 2px 6px rgba(220, 38, 38, 0.4);
+  animation: pulse-glow 2.5s infinite ease-in-out;
+}
+
+/* Step 3 Grocery Item Promo Tag */
+.item-promo-store-tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #c2410c;
+  background: #fff7ed;
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid #fed7aa;
+  margin-top: 0.2rem;
+}
+
+/* Main StepRabais Container */
+.step-rabais-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-bottom: 5rem;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Hero Banner Card */
+.rabais-hero-card {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  border-radius: var(--radius-xl);
+  padding: 2rem 2.25rem;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.rabais-hero-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(249, 115, 22, 0.18) 0%, rgba(239, 68, 68, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero-badge-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(249, 115, 22, 0.2);
+  border: 1px solid rgba(249, 115, 22, 0.4);
+  color: #fb923c;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.rabais-hero-title {
+  font-family: var(--font-heading);
+  font-size: 1.85rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.6rem;
+  color: #f8fafc;
+}
+
+.rabais-hero-desc {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  max-width: 720px;
+  line-height: 1.55;
+  margin-bottom: 1.4rem;
+}
+
+.rabais-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.btn-smart-plan {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  color: #ffffff;
+  padding: 0.7rem 1.35rem;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(234, 88, 12, 0.4);
+  transition: all 0.2s ease;
+}
+
+.btn-smart-plan:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(234, 88, 12, 0.5);
+}
+
+.btn-reebee-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e2e8f0;
+  padding: 0.7rem 1.15rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-reebee-link:hover {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+
+/* Filters Panel */
+.rabais-filters-panel {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  border: 1px solid var(--slate-200);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.rabais-search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.rabais-search-wrapper .search-icon {
+  position: absolute;
+  left: 1rem;
+  color: var(--slate-400);
+  pointer-events: none;
+}
+
+.rabais-search-input {
+  width: 100%;
+  padding: 0.75rem 2.75rem 0.75rem 2.6rem;
+  border: 1.5px solid var(--slate-200);
+  border-radius: var(--radius-md);
+  font-size: 0.92rem;
+  background: var(--slate-50);
+  color: var(--slate-800);
+  transition: all 0.2s ease;
+}
+
+.rabais-search-input:focus {
+  outline: none;
+  background: #ffffff;
+  border-color: var(--primary-500);
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
+}
+
+.clear-search-btn {
+  position: absolute;
+  right: 0.85rem;
+  background: none;
+  border: none;
+  color: var(--slate-400);
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+.filter-row-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--slate-500);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  min-width: 80px;
+}
+
+/* Store Chips */
+.stores-selector-row,
+.categories-selector-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.stores-scroll-chips,
+.categories-scroll-chips {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.25rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.store-chip,
+.cat-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--slate-200);
+  background: var(--slate-50);
+  color: var(--slate-700);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.store-chip:hover,
+.cat-chip:hover {
+  background: var(--slate-100);
+  border-color: var(--slate-300);
+}
+
+.store-chip.active,
+.cat-chip.active {
+  background: var(--slate-900);
+  color: #ffffff;
+  border-color: var(--slate-900);
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.25);
+}
+
+.cat-lunch-highlight {
+  border-color: #fed7aa;
+  background: #fff7ed;
+  color: #c2410c;
+}
+
+.cat-lunch-highlight.active {
+  background: linear-gradient(135deg, #ea580c, #c2410c);
+  color: #ffffff;
+  border-color: #ea580c;
+}
+
+/* Results Header */
+.rabais-results-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.25rem;
+}
+
+.rabais-count-text {
+  font-size: 0.95rem;
+  color: var(--slate-700);
+}
+
+.rabais-validity-info {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  color: var(--slate-500);
+  font-weight: 600;
+}
+
+/* Deals Cards Grid */
+.deals-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 1.25rem;
+}
+
+.deal-card {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--slate-200);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.22s ease;
+  position: relative;
+}
+
+.deal-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--slate-300);
+}
+
+.deal-card.top-deal-card {
+  border-color: #fed7aa;
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.08);
+}
+
+.deal-card.lunch-snack-card {
+  border-color: #bfdbfe;
+}
+
+.deal-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 0.85rem 0.4rem;
+  background: #ffffff;
+}
+
+.deal-store-badge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-full);
+}
+
+.store-superc {
+  background: #fee2e2;
+  color: #dc2626;
+  border: 1px solid #fca5a5;
+}
+
+.store-maxi {
+  background: #fef9c3;
+  color: #854d0e;
+  border: 1px solid #fde047;
+}
+
+.store-iga {
+  background: #ffe4e6;
+  color: #e11d48;
+  border: 1px solid #fda4af;
+}
+
+.store-metro {
+  background: #dbeafe;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+}
+
+.store-walmart {
+  background: #e0f2fe;
+  color: #0369a1;
+  border: 1px solid #bae6fd;
+}
+
+.deal-discount-badge {
+  background: #dc2626;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.18rem 0.45rem;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 1px 3px rgba(220, 38, 38, 0.3);
+}
+
+.deal-image-container {
+  height: 155px;
+  position: relative;
+  overflow: hidden;
+  background: var(--slate-100);
+}
+
+.deal-product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.deal-card:hover .deal-product-image {
+  transform: scale(1.04);
+}
+
+.flame-deal-badge {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(4px);
+  color: #fb923c;
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-full);
+}
+
+.lunch-deal-badge {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(4px);
+  color: #38bdf8;
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-full);
+}
+
+.deal-card-body {
+  padding: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+}
+
+.deal-product-title {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--slate-900);
+  line-height: 1.35;
+  margin: 0;
+  min-height: 2.6em;
+}
+
+.deal-pricing-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-top: 0.2rem;
+}
+
+.deal-price-main {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+}
+
+.price-number {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #dc2626;
+  line-height: 1;
+}
+
+.price-unit {
+  font-size: 0.76rem;
+  color: var(--slate-500);
+  font-weight: 600;
+}
+
+.deal-original-price {
+  font-size: 0.76rem;
+  color: var(--slate-400);
+  text-decoration: line-through;
+}
+
+.deal-valid-badge {
+  font-size: 0.72rem;
+  color: var(--slate-500);
+  font-weight: 500;
+}
+
+.deal-card-footer {
+  padding: 0.75rem 0.85rem;
+  background: var(--slate-50);
+  border-top: 1px solid var(--slate-100);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-add-to-grocery {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.55rem 0.75rem;
+  background: var(--slate-900);
+  color: #ffffff;
+  border-radius: var(--radius-md);
+  font-size: 0.82rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-add-to-grocery:hover {
+  background: #ea580c;
+  color: #ffffff;
+}
+
+.btn-deal-added {
+  background: #16a34a !important;
+  color: #ffffff !important;
+}
+
+.btn-linked-recipes {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.55rem 0.75rem;
+  background: #ffffff;
+  border: 1px solid #fed7aa;
+  color: #c2410c;
+  border-radius: var(--radius-md);
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-linked-recipes:hover {
+  background: #fff7ed;
+  border-color: #f97316;
+}
+
+.no-recipes-hint {
+  font-size: 0.72rem;
+  color: var(--slate-400);
+  font-weight: 600;
+  padding: 0.4rem 0.2rem;
+}
+
+/* Modal Linked Recipes */
+.deal-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: fade-in 0.2s ease;
+}
+
+.deal-modal-content {
+  background: #ffffff;
+  border-radius: var(--radius-xl);
+  max-width: 620px;
+  width: 100%;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+  animation: pop-in 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.deal-modal-header {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--slate-200);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.deal-modal-store-tag {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #ea580c;
+  background: #fff7ed;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-full);
+  display: inline-block;
+  margin-bottom: 0.3rem;
+}
+
+.deal-modal-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--slate-900);
+  margin: 0;
+}
+
+.deal-modal-subtitle {
+  padding: 0.75rem 1.5rem 0.25rem;
+  font-size: 0.88rem;
+  color: var(--slate-600);
+  margin: 0;
+}
+
+.deal-recipes-list {
+  padding: 0.75rem 1.5rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-height: 50vh;
+}
+
+.deal-recipe-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.65rem;
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  transition: all 0.18s ease;
+}
+
+.deal-recipe-item:hover {
+  background: var(--slate-50);
+  border-color: var(--slate-300);
+}
+
+.deal-recipe-thumb {
+  width: 58px;
+  height: 58px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.deal-recipe-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.deal-recipe-name {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--slate-900);
+  margin: 0 0 0.25rem 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.deal-recipe-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.recipe-tag-pill {
+  font-size: 0.7rem;
+  background: var(--slate-100);
+  color: var(--slate-700);
+  padding: 0.15rem 0.4rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+}
+
+.recipe-time-pill {
+  font-size: 0.7rem;
+  color: var(--slate-500);
+}
+
+.deal-recipe-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.btn-view-recipe-link {
+  background: none;
+  border: 1px solid var(--slate-200);
+  padding: 0.4rem 0.65rem;
+  border-radius: var(--radius-md);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--slate-700);
+  cursor: pointer;
+}
+
+.btn-view-recipe-link:hover {
+  background: var(--slate-100);
+}
+
+.btn-select-recipe-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.4rem 0.75rem;
+  background: var(--slate-900);
+  color: #ffffff;
+  border-radius: var(--radius-md);
+  font-size: 0.78rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-select-recipe-toggle.selected {
+  background: #16a34a;
+}
+
+.deal-modal-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--slate-200);
+  display: flex;
+  justify-content: flex-end;
+  background: var(--slate-50);
+}
+
+.btn-done-modal {
+  padding: 0.6rem 1.25rem;
+  background: var(--slate-900);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+/* Floating Dock Banner */
+.rabais-dock-banner {
+  position: fixed;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(12px);
+  color: #ffffff;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-full);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  z-index: 900;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.dock-banner-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+}
+
+.btn-dock-next {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: linear-gradient(135deg, #f97316, #ea580c);
+  color: #ffffff;
+  padding: 0.45rem 0.95rem;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 0.82rem;
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsive Mobile (iOS / Android) */
+@media (max-width: 768px) {
+  .rabais-hero-card {
+    padding: 1.35rem;
+  }
+
+  .rabais-hero-title {
+    font-size: 1.4rem;
+  }
+
+  .rabais-hero-desc {
+    font-size: 0.88rem;
+  }
+
+  .deals-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .rabais-dock-banner {
+    width: 92%;
+    bottom: 0.75rem;
+    padding: 0.65rem 1rem;
+    justify-content: space-between;
+  }
+
+  .stores-selector-row,
+  .categories-selector-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .filter-row-label {
+    min-width: unset;
+  }
+}

@@ -42,7 +42,7 @@ export function buildGroceryList(selectedRecipes = [], portions = 4, customItems
     });
   });
 
-  // Ajouter les articles personnalisés de l'utilisateur
+  // Ajouter les articles personnalisés et rabais circulaires
   customItems.forEach((custom) => {
     const key = `custom-${custom.id}`;
     aggregatedMap.set(key, {
@@ -52,7 +52,10 @@ export function buildGroceryList(selectedRecipes = [], portions = 4, customItems
       quantity: custom.quantity || 1,
       unit: custom.unit || 'unité',
       department: custom.department || 'non_perissable',
-      recipeSources: ['Ajout personnalisé'],
+      recipeSources: custom.storeBadge ? [`🏷️ ${custom.storeBadge} (${custom.promoPrice || ''} $)`] : ['Ajout manuel'],
+      storeBadge: custom.storeBadge || null,
+      promoPrice: custom.promoPrice || null,
+      isDeal: !!custom.isDeal,
       isCustom: true
     });
   });

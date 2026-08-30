@@ -1,5 +1,4 @@
-import React from 'react';
-import { Flame, UtensilsCrossed, ShoppingCart, ExternalLink, Sparkles, Users, RefreshCw, Lock, Unlock, ShieldCheck, Plus } from 'lucide-react';
+import { Flame, UtensilsCrossed, ShoppingCart, ExternalLink, Sparkles, Users, RefreshCw, Lock, Unlock, ShieldCheck, Plus, Tag } from 'lucide-react';
 
 export default function Navbar({
   activeStep,
@@ -16,6 +15,7 @@ export default function Navbar({
   onOpenNewRecipe
 }) {
   const steps = [
+    { id: 0, label: 'Rabais de la semaine', shortLabel: 'Rabais', icon: Tag, isDeals: true, badge: '🔥 Spéciaux' },
     { id: 1, label: 'Choisir les repas', shortLabel: 'Repas', icon: UtensilsCrossed, badge: `${selectedCount}/5` },
     { id: 2, label: 'Menu de la semaine', shortLabel: 'Menu', icon: Flame, badge: `${selectedCount}` },
     { id: 3, label: 'Liste d\'épicerie', shortLabel: 'Épicerie', icon: ShoppingCart },
@@ -146,17 +146,17 @@ export default function Navbar({
                 key={step.id}
                 type="button"
                 id={`step-nav-btn-${step.id}`}
-                className={`step-nav-item ${isActive ? 'is-active' : ''} ${isCompleted ? 'is-completed' : ''}`}
+                className={`step-nav-item ${step.isDeals ? 'step-deals-item' : ''} ${isActive ? 'is-active' : ''} ${isCompleted ? 'is-completed' : ''}`}
                 onClick={() => setActiveStep(step.id)}
               >
-                <div className="step-number-circle">
-                  {step.id}
+                <div className={`step-number-circle ${step.isDeals ? 'deals-circle' : ''}`}>
+                  {step.isDeals ? <Tag size={13} /> : step.id}
                 </div>
                 <Icon size={16} className="step-icon" />
                 <span className="step-title step-title-full">{step.label}</span>
                 <span className="step-title step-title-short">{step.shortLabel}</span>
                 {step.badge && (
-                  <span className={`step-badge ${selectedCount >= 5 ? 'badge-full' : ''}`}>
+                  <span className={`step-badge ${step.isDeals ? 'badge-deals-hot' : ''} ${selectedCount >= 5 && !step.isDeals ? 'badge-full' : ''}`}>
                     {step.badge}
                   </span>
                 )}

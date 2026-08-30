@@ -13,9 +13,11 @@ import {
   ShieldAlert,
   RotateCcw,
   Edit2,
-  ChefHat
+  ChefHat,
+  Tag
 } from 'lucide-react';
 import { PROTEIN_TYPES, COOKING_MODES, TIME_CATEGORIES, ALLERGENS_LIST } from '../data/recipes';
+import { WEEKLY_DEALS_DATA } from '../data/weeklyDeals';
 
 export default function Step1Selection({
   recipes,
@@ -26,14 +28,26 @@ export default function Step1Selection({
   onOpenNewRecipe,
   onEditRecipe,
   isAdmin,
-  onNextStep
+  onNextStep,
+  onGoToDeals
 }) {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedProtein, setSelectedProtein] = useState('all');
   const [selectedMode, setSelectedMode] = useState('all');
   const [selectedTime, setSelectedTime] = useState('all');
+  const [onlyOnSale, setOnlyOnSale] = useState(false);
   const [excludedAllergens, setExcludedAllergens] = useState([]);
   const [showFiltersDrawer, setShowFiltersDrawer] = useState(false);
+
+  // Mots-clés des rabais de la semaine
+  const activeDealsKeywords = useMemo(() => {
+    return WEEKLY_DEALS_DATA.flatMap(d => d.matchedKeywords);
+  }, []);
+
+  const isRecipeOnSale = (recipe) => {
+    const text = `${recipe.title} ${recipe.proteinType} ${recipe.tags?.join(' ') || ''} ${recipe.ingredients?.map(i => i.name).join(' ') || ''}`.toLowerCase();
+    return activeDealsKeywords.some(k => text.includes(k.toLowerCase()));
+  };
 
   // Toggle exclusion d'allergènes
   const toggleAllergenExclusion = (allergen) => {
@@ -48,6 +62,7 @@ export default function Step1Selection({
     setSelectedProtein('all');
     setSelectedMode('all');
     setSelectedTime('all');
+    setOnlyOnSale(false);
     setExcludedAllergens([]);
   };
 
@@ -61,6 +76,11 @@ export default function Step1Selection({
         const matchDesc = recipe.description.toLowerCase().includes(q);
         const matchIng = recipe.ingredients.some(i => i.name.toLowerCase().includes(q));
         if (!matchTitle && !matchDesc && !matchIng) return false;
+      }
+
+      // Filtre Seulement en rabais
+      if (onlyOnSale && !isRecipeOnSale(recipe)) {
+        return false;
       }
 
       // Filtre Protéine
@@ -88,7 +108,7 @@ export default function Step1Selection({
 
       return true;
     });
-  }, [recipes, searchQuery, selectedProtein, selectedMode, selectedTime, excludedAllergens]);
+  }, [recipes, searchQuery, onlyOnSale, selectedProtein, selectedMode, selectedTime, excludedAllergens, activeDealsKeywords]);
 
   const selectedCount = selectedRecipes.length;
   const isSelected = (id) => selectedRecipes.some(r => r.id === id);
@@ -207,6 +227,18 @@ export default function Step1Selection({
             </button>
           ))}
         </div>
+
+        {/* Quick Rabais Filter Button */}
+        <button
+          type="button"
+          id="btn-filter-only-deals"
+          className={`btn-filter-deals-toggle ${onlyOnSale ? 'is-active' : ''}`}
+          onClick={() => setOnlyOnSale(!onlyOnSale)}
+          title="Afficher uniquement les recettes avec des ingrédients en spécial cette semaine"
+        >
+          <Tag size={15} />
+          <span>🔥 En rabais ({recipes.filter(isRecipeOnSale).length})</span>
+        </button>
 
         <button
           type="button"
@@ -353,6 +385,11 @@ export default function Step1Selection({
                     <span className={`badge-mode mode-${recipe.cookingMode}`}>
                       {recipe.cookingMode === 'plancha' ? '🔥 Plancha' : recipe.cookingMode === 'rapide' ? '⚡ Rapide' : '🍳 Mixte'}
                     </span>
+                    {isRecipeOnSale(recipe) && (
+                      <span className="badge-deal-sale" title="Ingrédient en rabais cette semaine">
+                        🔥 En spécial
+                      </span>
+                    )}
                   </div>
 
                   <div className="card-hover-overlay">
