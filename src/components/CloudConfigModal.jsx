@@ -188,7 +188,7 @@ service cloud.firestore {
 
           {/* Section Réinitialisation */}
           <div className="cloud-reset-section">
-            <h4 className="reset-section-title">Restaurer les 20 recettes d'origine</h4>
+            <h4 className="reset-section-title">Restaurer le catalogue complet (50 recettes)</h4>
             <p className="reset-section-desc">
               Si des recettes manquent ou si vous souhaitez réinitialiser la base de données :
             </p>
@@ -198,7 +198,7 @@ service cloud.firestore {
               onClick={onResetDefaults}
             >
               <RefreshCw size={14} />
-              <span>Restaurer les 20 recettes complètes</span>
+              <span>Restaurer les 50 recettes complètes</span>
             </button>
           </div>
         </div>

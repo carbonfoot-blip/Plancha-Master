@@ -251,13 +251,13 @@ export default function App() {
     }
   };
 
-  // Restaurer les 20 recettes par défaut
+  // Restaurer les 50 recettes par défaut
   const handleResetDefaults = async () => {
-    if (window.confirm('Voulez-vous réinitialiser toutes les recettes avec les 20 recettes d\'origine ?')) {
+    if (window.confirm('Voulez-vous restaurer l\'intégralité des 50 recettes du catalogue officiel ?')) {
       const reset = await resetAllRecipesToDefaults();
       setRecipes(reset);
       setShowCloudModal(false);
-      alert('Les 20 recettes d\'origine ont été restaurées avec succès.');
+      alert('Les 50 recettes du catalogue ont été restaurées avec succès.');
     }
   };
 
