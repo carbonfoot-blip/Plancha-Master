@@ -1,4 +1,4 @@
-import { Flame, UtensilsCrossed, ShoppingCart, ExternalLink, Sparkles, Users, RefreshCw, Lock, Unlock, ShieldCheck, Plus, Tag } from 'lucide-react';
+import { Flame, UtensilsCrossed, ShoppingCart, ExternalLink, Sparkles, Users, RefreshCw, Lock, Unlock, ShieldCheck, Plus, Tag, Smartphone } from 'lucide-react';
 
 export default function Navbar({
   activeStep,
@@ -12,7 +12,8 @@ export default function Navbar({
   onOpenAdminAuth,
   onLockAdmin,
   onOpenCloudConfig,
-  onOpenNewRecipe
+  onOpenNewRecipe,
+  onOpenPwaModal
 }) {
   const steps = [
     { id: 0, label: 'Rabais de la semaine', shortLabel: 'Rabais', icon: Tag, isDeals: true, badge: '🔥 Spéciaux' },
@@ -117,6 +118,18 @@ export default function Navbar({
               <span className="admin-btn-text">Admin</span>
             </button>
           )}
+
+          {/* Bouton Installer l'Application (PWA) */}
+          <button
+            type="button"
+            className="btn-pwa-install-trigger"
+            onClick={onOpenPwaModal}
+            title="Installer l'application sur votre téléphone (iOS / Android)"
+            id="btn-nav-install-pwa"
+          >
+            <Smartphone size={14} />
+            <span className="pwa-install-text btn-text-hide-mobile">Installer l'App</span>
+          </button>
 
           {selectedCount > 0 && (
             <button

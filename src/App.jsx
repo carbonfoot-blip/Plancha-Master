@@ -19,6 +19,7 @@ import RecipeDetailModal from './components/RecipeDetailModal';
 import RecipeEditorModal from './components/RecipeEditorModal';
 import CloudConfigModal from './components/CloudConfigModal';
 import AdminAuthModal from './components/AdminAuthModal';
+import PwaInstallModal from './components/PwaInstallModal';
 import './App.css';
 
 const LOCAL_STORAGE_KEY_RECIPES = 'plancha_menu_selected_recipes';
@@ -49,6 +50,8 @@ export default function App() {
 
   // Modals d'administration et de configuration
   const [showCloudModal, setShowCloudModal] = useState(false);
+  const [showPwaModal, setShowPwaModal] = useState(false);
+  const [deferredPwaPrompt, setDeferredPwaPrompt] = useState(null);
   const [recipeToEdit, setRecipeToEdit] = useState(null);
   const [isCreatingNew, setIsCreatingNew] = useState(false);
 
@@ -150,6 +153,27 @@ export default function App() {
       }
     }
   }, []);
+
+  // Écoute de l'événement d'installation PWA natif
+  useEffect(() => {
+    const handleBeforeInstallPrompt = (e) => {
+      e.preventDefault();
+      setDeferredPwaPrompt(e);
+    };
+
+    window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+    return () => window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+  }, []);
+
+  const handleTriggerPwaInstall = async () => {
+    if (!deferredPwaPrompt) return;
+    deferredPwaPrompt.prompt();
+    const { outcome } = await deferredPwaPrompt.userChoice;
+    if (outcome === 'accepted') {
+      setDeferredPwaPrompt(null);
+      setShowPwaModal(false);
+    }
+  };
 
   // Gestion du statut Administrateur
   const handleUnlockAdmin = () => {
@@ -370,6 +394,7 @@ export default function App() {
         onLockAdmin={handleLockAdmin}
         onOpenCloudConfig={() => setShowCloudModal(true)}
         onOpenNewRecipe={() => setIsCreatingNew(true)}
+        onOpenPwaModal={() => setShowPwaModal(true)}
       />
 
       {/* Corps principal selon l'étape active */}
@@ -505,6 +530,14 @@ export default function App() {
           onClose={() => setShowCloudModal(false)}
         />
       )}
+
+      {/* Modal Guide d'installation PWA (iPhone / Android) */}
+      <PwaInstallModal
+        isOpen={showPwaModal}
+        onClose={() => setShowPwaModal(false)}
+        deferredPrompt={deferredPwaPrompt}
+        onTriggerInstall={handleTriggerPwaInstall}
+      />
 
       {/* Footer informatif */}
       <footer className="site-footer">

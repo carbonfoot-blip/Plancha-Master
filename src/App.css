@@ -5059,3 +5059,179 @@
     transform: translateY(-1px);
   }
 }
+
+/* ==========================================================================
+   BOUTON & MODAL INSTALLATION APPLICATION (PWA)
+   ========================================================================== */
+
+.btn-pwa-install-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, #ea580c, #c2410c);
+  color: #ffffff;
+  border: 1px solid #ea580c;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(234, 88, 12, 0.25);
+  transition: all 0.18s ease;
+}
+
+.btn-pwa-install-trigger:hover {
+  background: linear-gradient(135deg, #c2410c, #9a3412);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.35);
+}
+
+.modal-pwa-card {
+  background: #ffffff;
+  border-radius: var(--radius-2xl);
+  max-width: 520px;
+  width: 92%;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-2xl);
+  border: 1px solid var(--slate-200);
+}
+
+.pwa-modal-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.pwa-header-icon {
+  color: var(--primary-600);
+}
+
+.pwa-modal-title-group h3 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--slate-900);
+  margin: 0;
+}
+
+.pwa-modal-body {
+  margin: 1.25rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.pwa-app-preview {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  background: var(--slate-900);
+  color: #ffffff;
+  border-radius: var(--radius-xl);
+}
+
+.pwa-preview-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.pwa-preview-name {
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.pwa-preview-desc {
+  font-size: 0.78rem;
+  color: var(--slate-400);
+}
+
+.pwa-native-install-box {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  padding: 1.15rem;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  align-items: center;
+}
+
+.pwa-native-install-box p {
+  font-size: 0.88rem;
+  color: #9a3412;
+  margin: 0;
+}
+
+.btn-install-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  border-radius: var(--radius-full);
+}
+
+.pwa-instructions-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.pwa-step-guide {
+  background: var(--slate-50);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  padding: 0.95rem 1.15rem;
+}
+
+.step-guide-header {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.9rem;
+  color: var(--slate-900);
+  margin-bottom: 0.5rem;
+}
+
+.pwa-steps-list {
+  margin: 0;
+  padding-left: 1.25rem;
+  font-size: 0.85rem;
+  color: var(--slate-700);
+  line-height: 1.5;
+}
+
+.pwa-steps-list li {
+  margin-bottom: 0.35rem;
+}
+
+.inline-icon {
+  display: inline-block;
+  vertical-align: -2px;
+  color: var(--primary-600);
+}
+
+.pwa-benefits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-lg);
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #166534;
+}
+
