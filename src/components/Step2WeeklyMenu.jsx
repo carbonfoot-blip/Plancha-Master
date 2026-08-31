@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Flame,
   Clock,
@@ -12,7 +12,9 @@ import {
   AlertCircle,
   Thermometer,
   ShieldCheck,
-  CheckCircle2
+  CheckCircle2,
+  Share2,
+  Check
 } from 'lucide-react';
 import { GROCERY_DEPARTMENTS } from '../data/recipes';
 
@@ -33,9 +35,21 @@ export default function Step2WeeklyMenu({
   onRemoveRecipe,
   onViewRecipe,
   onGoToStep1,
-  onNextStep
+  onNextStep,
+  onShareMenu
 }) {
+  const [shareCopied, setShareCopied] = useState(false);
   const portionFactor = portions / 4;
+
+  const handleShare = async () => {
+    if (onShareMenu) {
+      const res = await onShareMenu();
+      if (res && res.method === 'clipboard') {
+        setShareCopied(true);
+        setTimeout(() => setShareCopied(false), 3000);
+      }
+    }
+  };
 
   return (
     <div className="step-page-container animate-fade-in" id="step-2-weekly-menu-screen">
@@ -53,6 +67,19 @@ export default function Step2WeeklyMenu({
         </div>
 
         <div className="menu-header-right">
+          {/* Share Button */}
+          {selectedRecipes.length > 0 && (
+            <button
+              type="button"
+              className="btn-toolbar-action btn-share-highlight"
+              onClick={handleShare}
+              title="Partager le menu et la liste d'épicerie avec votre conjointe / famille"
+            >
+              {shareCopied ? <Check size={16} color="#16a34a" /> : <Share2 size={16} />}
+              <span>{shareCopied ? 'Lien copié !' : 'Partager le menu'}</span>
+            </button>
+          )}
+
           {/* Quick Portions Selector */}
           <div className="portions-card-box">
             <div className="portions-card-header">

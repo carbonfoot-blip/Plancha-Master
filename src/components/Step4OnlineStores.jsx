@@ -9,9 +9,14 @@ import {
   ShoppingCart,
   Store,
   CheckCircle2,
+  AlertTriangle,
   HelpCircle,
   TrendingDown,
-  Info
+  Info,
+  RotateCcw,
+  PlusCircle,
+  Package,
+  Layers
 } from 'lucide-react';
 import { GROCERY_CHAINS, cleanSearchQuery, formatGroceryListForClipboard } from '../utils/storeLinks';
 
@@ -21,9 +26,13 @@ export default function Step4OnlineStores({
   selectedRecipes,
   onGoToStep3
 }) {
-  const [selectedChainId, setSelectedChainId] = useState('superc');
+  const [selectedChainId, setSelectedChainId] = useState('maxi');
   const [copied, setCopied] = useState(false);
+  const [copiedMissing, setCopiedMissing] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
+  
+  // Suivi de l'état du panier : { [itemKey]: 'added' | 'missing' }
+  const [cartStatus, setCartStatus] = useState({});
 
   const activeChain = GROCERY_CHAINS.find(c => c.id === selectedChainId) || GROCERY_CHAINS[0];
 
@@ -36,7 +45,8 @@ export default function Step4OnlineStores({
 
   // Extraire tous les ingrédients sous forme de liste plate
   const allItems = [];
-  Object.values(groceryDepartments).forEach((dept) => {
+  Object.entries(groceryDepartments).forEach(([deptKey, dept]) => {
+    if (deptKey === '_excludedItems' || !dept.items) return;
     dept.items.forEach((item) => {
       allItems.push({
         ...item,
@@ -51,6 +61,35 @@ export default function Step4OnlineStores({
     i.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  // Marquer un article comme ajouté ou non disponible
+  const setItemStatus = (itemKey, status) => {
+    setCartStatus(prev => {
+      if (prev[itemKey] === status) {
+        const next = { ...prev };
+        delete next[itemKey];
+        return next;
+      }
+      return { ...prev, [itemKey]: status };
+    });
+  };
+
+  // Réinitialiser le statut du panier
+  const handleResetCartStatus = () => {
+    setCartStatus({});
+  };
+
+  const addedItemsCount = Object.values(cartStatus).filter(s => s === 'added').length;
+  const missingItems = allItems.filter(item => cartStatus[item.key] === 'missing');
+
+  const handleCopyMissingItems = () => {
+    if (missingItems.length === 0) return;
+    const text = `⚠️ ARTICLES NON AJOUTÉS / NON DISPONIBLES (${activeChain.name})\n` +
+      missingItems.map(i => `• ${i.name} (${i.displayQuantity} ${i.displayUnit})`).join('\n');
+    navigator.clipboard.writeText(text);
+    setCopiedMissing(true);
+    setTimeout(() => setCopiedMissing(false), 2500);
+  };
+
   return (
     <div className="step-page-container animate-fade-in" id="step-4-stores-screen">
       {/* Top Banner */}
@@ -58,11 +97,12 @@ export default function Step4OnlineStores({
         <div className="stores-header-info">
           <div className="hero-tagline">
             <span className="hero-pill">Étape 4 sur 4</span>
-            <span className="hero-subpill">Épiceries du Québec</span>
+            <span className="hero-subpill">Bâtisseur de panier d'épicerie en ligne</span>
           </div>
-          <h1 className="stores-page-title">Commandes en Ligne & Liens Épiceries</h1>
+          <h1 className="stores-page-title">Commandes en Ligne & Bâtisseur de Panier</h1>
           <p className="stores-page-subtitle">
-            Trouvez instantanément vos ingrédients chez <strong>Super C, Maxi, IGA, Metro ou Walmart</strong> en 1 clic grâce aux recherches directes préconfigurées.
+            Bâtissez votre panier en 1 clic chez <strong>Maxi (PC Express), Super C, IGA, Metro ou Walmart</strong>. 
+            Suivez les articles ajoutés et repérez facilement les articles non disponibles pour les remplacer.
           </p>
         </div>
 
@@ -74,7 +114,7 @@ export default function Step4OnlineStores({
             id="btn-copy-all-stores"
           >
             {copied ? <Check size={18} color="#16a34a" /> : <Copy size={18} />}
-            <span>{copied ? 'Liste copiée !' : 'Copier tout le panier'}</span>
+            <span>{copied ? 'Panier copié !' : 'Copier tout le panier'}</span>
           </button>
         </div>
       </div>
@@ -109,10 +149,10 @@ export default function Step4OnlineStores({
         <div className="active-chain-header">
           <div className="chain-info-group">
             <h3 className="chain-active-title">
-              Magasiner chez <span style={{ color: activeChain.themeColor }}>{activeChain.name}</span>
+              Commander chez <span style={{ color: activeChain.themeColor }}>{activeChain.name}</span>
             </h3>
             <p className="chain-active-desc">
-              Cliquez sur n'importe quel ingrédient ci-dessous pour ouvrir automatiquement la page de recherche exacte sur {activeChain.name}.
+              Cliquez sur <strong>"Chercher & Ajouter"</strong> pour ouvrir la recherche pré-remplie sur le site officiel de {activeChain.name}. Indiquez ensuite si l'article est ajouté au panier ou indisponible.
             </p>
           </div>
 
@@ -122,20 +162,42 @@ export default function Step4OnlineStores({
             rel="noopener noreferrer"
             className="btn-open-store-home"
             id="btn-open-active-store-home"
+            style={{ backgroundColor: activeChain.themeColor }}
           >
-            <span>Accéder au site officiel {activeChain.name}</span>
+            <span>Ouvrir {activeChain.name} (Se connecter)</span>
             <ExternalLink size={16} />
           </a>
         </div>
 
-        {/* Chain Advantages */}
-        <div className="chain-advantages-row">
-          {activeChain.advantages.map((adv, idx) => (
-            <div key={idx} className="chain-adv-item">
-              <CheckCircle2 size={15} className="adv-check-icon" style={{ color: activeChain.themeColor }} />
-              <span>{adv}</span>
+        {/* Status Tracker */}
+        <div className="cart-builder-summary-bar">
+          <div className="cart-progress-stat">
+            <CheckCircle2 size={18} className="text-green-600" />
+            <span>
+              <strong>{addedItemsCount}</strong> / {allItems.length} articles ajoutés au panier
+            </span>
+          </div>
+
+          {missingItems.length > 0 && (
+            <div className="cart-missing-stat">
+              <AlertTriangle size={18} className="text-amber-600" />
+              <span>
+                <strong>{missingItems.length}</strong> article{missingItems.length > 1 ? 's' : ''} non disponible{missingItems.length > 1 ? 's' : ''}
+              </span>
             </div>
-          ))}
+          )}
+
+          {Object.keys(cartStatus).length > 0 && (
+            <button
+              type="button"
+              className="btn-reset-cart-status"
+              onClick={handleResetCartStatus}
+              title="Réinitialiser le suivi du panier"
+            >
+              <RotateCcw size={13} />
+              <span>Réinitialiser</span>
+            </button>
+          )}
         </div>
       </div>
 
@@ -144,7 +206,7 @@ export default function Step4OnlineStores({
         <div className="search-box-header">
           <div className="search-box-title-group">
             <Search size={20} className="search-title-icon" />
-            <h3>Recherche d'articles en 1 clic ({filteredItems.length} articles)</h3>
+            <h3>Assistant Panier 1-Clic ({filteredItems.length} articles)</h3>
           </div>
 
           <div className="search-quick-filter">
@@ -161,50 +223,135 @@ export default function Step4OnlineStores({
         <div className="one-click-items-grid">
           {filteredItems.map((item) => {
             const searchUrl = activeChain.searchUrl(item.cleanQuery);
+            const status = cartStatus[item.key];
 
             return (
-              <div key={item.key} className="store-item-card" id={`store-item-btn-${item.key}`}>
+              <div 
+                key={item.key} 
+                className={`store-item-card ${status === 'added' ? 'item-status-added' : ''} ${status === 'missing' ? 'item-status-missing' : ''}`}
+                id={`store-item-btn-${item.key}`}
+              >
                 <div className="store-item-left">
                   <span className="store-dept-emoji">{item.deptIcon}</span>
                   <div className="store-item-names">
                     <span className="store-item-title">{item.name}</span>
                     <span className="store-item-qty">
-                      Besoin : <strong>{item.displayQuantity} {item.displayUnit}</strong>
+                      Quantité : <strong>{item.displayQuantity} {item.displayUnit}</strong>
                     </span>
+                    {item.storeBadge && (
+                      <span className="store-promo-label">
+                        {item.storeBadge}
+                      </span>
+                    )}
                   </div>
                 </div>
 
-                <a
-                  href={searchUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-store-search-link"
-                  title={`Chercher "${item.cleanQuery}" sur ${activeChain.name}`}
-                  style={{ backgroundColor: activeChain.bgColor, color: activeChain.themeColor }}
-                >
-                  <span>Chercher sur {activeChain.name}</span>
-                  <ExternalLink size={14} />
-                </a>
+                <div className="store-item-actions-group">
+                  {/* Bouton 1 : Chercher sur l'épicerie en 1 clic */}
+                  <a
+                    href={searchUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-store-search-link"
+                    title={`Chercher "${item.cleanQuery}" sur ${activeChain.name}`}
+                    style={{ backgroundColor: activeChain.bgColor, color: activeChain.themeColor }}
+                    onClick={() => {
+                      // Marquer automatiquement comme consulté si non encore coché
+                      if (!cartStatus[item.key]) {
+                        setItemStatus(item.key, 'added');
+                      }
+                    }}
+                  >
+                    <span>Chercher sur {activeChain.name}</span>
+                    <ExternalLink size={14} />
+                  </a>
+
+                  {/* Bouton 2 : Valider comme ajouté au panier */}
+                  <button
+                    type="button"
+                    className={`btn-cart-check ${status === 'added' ? 'is-active-added' : ''}`}
+                    onClick={() => setItemStatus(item.key, 'added')}
+                    title="Marquer cet article comme ajouté au panier de l'épicerie"
+                  >
+                    <Check size={16} />
+                    <span className="btn-cart-status-text">Ajouté</span>
+                  </button>
+
+                  {/* Bouton 3 : Signaler comme non trouvé / non disponible */}
+                  <button
+                    type="button"
+                    className={`btn-cart-missing ${status === 'missing' ? 'is-active-missing' : ''}`}
+                    onClick={() => setItemStatus(item.key, 'missing')}
+                    title="Signaler comme non disponible ou introuvable sur cette épicerie"
+                  >
+                    <AlertTriangle size={15} />
+                    <span className="btn-cart-status-text">Non dispo</span>
+                  </button>
+                </div>
               </div>
             );
           })}
         </div>
       </div>
 
+      {/* Section des Articles Non Ajoutés / Non Disponibles */}
+      {missingItems.length > 0 && (
+        <div className="missing-items-card animate-fade-in" id="missing-items-section">
+          <div className="missing-card-header">
+            <div className="missing-title-left">
+              <AlertTriangle size={20} className="text-amber-500" />
+              <h3>Articles Non Ajoutés / Introuvables ({missingItems.length})</h3>
+            </div>
+            <button
+              type="button"
+              className="btn-copy-missing"
+              onClick={handleCopyMissingItems}
+            >
+              {copiedMissing ? <Check size={16} color="#16a34a" /> : <Copy size={16} />}
+              <span>{copiedMissing ? 'Copié !' : 'Copier les articles manquants'}</span>
+            </button>
+          </div>
+
+          <p className="missing-card-desc">
+            Ces articles n'ont pas pu être ajoutés à votre commande en ligne chez {activeChain.name}. Vous pouvez les acheter en magasin ou choisir un produit de substitution :
+          </p>
+
+          <ul className="missing-items-list">
+            {missingItems.map(item => (
+              <li key={item.key} className="missing-item-row">
+                <div className="missing-item-info">
+                  <span className="missing-item-icon">{item.deptIcon}</span>
+                  <span className="missing-item-name"><strong>{item.name}</strong></span>
+                  <span className="missing-item-qty">({item.displayQuantity} {item.displayUnit})</span>
+                </div>
+                <button
+                  type="button"
+                  className="btn-resolve-missing"
+                  onClick={() => setItemStatus(item.key, 'added')}
+                >
+                  <Check size={14} />
+                  <span>Marquer comme trouvé / substitué</span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
       {/* Advice Box for Online Grocery Ordering in Quebec */}
       <div className="quebec-grocery-tips-card">
         <div className="tips-card-header">
           <TrendingDown size={22} className="tips-icon" />
-          <h4>Astuces pour économiser sur votre épicerie au Québec</h4>
+          <h4>Astuces pour vos commandes en ligne au Québec</h4>
         </div>
         <div className="tips-content-grid">
           <div className="tip-box">
             <strong>Égalisation des prix (Maxi) :</strong>
-            <p>Utilisez l'application Flipp ou Reebee et présentez les circulaires de Super C ou IGA à la caisse de Maxi pour obtenir les plus bas prix.</p>
+            <p>Utilisez le site Circulaires.com pour vérifier les spéciaux de Super C ou IGA et demandez l'égalisation des prix à la caisse.</p>
           </div>
           <div className="tip-box">
             <strong>Formats Club & Viandes (Super C) :</strong>
-            <p>Super C propose souvent des emballages économiques de bœuf haché, porc et poulet parfaits pour être portionnés et cuits sur la plancha.</p>
+            <p>Super C propose souvent des emballages économiques de bœuf haché, porc et poulet parfaits pour la plancha.</p>
           </div>
           <div className="tip-box">
             <strong>Cueillette sans frais :</strong>

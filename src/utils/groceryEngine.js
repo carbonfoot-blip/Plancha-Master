@@ -6,9 +6,16 @@ import { GROCERY_DEPARTMENTS } from '../data/recipes';
  * @param {number} portions - Nombre de portions désirées (base = 4)
  * @param {Array} customItems - Articles ajoutés manuellement par l'utilisateur
  * @param {Object} checkedState - Dictionnaire d'état des cases cochées { [id]: boolean }
- * @returns {Object} Rayons avec liste d'ingrédients cumulés
+ * @param {Array} excludedIngredientKeys - Clés des ingrédients exclus (déjà en réserve à la maison)
+ * @returns {Object} Rayons avec liste d'ingrédients cumulés et liste d'articles exclus
  */
-export function buildGroceryList(selectedRecipes = [], portions = 4, customItems = [], checkedState = {}) {
+export function buildGroceryList(
+  selectedRecipes = [], 
+  portions = 4, 
+  customItems = [], 
+  checkedState = {}, 
+  excludedIngredientKeys = []
+) {
   const portionFactor = portions / 4;
   const aggregatedMap = new Map();
 
@@ -69,10 +76,13 @@ export function buildGroceryList(selectedRecipes = [], portions = 4, customItems
     };
   });
 
+  const excludedItemsList = [];
+
   // Répartir et formater chaque article
   aggregatedMap.forEach((item) => {
     const deptKey = departmentsResult[item.department] ? item.department : 'non_perissable';
     const isChecked = !!checkedState[item.key];
+    const isExcluded = excludedIngredientKeys.includes(item.key) || excludedIngredientKeys.includes(item.id);
 
     // Formatage propre de la quantité (arrondi esthétique)
     let displayQuantity = item.quantity;
@@ -88,12 +98,19 @@ export function buildGroceryList(selectedRecipes = [], portions = 4, customItems
       displayQuantity = +(Math.round(displayQuantity * 100) / 100).toFixed(displayQuantity % 1 === 0 ? 0 : 1);
     }
 
-    departmentsResult[deptKey].items.push({
+    const formattedItem = {
       ...item,
       displayQuantity,
       displayUnit,
-      isChecked
-    });
+      isChecked,
+      isExcluded
+    };
+
+    if (isExcluded) {
+      excludedItemsList.push(formattedItem);
+    } else {
+      departmentsResult[deptKey].items.push(formattedItem);
+    }
   });
 
   // Trier les articles de chaque rayon par ordre alphabétique
@@ -101,17 +118,22 @@ export function buildGroceryList(selectedRecipes = [], portions = 4, customItems
     departmentsResult[deptKey].items.sort((a, b) => a.name.localeCompare(b.name, 'fr'));
   });
 
+  excludedItemsList.sort((a, b) => a.name.localeCompare(b.name, 'fr'));
+  departmentsResult._excludedItems = excludedItemsList;
+
   return departmentsResult;
 }
 
 /**
- * Calcule les statistiques de la liste d'épicerie (total articles, articles cochés, etc.)
+ * Calcule les statistiques de la liste d'épicerie (total articles, articles cochés, articles exclus)
  */
 export function getGroceryStats(departmentsResult) {
   let totalItems = 0;
   let checkedItems = 0;
+  const excludedItemsCount = departmentsResult?._excludedItems?.length || 0;
 
-  Object.values(departmentsResult).forEach((dept) => {
+  Object.entries(departmentsResult).forEach(([key, dept]) => {
+    if (key === '_excludedItems' || !dept.items) return;
     dept.items.forEach((item) => {
       totalItems += 1;
       if (item.isChecked) checkedItems += 1;
@@ -123,6 +145,7 @@ export function getGroceryStats(departmentsResult) {
   return {
     totalItems,
     checkedItems,
+    excludedItemsCount,
     progressPercent
   };
 }

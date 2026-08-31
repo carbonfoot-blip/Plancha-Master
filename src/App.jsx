@@ -8,6 +8,7 @@ import {
   resetAllRecipesToDefaults
 } from './services/dbService';
 import { buildGroceryList, getGroceryStats } from './utils/groceryEngine';
+import { decodeShareState, shareMenuAndGrocery } from './utils/shareUtils';
 import Navbar from './components/Navbar';
 import Step1Selection from './components/Step1Selection';
 import StepRabaisSemaine from './components/StepRabaisSemaine';
@@ -24,10 +25,11 @@ const LOCAL_STORAGE_KEY_RECIPES = 'plancha_menu_selected_recipes';
 const LOCAL_STORAGE_KEY_PORTIONS = 'plancha_menu_portions';
 const LOCAL_STORAGE_KEY_CHECKED = 'plancha_menu_checked_grocery';
 const LOCAL_STORAGE_KEY_CUSTOM = 'plancha_menu_custom_items';
+const LOCAL_STORAGE_KEY_EXCLUDED = 'plancha_menu_excluded_ingredients';
 const LOCAL_STORAGE_KEY_IS_ADMIN = 'plancha_master_is_admin_logged';
 
 export default function App() {
-  // Navigation entre les 4 étapes
+  // Navigation entre les étapes
   const [activeStep, setActiveStep] = useState(1);
 
   // État des recettes chargées depuis Cloud DB / Local Cache
@@ -83,6 +85,17 @@ export default function App() {
     return [];
   });
 
+  // Ingrédients exclus de l'achat (déjà en stock à la maison)
+  const [excludedIngredientKeys, setExcludedIngredientKeys] = useState(() => {
+    try {
+      const saved = localStorage.getItem(LOCAL_STORAGE_KEY_EXCLUDED);
+      if (saved) return JSON.parse(saved);
+    } catch (e) {
+      console.error('Erreur lecture excluded keys:', e);
+    }
+    return [];
+  });
+
   // État des cases à cocher de l'épicerie
   const [checkedState, setCheckedState] = useState(() => {
     try {
@@ -113,6 +126,29 @@ export default function App() {
 
   useEffect(() => {
     fetchRecipes();
+  }, []);
+
+  // Détection d'un lien de partage dans l'URL (#share=... ou ?share=...)
+  useEffect(() => {
+    const raw = window.location.hash || window.location.search;
+    if (raw && raw.includes('share=')) {
+      const shared = decodeShareState(raw);
+      if (shared) {
+        if (shared.selectedRecipeIds?.length) setSelectedRecipeIds(shared.selectedRecipeIds);
+        if (shared.portions) setPortions(shared.portions);
+        if (shared.customItems) setCustomItems(shared.customItems);
+        if (shared.excludedKeys) setExcludedIngredientKeys(shared.excludedKeys);
+
+        // Aller directement à l'étape 2 (Menu)
+        setActiveStep(2);
+
+        confetti({
+          particleCount: 70,
+          spread: 70,
+          origin: { y: 0.4 }
+        });
+      }
+    }
   }, []);
 
   // Gestion du statut Administrateur
@@ -152,6 +188,10 @@ export default function App() {
     localStorage.setItem(LOCAL_STORAGE_KEY_CUSTOM, JSON.stringify(customItems));
   }, [customItems]);
 
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY_EXCLUDED, JSON.stringify(excludedIngredientKeys));
+  }, [excludedIngredientKeys]);
+
   // Recettes complètes sélectionnées
   const selectedRecipes = useMemo(() => {
     return selectedRecipeIds
@@ -159,10 +199,10 @@ export default function App() {
       .filter(Boolean);
   }, [selectedRecipeIds, recipes]);
 
-  // Moteur d'épicerie cumulée
+  // Moteur d'épicerie cumulée avec gestion des exclusions
   const groceryDepartments = useMemo(() => {
-    return buildGroceryList(selectedRecipes, portions, customItems, checkedState);
-  }, [selectedRecipes, portions, customItems, checkedState]);
+    return buildGroceryList(selectedRecipes, portions, customItems, checkedState, excludedIngredientKeys);
+  }, [selectedRecipes, portions, customItems, checkedState, excludedIngredientKeys]);
 
   // Statistiques d'épicerie
   const groceryStats = useMemo(() => {
@@ -369,6 +409,12 @@ export default function App() {
             onViewRecipe={(r) => setActiveModalRecipe(r)}
             onGoToStep1={() => goToStep(1)}
             onNextStep={() => goToStep(3)}
+            onShareMenu={() => shareMenuAndGrocery({
+              selectedRecipeIds,
+              portions,
+              customItems,
+              excludedKeys: excludedIngredientKeys
+            })}
           />
         )}
 
@@ -379,9 +425,25 @@ export default function App() {
             checkedState={checkedState}
             onToggleItemCheck={handleToggleItemCheck}
             onToggleAllDept={handleToggleAllDept}
+            onResetAllChecks={() => setCheckedState({})}
             customItems={customItems}
             onAddCustomItem={handleAddCustomItem}
             onRemoveCustomItem={handleRemoveCustomItem}
+            onToggleExcludeItem={(itemKey) => {
+              setExcludedIngredientKeys(prev => {
+                if (prev.includes(itemKey)) {
+                  return prev.filter(k => k !== itemKey);
+                } else {
+                  return [...prev, itemKey];
+                }
+              });
+            }}
+            onShareMenu={() => shareMenuAndGrocery({
+              selectedRecipeIds,
+              portions,
+              customItems,
+              excludedKeys: excludedIngredientKeys
+            })}
             portions={portions}
             selectedRecipes={selectedRecipes}
             onGoToStep2={() => goToStep(2)}

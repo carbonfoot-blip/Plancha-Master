@@ -96,7 +96,7 @@ export default function StepRabaisSemaine({
 
   // Récupère l'URL de circulaire du magasin actif
   const currentStoreObj = GROCERY_STORES.find(s => s.id === selectedStore);
-  const flyerUrl = currentStoreObj?.flyerUrl || 'https://www.reebee.com/fr-ca';
+  const flyerUrl = currentStoreObj?.flyerUrl || 'https://www.circulaires.com/';
 
   return (
     <div className="step-rabais-container">
@@ -132,9 +132,9 @@ export default function StepRabaisSemaine({
               target="_blank" 
               rel="noopener noreferrer" 
               className="btn-reebee-link"
-              title="Consulter les circulaires complètes sur Reebee"
+              title="Consulter les circulaires complètes sur Circulaires.com"
             >
-              <span>Circulaires en ligne (Reebee)</span>
+              <span>Circulaires en ligne (Circulaires.com)</span>
               <ExternalLink size={16} />
             </a>
           </div>

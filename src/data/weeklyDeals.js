@@ -4,12 +4,12 @@
  */
 
 export const GROCERY_STORES = [
-  { id: 'all', name: 'Toutes les épiceries', icon: '🛒', color: '#64748b' },
-  { id: 'superc', name: 'Super C', icon: '🔴', color: '#dc2626', flyerUrl: 'https://www.reebee.com/fr-ca/flyers/super-c' },
-  { id: 'maxi', name: 'Maxi', icon: '🟡', color: '#eab308', flyerUrl: 'https://www.reebee.com/fr-ca/flyers/maxi' },
-  { id: 'iga', name: 'IGA', icon: '🔴', color: '#e11d48', flyerUrl: 'https://www.reebee.com/fr-ca/flyers/iga' },
-  { id: 'metro', name: 'Metro', icon: '🔵', color: '#2563eb', flyerUrl: 'https://www.reebee.com/fr-ca/flyers/metro' },
-  { id: 'walmart', name: 'Walmart', icon: '🟡', color: '#0284c7', flyerUrl: 'https://www.reebee.com/fr-ca/flyers/walmart' }
+  { id: 'all', name: 'Toutes les épiceries', icon: '🛒', color: '#64748b', flyerUrl: 'https://www.circulaires.com/' },
+  { id: 'superc', name: 'Super C', icon: '🔴', color: '#dc2626', flyerUrl: 'https://www.circulaires.com/super-c/' },
+  { id: 'maxi', name: 'Maxi', icon: '🟡', color: '#eab308', flyerUrl: 'https://www.circulaires.com/maxi/' },
+  { id: 'iga', name: 'IGA', icon: '🔴', color: '#e11d48', flyerUrl: 'https://www.circulaires.com/iga/' },
+  { id: 'metro', name: 'Metro', icon: '🔵', color: '#2563eb', flyerUrl: 'https://www.circulaires.com/metro/' },
+  { id: 'walmart', name: 'Walmart', icon: '🟡', color: '#0284c7', flyerUrl: 'https://www.circulaires.com/walmart/' }
 ];
 
 export const DEAL_CATEGORIES = [

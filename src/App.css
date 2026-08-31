@@ -4520,3 +4520,377 @@
     min-width: unset;
   }
 }
+
+/* ==========================================================================
+   PARTAGE DE MENU & EXCLUSION D'INGRÉDIENTS ("J'en ai déjà")
+   ========================================================================== */
+
+/* Bouton Partager */
+.btn-share-highlight {
+  background: linear-gradient(135deg, #0ea5e9, #0284c7) !important;
+  color: #ffffff !important;
+  border-color: #0284c7 !important;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.25);
+}
+
+.btn-share-highlight:hover {
+  background: linear-gradient(135deg, #0284c7, #0369a1) !important;
+  transform: translateY(-1px);
+}
+
+/* Bouton J'en ai déjà sur les rangées d'épicerie */
+.btn-exclude-ingredient {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: #f8fafc;
+  border: 1px solid var(--slate-200);
+  color: var(--slate-600);
+  padding: 0.35rem 0.6rem;
+  border-radius: var(--radius-md);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  flex-shrink: 0;
+}
+
+.btn-exclude-ingredient:hover {
+  background: #eff6ff;
+  border-color: #93c5fd;
+  color: #1d4ed8;
+}
+
+.exclude-btn-text {
+  display: inline;
+}
+
+@media (max-width: 480px) {
+  .exclude-btn-text {
+    display: none;
+  }
+  .btn-exclude-ingredient {
+    padding: 0.35rem;
+  }
+}
+
+/* Section des Articles en Réserve (Exclus) */
+.excluded-items-section {
+  background: #f8fafc;
+  border: 1.5px dashed var(--slate-300);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  margin-top: 1.5rem;
+}
+
+.excluded-section-header {
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  background: #ffffff;
+  transition: background 0.18s ease;
+  user-select: none;
+}
+
+.excluded-section-header:hover {
+  background: #f1f5f9;
+}
+
+.excluded-title-left {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.excluded-heading {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--slate-700);
+  margin: 0;
+}
+
+.excluded-toggle-arrow {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--slate-500);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.excluded-items-body {
+  padding: 1rem 1.25rem;
+  border-top: 1px dashed var(--slate-200);
+}
+
+.excluded-description-hint {
+  font-size: 0.82rem;
+  color: var(--slate-500);
+  margin-bottom: 0.75rem;
+}
+
+.excluded-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.excluded-item-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  padding: 0.6rem 0.85rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--slate-200);
+}
+
+.excluded-item-info {
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  font-size: 0.88rem;
+}
+
+.excluded-item-name {
+  font-weight: 600;
+  color: var(--slate-800);
+}
+
+.excluded-item-qty {
+  font-size: 0.8rem;
+  color: var(--slate-500);
+}
+
+.excluded-item-recipe {
+  font-size: 0.75rem;
+  color: var(--slate-400);
+}
+
+.btn-reinclude-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: #f0fdf4;
+  border: 1px solid #86efac;
+  color: #166534;
+  padding: 0.35rem 0.65rem;
+  border-radius: var(--radius-md);
+  font-size: 0.76rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.btn-reinclude-item:hover {
+  background: #dcfce7;
+  border-color: #4ade80;
+}
+
+/* ==========================================================================
+   BÂTISSEUR DE PANIER INTERACTIF (Étape 4)
+   ========================================================================== */
+
+.cart-builder-summary-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 0.75rem 1rem;
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--slate-200);
+  margin-top: 1rem;
+}
+
+.cart-progress-stat,
+.cart-missing-stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.88rem;
+  color: var(--slate-700);
+}
+
+.btn-reset-cart-status {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: none;
+  border: 1px solid var(--slate-200);
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--radius-md);
+  font-size: 0.75rem;
+  color: var(--slate-500);
+  cursor: pointer;
+}
+
+.btn-reset-cart-status:hover {
+  background: var(--slate-100);
+  color: var(--slate-800);
+}
+
+/* Actions group for store item row */
+.store-item-actions-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-cart-check,
+.btn-cart-missing {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.5rem 0.7rem;
+  border-radius: var(--radius-md);
+  font-size: 0.78rem;
+  font-weight: 700;
+  border: 1px solid var(--slate-200);
+  background: #ffffff;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.btn-cart-check {
+  color: var(--slate-600);
+}
+
+.btn-cart-check:hover,
+.btn-cart-check.is-active-added {
+  background: #16a34a;
+  border-color: #16a34a;
+  color: #ffffff;
+}
+
+.btn-cart-missing {
+  color: var(--slate-500);
+}
+
+.btn-cart-missing:hover,
+.btn-cart-missing.is-active-missing {
+  background: #d97706;
+  border-color: #d97706;
+  color: #ffffff;
+}
+
+.store-item-card.item-status-added {
+  border-color: #86efac;
+  background: #f0fdf4;
+}
+
+.store-item-card.item-status-missing {
+  border-color: #fde68a;
+  background: #fffbeb;
+}
+
+/* Missing Items Section */
+.missing-items-card {
+  background: #fffbeb;
+  border: 1.5px solid #fde68a;
+  border-radius: var(--radius-xl);
+  padding: 1.25rem 1.5rem;
+  margin-top: 1.25rem;
+}
+
+.missing-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.missing-title-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.missing-title-left h3 {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #92400e;
+  margin: 0;
+}
+
+.btn-copy-missing {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #ffffff;
+  border: 1px solid #fcd34d;
+  color: #92400e;
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-md);
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-copy-missing:hover {
+  background: #fef3c7;
+}
+
+.missing-card-desc {
+  font-size: 0.85rem;
+  color: #b45309;
+  margin-bottom: 1rem;
+}
+
+.missing-items-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.missing-item-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  padding: 0.65rem 1rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid #fef08a;
+}
+
+.missing-item-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+}
+
+.missing-item-icon {
+  font-size: 1.1rem;
+}
+
+.btn-resolve-missing {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: #f0fdf4;
+  border: 1px solid #86efac;
+  color: #166534;
+  padding: 0.35rem 0.7rem;
+  border-radius: var(--radius-md);
+  font-size: 0.76rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-resolve-missing:hover {
+  background: #dcfce7;
+}
+
