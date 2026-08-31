@@ -5235,3 +5235,284 @@
   color: #166534;
 }
 
+/* ==========================================================================
+   TOAST FLOTTANT & ASSISTANT AUTO-PILOTE (Étape 4)
+   ========================================================================== */
+
+/* Toast de confirmation */
+.floating-cart-toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 9999;
+  background: #0f172a;
+  color: #ffffff;
+  padding: 0.85rem 1.35rem;
+  border-radius: var(--radius-full);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border: 1px solid #334155;
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (max-width: 640px) {
+  .floating-cart-toast {
+    left: 1rem;
+    right: 1rem;
+    bottom: 5.5rem;
+    justify-content: center;
+    font-size: 0.82rem;
+  }
+}
+
+/* Panneau Auto-Pilote */
+.autopilot-panel-card {
+  background: #ffffff;
+  border: 2px solid var(--primary-500);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08);
+  margin-bottom: 1.5rem;
+}
+
+.autopilot-header {
+  padding: 0.85rem 1.35rem;
+  background: var(--slate-900);
+  color: #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.autopilot-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 800;
+  font-size: 0.88rem;
+  color: #fbbf24;
+}
+
+.autopilot-store-tag {
+  font-size: 0.82rem;
+  background: #1e293b;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+}
+
+.autopilot-body {
+  padding: 1.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.autopilot-item-display {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  background: var(--slate-50);
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--slate-200);
+}
+
+.autopilot-item-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1;
+  min-width: 260px;
+}
+
+.autopilot-step-count {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--primary-600);
+}
+
+.autopilot-item-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.autopilot-dept-emoji {
+  font-size: 1.5rem;
+}
+
+.autopilot-item-name {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--slate-900);
+  margin: 0;
+}
+
+.autopilot-item-qty {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--slate-600);
+}
+
+.autopilot-promo-badge {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #b45309;
+  background: #fef3c7;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-sm);
+  display: inline-block;
+  align-self: flex-start;
+}
+
+.autopilot-actions-primary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.btn-autopilot-search-next {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.5rem;
+  border-radius: var(--radius-full);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.98rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+}
+
+.btn-autopilot-search-next:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+.autopilot-stepper-btns {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.btn-stepper-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: #ffffff;
+  border: 1px solid var(--slate-300);
+  color: var(--slate-700);
+  padding: 0.65rem 0.95rem;
+  border-radius: var(--radius-lg);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.btn-stepper-nav:hover:not(:disabled) {
+  background: var(--slate-100);
+  border-color: var(--slate-400);
+}
+
+.btn-stepper-nav:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Barre d'outils express */
+.autopilot-quick-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.btn-quick-batch,
+.btn-quick-keywords,
+.btn-quick-store-home {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 0.95rem;
+  border-radius: var(--radius-md);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  text-decoration: none;
+}
+
+.btn-quick-batch {
+  background: #f0fdf4;
+  border: 1.5px solid #86efac;
+  color: #166534;
+}
+
+.btn-quick-batch:hover {
+  background: #dcfce7;
+  border-color: #4ade80;
+}
+
+.btn-quick-keywords {
+  background: #eff6ff;
+  border: 1.5px solid #bfdbfe;
+  color: #1e40af;
+}
+
+.btn-quick-keywords:hover {
+  background: #dbeafe;
+}
+
+.btn-quick-store-home {
+  background: #f8fafc;
+  border: 1.5px solid var(--slate-300);
+  color: var(--slate-800);
+  margin-left: auto;
+}
+
+.btn-quick-store-home:hover {
+  background: var(--slate-200);
+}
+
+/* Progression */
+.autopilot-progress-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.autopilot-progress-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  color: var(--slate-600);
+}
+
+.autopilot-progress-track {
+  height: 8px;
+  background: var(--slate-100);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.autopilot-progress-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 0.3s ease;
+}
+

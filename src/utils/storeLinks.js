@@ -73,6 +73,7 @@ export function cleanSearchQuery(ingredientName) {
   return ingredientName
     .replace(/\(.*?\)/g, '') // Supprime le contenu entre parenthèses
     .replace(/(frais|fraîche|fraîches|émincé|émincée|coupé|coupée|râpé|râpée|crues|cuits|extra-ferme|avec peau|paré|maigre|mi-maigre)/gi, '')
+    .replace(/\s+/g, ' ')
     .trim();
 }
 
@@ -84,8 +85,8 @@ export function formatGroceryListForClipboard(departmentsResult, portions = 4, s
   text += `📅 Menu de la semaine : ${selectedRecipes.map(r => r.title).join(' | ')}\n`;
   text += `--------------------------------------------------\n\n`;
 
-  Object.values(departmentsResult).forEach((dept) => {
-    if (dept.items.length === 0) return;
+  Object.entries(departmentsResult).forEach(([key, dept]) => {
+    if (key === '_excludedItems' || !dept.items || dept.items.length === 0) return;
     text += `${dept.icon} ${dept.name.toUpperCase()}\n`;
     dept.items.forEach((item) => {
       const checkMark = item.isChecked ? ' [✓]' : ' [ ]';
@@ -97,4 +98,45 @@ export function formatGroceryListForClipboard(departmentsResult, portions = 4, s
   text += `--------------------------------------------------\n`;
   text += `Généré via Plancha-Master Québec`;
   return text;
+}
+
+/**
+ * Génère une liste de mots-clés séparés par des virgules pour la recherche groupée
+ */
+export function formatGroceryItemsForBulkSearch(items = []) {
+  return items.map(i => cleanSearchQuery(i.name)).filter(Boolean).join(', ');
+}
+
+/**
+ * Utilitaire robuste de copie dans le presse-papier avec fallback pour iOS / WebViews
+ */
+export async function copyTextToClipboard(text) {
+  if (!text) return false;
+
+  if (navigator.clipboard && window.isSecureContext) {
+    try {
+      await navigator.clipboard.writeText(text);
+      return true;
+    } catch (e) {
+      console.warn('navigator.clipboard a échoué, essai du fallback:', e);
+    }
+  }
+
+  try {
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.style.position = 'fixed';
+    textarea.style.top = '0';
+    textarea.style.left = '-999999px';
+    textarea.setAttribute('readonly', '');
+    document.body.appendChild(textarea);
+    textarea.focus();
+    textarea.select();
+    const successful = document.execCommand('copy');
+    document.body.removeChild(textarea);
+    return successful;
+  } catch (err) {
+    console.error('Erreur finale de copie:', err);
+    return false;
+  }
 }

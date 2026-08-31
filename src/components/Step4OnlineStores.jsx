@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import {
   ExternalLink,
   Search,
@@ -16,9 +16,20 @@ import {
   RotateCcw,
   PlusCircle,
   Package,
-  Layers
+  Layers,
+  Zap,
+  FastForward,
+  ChevronRight,
+  ChevronLeft,
+  ListFilter
 } from 'lucide-react';
-import { GROCERY_CHAINS, cleanSearchQuery, formatGroceryListForClipboard } from '../utils/storeLinks';
+import {
+  GROCERY_CHAINS,
+  cleanSearchQuery,
+  formatGroceryListForClipboard,
+  formatGroceryItemsForBulkSearch,
+  copyTextToClipboard
+} from '../utils/storeLinks';
 
 export default function Step4OnlineStores({
   groceryDepartments,
@@ -28,38 +39,70 @@ export default function Step4OnlineStores({
 }) {
   const [selectedChainId, setSelectedChainId] = useState('maxi');
   const [copied, setCopied] = useState(false);
+  const [copiedBulk, setCopiedBulk] = useState(false);
   const [copiedMissing, setCopiedMissing] = useState(false);
+  const [toastMessage, setToastMessage] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
   
   // Suivi de l'état du panier : { [itemKey]: 'added' | 'missing' }
   const [cartStatus, setCartStatus] = useState({});
 
+  // Index actuel pour l'Assistant Auto-Pilote
+  const [autoPilotIndex, setAutoPilotIndex] = useState(0);
+
   const activeChain = GROCERY_CHAINS.find(c => c.id === selectedChainId) || GROCERY_CHAINS[0];
 
-  const handleCopyFormattedList = () => {
-    const formatted = formatGroceryListForClipboard(groceryDepartments, portions, selectedRecipes);
-    navigator.clipboard.writeText(formatted);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2500);
-  };
-
-  // Extraire tous les ingrédients sous forme de liste plate
-  const allItems = [];
-  Object.entries(groceryDepartments).forEach(([deptKey, dept]) => {
-    if (deptKey === '_excludedItems' || !dept.items) return;
-    dept.items.forEach((item) => {
-      allItems.push({
-        ...item,
-        deptName: dept.name,
-        deptIcon: dept.icon,
-        cleanQuery: cleanSearchQuery(item.name)
+  // Extraire tous les ingrédients sous forme de liste plate non exclus
+  const allItems = useMemo(() => {
+    const items = [];
+    Object.entries(groceryDepartments).forEach(([deptKey, dept]) => {
+      if (deptKey === '_excludedItems' || !dept.items) return;
+      dept.items.forEach((item) => {
+        items.push({
+          ...item,
+          deptName: dept.name,
+          deptIcon: dept.icon,
+          cleanQuery: cleanSearchQuery(item.name)
+        });
       });
     });
-  });
+    return items;
+  }, [groceryDepartments]);
 
   const filteredItems = allItems.filter(i =>
     i.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  const triggerToast = (msg) => {
+    setToastMessage(msg);
+    setTimeout(() => {
+      setToastMessage('');
+    }, 3500);
+  };
+
+  // Copier toute la liste d'épicerie avec les rayons
+  const handleCopyFormattedList = async () => {
+    const formatted = formatGroceryListForClipboard(groceryDepartments, portions, selectedRecipes);
+    const ok = await copyTextToClipboard(formatted);
+    if (ok) {
+      setCopied(true);
+      triggerToast(`📋 Panier complet (${allItems.length} articles) copié dans le presse-papier !`);
+      setTimeout(() => setCopied(false), 2500);
+    } else {
+      alert('Liste d\'épicerie :\n\n' + formatted);
+    }
+  };
+
+  // Copier les mots-clés groupés pour recherche express
+  const handleCopyBulkKeywords = async () => {
+    const bulk = formatGroceryItemsForBulkSearch(allItems);
+    const ok = await copyTextToClipboard(bulk);
+    if (ok) {
+      setCopiedBulk(true);
+      triggerToast(`⚡ Mots-clés de recherche (${allItems.length} articles) copiés ! Collez-les dans la barre de recherche.`);
+      setTimeout(() => setCopiedBulk(false), 2500);
+    }
+  };
 
   // Marquer un article comme ajouté ou non disponible
   const setItemStatus = (itemKey, status) => {
@@ -76,33 +119,87 @@ export default function Step4OnlineStores({
   // Réinitialiser le statut du panier
   const handleResetCartStatus = () => {
     setCartStatus({});
+    setAutoPilotIndex(0);
+    triggerToast('Suivi de panier réinitialisé.');
   };
 
   const addedItemsCount = Object.values(cartStatus).filter(s => s === 'added').length;
   const missingItems = allItems.filter(item => cartStatus[item.key] === 'missing');
 
-  const handleCopyMissingItems = () => {
+  const handleCopyMissingItems = async () => {
     if (missingItems.length === 0) return;
     const text = `⚠️ ARTICLES NON AJOUTÉS / NON DISPONIBLES (${activeChain.name})\n` +
       missingItems.map(i => `• ${i.name} (${i.displayQuantity} ${i.displayUnit})`).join('\n');
-    navigator.clipboard.writeText(text);
-    setCopiedMissing(true);
-    setTimeout(() => setCopiedMissing(false), 2500);
+    const ok = await copyTextToClipboard(text);
+    if (ok) {
+      setCopiedMissing(true);
+      triggerToast('Articles manquants copiés !');
+      setTimeout(() => setCopiedMissing(false), 2500);
+    }
+  };
+
+  // Auto-Pilote : Item en cours
+  const currentAutoPilotItem = allItems[autoPilotIndex] || allItems[0];
+  const autoPilotDoneCount = Object.keys(cartStatus).length;
+  const autoPilotProgress = allItems.length > 0 ? Math.round((addedItemsCount / allItems.length) * 100) : 0;
+
+  // Lancer l'article actuel dans l'épicerie et avancer automatiquement
+  const handleAutoPilotSearchNext = () => {
+    if (!currentAutoPilotItem) return;
+    const searchUrl = activeChain.searchUrl(currentAutoPilotItem.cleanQuery);
+    window.open(searchUrl, '_blank', 'noopener,noreferrer');
+    
+    // Marquer comme ajouté
+    setItemStatus(currentAutoPilotItem.key, 'added');
+
+    // Passer au prochain article non traité
+    const nextIdx = allItems.findIndex((item, idx) => idx > autoPilotIndex && !cartStatus[item.key]);
+    if (nextIdx !== -1) {
+      setAutoPilotIndex(nextIdx);
+    } else if (autoPilotIndex < allItems.length - 1) {
+      setAutoPilotIndex(autoPilotIndex + 1);
+    }
+  };
+
+  // Ouvrir 5 articles en rafale
+  const handleOpenBatch5 = () => {
+    const unadded = allItems.filter(item => cartStatus[item.key] !== 'added');
+    const batch = unadded.slice(0, 5);
+
+    if (batch.length === 0) {
+      triggerToast('Tous les articles ont déjà été ajoutés ! 🎉');
+      return;
+    }
+
+    batch.forEach(item => {
+      const searchUrl = activeChain.searchUrl(item.cleanQuery);
+      window.open(searchUrl, '_blank', 'noopener,noreferrer');
+      setItemStatus(item.key, 'added');
+    });
+
+    triggerToast(`🚀 ${batch.length} onglets de recherche ouverts chez ${activeChain.name} !`);
   };
 
   return (
     <div className="step-page-container animate-fade-in" id="step-4-stores-screen">
+      {/* Toast Flottant de Confirmation */}
+      {toastMessage && (
+        <div className="floating-cart-toast animate-pop-in">
+          <Check size={18} className="text-green-400" />
+          <span>{toastMessage}</span>
+        </div>
+      )}
+
       {/* Top Banner */}
       <div className="stores-header-bar">
         <div className="stores-header-info">
           <div className="hero-tagline">
             <span className="hero-pill">Étape 4 sur 4</span>
-            <span className="hero-subpill">Bâtisseur de panier d'épicerie en ligne</span>
+            <span className="hero-subpill">Bâtisseur de commande en ligne</span>
           </div>
           <h1 className="stores-page-title">Commandes en Ligne & Bâtisseur de Panier</h1>
           <p className="stores-page-subtitle">
-            Bâtissez votre panier en 1 clic chez <strong>Maxi (PC Express), Super C, IGA, Metro ou Walmart</strong>. 
-            Suivez les articles ajoutés et repérez facilement les articles non disponibles pour les remplacer.
+            Gagnez du temps : construisez rapidement votre panier chez <strong>Maxi (PC Express), Super C, IGA, Metro ou Walmart</strong> grâce à l'Auto-Pilote et la recherche accélérée.
           </p>
         </div>
 
@@ -112,6 +209,7 @@ export default function Step4OnlineStores({
             className="btn-copy-clipboard-big"
             onClick={handleCopyFormattedList}
             id="btn-copy-all-stores"
+            title="Copier toute la liste pour la coller où vous voulez"
           >
             {copied ? <Check size={18} color="#16a34a" /> : <Copy size={18} />}
             <span>{copied ? 'Panier copié !' : 'Copier tout le panier'}</span>
@@ -130,7 +228,10 @@ export default function Step4OnlineStores({
               type="button"
               id={`tab-chain-${chain.id}`}
               className={`chain-tab-card ${isCurrent ? 'is-active-chain' : ''}`}
-              onClick={() => setSelectedChainId(chain.id)}
+              onClick={() => {
+                setSelectedChainId(chain.id);
+                setAutoPilotIndex(0);
+              }}
               role="tab"
               aria-selected={isCurrent}
             >
@@ -144,60 +245,128 @@ export default function Step4OnlineStores({
         })}
       </div>
 
-      {/* Active Chain Focus Card */}
-      <div className="active-chain-banner" style={{ borderTopColor: activeChain.themeColor }}>
-        <div className="active-chain-header">
-          <div className="chain-info-group">
-            <h3 className="chain-active-title">
-              Commander chez <span style={{ color: activeChain.themeColor }}>{activeChain.name}</span>
-            </h3>
-            <p className="chain-active-desc">
-              Cliquez sur <strong>"Chercher & Ajouter"</strong> pour ouvrir la recherche pré-remplie sur le site officiel de {activeChain.name}. Indiquez ensuite si l'article est ajouté au panier ou indisponible.
-            </p>
+      {/* =====================================================================
+          ⚡ ASSISTANT AUTO-PILOTE : CONSTRUCTION RAPIDE DU PANIER
+          ===================================================================== */}
+      <div className="autopilot-panel-card" style={{ borderColor: activeChain.themeColor }}>
+        <div className="autopilot-header">
+          <div className="autopilot-badge">
+            <Zap size={16} />
+            <span>Mode Accéléré : Auto-Pilote de Commande</span>
           </div>
-
-          <a
-            href={activeChain.homeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-open-store-home"
-            id="btn-open-active-store-home"
-            style={{ backgroundColor: activeChain.themeColor }}
-          >
-            <span>Ouvrir {activeChain.name} (Se connecter)</span>
-            <ExternalLink size={16} />
-          </a>
+          <span className="autopilot-store-tag" style={{ color: activeChain.themeColor }}>
+            Épicerie active : <strong>{activeChain.name}</strong>
+          </span>
         </div>
 
-        {/* Status Tracker */}
-        <div className="cart-builder-summary-bar">
-          <div className="cart-progress-stat">
-            <CheckCircle2 size={18} className="text-green-600" />
-            <span>
-              <strong>{addedItemsCount}</strong> / {allItems.length} articles ajoutés au panier
-            </span>
+        <div className="autopilot-body">
+          <div className="autopilot-item-display">
+            <div className="autopilot-item-meta">
+              <span className="autopilot-step-count">
+                Article {autoPilotIndex + 1} sur {allItems.length}
+              </span>
+              <div className="autopilot-item-title-row">
+                <span className="autopilot-dept-emoji">{currentAutoPilotItem?.deptIcon}</span>
+                <h3 className="autopilot-item-name">{currentAutoPilotItem?.name}</h3>
+                <span className="autopilot-item-qty">
+                  ({currentAutoPilotItem?.displayQuantity} {currentAutoPilotItem?.displayUnit})
+                </span>
+              </div>
+              {currentAutoPilotItem?.storeBadge && (
+                <span className="autopilot-promo-badge">
+                  🏷️ Spécial {currentAutoPilotItem.storeBadge}
+                </span>
+              )}
+            </div>
+
+            <div className="autopilot-actions-primary">
+              <button
+                type="button"
+                className="btn-autopilot-search-next"
+                onClick={handleAutoPilotSearchNext}
+                style={{ backgroundColor: activeChain.themeColor }}
+                title={`Ouvrir "${currentAutoPilotItem?.cleanQuery}" chez ${activeChain.name} et passer au suivant`}
+              >
+                <span>Chercher & Ajouter chez {activeChain.name}</span>
+                <ExternalLink size={18} />
+              </button>
+
+              <div className="autopilot-stepper-btns">
+                <button
+                  type="button"
+                  className="btn-stepper-nav"
+                  onClick={() => setAutoPilotIndex(Math.max(0, autoPilotIndex - 1))}
+                  disabled={autoPilotIndex === 0}
+                  title="Article précédent"
+                >
+                  <ChevronLeft size={18} />
+                  <span>Précédent</span>
+                </button>
+
+                <button
+                  type="button"
+                  className="btn-stepper-nav"
+                  onClick={() => setAutoPilotIndex(Math.min(allItems.length - 1, autoPilotIndex + 1))}
+                  disabled={autoPilotIndex >= allItems.length - 1}
+                  title="Passer à l'article suivant"
+                >
+                  <span>Suivant</span>
+                  <ChevronRight size={18} />
+                </button>
+              </div>
+            </div>
           </div>
 
-          {missingItems.length > 0 && (
-            <div className="cart-missing-stat">
-              <AlertTriangle size={18} className="text-amber-600" />
-              <span>
-                <strong>{missingItems.length}</strong> article{missingItems.length > 1 ? 's' : ''} non disponible{missingItems.length > 1 ? 's' : ''}
-              </span>
-            </div>
-          )}
-
-          {Object.keys(cartStatus).length > 0 && (
+          {/* Quick Bulk Actions Bar */}
+          <div className="autopilot-quick-toolbar">
             <button
               type="button"
-              className="btn-reset-cart-status"
-              onClick={handleResetCartStatus}
-              title="Réinitialiser le suivi du panier"
+              className="btn-quick-batch"
+              onClick={handleOpenBatch5}
+              title="Ouvre 5 onglets en même temps pour les 5 prochains articles"
             >
-              <RotateCcw size={13} />
-              <span>Réinitialiser</span>
+              <FastForward size={15} />
+              <span>Ouvrir les 5 prochains articles en rafale</span>
             </button>
-          )}
+
+            <button
+              type="button"
+              className="btn-quick-keywords"
+              onClick={handleCopyBulkKeywords}
+              title="Copie tous les mots-clés séparés par une virgule pour la recherche express"
+            >
+              {copiedBulk ? <Check size={15} color="#16a34a" /> : <Copy size={15} />}
+              <span>{copiedBulk ? 'Mots-clés copiés !' : 'Copier les mots-clés pour recherche groupée'}</span>
+            </button>
+
+            <a
+              href={activeChain.homeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-quick-store-home"
+            >
+              <span>Ouvrir {activeChain.name} (Panier)</span>
+              <ExternalLink size={14} />
+            </a>
+          </div>
+
+          {/* Progression */}
+          <div className="autopilot-progress-container">
+            <div className="autopilot-progress-info">
+              <span><strong>{addedItemsCount}</strong> sur {allItems.length} articles traités ({autoPilotProgress}%)</span>
+              {missingItems.length > 0 && (
+                <span className="text-amber-600 font-bold">
+                  ⚠️ {missingItems.length} article{missingItems.length > 1 ? 's' : ''} non disponible{missingItems.length > 1 ? 's' : ''}
+                </span>
+              )}
+            </div>
+            <div className="autopilot-progress-track">
+              <div
+                className="autopilot-progress-fill"
+                style={{ width: `${autoPilotProgress}%`, backgroundColor: activeChain.themeColor }}
+              ></div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -206,7 +375,7 @@ export default function Step4OnlineStores({
         <div className="search-box-header">
           <div className="search-box-title-group">
             <Search size={20} className="search-title-icon" />
-            <h3>Assistant Panier 1-Clic ({filteredItems.length} articles)</h3>
+            <h3>Liste Complète des Articles ({filteredItems.length})</h3>
           </div>
 
           <div className="search-quick-filter">
@@ -256,7 +425,6 @@ export default function Step4OnlineStores({
                     title={`Chercher "${item.cleanQuery}" sur ${activeChain.name}`}
                     style={{ backgroundColor: activeChain.bgColor, color: activeChain.themeColor }}
                     onClick={() => {
-                      // Marquer automatiquement comme consulté si non encore coché
                       if (!cartStatus[item.key]) {
                         setItemStatus(item.key, 'added');
                       }
