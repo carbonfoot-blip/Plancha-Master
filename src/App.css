@@ -4894,3 +4894,168 @@
   background: #dcfce7;
 }
 
+/* ==========================================================================
+   OPTIMISATIONS DESKTOP / PC (Écran Large ≥ 1024px)
+   Sections : Liste d'épicerie (Étape 3) & Commandes en ligne (Étape 4)
+   ========================================================================== */
+
+@media (min-width: 1024px) {
+  /* Étape 3 : Liste d'épicerie en grille 2 colonnes bien balancée */
+  .departments-list-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .grocery-department-block {
+    background: #ffffff;
+    border: 1.5px solid var(--slate-200);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+
+  .grocery-department-block:hover {
+    border-color: var(--slate-300);
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
+  }
+
+  .department-header-row {
+    padding: 0.95rem 1.25rem;
+    background: var(--slate-50);
+    border-bottom: 1.5px solid var(--slate-200);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .dept-title-left {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+  }
+
+  .dept-icon-symbol {
+    font-size: 1.35rem;
+  }
+
+  .dept-name-heading {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--slate-900);
+    margin: 0;
+  }
+
+  .dept-items-count-badge {
+    background: var(--slate-200);
+    color: var(--slate-700);
+    font-size: 0.76rem;
+    font-weight: 800;
+    padding: 0.2rem 0.55rem;
+    border-radius: var(--radius-full);
+  }
+
+  /* Liste verticale nette par rayon */
+  .grocery-items-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.85rem 1rem;
+    list-style: none;
+    margin: 0;
+  }
+
+  .grocery-item-row {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.75rem 1rem;
+    background: #ffffff;
+    border: 1px solid var(--slate-100);
+    border-radius: var(--radius-md);
+    transition: all 0.18s ease;
+  }
+
+  .grocery-item-row:hover {
+    background: #f8fafc;
+    border-color: var(--slate-300);
+    transform: translateX(2px);
+  }
+
+  .item-display-name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--slate-900);
+  }
+
+  .item-quantity-pill {
+    font-size: 0.88rem;
+    font-weight: 700;
+    background: var(--slate-100);
+    color: var(--slate-800);
+    padding: 0.3rem 0.7rem;
+    border-radius: var(--radius-sm);
+    white-space: nowrap;
+  }
+
+  .excluded-items-section {
+    grid-column: 1 / -1;
+  }
+
+  /* Étape 4 : Commandes en ligne sur PC */
+  .one-click-items-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .store-item-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.95rem 1.15rem;
+    background: #ffffff;
+    border: 1.5px solid var(--slate-200);
+    border-radius: var(--radius-lg);
+    gap: 1rem;
+    box-shadow: 0 1px 4px rgba(15, 23, 42, 0.03);
+    transition: all 0.2s ease;
+  }
+
+  .store-item-card:hover {
+    border-color: var(--slate-300);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.07);
+  }
+
+  .store-item-title {
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: var(--slate-900);
+  }
+
+  .store-item-qty {
+    font-size: 0.82rem;
+    color: var(--slate-600);
+  }
+
+  .btn-store-search-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.55rem 0.95rem;
+    border-radius: var(--radius-md);
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .btn-store-search-link:hover {
+    filter: brightness(0.95);
+    transform: translateY(-1px);
+  }
+}
