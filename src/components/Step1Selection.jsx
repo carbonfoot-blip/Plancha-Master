@@ -118,7 +118,7 @@ export default function Step1Selection({
 
       return true;
     });
-  }, [recipes, searchQuery, onlyOnSale, selectedProtein, selectedMode, selectedTime, excludedAllergens, activeDealsKeywords]);
+  }, [recipes, searchQuery, onlyOnSale, selectedProtein, selectedMode, selectedTime, excludedAllergens, activeProteinDeals]);
 
   const selectedCount = selectedRecipes.length;
   const isSelected = (id) => selectedRecipes.some(r => r.id === id);
