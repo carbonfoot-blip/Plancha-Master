@@ -42,6 +42,13 @@ export default function RecipeEditorModal({
   const [prepTime, setPrepTime] = useState(recipeToEdit?.prepTime || 15);
   const [cookTime, setCookTime] = useState(recipeToEdit?.cookTime || 12);
   const [calories, setCalories] = useState(recipeToEdit?.calories || 450);
+  const [proteins, setProteins] = useState(recipeToEdit?.macros?.proteins || 35);
+  const [carbs, setCarbs] = useState(recipeToEdit?.macros?.carbs || 40);
+  const [fats, setFats] = useState(recipeToEdit?.macros?.fats || 18);
+  const [isCompleteMeal, setIsCompleteMeal] = useState(recipeToEdit?.isCompleteMeal ?? false);
+  const [sideCarbs, setSideCarbs] = useState(recipeToEdit?.sideDishSuggestion?.carbs || '');
+  const [sideVeggies, setSideVeggies] = useState(recipeToEdit?.sideDishSuggestion?.veggies || '');
+  const [sideTip, setSideTip] = useState(recipeToEdit?.sideDishSuggestion?.planchaTip || '');
   const [image, setImage] = useState(recipeToEdit?.image || QUICK_IMAGE_PRESETS[0].url);
   const [planchaTips, setPlanchaTips] = useState(recipeToEdit?.planchaTips || '');
   const [allergens, setAllergens] = useState(recipeToEdit?.allergens || []);
@@ -162,6 +169,19 @@ export default function RecipeEditorModal({
       prepTime: parseInt(prepTime, 10) || 10,
       cookTime: parseInt(cookTime, 10) || 10,
       calories: parseInt(calories, 10) || 450,
+      macros: {
+        proteins: parseInt(proteins, 10) || 0,
+        carbs: parseInt(carbs, 10) || 0,
+        fats: parseInt(fats, 10) || 0
+      },
+      isCompleteMeal,
+      sideDishSuggestion: (!isCompleteMeal && (sideCarbs.trim() || sideVeggies.trim()))
+        ? {
+            carbs: sideCarbs.trim(),
+            veggies: sideVeggies.trim(),
+            planchaTip: sideTip.trim()
+          }
+        : null,
       allergens,
       image: image.trim() || QUICK_IMAGE_PRESETS[0].url,
       planchaTips: planchaTips.trim(),
@@ -193,7 +213,7 @@ export default function RecipeEditorModal({
         <form onSubmit={handleSubmit} className="recipe-editor-form">
           {/* Section 1 : Infos Générales */}
           <div className="editor-form-section">
-            <h3 className="editor-section-heading">1. Informations Générales</h3>
+            <h3 className="editor-section-heading">1. Informations Générales & Nutrition</h3>
 
             <div className="form-group">
               <label htmlFor="recipe-title">Titre de la recette * :</label>
@@ -275,6 +295,46 @@ export default function RecipeEditorModal({
               </div>
             </div>
 
+            {/* Macro-Nutriments Row */}
+            <div className="form-row-3cols">
+              <div className="form-group">
+                <label htmlFor="recipe-proteins">🥩 Protéines (g / port.) :</label>
+                <input
+                  id="recipe-proteins"
+                  type="number"
+                  className="form-control"
+                  value={proteins}
+                  onChange={(e) => setProteins(e.target.value)}
+                  min="0"
+                  max="200"
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="recipe-carbs">🍞 Glucides (g / port.) :</label>
+                <input
+                  id="recipe-carbs"
+                  type="number"
+                  className="form-control"
+                  value={carbs}
+                  onChange={(e) => setCarbs(e.target.value)}
+                  min="0"
+                  max="300"
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="recipe-fats">🥑 Lipides (g / port.) :</label>
+                <input
+                  id="recipe-fats"
+                  type="number"
+                  className="form-control"
+                  value={fats}
+                  onChange={(e) => setFats(e.target.value)}
+                  min="0"
+                  max="150"
+                />
+              </div>
+            </div>
+
             <div className="form-row-2cols">
               <div className="form-group">
                 <label htmlFor="recipe-prep-time">Temps de préparation (min) :</label>
@@ -300,6 +360,62 @@ export default function RecipeEditorModal({
                 />
               </div>
             </div>
+          </div>
+
+          {/* Section Accompagnement Recommandé */}
+          <div className="editor-form-section">
+            <h3 className="editor-section-heading">2. Accompagnements & Équilibre du repas</h3>
+
+            <div className="form-group">
+              <label className="checkbox-label-styled">
+                <input
+                  type="checkbox"
+                  checked={isCompleteMeal}
+                  onChange={(e) => setIsCompleteMeal(e.target.checked)}
+                />
+                <span>✨ <strong>Repas complet tout-en-un</strong> (féculents et légumes déjà intégrés, aucun accompagnement requis)</span>
+              </label>
+            </div>
+
+            {!isCompleteMeal && (
+              <div className="side-dish-editor-fields">
+                <div className="form-group">
+                  <label htmlFor="side-carbs">🥔 Féculent suggéré :</label>
+                  <input
+                    id="side-carbs"
+                    type="text"
+                    className="form-control"
+                    placeholder="Ex: Riz basmati au citron ou Pommes de terre grelots rôties"
+                    value={sideCarbs}
+                    onChange={(e) => setSideCarbs(e.target.value)}
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="side-veggies">🥗 Légume ou Salade suggéré :</label>
+                  <input
+                    id="side-veggies"
+                    type="text"
+                    className="form-control"
+                    placeholder="Ex: Salade grecque croquante (tomates, concombres, feta)"
+                    value={sideVeggies}
+                    onChange={(e) => setSideVeggies(e.target.value)}
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="side-tip">💡 Conseil & Cuisson plancha pour l'accompagnement :</label>
+                  <input
+                    id="side-tip"
+                    type="text"
+                    className="form-control"
+                    placeholder="Ex: Faites dorer les grelots sur la zone moyenne pendant la cuisson..."
+                    value={sideTip}
+                    onChange={(e) => setSideTip(e.target.value)}
+                  />
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Section 2 : Image de la recette */}

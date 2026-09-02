@@ -197,6 +197,9 @@ export default function Step2WeeklyMenu({
                         <span className="meta-chip-cal">
                           {recipe.calories} kcal / port.
                         </span>
+                        <span className="meta-chip-macros">
+                          P: {recipe.macros?.proteins || 35}g • G: {recipe.macros?.carbs || 40}g • L: {recipe.macros?.fats || 18}g
+                        </span>
                       </div>
 
                       <h4 className="day-recipe-title" onClick={() => onViewRecipe(recipe)}>
@@ -204,6 +207,18 @@ export default function Step2WeeklyMenu({
                       </h4>
 
                       <p className="day-recipe-desc">{recipe.subtitle}</p>
+
+                      {/* Side dish suggestion if any */}
+                      {recipe.sideDishSuggestion ? (
+                        <div className="day-side-dish-banner">
+                          <span className="day-side-dish-tag">🥗 Accompagnement suggéré :</span>
+                          <span className="day-side-dish-desc">{recipe.sideDishSuggestion.carbs} • {recipe.sideDishSuggestion.veggies}</span>
+                        </div>
+                      ) : (
+                        <div className="day-side-dish-complete">
+                          <span>✨ Repas complet tout-en-un</span>
+                        </div>
+                      )}
 
                       {/* Ingredients Mini Checklist scaled */}
                       <div className="day-ingredients-box">

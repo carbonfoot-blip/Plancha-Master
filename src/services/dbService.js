@@ -61,14 +61,47 @@ async function initFirebase() {
 function mergeRecipeLists(primaryList = [], fallbackList = RECIPES_DATA) {
   const map = new Map();
 
-  // 1. D'abord insérer le catalogue officiel par défaut
+  // 1. D'abord insérer le catalogue officiel enrichi du code (macros, accompagnements, wedges)
   fallbackList.forEach((r) => {
-    if (r && r.id) map.set(r.id, r);
+    if (r && r.id) {
+      map.set(r.id, { ...r });
+    }
   });
 
-  // 2. Écraser avec toutes les données et modifications de la BD Cloud / Mode Admin
-  primaryList.forEach((r) => {
-    if (r && r.id) map.set(r.id, r);
+  // 2. Fusionner avec la base de données Cloud / LocalStorage (en conservant les images et modifications de l'utilisateur)
+  primaryList.forEach((cloudRecipe) => {
+    if (cloudRecipe && cloudRecipe.id) {
+      const codeRecipe = map.get(cloudRecipe.id);
+      if (codeRecipe) {
+        // C'est une recette officielle : on conserve l'image et les personnalisations de la BD Cloud, tout en injectant les nouveaux macros et accompagnements
+        const mergedRecipe = {
+          ...codeRecipe,
+          ...cloudRecipe,
+          // Conserver l'image Cloud personnalisée de l'utilisateur
+          image: cloudRecipe.image || codeRecipe.image,
+          // Conserver ou injecter les macros
+          macros: cloudRecipe.macros || codeRecipe.macros,
+          // Conserver ou injecter les suggestions d'accompagnements
+          sideDishSuggestion: cloudRecipe.sideDishSuggestion !== undefined ? cloudRecipe.sideDishSuggestion : codeRecipe.sideDishSuggestion,
+          isCompleteMeal: cloudRecipe.isCompleteMeal !== undefined ? cloudRecipe.isCompleteMeal : codeRecipe.isCompleteMeal
+        };
+
+        // Si c'est rec-03 et que les wedges ne sont pas encore dans les ingrédients de la BD Cloud, mettre à jour les ingrédients & étapes de rec-03
+        if (cloudRecipe.id === 'rec-03' && (!cloudRecipe.ingredients || !cloudRecipe.ingredients.some(i => i.id === 'ing-pommes-de-terre-russet'))) {
+          mergedRecipe.ingredients = codeRecipe.ingredients;
+          mergedRecipe.steps = codeRecipe.steps;
+          mergedRecipe.title = codeRecipe.title;
+          mergedRecipe.subtitle = codeRecipe.subtitle;
+          mergedRecipe.description = codeRecipe.description;
+          mergedRecipe.planchaTips = codeRecipe.planchaTips;
+        }
+
+        map.set(cloudRecipe.id, mergedRecipe);
+      } else {
+        // Recette 100% personnalisée créée par l'utilisateur
+        map.set(cloudRecipe.id, cloudRecipe);
+      }
+    }
   });
 
   return Array.from(map.values());

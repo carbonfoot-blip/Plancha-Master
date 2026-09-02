@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Flame, Zap, Clock, Users, AlertTriangle, CheckCircle2, ChefHat, Plus, Check, Edit2 } from 'lucide-react';
+import { X, Flame, Zap, Clock, Users, AlertTriangle, CheckCircle2, ChefHat, Plus, Check, Edit2, Salad, Sparkles, Activity } from 'lucide-react';
 import { GROCERY_DEPARTMENTS } from '../data/recipes';
 
 export default function RecipeDetailModal({ recipe, portions, isSelected, onToggleSelect, onEditRecipe, isAdmin, onClose }) {
@@ -15,6 +15,10 @@ export default function RecipeDetailModal({ recipe, portions, isSelected, onTogg
   };
 
   const portionRatio = portions / 4;
+  const singleProt = recipe.macros?.proteins || 35;
+  const singleCarb = recipe.macros?.carbs || 40;
+  const singleFat = recipe.macros?.fats || 18;
+  const singleCal = recipe.calories || 450;
 
   return (
     <div className="modal-backdrop" onClick={onClose} role="dialog" aria-modal="true" id="recipe-modal-backdrop">
@@ -68,7 +72,7 @@ export default function RecipeDetailModal({ recipe, portions, isSelected, onTogg
                   <span>Cuisson: {recipe.cookTime} min</span>
                 </div>
                 <div className="quick-stat-item">
-                  <span>🔥 {recipe.calories} kcal / port.</span>
+                  <span>🔥 {Math.round(singleCal * portionRatio)} kcal ({portions} port.)</span>
                 </div>
               </div>
             </div>
@@ -78,6 +82,28 @@ export default function RecipeDetailModal({ recipe, portions, isSelected, onTogg
             <h2 className="modal-recipe-title">{recipe.title}</h2>
             <p className="modal-recipe-subtitle">{recipe.subtitle}</p>
             <p className="modal-recipe-desc">{recipe.description}</p>
+
+            {/* Macro-Nutriments Bar */}
+            <div className="modal-macros-box">
+              <div className="macros-header">
+                <Activity size={16} className="macros-icon" />
+                <span className="macros-title">Macro-nutriments par portion ({singleCal} kcal) :</span>
+              </div>
+              <div className="macros-grid">
+                <div className="macro-chip macro-prot">
+                  <span className="macro-name">🥩 Protéines</span>
+                  <span className="macro-val">{singleProt}g</span>
+                </div>
+                <div className="macro-chip macro-carb">
+                  <span className="macro-name">🍞 Glucides</span>
+                  <span className="macro-val">{singleCarb}g</span>
+                </div>
+                <div className="macro-chip macro-fat">
+                  <span className="macro-name">🥑 Lipides</span>
+                  <span className="macro-val">{singleFat}g</span>
+                </div>
+              </div>
+            </div>
 
             {recipe.allergens && recipe.allergens.length > 0 && (
               <div className="modal-allergens-bar">
@@ -92,6 +118,36 @@ export default function RecipeDetailModal({ recipe, portions, isSelected, onTogg
             )}
           </div>
         </div>
+
+        {/* Accompagnement Proposé ou Repas Complet */}
+        {recipe.sideDishSuggestion ? (
+          <div className="side-dish-pro-box">
+            <div className="side-dish-pro-header">
+              <Salad size={20} className="side-dish-icon" />
+              <h4>🥗 Accompagnement Recommandé (Féculent + Légume / Salade)</h4>
+            </div>
+            <div className="side-dish-content">
+              <div className="side-dish-row">
+                <span className="side-dish-tag">🥔 Féculent :</span>
+                <span className="side-dish-text">{recipe.sideDishSuggestion.carbs}</span>
+              </div>
+              <div className="side-dish-row">
+                <span className="side-dish-tag">🥗 Légume / Salade :</span>
+                <span className="side-dish-text">{recipe.sideDishSuggestion.veggies}</span>
+              </div>
+              {recipe.sideDishSuggestion.planchaTip && (
+                <div className="side-dish-tip">
+                  <span>💡 <em>{recipe.sideDishSuggestion.planchaTip}</em></span>
+                </div>
+              )}
+            </div>
+          </div>
+        ) : (
+          <div className="complete-meal-pro-box">
+            <Sparkles size={18} className="complete-meal-icon" />
+            <span><strong>✨ Repas complet tout-en-un</strong> : féculents et légumes déjà intégrés à la recette !</span>
+          </div>
+        )}
 
         {/* Plancha Pro Advice Box */}
         {recipe.planchaTips && (
