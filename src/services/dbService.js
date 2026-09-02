@@ -61,18 +61,22 @@ async function initFirebase() {
 function mergeRecipeLists(primaryList = [], fallbackList = RECIPES_DATA) {
   const map = new Map();
 
-  // D'abord insérer la liste officielle du code
-  fallbackList.forEach((r) => {
-    if (r && r.id) map.set(r.id, r);
-  });
-
-  // Ensuite fusionner les recettes chargées de la BD (cloud ou custom)
+  // 1. D'abord charger les recettes personnalisées créées par l'utilisateur
   primaryList.forEach((r) => {
     if (r && r.id) map.set(r.id, r);
   });
 
+  // 2. Mettre à jour les recettes officielles du catalogue avec la dernière version du code
+  fallbackList.forEach((r) => {
+    if (r && r.id) {
+      // Si la recette est une recette standard du catalogue, elle prend les dernières modifs du code
+      map.set(r.id, r);
+    }
+  });
+
   return Array.from(map.values());
 }
+
 
 /**
  * Synchronise les recettes officielles dans Firestore si elles sont absentes ou lors d'un reset forcé
