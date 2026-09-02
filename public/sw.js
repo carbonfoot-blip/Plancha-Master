@@ -1,4 +1,4 @@
-const CACHE_NAME = 'plancha-master-v1.1';
+const CACHE_NAME = 'plancha-master-v1.2';
 const STATIC_ASSETS = [
   './',
   './index.html',

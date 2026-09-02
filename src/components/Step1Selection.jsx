@@ -379,7 +379,16 @@ export default function Step1Selection({
               >
                 {/* Card Top Image & Badges */}
                 <div className="card-image-box" onClick={() => onViewRecipe(recipe)}>
-                  <img src={recipe.image} alt={recipe.title} loading="lazy" className="card-img" />
+                  <img
+                    src={recipe.image || 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80'}
+                    alt={recipe.title}
+                    loading="lazy"
+                    className="card-img"
+                    onError={(e) => {
+                      e.currentTarget.onerror = null;
+                      e.currentTarget.src = 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80';
+                    }}
+                  />
                   <div className="card-top-badges">
                     <span className="badge-protein">{recipe.proteinType}</span>
                     <span className={`badge-mode mode-${recipe.cookingMode}`}>

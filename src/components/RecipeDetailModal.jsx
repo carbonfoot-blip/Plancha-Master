@@ -48,7 +48,15 @@ export default function RecipeDetailModal({ recipe, portions, isSelected, onTogg
         {/* Modal Hero Body */}
         <div className="modal-hero-grid">
           <div className="modal-image-wrapper">
-            <img src={recipe.image} alt={recipe.title} className="modal-recipe-img" />
+            <img
+              src={recipe.image || 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80'}
+              alt={recipe.title}
+              className="modal-recipe-img"
+              onError={(e) => {
+                e.currentTarget.onerror = null;
+                e.currentTarget.src = 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80';
+              }}
+            />
             <div className="modal-image-overlay">
               <div className="modal-quick-stats">
                 <div className="quick-stat-item">

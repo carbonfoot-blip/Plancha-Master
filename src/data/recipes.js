@@ -370,7 +370,7 @@ export const RECIPES_DATA = [
     calories: 550,
     allergens: ['Gluten', 'Lactose', 'Moutarde'],
     tags: ['One-Pot', 'Famille nombreuse', 'Semaine sans stress'],
-    image: 'https://images.unsplash.com/photo-1621996346565-e3d5d628105d?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=800&q=80',
     description: 'Les pâtes cuisent directement dans le bouillon avec la viande et la sauce tomate, absorbant toutes les saveurs avant l\'ajout du fromage crémeux.',
     planchaTips: 'Plat mijoté de semaine par excellence en grand faitout.',
     ingredients: [
@@ -2534,7 +2534,7 @@ export const RECIPES_DATA = [
       "Anti-Gaspillage",
       "Ricardo"
     ],
-    "image": "https://ucarecdn.com/0e6c0cfc-799c-4df8-961a-e1438dad99f6/-/crop/4950x6688/322,1568/-/preview/",
+    "image": "https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=800&q=80",
     "description": "La recette mythique du riz frit parfait : le riz froid de la veille sauté sur une plaque brûlante avec de l'huile de sésame, sauce soya, porc émincé, œufs brouillés et oignons verts.",
     "planchaTips": "La plancha est imbattable pour le riz frit ! Étalez tout le riz sur la surface très chaude (220°C). Cassez les œufs directement sur un coin pour les brouiller avant de mélanger.",
     "ingredients": [
@@ -2780,7 +2780,7 @@ export const RECIPES_DATA = [
       "Convivial",
       "Mordu"
     ],
-    "image": "https://images.radio-canada.ca/q_auto,w_1200/v1/alimentation/recette/16x9/burrito-dejeuner-poele.jpg",
+    "image": "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=800&q=80",
     "description": "Une recette réconfortante et rapide pour les soirs de semaine ou les brunchs du week-end : saucisses chorizo rissolées, œufs brouillés crémeux et fromage fondu.",
     "planchaTips": "Faites dorer le chorizo d'un côté, brouillez les œufs de l'autre, roulez les burritos et faites-les dorer sur la jointure à la plancha.",
     "ingredients": [
@@ -2856,7 +2856,7 @@ export const RECIPES_DATA = [
       "Original",
       "Mordu"
     ],
-    "image": "https://images.radio-canada.ca/q_auto,w_1200/v1/alimentation/recette/16x9/smash-burgers-oignons-epinards-garam-masala.jpg",
+    "image": "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=800&q=80",
     "description": "Une fusion irrésistible signée Mordu : la technique du smash burger appliquée avec des épices garam masala, des oignons ultra caramélisés et des épinards flétris au beurre.",
     "planchaTips": "Plancha à 230°C. Posez une poignée d'oignons très finement émincés sur la plancha, posez la boule de bœuf au garam masala dessus et smashez le tout ensemble !",
     "ingredients": [
@@ -3036,7 +3036,7 @@ export const RECIPES_DATA = [
       "Plancha Classique",
       "PetitsPlats"
     ],
-    "image": "https://www.petitsplatsentreamis.com/wp-content/uploads/2019/02/Recette-de-yakitori-de-poulet-à-la-plancha.jpg",
+    "image": "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=800&q=80",
     "description": "Les célèbres brochettes japonaises Negima : morceaux de poulet moelleux et tronçons de blancs de poireaux ou d'oignons verts, laqués avec une sauce teriyaki sirupeuse et caramélisée.",
     "planchaTips": "Trempez les pics en bois dans l'eau 15 min avant. Badigeonnez de sauce teriyaki 3 fois pendant la cuisson pour créer une laque brillante et savoureuse.",
     "ingredients": [
