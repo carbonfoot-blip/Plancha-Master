@@ -164,7 +164,7 @@ export const RECIPES_DATA = [
     allergens: ['Gluten', 'Lactose', 'Moutarde', 'Oeufs'],
     tags: ['Plancha Star', 'Coup de coeur famille', 'Fast-food maison'],
     image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80',
-    description: 'La cuisson suprême à la plancha : des smash burgers ultra juteux et croustillants servis avec de généreux quartiers de pommes de terre (wedges) assaisonnés au paprika fumé et herbes.',
+    description: 'La cuisson suprême à la plancha : des smash burgers ultra juteux et croustillants servis avec des quartiers de pommes de terre (wedges) assaisonnés au paprika et dorés sur la plaque.',
     planchaTips: 'Plancha à 220°C pour les wedges (lancer 12-15 min avant en retournant souvent) et 250°C zone très chaude pour smasher les galettes de bœuf 2 min par face.',
     ingredients: [
       { id: 'ing-boeuf-hache', name: 'Bœuf haché mi-maigre', quantity: 600, unit: 'g', department: 'viandes' },
@@ -174,14 +174,14 @@ export const RECIPES_DATA = [
       { id: 'ing-oignon-jaune', name: 'Oignon jaune émincé très fin', quantity: 1, unit: 'unité', department: 'fruits_legumes' },
       { id: 'ing-laitue-romaine', name: 'Feuilles de laitue romaine', quantity: 4, unit: 'unité', department: 'fruits_legumes' },
       { id: 'ing-tomate-ronde', name: 'Tomate de serre en rondelles', quantity: 2, unit: 'unité', department: 'fruits_legumes' },
-      { id: 'ing-paprika-fume', name: 'Paprika fumé & herbes à frites', quantity: 10, unit: 'g', department: 'non_perissable' },
-      { id: 'ing-huile-cuisson', name: 'Huile végétale pour cuisson', quantity: 30, unit: 'ml', department: 'non_perissable' },
+      { id: 'ing-paprika-fume', name: 'Paprika & herbes à frites', quantity: 10, unit: 'g', department: 'non_perissable' },
+      { id: 'ing-huile-vegetale', name: 'Huile végétale pour cuisson', quantity: 30, unit: 'ml', department: 'non_perissable' },
       { id: 'ing-mayonnaise', name: 'Mayonnaise', quantity: 45, unit: 'ml', department: 'non_perissable' },
       { id: 'ing-moutarde-dijon', name: 'Moutarde de Dijon ou relish', quantity: 20, unit: 'ml', department: 'non_perissable' },
       { id: 'ing-beurre', name: 'Beurre salé', quantity: 20, unit: 'g', department: 'produits_laitiers' }
     ],
     steps: [
-      'Laver les pommes de terre et les couper en quartiers réguliers (wedges). Les enrober d\'huile, de paprika fumé, sel et poivre.',
+      'Laver les pommes de terre et les couper en quartiers réguliers (wedges). Les enrober d\'huile, de paprika, sel et poivre.',
       'Déposer les wedges sur la zone moyenne de la plancha (200°C) et cuire 12 à 15 minutes en les retournant régulièrement jusqu\'à ce qu\'elles soient tendres et croustillantes.',
       'Former 8 boules de 75g avec le bœuf haché sans trop tasser la viande. Saler généreusement l\'extérieur.',
       'Toaster les pains beurrés sur la plancha 1 minute, puis réserver.',
@@ -370,7 +370,7 @@ export const RECIPES_DATA = [
     calories: 550,
     allergens: ['Gluten', 'Lactose', 'Moutarde'],
     tags: ['One-Pot', 'Famille nombreuse', 'Semaine sans stress'],
-    image: 'https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1621996346565-e3d5d628105d?auto=format&fit=crop&w=800&q=80',
     description: 'Les pâtes cuisent directement dans le bouillon avec la viande et la sauce tomate, absorbant toutes les saveurs avant l\'ajout du fromage crémeux.',
     planchaTips: 'Plat mijoté de semaine par excellence en grand faitout.',
     ingredients: [
@@ -2534,7 +2534,7 @@ export const RECIPES_DATA = [
       "Anti-Gaspillage",
       "Ricardo"
     ],
-    "image": "https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=800&q=80",
+    "image": "https://ucarecdn.com/0e6c0cfc-799c-4df8-961a-e1438dad99f6/-/crop/4950x6688/322,1568/-/preview/",
     "description": "La recette mythique du riz frit parfait : le riz froid de la veille sauté sur une plaque brûlante avec de l'huile de sésame, sauce soya, porc émincé, œufs brouillés et oignons verts.",
     "planchaTips": "La plancha est imbattable pour le riz frit ! Étalez tout le riz sur la surface très chaude (220°C). Cassez les œufs directement sur un coin pour les brouiller avant de mélanger.",
     "ingredients": [
@@ -2780,7 +2780,7 @@ export const RECIPES_DATA = [
       "Convivial",
       "Mordu"
     ],
-    "image": "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=800&q=80",
+    "image": "https://images.radio-canada.ca/q_auto,w_1200/v1/alimentation/recette/16x9/burrito-dejeuner-poele.jpg",
     "description": "Une recette réconfortante et rapide pour les soirs de semaine ou les brunchs du week-end : saucisses chorizo rissolées, œufs brouillés crémeux et fromage fondu.",
     "planchaTips": "Faites dorer le chorizo d'un côté, brouillez les œufs de l'autre, roulez les burritos et faites-les dorer sur la jointure à la plancha.",
     "ingredients": [
@@ -2856,7 +2856,7 @@ export const RECIPES_DATA = [
       "Original",
       "Mordu"
     ],
-    "image": "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=800&q=80",
+    "image": "https://images.radio-canada.ca/q_auto,w_1200/v1/alimentation/recette/16x9/smash-burgers-oignons-epinards-garam-masala.jpg",
     "description": "Une fusion irrésistible signée Mordu : la technique du smash burger appliquée avec des épices garam masala, des oignons ultra caramélisés et des épinards flétris au beurre.",
     "planchaTips": "Plancha à 230°C. Posez une poignée d'oignons très finement émincés sur la plancha, posez la boule de bœuf au garam masala dessus et smashez le tout ensemble !",
     "ingredients": [
@@ -3036,7 +3036,7 @@ export const RECIPES_DATA = [
       "Plancha Classique",
       "PetitsPlats"
     ],
-    "image": "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=800&q=80",
+    "image": "https://www.petitsplatsentreamis.com/wp-content/uploads/2019/02/Recette-de-yakitori-de-poulet-à-la-plancha.jpg",
     "description": "Les célèbres brochettes japonaises Negima : morceaux de poulet moelleux et tronçons de blancs de poireaux ou d'oignons verts, laqués avec une sauce teriyaki sirupeuse et caramélisée.",
     "planchaTips": "Trempez les pics en bois dans l'eau 15 min avant. Badigeonnez de sauce teriyaki 3 fois pendant la cuisson pour créer une laque brillante et savoureuse.",
     "ingredients": [
