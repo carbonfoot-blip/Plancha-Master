@@ -161,11 +161,16 @@ export default function App() {
   const fetchRecipes = async () => {
     setIsLoadingDb(true);
     try {
-      const { recipes: loaded, isCloud } = await loadRecipesFromDb();
-      setRecipes(loaded);
-      setIsCloudActive(isCloud);
+      const res = await loadRecipesFromDb();
+      if (res && Array.isArray(res.recipes) && res.recipes.length > 0) {
+        setRecipes(res.recipes);
+      } else {
+        setRecipes(RECIPES_DATA);
+      }
+      setIsCloudActive(Boolean(res?.isCloud));
     } catch (err) {
       console.error('Erreur lors du chargement des recettes:', err);
+      setRecipes(RECIPES_DATA);
     } finally {
       setIsLoadingDb(false);
     }
