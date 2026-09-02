@@ -61,17 +61,14 @@ async function initFirebase() {
 function mergeRecipeLists(primaryList = [], fallbackList = RECIPES_DATA) {
   const map = new Map();
 
-  // 1. D'abord charger les recettes personnalisées créées par l'utilisateur
-  primaryList.forEach((r) => {
+  // 1. D'abord insérer le catalogue officiel par défaut
+  fallbackList.forEach((r) => {
     if (r && r.id) map.set(r.id, r);
   });
 
-  // 2. Mettre à jour les recettes officielles du catalogue avec la dernière version du code
-  fallbackList.forEach((r) => {
-    if (r && r.id) {
-      // Si la recette est une recette standard du catalogue, elle prend les dernières modifs du code
-      map.set(r.id, r);
-    }
+  // 2. Écraser avec toutes les données et modifications de la BD Cloud / Mode Admin
+  primaryList.forEach((r) => {
+    if (r && r.id) map.set(r.id, r);
   });
 
   return Array.from(map.values());
