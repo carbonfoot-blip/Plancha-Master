@@ -154,18 +154,18 @@ export const RECIPES_DATA = [
   {
     id: 'rec-03',
     title: 'Smashed Burgers de bœuf maison sur la plancha',
-    subtitle: 'Croûte croustillante caramélisée, fromage fondant, sauce secrète et patates wedges grillées',
+    subtitle: 'Croûte croustillante caramélisée, fromage fondant et sauce secrète',
     proteinType: 'Boeuf haché',
     cookingMode: 'plancha',
-    timeCategory: 'Moyen',
-    prepTime: 15,
-    cookTime: 20,
-    calories: 720,
+    timeCategory: 'Rapide',
+    prepTime: 10,
+    cookTime: 8,
+    calories: 580,
     allergens: ['Gluten', 'Lactose', 'Moutarde', 'Oeufs'],
     tags: ['Plancha Star', 'Coup de coeur famille', 'Fast-food maison'],
     image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80',
-    description: 'La cuisson suprême à la plancha : presser fortement des boules de bœuf haché pour créer une réaction de Maillard croustillante incomparable, servie avec de savoureuses patates wedges grillées.',
-    planchaTips: 'Plancha à 250°C (très chaude) pour les burgers, et 200°C (moyenne) pour les patates wedges grillées. Utiliser une spatule solide en inox pour écraser fermement dès la pose. 2 minutes de la 1ère face, retourner, poser le fromage et couvrir avec une cloche 1 minute.',
+    description: 'La cuisson suprême à la plancha : presser fortement des boules de bœuf haché pour créer une réaction de Maillard croustillante incomparable.',
+    planchaTips: 'Plancha à 250°C (très chaude). Utiliser une spatule solide en inox pour écraser fermement dès la pose. 2 minutes de la 1ère face, retourner, poser le fromage et couvrir avec une cloche 1 minute.',
     ingredients: [
       { id: 'ing-boeuf-hache', name: 'Bœuf haché mi-maigre', quantity: 600, unit: 'g', department: 'viandes' },
       { id: 'ing-pains-burger', name: 'Pains briochés à hamburger', quantity: 4, unit: 'unité', department: 'non_perissable' },
@@ -175,20 +175,15 @@ export const RECIPES_DATA = [
       { id: 'ing-tomate-ronde', name: 'Tomate de serre en rondelles', quantity: 2, unit: 'unité', department: 'fruits_legumes' },
       { id: 'ing-mayonnaise', name: 'Mayonnaise', quantity: 45, unit: 'ml', department: 'non_perissable' },
       { id: 'ing-moutarde-dijon', name: 'Moutarde de Dijon ou relish', quantity: 20, unit: 'ml', department: 'non_perissable' },
-      { id: 'ing-beurre', name: 'Beurre salé', quantity: 20, unit: 'g', department: 'produits_laitiers' },
-      { id: 'ing-pommes-terre-russet', name: 'Pommes de terre Russet (pour patates wedges grillées)', quantity: 4, unit: 'unité', department: 'fruits_legumes' },
-      { id: 'ing-paprika-fume', name: 'Paprika fumé ou épices BBQ (pour les wedges)', quantity: 10, unit: 'g', department: 'non_perissable' },
-      { id: 'ing-huile-olive', name: 'Huile d\'olive', quantity: 30, unit: 'ml', department: 'non_perissable' }
+      { id: 'ing-beurre', name: 'Beurre salé', quantity: 20, unit: 'g', department: 'produits_laitiers' }
     ],
     steps: [
-      'Laver les pommes de terre et les couper en quartiers (patates wedges). Les enrober d\'huile d\'olive, de paprika fumé, de sel et de poivre.',
-      'Préchauffer la plancha à feu moyen (200°C). Déposer les patates wedges de pommes de terre et les cuire environ 15 à 20 minutes en les retournant régulièrement jusqu\'à ce qu\'elles soient tendres et dorées. Les pousser sur le côté plus tiède de la plaque.',
       'Former 8 boules de 75g avec le bœuf haché sans trop tasser la viande. Saler généreusement l\'extérieur.',
       'Toaster les pains beurrés sur la plancha 1 minute, puis réserver.',
-      'Augmenter le feu sur une zone de la plancha à 250°C. Poser les boules de bœuf sur la zone très chaude et les oignons émincés sur le dessus.',
+      'Poser les boules de bœuf sur la plancha brûlante et les oignons émincés sur le dessus.',
       'Écraser très fermement avec une spatule plate pour former des galettes minces.',
       'Cuire 2 minutes jusqu\'à belle croûte brune, retourner, déposer immédiatement le cheddar et empiler 2 galettes par burger.',
-      'Monter les burgers avec la sauce mayo-moutarde, la laitue et les tranches de tomates fraîches. Servir chaud accompagné des patates wedges grillées croustillantes.'
+      'Monter les burgers avec la sauce mayo-moutarde, la laitue et les tranches de tomates fraîches.'
     ]
   },
   {
@@ -218,10 +213,10 @@ export const RECIPES_DATA = [
     steps: [
       'Bien éponger la peau des pavés de saumon avec du papier absorbant. Huiler et saler.',
       'Casser le pied fibreux des asperges et les mélanger avec un filet d\'huile d\'olive.',
-      'Poser les asperges sur la plancha à feu moyen and les retourner régulièrement pendant 8 minutes.',
+      'Poser les asperges sur la plancha à feu moyen et les retourner régulièrement pendant 8 minutes.',
       'Poser le saumon côté peau sur la plancha chaude. Cuire 6 minutes sans bouger.',
       'Retourner le saumon délicatement avec une spatule large, ajouter le beurre et l\'aneth pour arroser le poisson.',
-      'Servir avec les asperges dorées and des quartiers de citron grillés.'
+      'Servir avec les asperges dorées et des quartiers de citron grillés.'
     ]
   },
   {
@@ -251,10 +246,10 @@ export const RECIPES_DATA = [
     ],
     steps: [
       'Trancher le filet de porc en médaillons d\'environ 2.5 cm d\'épaisseur.',
-      'Dans un ramequin, fouetter le sirop d\'érable, la moutarde à l\'ancienne, la sauce soya and l\'ail haché.',
-      'Huiler les rondelles de courgettes and les médaillons de porc.',
-      'Sur la plancha chaude, cuire les courgettes and le porc 4 minutes de chaque côté.',
-      'Badigeonner généreusement le porc avec la sauce à l\'érable and laisser laquer 2 minutes en retournant.',
+      'Dans un ramequin, fouetter le sirop d\'érable, la moutarde à l\'ancienne, la sauce soya et l\'ail haché.',
+      'Huiler les rondelles de courgettes et les médaillons de porc.',
+      'Sur la plancha chaude, cuire les courgettes et le porc 4 minutes de chaque côté.',
+      'Badigeonner généreusement le porc avec la sauce à l\'érable et laisser laquer 2 minutes en retournant.',
       'Laisser reposer la viande 3 minutes avant de servir.'
     ]
   },
@@ -285,12 +280,12 @@ export const RECIPES_DATA = [
       { id: 'ing-huile-vegetale', name: 'Huile végétale pour cuisson', quantity: 30, unit: 'ml', department: 'non_perissable' }
     ],
     steps: [
-      'Éponger le tofu and le couper en bâtonnets de 1.5 cm.',
-      'Dans un grand sac ou bol, mélanger fécule de maïs, épices mexicaines and une pincée de sel. Y enrober le tofu.',
-      'Préparer la salsa : mélanger dés d\'avocats, tomates, jus de lime and coriandre.',
-      'Chauffer la plancha avec l\'huile. Disposer le tofu and cuire 8-10 minutes en le tournant jusqu\'à ce qu\'il soit bien doré et croustillant.',
+      'Éponger le tofu et le couper en bâtonnets de 1.5 cm.',
+      'Dans un grand sac ou bol, mélanger fécule de maïs, épices mexicaines et une pincée de sel. Y enrober le tofu.',
+      'Préparer la salsa : mélanger dés d\'avocats, tomates, jus de lime et coriandre.',
+      'Chauffer la plancha avec l\'huile. Disposer le tofu et cuire 8-10 minutes en le tournant jusqu\'à ce qu\'il soit bien doré et croustillant.',
       'Tiédir les tortillas sur le bord de la plancha 30 secondes.',
-      'Garnir les tortillas de tofu croustillant and de salsa d\'avocat fraîche.'
+      'Garnir les tortillas de tofu croustillant et de salsa d\'avocat fraîche.'
     ]
   },
   {
@@ -318,12 +313,12 @@ export const RECIPES_DATA = [
       { id: 'ing-beurre', name: 'Beurre pour dorer les tortillas', quantity: 20, unit: 'g', department: 'produits_laitiers' }
     ],
     steps: [
-      'Dans un bol, mélanger le poulet effiloché avec la moitié de la salsa and les lanières de poivron.',
+      'Dans un bol, mélanger le poulet effiloché avec la moitié de la salsa et les lanières de poivron.',
       'Beurrer légèrement l\'extérieur des tortillas.',
-      'Garnir une moitié de chaque tortilla avec le fromage râpé and le mélange de poulet.',
-      'Replier en demi-lune and déposer dans une poêle chaude ou sur la plancha à 180°C.',
-      'Cuire 3-4 minutes de chaque côté jusqu\'à ce que la tortilla soit dorée et croustillante and le fromage bien fondu.',
-      'Couper en triangles and servir avec la crème sure and le reste de salsa.'
+      'Garnir une moitié de chaque tortilla avec le fromage râpé et le mélange de poulet.',
+      'Replier en demi-lune et déposer dans une poêle chaude ou sur la plancha à 180°C.',
+      'Cuire 3-4 minutes de chaque côté jusqu\'à ce que la tortilla soit dorée et croustillante et le fromage bien fondu.',
+      'Couper en triangles et servir avec la crème sure et le reste de salsa.'
     ]
   },
   {
@@ -352,11 +347,11 @@ export const RECIPES_DATA = [
       { id: 'ing-coriandre-fraiche', name: 'Coriandre fraîche', quantity: 10, unit: 'g', department: 'fruits_legumes' }
     ],
     steps: [
-      'Dans un saladier, mélanger les crevettes avec l\'huile d\'olive, l\'ail pressé, le jus d\'une lime and le paprika fumé.',
-      'Monter sur des pics à brochettes en alternant crevettes and carrés de poivrons colorés.',
+      'Dans un saladier, mélanger les crevettes avec l\'huile d\'olive, l\'ail pressé, le jus d\'une lime et le paprika fumé.',
+      'Monter sur des pics à brochettes en alternant crevettes et carrés de poivrons colorés.',
       'Déposer sur la plancha bien chaude graissée.',
       'Cuire 2 à 3 minutes de chaque côté en arrosant avec le reste de marinade.',
-      'Parsemer de coriandre fraîche and servir avec des quartiers de lime.'
+      'Parsemer de coriandre fraîche et servir avec des quartiers de lime.'
     ]
   },
   {
@@ -386,18 +381,18 @@ export const RECIPES_DATA = [
       { id: 'ing-ail-poudre', name: 'Poudre d\'ail et d\'oignon', quantity: 10, unit: 'g', department: 'non_perissable' }
     ],
     steps: [
-      'Dans un grand faitout à feu moyen-vif, faire dorer le bœuf haché and l\'oignon haché pendant 5 minutes. Égoutter le surplus de gras si désiré.',
-      'Ajouter la poudre d\'ail, la moutarde, la sauce tomate, le bouillon de bœuf and les pâtes crues.',
-      'Porter à ébullition, puis réduire à feu doux-moyen. Couvrir and laisser mijoter 10 à 12 minutes en remuant de temps en temps jusqu\'à ce que les pâtes soient tendres.',
-      'Retirer du feu, incorporer le lait and le cheddar râpé jusqu\'à consistance onctueuse et crémeuse.',
-      'Assaisonner de poivre frais and servir aussitôt.'
+      'Dans un grand faitout à feu moyen-vif, faire dorer le bœuf haché et l\'oignon haché pendant 5 minutes. Égoutter le surplus de gras si désiré.',
+      'Ajouter la poudre d\'ail, la moutarde, la sauce tomate, le bouillon de bœuf et les pâtes crues.',
+      'Porter à ébullition, puis réduire à feu doux-moyen. Couvrir et laisser mijoter 10 à 12 minutes en remuant de temps en temps jusqu\'à ce que les pâtes soient tendres.',
+      'Retirer du feu, incorporer le lait et le cheddar râpé jusqu\'à consistance onctueuse et crémeuse.',
+      'Assaisonner de poivre frais et servir aussitôt.'
     ]
   },
   {
     id: 'rec-10',
     title: 'Côtelettes de porc croustillantes aux herbes de Provence et courgettes',
     subtitle: 'Dorure parfaite à la plancha avec des légumes d\'accompagnement grillés',
-    proteinType: 'Porc haché',
+    proteinType: 'Porc haché', // Classé dans porc / filet
     cookingMode: 'plancha',
     timeCategory: 'Moyen',
     prepTime: 10,
@@ -418,10 +413,10 @@ export const RECIPES_DATA = [
       { id: 'ing-sel-poivre', name: 'Sel et poivre', quantity: 5, unit: 'g', department: 'non_perissable' }
     ],
     steps: [
-      'Badigeonner les côtelettes de porc and les légumes avec l\'huile d\'olive, l\'ail écrasé, les herbes de Provence, le sel et le poivre.',
+      'Badigeonner les côtelettes de porc et les légumes avec l\'huile d\'olive, l\'ail écrasé, les herbes de Provence, le sel et le poivre.',
       'Chauffer la plancha à feu moyen-fort (200°C).',
-      'Déposer le porc and les légumes sur la surface de cuisson.',
-      'Laisser dorer le porc 5 minutes par face, and retourner régulièrement les légumes jusqu\'à ce qu\'ils soient tendres et grillés.',
+      'Déposer le porc et les légumes sur la surface de cuisson.',
+      'Laisser dorer le porc 5 minutes par face, et retourner régulièrement les légumes jusqu\'à ce qu\'ils soient tendres et grillés.',
       'Laisser reposer le porc 3 minutes sous une feuille d\'aluminium avant de servir.'
     ]
   },
@@ -453,12 +448,12 @@ export const RECIPES_DATA = [
       { id: 'ing-huile-vegetale', name: 'Huile végétale pour cuisson', quantity: 30, unit: 'ml', department: 'non_perissable' }
     ],
     steps: [
-      'Enrober le poulet and les légumes d\'huile et d\'épices pour fajitas.',
-      'Chauffer la plancha à 220°C. Déposer le poulet d\'un côté and les légumes de l\'autre.',
+      'Enrober le poulet et les légumes d\'huile et d\'épices pour fajitas.',
+      'Chauffer la plancha à 220°C. Déposer le poulet d\'un côté et les légumes de l\'autre.',
       'Saisir vivement le poulet 6 à 8 minutes en remuant avec deux spatules.',
-      'Faire griller les poivrons and oignons jusqu\'à ce qu\'ils soient dorés et tendres.',
-      'Mélanger viande and légumes sur la plaque, tiédir les tortillas sur le côté.',
-      'Servir avec crème sure and salsa au centre de la table.'
+      'Faire griller les poivrons et oignons jusqu\'à ce qu\'ils soient dorés et tendres.',
+      'Mélanger viande et légumes sur la plaque, tiédir les tortillas sur le côté.',
+      'Servir avec crème sure et salsa au centre de la table.'
     ]
   },
   {
@@ -488,11 +483,11 @@ export const RECIPES_DATA = [
       { id: 'ing-oignons-verts', name: 'Oignons verts ciselés', quantity: 2, unit: 'unité', department: 'fruits_legumes' }
     ],
     steps: [
-      'Cuire les nouilles selon les instructions du paquet (2 à 3 minutes dans l\'eau bouillante), égoutter and rincer à l\'eau froide.',
-      'Dans une grande poêle à feu vif, chauffer l\'huile de sésame and faire revenir le bœuf haché avec l\'ail et le gingembre 5 minutes.',
-      'Ajouter les brocolis and 3 c. à soupe d\'eau, couvrir 3 minutes pour attendrir les brocolis à la vapeur.',
-      'Ajouter les nouilles, la sauce teriyaki and la sauce soya. Sauter 2 minutes pour bien enrober l\'ensemble.',
-      'Dresser dans des bols and garnir d\'oignons verts.'
+      'Cuire les nouilles selon les instructions du paquet (2 à 3 minutes dans l\'eau bouillante), égoutter et rincer à l\'eau froide.',
+      'Dans une grande poêle à feu vif, chauffer l\'huile de sésame et faire revenir le bœuf haché avec l\'ail et le gingembre 5 minutes.',
+      'Ajouter les brocolis et 3 c. à soupe d\'eau, couvrir 3 minutes pour attendrir les brocolis à la vapeur.',
+      'Ajouter les nouilles, la sauce teriyaki et la sauce soya. Sauter 2 minutes pour bien enrober l\'ensemble.',
+      'Dresser dans des bols et garnir d\'oignons verts.'
     ]
   },
   {
@@ -520,11 +515,11 @@ export const RECIPES_DATA = [
       { id: 'ing-sel-poivre', name: 'Sel et poivre', quantity: 5, unit: 'g', department: 'non_perissable' }
     ],
     steps: [
-      'Badigeonner la chair de truite avec une couche de pesto and arroser d\'un peu de jus de citron.',
-      'Huiler and assaisonner les tranches de courgettes and les tomates cerises.',
-      'Déposer les courgettes and les tomates sur la plancha à 200°C pendant 6 minutes en les retournant.',
+      'Badigeonner la chair de truite avec une couche de pesto et arroser d\'un peu de jus de citron.',
+      'Huiler et assaisonner les tranches de courgettes et les tomates cerises.',
+      'Déposer les courgettes et les tomates sur la plancha à 200°C pendant 6 minutes en les retournant.',
       'Poser la truite côté peau pendant 6 minutes, puis retourner délicatement 2 minutes pour caraméliser le pesto.',
-      'Servir les filets accompagnés des courgettes grillées and des tomates éclatées.'
+      'Servir les filets accompagnés des courgettes grillées et des tomates éclatées.'
     ]
   },
   {
@@ -554,10 +549,10 @@ export const RECIPES_DATA = [
       { id: 'ing-huile-vegetale', name: 'Huile végétale', quantity: 25, unit: 'ml', department: 'non_perissable' }
     ],
     steps: [
-      'Dans un bol, mélanger le beurre d\'arachide, la sauce soya, le sirop d\'érable, le jus de lime and 4 c. à soupe d\'eau tiède pour créer une sauce onctueuse.',
-      'Dans une grande poêle ou un wok, chauffer l\'huile and dorer les cubes de tofu 6 à 8 minutes jusqu\'à belle coloration.',
-      'Ajouter les légumes (poivron, carottes, pois mange-tout) and sauter à feu vif 3 à 4 minutes.',
-      'Verser la sauce aux arachides, mélanger pour bien napper le tout and laisser épaissir 1 minute.',
+      'Dans un bol, mélanger le beurre d\'arachide, la sauce soya, le sirop d\'érable, le jus de lime et 4 c. à soupe d\'eau tiède pour créer une sauce onctueuse.',
+      'Dans une grande poêle ou un wok, chauffer l\'huile et dorer les cubes de tofu 6 à 8 minutes jusqu\'à belle coloration.',
+      'Ajouter les légumes (poivron, carottes, pois mange-tout) et sauter à feu vif 3 à 4 minutes.',
+      'Verser la sauce aux arachides, mélanger pour bien napper le tout et laisser épaissir 1 minute.',
       'Servir avec du riz brun ou des vermicelles de riz.'
     ]
   },
@@ -588,11 +583,11 @@ export const RECIPES_DATA = [
       { id: 'ing-coriandre-fraiche', name: 'Coriandre fraîche', quantity: 15, unit: 'g', department: 'fruits_legumes' }
     ],
     steps: [
-      'Dans un bol, mélanger le porc haché, l\'oignon vert, l\'ail, la sauce poisson, la cassonade, l\'œuf and l\'chapelure.',
+      'Dans un bol, mélanger le porc haché, l\'oignon vert, l\'ail, la sauce poisson, la cassonade, l\'œuf et la chapelure.',
       'Façonner environ 16 boulettes légèrement aplaties pour une meilleure cuisson sur la plancha.',
       'Chauffer la plancha à 200°C avec un léger film d\'huile.',
       'Cuire les boulettes 10 à 12 minutes en les retournant régulièrement pour bien dorer toutes les faces.',
-      'Servir dans des petits pains ou sur un bol de vermicelles avec rondelles de concombre frais and brins de coriandre.'
+      'Servir dans des petits pains ou sur un bol de vermicelles avec rondelles de concombre frais et brins de coriandre.'
     ]
   },
   {
@@ -622,8 +617,8 @@ export const RECIPES_DATA = [
       { id: 'ing-pitas', name: 'Pains pitas grecs', quantity: 4, unit: 'unité', department: 'non_perissable' }
     ],
     steps: [
-      'Mariner les cubes de filet de porc dans l\'huile d\'olive, l\'origan, l\'ail pressé and le jus de citron pendant 10 minutes.',
-      'Monter sur des pics à brochettes en intercalant oignon rouge and poivron.',
+      'Mariner les cubes de filet de porc dans l\'huile d\'olive, l\'origan, l\'ail pressé et le jus de citron pendant 10 minutes.',
+      'Monter sur des pics à brochettes en intercalant oignon rouge et poivron.',
       'Chauffer la plancha à feu moyen-fort (210°C).',
       'Faire griller les brochettes 10 à 12 minutes en tournant régulièrement.',
       'Réchauffer les pitas sur le bord de la plancha 1 minute.',
@@ -658,9 +653,9 @@ export const RECIPES_DATA = [
     steps: [
       'Tremper les escalopes de poulet dans l\'œuf battu puis dans la chapelure italienne mélangée avec la moitié du parmesan.',
       'Dans une grande poêle avec l\'huile d\'olive à feu moyen-vif, dorer le poulet 4 minutes de chaque côté.',
-      'Napper chaque escalope de sauce marinara, recouvrir de mozzarella and du reste de parmesan.',
-      'Couvrir la poêle 3 minutes à feu doux pour faire fondre and bouillonner le fromage.',
-      'Garnir de basilic frais and servir avec des pâtes ou des légumes verts.'
+      'Napper chaque escalope de sauce marinara, recouvrir de mozzarella et du reste de parmesan.',
+      'Couvrir la poêle 3 minutes à feu doux pour faire fondre et bouillonner le fromage.',
+      'Garnir de basilic frais et servir avec des pâtes ou des légumes verts.'
     ]
   },
   {
@@ -688,11 +683,11 @@ export const RECIPES_DATA = [
       { id: 'ing-herbes-provence', name: 'Herbes de Provence et poivre', quantity: 10, unit: 'g', department: 'non_perissable' }
     ],
     steps: [
-      'Couper les légumes and le fromage halloumi en morceaux de taille égale.',
-      'Enfiler sur des pics à brochettes en alternant légumes and fromage.',
-      'Badigeonner d\'huile d\'olive and d\'herbes de Provence.',
+      'Couper les légumes et le fromage halloumi en morceaux de taille égale.',
+      'Enfiler sur des pics à brochettes en alternant légumes et fromage.',
+      'Badigeonner d\'huile d\'olive et d\'herbes de Provence.',
       'Chauffer la plancha à 200°C.',
-      'Cuire les brochettes 8 à 10 minutes en tournant régulièrement pour dorer le halloumi and attendrir les légumes.',
+      'Cuire les brochettes 8 à 10 minutes en tournant régulièrement pour dorer le halloumi et attendrir les légumes.',
       'Servir immédiatement avec un filet de jus de citron.'
     ]
   },
@@ -723,11 +718,11 @@ export const RECIPES_DATA = [
       { id: 'ing-coriandre-fraiche', name: 'Coriandre fraîche', quantity: 10, unit: 'g', department: 'fruits_legumes' }
     ],
     steps: [
-      'Dans un grand chaudron, faire dorer le bœuf avec l\'oignon and le poivron vert 6 minutes.',
-      'Ajouter la poudre de chili, le cumin and le sel. Remuer 1 minute pour libérer les arômes.',
-      'Verser les tomates en dés, les haricots noirs and le maïs surgelé.',
+      'Dans un grand chaudron, faire dorer le bœuf avec l\'oignon et le poivron vert 6 minutes.',
+      'Ajouter la poudre de chili, le cumin et le sel. Remuer 1 minute pour libérer les arômes.',
+      'Verser les tomates en dés, les haricots noirs et le maïs surgelé.',
       'Laisser mijoter à feu moyen 12 à 15 minutes en remuant régulièrement jusqu\'à épaississement.',
-      'Servir dans des bols avec du cheddar râpé and de la coriandre fraîche.'
+      'Servir dans des bols avec du cheddar râpé et de la coriandre fraîche.'
     ]
   },
   {
@@ -757,10 +752,10 @@ export const RECIPES_DATA = [
     ],
     steps: [
       'Chauffer l\'huile de sésame dans un wok ou une grande poêle à feu très vif.',
-      'Ajouter l\'ail and le gingembre 30 secondes, puis ajouter les légumes pour wok.',
+      'Ajouter l\'ail et le gingembre 30 secondes, puis ajouter les légumes pour wok.',
       'Faire sauter 4 minutes à feu vif pour garder les légumes croquants.',
-      'Ajouter les crevettes, la sauce soya and le sirop d\'érable. Sauter 3 minutes jusqu\'à ce que les crevettes soient roses et opaques.',
-      'Saupoudrer de graines de sésame and servir avec du riz ou des nouilles.'
+      'Ajouter les crevettes, la sauce soya et le sirop d\'érable. Sauter 3 minutes jusqu\'à ce que les crevettes soient roses et opaques.',
+      'Saupoudrer de graines de sésame et servir avec du riz ou des nouilles.'
     ]
   },
   {
@@ -781,7 +776,7 @@ export const RECIPES_DATA = [
       "HelloFresh"
     ],
     "image": "https://img.hellofresh.com/hellofresh_s3/image/poulet-glace-a-la-mangue-a-la-caribeenne-f5ab9fee.jpg",
-    "description": "De tendres poitrines de poulet laquées d'un glaçage tropical à la mangue et au cari doux, servies with un riz parfumé et des poivrons grillés.",
+    "description": "De tendres poitrines de poulet laquées d'un glaçage tropical à la mangue et au cari doux, servies avec un riz parfumé et des poivrons grillés.",
     "planchaTips": "Faites saisir le poulet sur la zone chaude (200°C) 5 min par face, puis badigeonnez généreusement de chutney de mangues en fin de cuisson pour caraméliser sans brûler.",
     "ingredients": [
       {
@@ -1138,7 +1133,7 @@ export const RECIPES_DATA = [
       "Cuire le riz au jasmin à couvert 12 minutes.",
       "Éponger les dés de tofu avec un essuie-tout, puis les rouler dans la fécule de maïs avec une pincée de sel.",
       "Dans un bol, fouetter la mayonnaise, la sauce chili douce et la sriracha pour créer la sauce Bang Bang.",
-      "Chauffer une poêle antiadhésive ou la plancha with l'huile à feu moyen-vif. Faire dorer le tofu 8 à 10 minutes en le retournant souvent.",
+      "Chauffer une poêle antiadhésive ou la plancha avec l'huile à feu moyen-vif. Faire dorer le tofu 8 à 10 minutes en le retournant souvent.",
       "Transférer le tofu doré dans un grand bol et l'enrober immédiatement avec la moitié de la sauce Bang Bang.",
       "Dresser les bols avec le riz, le concombre, les carottes et le tofu Bang Bang. Napper du reste de sauce."
     ]
@@ -1590,7 +1585,7 @@ export const RECIPES_DATA = [
     "steps": [
       "Cuire le riz jasmin dans 600 ml d'eau salée 12 minutes.",
       "Dans un bol, mélanger le miel, la sauce soya, l'ail pressé et 30 ml d'eau.",
-      "Faire chauffer la poêle ou la plancha à feu moyen-vif with un filet d'huile.",
+      "Faire chauffer la poêle ou la plancha à feu moyen-vif avec un filet d'huile.",
       "Dorer les cubes de poulet 6 à 7 minutes jusqu'à cuisson complète.",
       "Ajouter les pois mange-tout et les carottes, faire sauter 3 minutes.",
       "Verser la sauce au miel et à l'ail. Laisser bouillir 2 minutes pour épaissir la sauce et napper le poulet.",
@@ -1618,7 +1613,7 @@ export const RECIPES_DATA = [
     ],
     "image": "https://img.hellofresh.com/hellofresh_s3/image/HFCARC-RC39637-1_Hero_SuperquickGreekInspiredGrilledChickenWithCucumberTomatoAndFetaSalad_W23-1050-2025_Web-5473f7ee.jpg",
     "description": "Des poitrines de poulet assaisonnées aux herbes grecques saisies à la plancha, accompagnées d'une salade croquante de concombres, tomates, feta et olives kalamata.",
-    "planchaTips": "Grillez aussi des pains pitas ou naan coupés en pointes sur le coin de la plancha pour accompagner le tzatziki.",
+    "planchaTips": "Plancha à 210°C. Grillez aussi des pains pitas ou naan coupés en pointes sur le coin de la plancha pour accompagner le tzatziki.",
     "ingredients": [
       {
         "id": "ing-poulet-poitrine",
@@ -1689,7 +1684,7 @@ export const RECIPES_DATA = [
       "Dans un saladier, mélanger les concombres, tomates cerises, olives, feta, huile d'olive et origan.",
       "Chauffer la plancha à 210°C. Cuire les poitrines de poulet 5 minutes de chaque côté.",
       "Laisser reposer le poulet 2 minutes sur une planche puis trancher en biseaux.",
-      "Dresser les assiettes with la salade grecque, le poulet grillé et une belle portion de tzatziki."
+      "Dresser les assiettes avec la salade grecque, le poulet grillé et une belle portion de tzatziki."
     ]
   },
   {
@@ -1713,7 +1708,7 @@ export const RECIPES_DATA = [
       "HelloFresh"
     ],
     "image": "https://img.hellofresh.com/hellofresh_s3/image/HFCARC_RC155957-9_Hero_MangoChutneyChickenTikka_W30_1092_2026_low_Web-82d36ad2.jpg",
-    "description": "Poulet mariné au yogourt et épices tikka garam masala, saisi with un marquage doré et servi with un chutney de mangue sucré et des amandes effilées.",
+    "description": "Poulet mariné au yogourt et épices tikka garam masala, saisi avec un marquage doré et servi avec un chutney de mangue sucré et des amandes effilées.",
     "planchaTips": "La marinade au yogourt crée une croûte savoureuse à la plancha. Cuire à 200°C 4 minutes de chaque côté.",
     "ingredients": [
       {
@@ -1767,11 +1762,11 @@ export const RECIPES_DATA = [
       }
     ],
     "steps": [
-      "Mélanger le yogourt with la pâte tikka et y enrober les morceaux de poulet.",
+      "Mélanger le yogourt avec la pâte tikka et y enrober les morceaux de poulet.",
       "Cuire le riz basmati à couvert pendant 12 minutes.",
       "Chauffer la plancha à feu moyen-vif. Cuire le poulet tikka 8 à 10 minutes en le retournant.",
       "Griller les amandes effilées à sec 1 minute sur le coin de la plancha.",
-      "Servir le poulet tikka with le riz, le chutney de mangues, la coriandre et les amandes."
+      "Servir le poulet tikka avec le riz, le chutney de mangues, la coriandre et les amandes."
     ]
   },
   {
@@ -1799,7 +1794,7 @@ export const RECIPES_DATA = [
     "ingredients": [
       {
         "id": "ing-fromage-haloumi",
-        "name": "Fromage halloumi tranché",
+        "name": "Fromage haloumi tranché",
         "quantity": 400,
         "unit": "g",
         "department": "produits_laitiers"
@@ -1855,11 +1850,11 @@ export const RECIPES_DATA = [
       }
     ],
     "steps": [
-      "Cuire le riz with une pincée de sel et le zeste d'une lime.",
-      "Écraser les avocats with le jus de lime, dés de tomates, sel et poivre pour le guacamole.",
-      "Réchauffer les haricots noirs with les épices mexicaines.",
+      "Cuire le riz avec une pincée de sel et le zeste d'une lime.",
+      "Écraser les avocats avec le jus de lime, dés de tomates, sel et poivre pour le guacamole.",
+      "Réchauffer les haricots noirs avec les épices mexicaines.",
       "Griller les tranches d'haloumi et le maïs sur la plancha chaude 2 minutes par côté.",
-      "Dresser les bols with le riz, les haricots, le maïs, le guacamole et les tranches d'haloumi grillé."
+      "Dresser les bols avec le riz, les haricots, le maïs, le guacamole et les tranches d'haloumi grillé."
     ]
   },
   {
@@ -1931,8 +1926,8 @@ export const RECIPES_DATA = [
       }
     ],
     "steps": [
-      "Caraméliser les oignons sur la plancha ou dans une poêle with un peu de beurre 6 minutes.",
-      "Faire dorer la dinde hachée with sel, poivre et moutarde de Dijon 6 minutes.",
+      "Caraméliser les oignons sur la plancha ou dans une poêle avec un peu de beurre 6 minutes.",
+      "Faire dorer la dinde hachée avec sel, poivre et moutarde de Dijon 6 minutes.",
       "Faire griller les tranches de pain beurrées sur la plancha.",
       "Déposer la dinde et les oignons sur chaque tranche de pain, couvrir de provolone.",
       "Couvrir d'une cloche de cuisson pour faire fondre le fromage et servir chaud."
@@ -1960,7 +1955,7 @@ export const RECIPES_DATA = [
     ],
     "image": "https://img.hellofresh.com/hellofresh_s3/image/quesadillas-fromagees-au-porc-f7b8ab48.jpg",
     "description": "La plancha est l'outil rêvé pour les quesadillas : elle dore uniformément 4 grandes tortillas en même temps pour un fromage parfaitement fondu et croustillant.",
-    "planchaTips": "Chauffez la plancha à 190°C. Déposez les tortillas à plat, garnissez une moitié, repliez et pressez with une spatule plate 3 min par face.",
+    "planchaTips": "Chauffez la plancha à 190°C. Déposez les tortillas à plat, garnissez une moitié, repliez et pressez avec une spatule plate 3 min par face.",
     "ingredients": [
       {
         "id": "ing-porc-hache",
@@ -2013,12 +2008,12 @@ export const RECIPES_DATA = [
       }
     ],
     "steps": [
-      "Cuire le porc haché with les épices pour tacos et les dés de poivrons pendant 6 minutes.",
+      "Cuire le porc haché avec les épices pour tacos et les dés de poivrons pendant 6 minutes.",
       "Disposer les tortillas sur la plancha tiède-chaude (190°C).",
       "Saupoudrer de fromage sur une moitié de chaque tortilla, ajouter la garniture de porc et recouvrir d'un peu de fromage.",
       "Replier les tortillas en demi-lune.",
       "Cuire 3 minutes de chaque côté jusqu'à ce que les tortillas soient dorées et croustillantes.",
-      "Couper en triangles et servir with salsa et crème sure."
+      "Couper en triangles et servir avec salsa et crème sure."
     ]
   },
   {
@@ -2042,7 +2037,7 @@ export const RECIPES_DATA = [
       "HelloFresh"
     ],
     "image": "https://img.hellofresh.com/hellofresh_s3/image/HFCARC-RB151661-18_Hero_CheesyBeefTaquitosWithZestyGuacamole_W15-1072-2025_low_Web-be308eca.jpg",
-    "description": "Des tortillas roulées serrées with du bœuf haché assaisonné et du fromage fondant, saisies à la plancha ou à la poêle pour un croustillant irrésistible.",
+    "description": "Des tortillas roulées serrées avec du bœuf haché assaisonné et du fromage fondant, saisies à la plancha ou à la poêle pour un croustillant irrésistible.",
     "planchaTips": "Posez les taquitos la jointure vers le bas sur la plancha huilée pour les sceller immédiatement, puis roulez-les d'un quart de tour toutes les 2 minutes.",
     "ingredients": [
       {
@@ -2096,7 +2091,7 @@ export const RECIPES_DATA = [
       }
     ],
     "steps": [
-      "Dorer le bœuf with les épices tex-mex et la pâte de tomate 6 minutes.",
+      "Dorer le bœuf avec les épices tex-mex et la pâte de tomate 6 minutes.",
       "Réchauffer les tortillas quelques secondes pour les assouplir.",
       "Garnir chaque tortilla d'une ligne de bœuf et de fromage, puis rouler serré.",
       "Chauffer la plancha huilée à feu moyen. Poser les taquitos côté jointure.",
@@ -2125,7 +2120,7 @@ export const RECIPES_DATA = [
       "HelloFresh"
     ],
     "image": "https://img.hellofresh.com/hellofresh_s3/image/HF_Y26_R1110_W35_CA_RC57433-2main_low-85fa1b88.jpg",
-    "description": "Une spécialité du Sud américain : le poulet frotté d'épices fumées au bois de pommier, servi with la célèbre sauce BBQ blanche à base de mayo, vinaigre de cidre et raifort.",
+    "description": "Une spécialité du Sud américain : le poulet frotté d'épices fumées au bois de pommier, servi avec la célèbre sauce BBQ blanche à base de mayo, vinaigre de cidre et raifort.",
     "planchaTips": "La sauce BBQ blanche (Alabama white sauce) s'ajoute en nappage sur le poulet chaud dès la sortie de plancha.",
     "ingredients": [
       {
@@ -2183,7 +2178,7 @@ export const RECIPES_DATA = [
       "Enrober le poulet d'huile et des épices fumées.",
       "Chauffer la plancha à 200°C. Cuire les tronçons de maïs et le poulet 5 à 6 minutes de chaque côté.",
       "Trancher le poulet et napper généreusement de sauce BBQ blanche crémeuse.",
-      "Servir with le maïs grillé et la salade."
+      "Servir avec le maïs grillé et la salade."
     ]
   },
   {
@@ -2207,8 +2202,8 @@ export const RECIPES_DATA = [
       "HelloFresh"
     ],
     "image": "https://img.hellofresh.com/hellofresh_s3/image/fajitas-de-poulet-grille-e10b7b11.jpg",
-    "description": "Le grand classique de la plancha : la viande et les poivrons qui crépitent sur la plaque chaude, servis with des tortillas chaudes et toutes les garnitures.",
-    "planchaTips": "Cuisson simultanée : légumes d'un côté, poulet de l'autre. Rassemblez et mélangez le tout dans les 30 dernières secondes with un squeeze de jus de lime.",
+    "description": "Le grand classique de la plancha : la viande et les poivrons qui crépitent sur la plaque chaude, servis avec des tortillas chaudes et toutes les garnitures.",
+    "planchaTips": "Cuisson simultanée : légumes d'un côté, poulet de l'autre. Rassemblez et mélangez le tout dans les 30 dernières secondes avec un squeeze de jus de lime.",
     "ingredients": [
       {
         "id": "ing-poulet-poitrine",
@@ -2271,7 +2266,7 @@ export const RECIPES_DATA = [
       "Trancher le poulet, les poivrons et l'oignon en lanières régulières.",
       "Enrober le poulet des épices fajitas et d'un filet d'huile d'olive.",
       "Préchauffer la plancha à 220°C. Faire sauter les poivrons et oignons 5 minutes.",
-      "Ajouter le poulet et cuire 5 minutes en remuant with deux spatules.",
+      "Ajouter le poulet et cuire 5 minutes en remuant avec deux spatules.",
       "Réchauffer les tortillas 30 secondes sur le coin de la plancha.",
       "Servir au centre de la table pour que chacun monte ses fajitas."
     ]
@@ -2330,7 +2325,7 @@ export const RECIPES_DATA = [
       },
       {
         "id": "ing-ail-gousses",
-        "name": "Goutes d'ail émincées",
+        "name": "Gousses d'ail émincées",
         "quantity": 3,
         "unit": "unité",
         "department": "fruits_legumes"
@@ -2506,11 +2501,11 @@ export const RECIPES_DATA = [
       }
     ],
     "steps": [
-      "Faire revenir le bœuf haché with les oignons et les épices enchiladas 6 minutes.",
+      "Faire revenir le bœuf haché avec les oignons et les épices enchiladas 6 minutes.",
       "Ajouter la moitié de la sauce et les haricots rouges égouttés.",
-      "Garnir les tortillas with le mélange de bœuf et un peu de fromage, puis les rouler serré.",
+      "Garnir les tortillas avec le mélange de bœuf et un peu de fromage, puis les rouler serré.",
       "Disposer dans un plat allant au four (ou sur une plaque à plancha couverte).",
-      "Napper with le reste de sauce et couvrir généreusement de fromage râpé.",
+      "Napper avec le reste de sauce et couvrir généreusement de fromage râpé.",
       "Gratiner 10 à 12 minutes jusqu'à ce que le fromage fasse des bulles dorées."
     ]
   },
@@ -2536,7 +2531,7 @@ export const RECIPES_DATA = [
       "Ricardo"
     ],
     "image": "https://ucarecdn.com/0e6c0cfc-799c-4df8-961a-e1438dad99f6/-/crop/4950x6688/322,1568/-/preview/",
-    "description": "La recette mythique du riz frit parfait : le riz froid de la veille sauté sur une plaque brûlante with de l'huile de sésame, sauce soya, porc émincé, œufs brouillés et oignons verts.",
+    "description": "La recette mythique du riz frit parfait : le riz froid de la veille sauté sur une plaque brûlante avec de l'huile de sésame, sauce soya, porc émincé, œufs brouillés et oignons verts.",
     "planchaTips": "La plancha est imbattable pour le riz frit ! Étalez tout le riz sur la surface très chaude (220°C). Cassez les œufs directement sur un coin pour les brouiller avant de mélanger.",
     "ingredients": [
       {
@@ -2597,8 +2592,8 @@ export const RECIPES_DATA = [
       }
     ],
     "steps": [
-      "Chauffer la plancha ou un grand wok à feu vif with un peu d'huile.",
-      "Faire sauter la viande with l'ail et le gingembre 4 minutes.",
+      "Chauffer la plancha ou un grand wok à feu vif avec un peu d'huile.",
+      "Faire sauter la viande avec l'ail et le gingembre 4 minutes.",
       "Pousser la viande sur le côté, verser les œufs battus et les brouiller rapidement.",
       "Ajouter le riz froid bien égrainé et les petits pois.",
       "Arroser de sauce soya et d'huile de sésame. Faire sauter vigoureusement 5 minutes.",
@@ -2629,7 +2624,7 @@ export const RECIPES_DATA = [
     ],
     "image": "https://images.radio-canada.ca/q_auto,w_1200/v1/alimentation/recette/16x9/smash-tacos.jpg",
     "description": "Le phénomène culinaire québécois : une boulette de bœuf écrasée ultra fine directement sur une tortilla posée sur la plancha, garnie de cheddar, laitue et sauce burger crémeuse.",
-    "planchaTips": "Plancha à 230°C. Déposez la boulette de bœuf, posez la tortilla dessus et appuyez fort with une spatule en métal pour écraser la viande jusqu'au bord !",
+    "planchaTips": "Plancha à 230°C. Déposez la boulette de bœuf, posez la tortilla dessus et appuyez fort avec une spatule en métal pour écraser la viande jusqu'au bord !",
     "ingredients": [
       {
         "id": "ing-boeuf-hache",
@@ -2685,7 +2680,7 @@ export const RECIPES_DATA = [
       "Former 8 petites boules de bœuf de 60g chacune.",
       "Dans un bol, mélanger la mayo, la relish, la moutarde et le paprika pour faire la sauce Mac.",
       "Chauffer la plancha à feu très vif. Poser les boulettes de bœuf, saler et poivrer.",
-      "Placer une tortilla sur chaque boulette et écraser fermement (smash) with une spatule plate.",
+      "Placer une tortilla sur chaque boulette et écraser fermement (smash) avec une spatule plate.",
       "Cuire 2 à 3 minutes pour créer une croûte croustillante, puis retourner viande vers le haut.",
       "Poser une tranche de cheddar sur chaque taco et laisser fondre 1 minute.",
       "Garnir de sauce, oignons hachés, laitue iceberg et cornichons, puis plier en deux."
@@ -2712,7 +2707,7 @@ export const RECIPES_DATA = [
       "Mordu"
     ],
     "image": "https://images.radio-canada.ca/q_auto,w_1200/v1/alimentation/recette/16x9/quesadillas-vide-frigo.jpg",
-    "description": "La recette anti-gaspillage par excellence de Savourer x Mordu : utilisez tous vos restes de poulet, porc cuit, tofu ou haricots dans des quesadillas croustillantes à souhait.",
+    "description": "La recette anti-gaspillage par excellence de Savourer x Mordu : utilisez tous vos restes de poulet, porc, légumes flétris et fromages dans des quesadillas croustillantes à souhait.",
     "planchaTips": "Idéal pour vider le frigo le vendredi soir ! Faites griller tous vos légumes sur la plancha avant de les assembler dans les tortillas.",
     "ingredients": [
       {
@@ -2753,11 +2748,11 @@ export const RECIPES_DATA = [
     ],
     "steps": [
       "Couper les légumes en petits morceaux et les faire sauter 4 minutes sur la plancha.",
-      "Ajouter vos restants de protéines pour les réchauffer with un peu d'épices.",
+      "Ajouter vos restants de protéines pour les réchauffer avec un peu d'épices.",
       "Poser les tortillas sur la plancha à 190°C.",
-      "Garnir une moitié de chaque tortilla with le fromage et les légumes sautés.",
+      "Garnir une moitié de chaque tortilla avec le fromage et les légumes sautés.",
       "Replier en deux et cuire 3 minutes par côté jusqu'à belle dorure dorée.",
-      "Servir with de la salsa et un reste de crème sure."
+      "Servir avec de la salsa et un reste de crème sure."
     ]
   },
   {
@@ -2831,7 +2826,7 @@ export const RECIPES_DATA = [
     "steps": [
       "Faire rissoler le chorizo en morceaux et les dés de pommes de terre sur la plancha 6 minutes.",
       "Battre les œufs et les brouiller doucement sur la plancha huilée.",
-      "Remplir chaque tortilla with les pommes de terre, le chorizo, les œufs, la salsa et le fromage.",
+      "Remplir chaque tortilla avec les pommes de terre, le chorizo, les œufs, la salsa et le fromage.",
       "Replier les côtés et rouler serré en burrito.",
       "Poser les burritos sur la plancha chaude 1 minute pour sceller et rendre la tortilla croustillante."
     ]
@@ -2858,7 +2853,7 @@ export const RECIPES_DATA = [
       "Mordu"
     ],
     "image": "https://images.radio-canada.ca/q_auto,w_1200/v1/alimentation/recette/16x9/smash-burgers-oignons-epinards-garam-masala.jpg",
-    "description": "Une fusion irrésistible signée Mordu : la technique du smash burger appliquée with des épices garam masala, des oignons ultra caramélisés et des épinards flétris au beurre.",
+    "description": "Une fusion irrésistible signée Mordu : la technique du smash burger appliquée avec des épices garam masala, des oignons ultra caramélisés et des épinards flétris au beurre.",
     "planchaTips": "Plancha à 230°C. Posez une poignée d'oignons très finement émincés sur la plancha, posez la boule de bœuf au garam masala dessus et smashez le tout ensemble !",
     "ingredients": [
       {
@@ -2912,10 +2907,10 @@ export const RECIPES_DATA = [
       }
     ],
     "steps": [
-      "Assaisonner le bœuf with le garam masala, sel et poivre. Former 4 grosses boules.",
+      "Assaisonner le bœuf avec le garam masala, sel et poivre. Former 4 grosses boules.",
       "Chauffer la plancha à feu très vif. Poser les oignons émincés en 4 petits tas.",
-      "Déposer une boule de bœuf sur chaque tas d'oignons et écraser très fort with une spatule.",
-      "Cuire 2 à 3 minutes, retourner with les oignons caramélisés incrustés.",
+      "Déposer une boule de bœuf sur chaque tas d'oignons et écraser très fort avec une spatule.",
+      "Cuire 2 à 3 minutes, retourner avec les oignons caramélisés incrustés.",
       "Ajouter le fromage sur la viande et faire tomber les épinards 1 minute sur la plaque.",
       "Toaster les pains briochés, garnir de mayo à la menthe, du smash burger aux oignons et des épinards."
     ]
@@ -3012,9 +3007,9 @@ export const RECIPES_DATA = [
       "Trancher le bœuf le plus finement possible (astuce : placer 30 min au congélateur avant de couper).",
       "Dans un bol, mélanger la poire râpée, la sauce soya, la cassonade, l'ail, l'huile de sésame et les oignons verts.",
       "Faire mariner la viande 15 à 30 minutes.",
-      "Chauffer la plancha à feu vif with un peu d'huile.",
-      "Déposer le bœuf en lanières et cuire 3 à 4 minutes en remuant vivement with des pinces.",
-      "Servir with du riz blanc, des graines de sésame et des feuilles de laitue pour manger à la coréenne (en bouchées ssam)."
+      "Chauffer la plancha à feu vif avec un peu d'huile.",
+      "Déposer le bœuf en lanières et cuire 3 à 4 minutes en remuant vivement avec des pinces.",
+      "Servir avec du riz blanc, des graines de sésame et des feuilles de laitue pour manger à la coréenne (en bouchées ssam)."
     ]
   },
   {
@@ -3038,7 +3033,7 @@ export const RECIPES_DATA = [
       "PetitsPlats"
     ],
     "image": "https://www.petitsplatsentreamis.com/wp-content/uploads/2019/02/Recette-de-yakitori-de-poulet-à-la-plancha.jpg",
-    "description": "Les célèbres brochettes japonaises Negima : morceaux de poulet moelleux et tronçons de blancs de poireaux ou d'oignons verts, laqués with une sauce teriyaki sirupeuse et caramélisée.",
+    "description": "Les célèbres brochettes japonaises Negima : morceaux de poulet moelleux et tronçons de blancs de poireaux ou d'oignons verts, laqués avec une sauce teriyaki sirupeuse et caramélisée.",
     "planchaTips": "Trempez les pics en bois dans l'eau 15 min avant. Badigeonnez de sauce teriyaki 3 fois pendant la cuisson pour créer une laque brillante et savoureuse.",
     "ingredients": [
       {
@@ -3098,7 +3093,7 @@ export const RECIPES_DATA = [
       "Chauffer la plancha à 200°C. Déposer les brochettes et cuire 4 minutes.",
       "Badigeonner généreusement de sauce yakitori, retourner et badigeonner à nouveau.",
       "Cuire encore 4 à 5 minutes jusqu'à caramélisation complète.",
-      "Servir bien chaud with le riz parfumé."
+      "Servir bien chaud avec le riz parfumé."
     ]
   },
   {
@@ -3176,7 +3171,7 @@ export const RECIPES_DATA = [
       }
     ],
     "steps": [
-      "Faire revenir la dinde hachée with les épices tacos 6 minutes.",
+      "Faire revenir la dinde hachée avec les épices tacos 6 minutes.",
       "Étaler la sauce tomate sur chaque pain plat.",
       "Répartir la dinde cuite, le maïs et recouvrir généreusement de fromage râpé.",
       "Chauffer la plancha à feu moyen (ou le four à 210°C).",
@@ -3205,7 +3200,7 @@ export const RECIPES_DATA = [
       "HelloFresh"
     ],
     "image": "https://img.hellofresh.com/hellofresh_s3/image/HF_Y25_R1047_W06_CA_RT32013-2_Main__1low-f5453c81.jpg",
-    "description": "La soirée tacos minute par excellence : de la dinde hachée tendre cuite with un assaisonnement mexicain savoureux, servie dans des tortillas tièdes with cheddar et salsa.",
+    "description": "La soirée tacos minute par excellence : de la dinde hachée tendre cuite avec un assaisonnement mexicain savoureux, servie dans des tortillas tièdes avec cheddar et salsa.",
     "planchaTips": "Réchauffez et faites dorer légèrement toutes les tortillas sur la plancha en 30 secondes avant de les garnir.",
     "ingredients": [
       {
@@ -3262,7 +3257,7 @@ export const RECIPES_DATA = [
       "Faire dorer la dinde hachée dans une poêle ou sur la plancha 6 minutes.",
       "Ajouter les épices tacos et 60 ml d'eau, laisser mijoter 3 minutes.",
       "Chauffer les tortillas sur la plancha.",
-      "Garnir chaque taco with la dinde chaude, le fromage cheddar râpé, la laitue, la tomate et la crème sure."
+      "Garnir chaque taco avec la dinde chaude, le fromage cheddar râpé, la laitue, la tomate et la crème sure."
     ]
   },
   {
@@ -3359,7 +3354,7 @@ export const RECIPES_DATA = [
       "Assaisonner le poulet et le faire griller sur la plancha à 200°C pendant 5 minutes de chaque côté.",
       "Badigeonner de laque à l'érable dans les 2 dernières minutes.",
       "Dans un grand saladier, assembler le mesclun, les tranches de pommes, les canneberges, les pacanes et les copeaux de cheddar.",
-      "Trancher le poulet tiède et le deposes sur la salade.",
+      "Trancher le poulet tiède et le déposer sur la salade.",
       "Arroser de vinaigrette au cidre et déguster."
     ]
   }
