@@ -39,14 +39,24 @@ export default function Step1Selection({
   const [excludedAllergens, setExcludedAllergens] = useState([]);
   const [showFiltersDrawer, setShowFiltersDrawer] = useState(false);
 
-  // Mots-clés des rabais de la semaine
-  const activeDealsKeywords = useMemo(() => {
-    return WEEKLY_DEALS_DATA.flatMap(d => d.matchedKeywords);
+  // Mots-clés des rabais sur les PROTÉINES en circulaire cette semaine
+  const activeProteinDeals = useMemo(() => {
+    return WEEKLY_DEALS_DATA.filter(d => d.category === 'viandes');
   }, []);
 
   const isRecipeOnSale = (recipe) => {
-    const text = `${recipe.title} ${recipe.proteinType} ${recipe.tags?.join(' ') || ''} ${recipe.ingredients?.map(i => i.name).join(' ') || ''}`.toLowerCase();
-    return activeDealsKeywords.some(k => text.includes(k.toLowerCase()));
+    if (!recipe) return false;
+    const proteinTypeStr = (recipe.proteinType || '').toLowerCase();
+    const recipeTitleStr = (recipe.title || '').toLowerCase();
+    const primaryMeat = recipe.ingredients?.find(i => i.department === 'viandes')?.name?.toLowerCase() || '';
+
+    return activeProteinDeals.some(deal => {
+      return deal.matchedKeywords.some(keyword => {
+        const kw = keyword.toLowerCase().trim();
+        if (kw.length < 3) return false;
+        return proteinTypeStr.includes(kw) || primaryMeat.includes(kw) || recipeTitleStr.includes(kw);
+      });
+    });
   };
 
   // Toggle exclusion d'allergènes
@@ -434,9 +444,6 @@ export default function Step1Selection({
                     <span className="macro-stat-pill"><span className="macro-stat-lbl">P:</span> {recipe.macros?.proteins || 35}g</span>
                     <span className="macro-stat-pill"><span className="macro-stat-lbl">G:</span> {recipe.macros?.carbs || 40}g</span>
                     <span className="macro-stat-pill"><span className="macro-stat-lbl">L:</span> {recipe.macros?.fats || 18}g</span>
-                    <span className="complete-meal-indicator-pill" title="Repas équilibré complet : Protéine + Féculent sans gluten + Légume/Salade">
-                      ✨ Repas Complet
-                    </span>
                   </div>
 
                   <h3 className="card-title" onClick={() => onViewRecipe(recipe)}>

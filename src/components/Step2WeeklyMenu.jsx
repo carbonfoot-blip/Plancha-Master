@@ -208,10 +208,6 @@ export default function Step2WeeklyMenu({
 
                       <p className="day-recipe-desc">{recipe.subtitle}</p>
 
-                      {/* Complete Balanced Meal Banner */}
-                      <div className="day-side-dish-complete">
-                        <span>✨ Repas complet & équilibré (Protéine + Féculent sans gluten + Légume/Salade)</span>
-                      </div>
 
                       {/* Ingredients Mini Checklist scaled */}
                       <div className="day-ingredients-box">

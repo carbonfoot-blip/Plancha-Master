@@ -23,7 +23,7 @@ export const DEAL_CATEGORIES = [
 ];
 
 export const WEEKLY_DEALS_DATA = [
-  // --- VIANDES & POISSONS ---
+  // --- VIANDES & POISSONS (PROTÉINES EN VEDETTE DANS LES CIRCULAIRES) ---
   {
     id: 'deal-01',
     name: 'Poitrines de poulet fraîches désossées',
@@ -36,7 +36,7 @@ export const WEEKLY_DEALS_DATA = [
     discount: '-40%',
     validUntil: 'Mercredi prochain',
     image: 'https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=600&q=80',
-    matchedKeywords: ['poulet', 'poitrine', 'hauts de cuisse'],
+    matchedKeywords: ['poitrine de poulet', 'poulet'],
     department: 'viandes',
     isTopDeal: true
   },
@@ -52,23 +52,7 @@ export const WEEKLY_DEALS_DATA = [
     discount: '-44%',
     validUntil: 'Mercredi prochain',
     image: 'https://images.unsplash.com/photo-1588168333986-5078d3ae3976?auto=format&fit=crop&w=600&q=80',
-    matchedKeywords: ['porc', 'haché'],
-    department: 'viandes',
-    isTopDeal: true
-  },
-  {
-    id: 'deal-03',
-    name: 'Bœuf haché mi-maigre format économique',
-    store: 'metro',
-    storeName: 'Metro',
-    category: 'viandes',
-    promoPrice: '3.99',
-    unit: '$/lb (8.80 $/kg)',
-    originalPrice: '6.49 $/lb',
-    discount: '-38%',
-    validUntil: 'Mercredi prochain',
-    image: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80',
-    matchedKeywords: ['boeuf', 'haché', 'smash'],
+    matchedKeywords: ['porc haché'],
     department: 'viandes',
     isTopDeal: true
   },
@@ -84,57 +68,9 @@ export const WEEKLY_DEALS_DATA = [
     discount: '-40%',
     validUntil: 'Mercredi prochain',
     image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=600&q=80',
-    matchedKeywords: ['saumon', 'poisson'],
+    matchedKeywords: ['saumon', 'truite'],
     department: 'viandes',
     isTopDeal: true
-  },
-  {
-    id: 'deal-05',
-    name: 'Filet de porc frais tout paré (emballage de 2)',
-    store: 'superc',
-    storeName: 'Super C',
-    category: 'viandes',
-    promoPrice: '3.49',
-    unit: '$/lb (7.69 $/kg)',
-    originalPrice: '6.99 $/lb',
-    discount: '-50%',
-    validUntil: 'Mercredi prochain',
-    image: 'https://images.unsplash.com/photo-1432139555190-58524dae6a55?auto=format&fit=crop&w=600&q=80',
-    matchedKeywords: ['filet de porc', 'porc'],
-    department: 'viandes',
-    isTopDeal: false
-  },
-  {
-    id: 'deal-06',
-    name: 'Dinde hachée extra-maigre',
-    store: 'walmart',
-    storeName: 'Walmart',
-    category: 'viandes',
-    promoPrice: '3.97',
-    unit: 'l\'emballage de 450g',
-    originalPrice: '5.97 $',
-    discount: '-33%',
-    validUntil: 'Mercredi prochain',
-    image: 'https://images.unsplash.com/photo-1587593810167-a84920ea0781?auto=format&fit=crop&w=600&q=80',
-    matchedKeywords: ['dinde', 'hachée', 'tacos'],
-    department: 'viandes',
-    isTopDeal: false
-  },
-  {
-    id: 'deal-07',
-    name: 'Bacon fumé de style campagnard Lafleur (375g)',
-    store: 'maxi',
-    storeName: 'Maxi',
-    category: 'viandes',
-    promoPrice: '4.44',
-    unit: 'paquet de 375g',
-    originalPrice: '6.99 $',
-    discount: '-36%',
-    validUntil: 'Mercredi prochain',
-    image: 'https://images.unsplash.com/photo-1528607929212-2636ec44253e?auto=format&fit=crop&w=600&q=80',
-    matchedKeywords: ['bacon', 'linguines'],
-    department: 'viandes',
-    isTopDeal: false
   },
 
   // --- FRUITS & LÉGUMES ---

@@ -119,11 +119,6 @@ export default function RecipeDetailModal({ recipe, portions, isSelected, onTogg
           </div>
         </div>
 
-        {/* Repas Complet Tout-en-Un */}
-        <div className="complete-meal-pro-box">
-          <Sparkles size={18} className="complete-meal-icon" />
-          <span><strong>✨ Repas complet & équilibré</strong> : Protéine, féculent sans gluten et légume/salade directement intégrés dans les ingrédients ci-dessous !</span>
-        </div>
 
         {/* Plancha Pro Advice Box */}
         {recipe.planchaTips && (
