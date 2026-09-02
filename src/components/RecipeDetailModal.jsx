@@ -119,35 +119,11 @@ export default function RecipeDetailModal({ recipe, portions, isSelected, onTogg
           </div>
         </div>
 
-        {/* Accompagnement Proposé ou Repas Complet */}
-        {recipe.sideDishSuggestion ? (
-          <div className="side-dish-pro-box">
-            <div className="side-dish-pro-header">
-              <Salad size={20} className="side-dish-icon" />
-              <h4>🥗 Accompagnement Recommandé (Féculent + Légume / Salade)</h4>
-            </div>
-            <div className="side-dish-content">
-              <div className="side-dish-row">
-                <span className="side-dish-tag">🥔 Féculent :</span>
-                <span className="side-dish-text">{recipe.sideDishSuggestion.carbs}</span>
-              </div>
-              <div className="side-dish-row">
-                <span className="side-dish-tag">🥗 Légume / Salade :</span>
-                <span className="side-dish-text">{recipe.sideDishSuggestion.veggies}</span>
-              </div>
-              {recipe.sideDishSuggestion.planchaTip && (
-                <div className="side-dish-tip">
-                  <span>💡 <em>{recipe.sideDishSuggestion.planchaTip}</em></span>
-                </div>
-              )}
-            </div>
-          </div>
-        ) : (
-          <div className="complete-meal-pro-box">
-            <Sparkles size={18} className="complete-meal-icon" />
-            <span><strong>✨ Repas complet tout-en-un</strong> : féculents et légumes déjà intégrés à la recette !</span>
-          </div>
-        )}
+        {/* Repas Complet Tout-en-Un */}
+        <div className="complete-meal-pro-box">
+          <Sparkles size={18} className="complete-meal-icon" />
+          <span><strong>✨ Repas complet & équilibré</strong> : Protéine, féculent sans gluten et légume/salade directement intégrés dans les ingrédients ci-dessous !</span>
+        </div>
 
         {/* Plancha Pro Advice Box */}
         {recipe.planchaTips && (

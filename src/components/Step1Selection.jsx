@@ -434,15 +434,9 @@ export default function Step1Selection({
                     <span className="macro-stat-pill"><span className="macro-stat-lbl">P:</span> {recipe.macros?.proteins || 35}g</span>
                     <span className="macro-stat-pill"><span className="macro-stat-lbl">G:</span> {recipe.macros?.carbs || 40}g</span>
                     <span className="macro-stat-pill"><span className="macro-stat-lbl">L:</span> {recipe.macros?.fats || 18}g</span>
-                    {recipe.sideDishSuggestion ? (
-                      <span className="side-dish-indicator-pill" title="Accompagnement féculent + salade recommandé">
-                        🥗 Accomp.
-                      </span>
-                    ) : (
-                      <span className="complete-meal-indicator-pill" title="Repas complet tout-en-un">
-                        ✨ Complet
-                      </span>
-                    )}
+                    <span className="complete-meal-indicator-pill" title="Repas équilibré complet : Protéine + Féculent sans gluten + Légume/Salade">
+                      ✨ Repas Complet
+                    </span>
                   </div>
 
                   <h3 className="card-title" onClick={() => onViewRecipe(recipe)}>

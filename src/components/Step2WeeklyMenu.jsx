@@ -208,17 +208,10 @@ export default function Step2WeeklyMenu({
 
                       <p className="day-recipe-desc">{recipe.subtitle}</p>
 
-                      {/* Side dish suggestion if any */}
-                      {recipe.sideDishSuggestion ? (
-                        <div className="day-side-dish-banner">
-                          <span className="day-side-dish-tag">🥗 Accompagnement suggéré :</span>
-                          <span className="day-side-dish-desc">{recipe.sideDishSuggestion.carbs} • {recipe.sideDishSuggestion.veggies}</span>
-                        </div>
-                      ) : (
-                        <div className="day-side-dish-complete">
-                          <span>✨ Repas complet tout-en-un</span>
-                        </div>
-                      )}
+                      {/* Complete Balanced Meal Banner */}
+                      <div className="day-side-dish-complete">
+                        <span>✨ Repas complet & équilibré (Protéine + Féculent sans gluten + Légume/Salade)</span>
+                      </div>
 
                       {/* Ingredients Mini Checklist scaled */}
                       <div className="day-ingredients-box">

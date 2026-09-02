@@ -61,44 +61,33 @@ async function initFirebase() {
 function mergeRecipeLists(primaryList = [], fallbackList = RECIPES_DATA) {
   const map = new Map();
 
-  // 1. D'abord insérer le catalogue officiel enrichi du code (macros, accompagnements, wedges)
+  // 1. D'abord insérer le catalogue officiel enrichi du code (avec féculents sans gluten, légumes et macros complets)
   fallbackList.forEach((r) => {
     if (r && r.id) {
       map.set(r.id, { ...r });
     }
   });
 
-  // 2. Fusionner avec la base de données Cloud / LocalStorage (en conservant les images et modifications de l'utilisateur)
+  // 2. Fusionner avec la base de données Cloud / LocalStorage
   primaryList.forEach((cloudRecipe) => {
     if (cloudRecipe && cloudRecipe.id) {
       const codeRecipe = map.get(cloudRecipe.id);
       if (codeRecipe) {
-        // C'est une recette officielle : on conserve l'image et les personnalisations de la BD Cloud, tout en injectant les nouveaux macros et accompagnements
+        // C'est une recette du catalogue officiel : on conserve l'image personnalisée de l'utilisateur de la BD Cloud
         const mergedRecipe = {
-          ...codeRecipe,
-          ...cloudRecipe,
-          // Conserver l'image Cloud personnalisée de l'utilisateur
-          image: cloudRecipe.image || codeRecipe.image,
-          // Conserver ou injecter les macros
-          macros: cloudRecipe.macros || codeRecipe.macros,
-          // Conserver ou injecter les suggestions d'accompagnements
-          sideDishSuggestion: cloudRecipe.sideDishSuggestion !== undefined ? cloudRecipe.sideDishSuggestion : codeRecipe.sideDishSuggestion,
-          isCompleteMeal: cloudRecipe.isCompleteMeal !== undefined ? cloudRecipe.isCompleteMeal : codeRecipe.isCompleteMeal
+          ...codeRecipe, // Prends tous les ingrédients complets (féculent + légume), étapes, macros et calories
+          ...cloudRecipe, // Garde les données utilisateur
+          image: cloudRecipe.image || codeRecipe.image, // Conserve à 100% l'image personnalisée de la BD Cloud !
+          macros: codeRecipe.macros || cloudRecipe.macros, // Macros à jour avec les accompagnements
+          calories: codeRecipe.calories || cloudRecipe.calories, // Calories à jour du repas complet
+          ingredients: codeRecipe.ingredients || cloudRecipe.ingredients, // Liste complète d'ingrédients
+          steps: codeRecipe.steps || cloudRecipe.steps, // Étapes complètes
+          title: codeRecipe.title || cloudRecipe.title,
+          subtitle: codeRecipe.subtitle || cloudRecipe.subtitle
         };
-
-        // Si c'est rec-03 et que les wedges ne sont pas encore dans les ingrédients de la BD Cloud, mettre à jour les ingrédients & étapes de rec-03
-        if (cloudRecipe.id === 'rec-03' && (!cloudRecipe.ingredients || !cloudRecipe.ingredients.some(i => i.id === 'ing-pommes-de-terre-russet'))) {
-          mergedRecipe.ingredients = codeRecipe.ingredients;
-          mergedRecipe.steps = codeRecipe.steps;
-          mergedRecipe.title = codeRecipe.title;
-          mergedRecipe.subtitle = codeRecipe.subtitle;
-          mergedRecipe.description = codeRecipe.description;
-          mergedRecipe.planchaTips = codeRecipe.planchaTips;
-        }
-
         map.set(cloudRecipe.id, mergedRecipe);
       } else {
-        // Recette 100% personnalisée créée par l'utilisateur
+        // Recette 100% personnalisée créée par l'utilisateur (rec-custom-xxx)
         map.set(cloudRecipe.id, cloudRecipe);
       }
     }
