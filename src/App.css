@@ -5796,4 +5796,257 @@
   border-radius: var(--radius-md);
 }
 
+/* ==========================================================================
+   RELEASE NOTES & BROADCAST SYSTEM
+   ========================================================================== */
+
+/* Bouton Nouveautés dans le Header */
+.btn-release-notes {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.75rem;
+  background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
+  border: 1px solid #fdba74;
+  color: var(--primary-700);
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 700;
+  transition: all var(--transition-normal);
+  box-shadow: 0 2px 6px rgba(234, 88, 12, 0.12);
+}
+
+.btn-release-notes:hover {
+  background: linear-gradient(135deg, #ffedd5 0%, #fed7aa 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(234, 88, 12, 0.2);
+}
+
+.release-sparkle-icon {
+  color: var(--primary-600);
+  animation: pulseGlow 2s infinite;
+}
+
+.release-unread-dot {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 10px;
+  height: 10px;
+  background: #ef4444;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  animation: pulseGlow 1.5s infinite;
+}
+
+/* Bandeau Broadcast Top Strip sous le Header */
+.broadcast-top-strip {
+  background: linear-gradient(90deg, #1e293b 0%, #0f172a 100%);
+  color: #ffffff;
+  padding: 0.5rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #334155;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-size: 0.84rem;
+  z-index: 45;
+}
+
+.broadcast-strip-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  flex: 1;
+  overflow: hidden;
+}
+
+.broadcast-sparkle-pill {
+  background: rgba(234, 88, 12, 0.25);
+  border: 1px solid var(--primary-500);
+  color: #fdba74;
+  font-size: 0.74rem;
+  font-weight: 800;
+  padding: 0.15rem 0.55rem;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+.broadcast-strip-text {
+  font-weight: 600;
+  color: #f8fafc;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.broadcast-strip-cta {
+  color: var(--primary-400);
+  font-weight: 700;
+  white-space: nowrap;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition-fast);
+}
+
+.broadcast-strip-content:hover .broadcast-strip-cta {
+  color: var(--primary-300);
+}
+
+.broadcast-strip-close {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  margin-left: 0.75rem;
+  transition: all var(--transition-fast);
+}
+
+.broadcast-strip-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+/* Modale Release Notes */
+.modal-release-notes {
+  max-width: 640px;
+  width: 95%;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.release-icon-badge {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: #ffedd5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.release-subtitle {
+  font-size: 0.8rem;
+  color: var(--slate-500);
+}
+
+.release-notes-body {
+  padding: 1.25rem 1.5rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.release-card {
+  background: #f8fafc;
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.release-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.release-badges-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.release-version-pill {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.8rem;
+  background: var(--slate-800);
+  color: #ffffff;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-sm);
+}
+
+.release-tag-pill {
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid;
+}
+
+.release-date-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  color: var(--slate-500);
+  font-weight: 600;
+}
+
+.release-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--slate-900);
+  line-height: 1.3;
+}
+
+.release-summary {
+  font-size: 0.88rem;
+  color: var(--slate-600);
+  line-height: 1.5;
+}
+
+.release-highlights-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.release-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: #ffffff;
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 0.85rem;
+}
+
+.release-item-icon {
+  font-size: 1.25rem;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.release-item-text strong {
+  display: block;
+  font-size: 0.88rem;
+  color: var(--slate-900);
+  margin-bottom: 0.2rem;
+}
+
+.release-item-text p {
+  font-size: 0.82rem;
+  color: var(--slate-600);
+  line-height: 1.45;
+  margin: 0;
+}
+
+
 

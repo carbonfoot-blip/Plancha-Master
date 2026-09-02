@@ -1,4 +1,4 @@
-import { Flame, UtensilsCrossed, ShoppingCart, ExternalLink, Sparkles, Users, RefreshCw, Lock, Unlock, ShieldCheck, Plus, Tag, Smartphone } from 'lucide-react';
+import { Flame, UtensilsCrossed, ShoppingCart, ExternalLink, Sparkles, Users, RefreshCw, Lock, Unlock, ShieldCheck, Plus, Tag, Smartphone, X } from 'lucide-react';
 
 export default function Navbar({
   activeStep,
@@ -13,7 +13,12 @@ export default function Navbar({
   onLockAdmin,
   onOpenCloudConfig,
   onOpenNewRecipe,
-  onOpenPwaModal
+  onOpenPwaModal,
+  onOpenReleaseNotes,
+  hasUnreadReleaseNotes,
+  activeReleaseNotes,
+  showBroadcastBanner,
+  onDismissBroadcast
 }) {
   const steps = [
     { id: 0, label: 'Rabais de la semaine', shortLabel: 'Rabais', icon: Tag, isDeals: true, badge: '🔥 Spéciaux' },
@@ -119,6 +124,19 @@ export default function Navbar({
             </button>
           )}
 
+          {/* Bouton Nouveautés & Mises à Jour (Broadcast) */}
+          <button
+            type="button"
+            className={`btn-release-notes ${hasUnreadReleaseNotes ? 'has-unread' : ''}`}
+            onClick={onOpenReleaseNotes}
+            title="Consulter les dernières nouveautés de l'application"
+            id="btn-nav-release-notes"
+          >
+            <Sparkles size={14} className="release-sparkle-icon" />
+            <span className="pwa-install-text btn-text-hide-mobile">Nouveautés</span>
+            {hasUnreadReleaseNotes && <span className="release-unread-dot" title="Nouvelles mises à jour disponibles" />}
+          </button>
+
           {/* Bouton Installer l'Application (PWA) */}
           <button
             type="button"
@@ -145,6 +163,29 @@ export default function Navbar({
           )}
         </div>
       </div>
+
+      {/* Broadcast Top Strip (Affiché subtilement si des nouveautés récentes existent) */}
+      {showBroadcastBanner && activeReleaseNotes && activeReleaseNotes.length > 0 && (
+        <div className="broadcast-top-strip animate-fade-in" id="navbar-broadcast-strip">
+          <div className="broadcast-strip-content" onClick={onOpenReleaseNotes} role="button" tabIndex={0}>
+            <span className="broadcast-sparkle-pill">✨ {activeReleaseNotes[0].version}</span>
+            <span className="broadcast-strip-text">{activeReleaseNotes[0].title}</span>
+            <span className="broadcast-strip-cta">Voir les nouveautés →</span>
+          </div>
+          <button
+            type="button"
+            className="broadcast-strip-close"
+            onClick={(e) => {
+              e.stopPropagation();
+              if (onDismissBroadcast) onDismissBroadcast();
+            }}
+            title="Masquer cette notification"
+            aria-label="Fermer"
+          >
+            <X size={14} />
+          </button>
+        </div>
+      )}
 
       {/* 4 Steps Navigation Bar */}
       <nav className="steps-nav-bar" aria-label="Étapes de planification">

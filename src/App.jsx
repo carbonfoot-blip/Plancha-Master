@@ -20,6 +20,8 @@ import RecipeEditorModal from './components/RecipeEditorModal';
 import CloudConfigModal from './components/CloudConfigModal';
 import AdminAuthModal from './components/AdminAuthModal';
 import PwaInstallModal from './components/PwaInstallModal';
+import ReleaseNotesModal from './components/ReleaseNotesModal';
+import { getActiveReleaseNotes } from './data/releaseNotes';
 import './App.css';
 
 const LOCAL_STORAGE_KEY_RECIPES = 'plancha_menu_selected_recipes';
@@ -28,6 +30,8 @@ const LOCAL_STORAGE_KEY_CHECKED = 'plancha_menu_checked_grocery';
 const LOCAL_STORAGE_KEY_CUSTOM = 'plancha_menu_custom_items';
 const LOCAL_STORAGE_KEY_EXCLUDED = 'plancha_menu_excluded_ingredients';
 const LOCAL_STORAGE_KEY_IS_ADMIN = 'plancha_master_is_admin_logged';
+const LOCAL_STORAGE_KEY_LAST_SEEN_RELEASE = 'plancha_last_seen_release_id';
+const LOCAL_STORAGE_KEY_DISMISSED_BROADCAST = 'plancha_dismissed_broadcast_id';
 
 export default function App() {
   const [activeStep, setActiveStep] = useState(1);
@@ -35,6 +39,57 @@ export default function App() {
   const [recipes, setRecipes] = useState(RECIPES_DATA);
   const [isCloudActive, setIsCloudActive] = useState(false);
   const [isLoadingDb, setIsLoadingDb] = useState(true);
+
+  // Release notes (publiées dans les 5 derniers jours)
+  const activeReleaseNotes = useMemo(() => {
+    return getActiveReleaseNotes(5);
+  }, []);
+
+  const [showReleaseNotesModal, setShowReleaseNotesModal] = useState(false);
+
+  const [lastSeenReleaseId, setLastSeenReleaseId] = useState(() => {
+    try {
+      return localStorage.getItem(LOCAL_STORAGE_KEY_LAST_SEEN_RELEASE) || '';
+    } catch (e) {
+      return '';
+    }
+  });
+
+  const [dismissedBroadcastId, setDismissedBroadcastId] = useState(() => {
+    try {
+      return localStorage.getItem(LOCAL_STORAGE_KEY_DISMISSED_BROADCAST) || '';
+    } catch (e) {
+      return '';
+    }
+  });
+
+  const latestReleaseId = activeReleaseNotes[0]?.id || '';
+  const hasUnreadReleaseNotes = Boolean(latestReleaseId && lastSeenReleaseId !== latestReleaseId);
+  const showBroadcastBanner = Boolean(latestReleaseId && dismissedBroadcastId !== latestReleaseId);
+
+  const handleOpenReleaseNotes = () => {
+    setShowReleaseNotesModal(true);
+  };
+
+  const handleMarkAllReleasesAsRead = () => {
+    if (latestReleaseId) {
+      setLastSeenReleaseId(latestReleaseId);
+      setDismissedBroadcastId(latestReleaseId);
+      try {
+        localStorage.setItem(LOCAL_STORAGE_KEY_LAST_SEEN_RELEASE, latestReleaseId);
+        localStorage.setItem(LOCAL_STORAGE_KEY_DISMISSED_BROADCAST, latestReleaseId);
+      } catch (e) {}
+    }
+  };
+
+  const handleDismissBroadcast = () => {
+    if (latestReleaseId) {
+      setDismissedBroadcastId(latestReleaseId);
+      try {
+        localStorage.setItem(LOCAL_STORAGE_KEY_DISMISSED_BROADCAST, latestReleaseId);
+      } catch (e) {}
+    }
+  };
 
   const [isAdmin, setIsAdmin] = useState(() => {
     try {
@@ -362,6 +417,11 @@ export default function App() {
         onOpenCloudConfig={() => setShowCloudModal(true)}
         onOpenNewRecipe={() => setIsCreatingNew(true)}
         onOpenPwaModal={() => setShowPwaModal(true)}
+        onOpenReleaseNotes={handleOpenReleaseNotes}
+        hasUnreadReleaseNotes={hasUnreadReleaseNotes}
+        activeReleaseNotes={activeReleaseNotes}
+        showBroadcastBanner={showBroadcastBanner}
+        onDismissBroadcast={handleDismissBroadcast}
       />
 
       <main className="main-content-area">
@@ -499,6 +559,14 @@ export default function App() {
         deferredPrompt={deferredPwaPrompt}
         onTriggerInstall={handleTriggerPwaInstall}
       />
+
+      {showReleaseNotesModal && (
+        <ReleaseNotesModal
+          releaseNotes={activeReleaseNotes}
+          onClose={() => setShowReleaseNotesModal(false)}
+          onMarkAllAsRead={handleMarkAllReleasesAsRead}
+        />
+      )}
 
       <footer className="site-footer">
         <div className="footer-container">
