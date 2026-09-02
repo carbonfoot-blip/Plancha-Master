@@ -288,7 +288,8 @@ export default function App() {
     } else {
       alert('Erreur lors de la suppression.');
     }
-  }; substitute catalog
+  };
+
   const handleResetDefaults = async () => {
     if (window.confirm('Voulez-vous synchroniser et restaurer l\'intégralité des 50 recettes du catalogue officiel dans la base de données ?')) {
       const reset = await resetAllRecipesToDefaults();
