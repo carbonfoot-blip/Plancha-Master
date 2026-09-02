@@ -17,7 +17,6 @@ export function getStoredFirebaseConfig() {
   } catch (e) {
     console.error('Erreur lecture config Firebase:', e);
   }
-  // Utiliser la configuration Firebase officielle par défaut
   return DEFAULT_FIREBASE_CONFIG;
 }
 
@@ -57,17 +56,17 @@ async function initFirebase() {
 }
 
 /**
- * Fusionne intelligemment deux listes de recettes par ID en garantissant qu'aucune recette par défaut n'est perdue
+ * Fusionne deux listes de recettes en conservant l'intégralité du catalogue
  */
 function mergeRecipeLists(primaryList = [], fallbackList = RECIPES_DATA) {
   const map = new Map();
 
-  // D'abord insérer la liste de secours (recettes de base)
+  // D'abord insérer la liste officielle du code
   fallbackList.forEach((r) => {
     if (r && r.id) map.set(r.id, r);
   });
 
-  // Ensuite écraser/ajouter avec les recettes modifiées ou créées
+  // Ensuite fusionner les recettes chargées de la BD (cloud ou custom)
   primaryList.forEach((r) => {
     if (r && r.id) map.set(r.id, r);
   });
@@ -76,49 +75,83 @@ function mergeRecipeLists(primaryList = [], fallbackList = RECIPES_DATA) {
 }
 
 /**
- * Charge les recettes : depuis Firebase Firestore si connecté, sinon depuis le cache local, avec fusion de sécurité.
+ * Synchronise les recettes officielles dans Firestore si elles sont absentes ou lors d'un reset forcé
+ */
+export async function seedDefaultRecipesToCloud(db, force = false) {
+  if (!db) return;
+  try {
+    const { doc, setDoc, getDoc } = await import('firebase/firestore');
+    for (const recipe of RECIPES_DATA) {
+      const { id, ...data } = recipe;
+      const ref = doc(db, 'recipes', id);
+      if (force) {
+        await setDoc(ref, data, { merge: true });
+      } else {
+        const existing = await getDoc(ref);
+        if (!existing.exists()) {
+          await setDoc(ref, data, { merge: true });
+        }
+      }
+    }
+  } catch (e) {
+    console.warn('Erreur de synchro Cloud Firestore :', e);
+  }
+}
+
+/**
+ * Charge les recettes depuis Firestore ou le stockage local, et force l'ajout des nouvelles recettes du code dans la BD
  */
 export async function loadRecipesFromDb() {
   const db = await initFirebase();
   let cloudError = null;
 
-  // 1. Tenter la lecture depuis le Cloud si Firebase est configuré
   if (db) {
     try {
       const { collection, getDocs } = await import('firebase/firestore');
       const snapshot = await getDocs(collection(db, 'recipes'));
       
+      const cloudRecipes = [];
       if (!snapshot.empty) {
-        const cloudRecipes = [];
-        snapshot.forEach((doc) => {
-          const data = doc.data();
-          cloudRecipes.push({ id: doc.id, ...data });
+        snapshot.forEach((docSnap) => {
+          const data = docSnap.data();
+          cloudRecipes.push({ id: docSnap.id, ...data });
         });
-
-        // Fusion de sécurité : on combine les recettes cloud avec les recettes de base pour ne rien perdre
-        const merged = mergeRecipeLists(cloudRecipes, RECIPES_DATA);
-        localStorage.setItem(LOCAL_STORAGE_RECIPES_KEY, JSON.stringify(merged));
-        return { recipes: merged, isCloud: true, cloudError: null };
-      } else {
-        // La base cloud est neuve / vide : on l'initialise avec nos recettes
-        await seedDefaultRecipesToCloud(db);
-        const merged = mergeRecipeLists([], RECIPES_DATA);
-        localStorage.setItem(LOCAL_STORAGE_RECIPES_KEY, JSON.stringify(merged));
-        return { recipes: merged, isCloud: true, cloudError: null };
       }
+
+      // Détecter si des recettes de RECIPES_DATA sont absentes de Firestore
+      const cloudIds = new Set(cloudRecipes.map(r => r.id));
+      const missingDefaultRecipes = RECIPES_DATA.filter(r => !cloudIds.has(r.id));
+
+      if (snapshot.empty || missingDefaultRecipes.length > 0) {
+        // Injection automatique des recettes manquantes dans Firestore
+        await seedDefaultRecipesToCloud(db, false);
+
+        // Re-charger la collection mise à jour
+        const updatedSnapshot = await getDocs(collection(db, 'recipes'));
+        cloudRecipes.length = 0;
+        updatedSnapshot.forEach((docSnap) => {
+          const data = docSnap.data();
+          cloudRecipes.push({ id: docSnap.id, ...data });
+        });
+      }
+
+      const merged = mergeRecipeLists(cloudRecipes, RECIPES_DATA);
+      localStorage.setItem(LOCAL_STORAGE_RECIPES_KEY, JSON.stringify(merged));
+      return { recipes: merged, isCloud: true, cloudError: null };
     } catch (err) {
       console.warn('Erreur Firestore (règles de sécurité ou réseau) :', err);
       cloudError = err.code || err.message;
     }
   }
 
-  // 2. Repli sur le cache local
+  // Repli local si pas de cloud
   try {
     const local = localStorage.getItem(LOCAL_STORAGE_RECIPES_KEY);
     if (local) {
       const parsed = JSON.parse(local);
       if (Array.isArray(parsed) && parsed.length > 0) {
         const merged = mergeRecipeLists(parsed, RECIPES_DATA);
+        localStorage.setItem(LOCAL_STORAGE_RECIPES_KEY, JSON.stringify(merged));
         return { recipes: merged, isCloud: !!db && !cloudError, cloudError };
       }
     }
@@ -126,28 +159,12 @@ export async function loadRecipesFromDb() {
     console.error('Erreur lecture localStorage:', e);
   }
 
-  // 3. Initialisation par défaut
   localStorage.setItem(LOCAL_STORAGE_RECIPES_KEY, JSON.stringify(RECIPES_DATA));
   return { recipes: RECIPES_DATA, isCloud: !!db && !cloudError, cloudError };
 }
 
 /**
- * Envoie les recettes initiales dans la base Cloud
- */
-async function seedDefaultRecipesToCloud(db) {
-  try {
-    const { doc, setDoc } = await import('firebase/firestore');
-    for (const recipe of RECIPES_DATA) {
-      const { id, ...data } = recipe;
-      await setDoc(doc(db, 'recipes', id), data, { merge: true });
-    }
-  } catch (e) {
-    console.warn('Erreur de seeding Cloud (vérifiez les règles Firestore) :', e);
-  }
-}
-
-/**
- * Sauvegarde (Ajout ou Mise à jour) d'une recette dans le Cloud et le Cache local
+ * Sauvegarde (Ajout ou Modification) d'une recette dans le Cloud et le Cache local
  */
 export async function saveRecipeToDb(recipeData) {
   const isNew = !recipeData.id || recipeData.id.startsWith('temp_') || recipeData.id.startsWith('rec-custom-');
@@ -159,7 +176,6 @@ export async function saveRecipeToDb(recipeData) {
     updatedAt: new Date().toISOString()
   };
 
-  // 1. Mise à jour immédiate du Cache local pour éviter toute perte
   let updatedRecipes = [];
   try {
     const local = localStorage.getItem(LOCAL_STORAGE_RECIPES_KEY);
@@ -180,7 +196,6 @@ export async function saveRecipeToDb(recipeData) {
     updatedRecipes = mergeRecipeLists([fullRecipe], RECIPES_DATA);
   }
 
-  // 2. Sauvegarde dans le Cloud Firestore si connecté
   const db = await initFirebase();
   let cloudError = null;
 
@@ -190,7 +205,7 @@ export async function saveRecipeToDb(recipeData) {
       const { id, ...dataToSave } = fullRecipe;
       await setDoc(doc(db, 'recipes', recipeId), dataToSave, { merge: true });
     } catch (e) {
-      console.warn('Erreur sauvegarde Cloud Firestore (vérifiez vos règles de sécurité) :', e);
+      console.warn('Erreur sauvegarde Cloud Firestore :', e);
       cloudError = e.code || e.message;
     }
   }
@@ -230,13 +245,13 @@ export async function deleteRecipeFromDb(recipeId) {
 }
 
 /**
- * Réinitialise aux recettes d'usine par défaut
+ * Force la réinitialisation et synchronise les 50 recettes du code dans la BD Cloud
  */
 export async function resetAllRecipesToDefaults() {
   localStorage.setItem(LOCAL_STORAGE_RECIPES_KEY, JSON.stringify(RECIPES_DATA));
   const db = await initFirebase();
   if (db) {
-    await seedDefaultRecipesToCloud(db);
+    await seedDefaultRecipesToCloud(db, true);
   }
   return RECIPES_DATA;
 }

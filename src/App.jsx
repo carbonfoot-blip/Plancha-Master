@@ -30,15 +30,12 @@ const LOCAL_STORAGE_KEY_EXCLUDED = 'plancha_menu_excluded_ingredients';
 const LOCAL_STORAGE_KEY_IS_ADMIN = 'plancha_master_is_admin_logged';
 
 export default function App() {
-  // Navigation entre les étapes
   const [activeStep, setActiveStep] = useState(1);
 
-  // État des recettes chargées depuis Cloud DB / Local Cache
   const [recipes, setRecipes] = useState(RECIPES_DATA);
   const [isCloudActive, setIsCloudActive] = useState(false);
   const [isLoadingDb, setIsLoadingDb] = useState(true);
 
-  // État d'authentification Mode Administrateur
   const [isAdmin, setIsAdmin] = useState(() => {
     try {
       return localStorage.getItem(LOCAL_STORAGE_KEY_IS_ADMIN) === 'true';
@@ -48,14 +45,12 @@ export default function App() {
   });
   const [showAdminAuthModal, setShowAdminAuthModal] = useState(false);
 
-  // Modals d'administration et de configuration
   const [showCloudModal, setShowCloudModal] = useState(false);
   const [showPwaModal, setShowPwaModal] = useState(false);
   const [deferredPwaPrompt, setDeferredPwaPrompt] = useState(null);
   const [recipeToEdit, setRecipeToEdit] = useState(null);
   const [isCreatingNew, setIsCreatingNew] = useState(false);
 
-  // Recettes sélectionnées pour la semaine (initialisé avec 5 recettes par défaut)
   const [selectedRecipeIds, setSelectedRecipeIds] = useState(() => {
     try {
       const saved = localStorage.getItem(LOCAL_STORAGE_KEY_RECIPES);
@@ -66,7 +61,6 @@ export default function App() {
     return ['rec-01', 'rec-02', 'rec-03', 'rec-04', 'rec-05'];
   });
 
-  // Nombre de portions (défaut = 4 portions familiales)
   const [portions, setPortions] = useState(() => {
     try {
       const saved = localStorage.getItem(LOCAL_STORAGE_KEY_PORTIONS);
@@ -77,7 +71,6 @@ export default function App() {
     return 4;
   });
 
-  // Articles personnalisés d'épicerie
   const [customItems, setCustomItems] = useState(() => {
     try {
       const saved = localStorage.getItem(LOCAL_STORAGE_KEY_CUSTOM);
@@ -88,7 +81,6 @@ export default function App() {
     return [];
   });
 
-  // Ingrédients exclus de l'achat (déjà en stock à la maison)
   const [excludedIngredientKeys, setExcludedIngredientKeys] = useState(() => {
     try {
       const saved = localStorage.getItem(LOCAL_STORAGE_KEY_EXCLUDED);
@@ -99,7 +91,6 @@ export default function App() {
     return [];
   });
 
-  // État des cases à cocher de l'épicerie
   const [checkedState, setCheckedState] = useState(() => {
     try {
       const saved = localStorage.getItem(LOCAL_STORAGE_KEY_CHECKED);
@@ -110,10 +101,8 @@ export default function App() {
     return {};
   });
 
-  // Modal recette active (vue détaillée)
   const [activeModalRecipe, setActiveModalRecipe] = useState(null);
 
-  // Charger les recettes depuis la BD Cloud au démarrage
   const fetchRecipes = async () => {
     setIsLoadingDb(true);
     try {
@@ -131,7 +120,6 @@ export default function App() {
     fetchRecipes();
   }, []);
 
-  // Détection d'un lien de partage dans l'URL (#share=... ou ?share=...)
   useEffect(() => {
     const raw = window.location.hash || window.location.search;
     if (raw && raw.includes('share=')) {
@@ -142,7 +130,6 @@ export default function App() {
         if (shared.customItems) setCustomItems(shared.customItems);
         if (shared.excludedKeys) setExcludedIngredientKeys(shared.excludedKeys);
 
-        // Aller directement à l'étape 2 (Menu)
         setActiveStep(2);
 
         confetti({
@@ -154,7 +141,6 @@ export default function App() {
     }
   }, []);
 
-  // Écoute de l'événement d'installation PWA natif
   useEffect(() => {
     const handleBeforeInstallPrompt = (e) => {
       e.preventDefault();
@@ -175,7 +161,6 @@ export default function App() {
     }
   };
 
-  // Gestion du statut Administrateur
   const handleUnlockAdmin = () => {
     setIsAdmin(true);
     try {
@@ -195,7 +180,6 @@ export default function App() {
     } catch (e) {}
   };
 
-  // Sauvegarde dans localStorage pour les sélections utilisateur
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY_RECIPES, JSON.stringify(selectedRecipeIds));
   }, [selectedRecipeIds]);
@@ -216,24 +200,20 @@ export default function App() {
     localStorage.setItem(LOCAL_STORAGE_KEY_EXCLUDED, JSON.stringify(excludedIngredientKeys));
   }, [excludedIngredientKeys]);
 
-  // Recettes complètes sélectionnées
   const selectedRecipes = useMemo(() => {
     return selectedRecipeIds
       .map(id => recipes.find(r => r.id === id))
       .filter(Boolean);
   }, [selectedRecipeIds, recipes]);
 
-  // Moteur d'épicerie cumulée avec gestion des exclusions
   const groceryDepartments = useMemo(() => {
     return buildGroceryList(selectedRecipes, portions, customItems, checkedState, excludedIngredientKeys);
   }, [selectedRecipes, portions, customItems, checkedState, excludedIngredientKeys]);
 
-  // Statistiques d'épicerie
   const groceryStats = useMemo(() => {
     return getGroceryStats(groceryDepartments);
   }, [groceryDepartments]);
 
-  // Gestion de la sélection des recettes
   const handleToggleRecipe = (recipe) => {
     setSelectedRecipeIds((prev) => {
       if (prev.includes(recipe.id)) {
@@ -252,12 +232,10 @@ export default function App() {
     });
   };
 
-  // Retirer une recette
   const handleRemoveRecipe = (recipeId) => {
     setSelectedRecipeIds(prev => prev.filter(id => id !== recipeId));
   };
 
-  // Réinitialiser le menu
   const handleResetMenu = () => {
     if (window.confirm('Voulez-vous réinitialiser votre sélection de repas pour la semaine ?')) {
       setSelectedRecipeIds([]);
@@ -265,7 +243,6 @@ export default function App() {
     }
   };
 
-  // Générateur aléatoire de 5 repas équilibrés
   const handleSelectRandom5 = () => {
     const shuffled = [...recipes].sort(() => 0.5 - Math.random());
     const random5 = shuffled.slice(0, 5).map(r => r.id);
@@ -278,7 +255,6 @@ export default function App() {
     });
   };
 
-  // Sauvegarde (Création / Modification) d'une recette dans la BD (ADMIN UNIQUEMENT)
   const handleSaveRecipe = async (recipeData) => {
     const res = await saveRecipeToDb(recipeData);
     if (res.success) {
@@ -286,7 +262,6 @@ export default function App() {
       setRecipeToEdit(null);
       setIsCreatingNew(false);
 
-      // Si la recette sauvegardée était ouverte dans le modal détail, mettre à jour
       if (activeModalRecipe && activeModalRecipe.id === recipeData.id) {
         setActiveModalRecipe(res.recipe);
       }
@@ -301,7 +276,6 @@ export default function App() {
     }
   };
 
-  // Suppression d'une recette de la BD (ADMIN UNIQUEMENT)
   const handleDeleteRecipe = async (recipeId) => {
     const res = await deleteRecipeFromDb(recipeId);
     if (res.success) {
@@ -314,19 +288,16 @@ export default function App() {
     } else {
       alert('Erreur lors de la suppression.');
     }
-  };
-
-  // Restaurer les 50 recettes par défaut
+  }; substitute catalog
   const handleResetDefaults = async () => {
-    if (window.confirm('Voulez-vous restaurer l\'intégralité des 50 recettes du catalogue officiel ?')) {
+    if (window.confirm('Voulez-vous synchroniser et restaurer l\'intégralité des 50 recettes du catalogue officiel dans la base de données ?')) {
       const reset = await resetAllRecipesToDefaults();
       setRecipes(reset);
       setShowCloudModal(false);
-      alert('Les 50 recettes du catalogue ont été restaurées avec succès.');
+      alert('Les 50 recettes du catalogue ont été synchronisées et restaurées dans la base de données Cloud avec succès.');
     }
   };
 
-  // Gestion des cases à cocher de l'épicerie
   const handleToggleItemCheck = (itemKey) => {
     setCheckedState(prev => ({
       ...prev,
@@ -334,7 +305,6 @@ export default function App() {
     }));
   };
 
-  // Cocher/Décocher tout un rayon
   const handleToggleAllDept = (deptId, targetChecked) => {
     const dept = groceryDepartments[deptId];
     if (!dept) return;
@@ -348,12 +318,10 @@ export default function App() {
     });
   };
 
-  // Ajout / Suppression d'articles personnalisés
   const handleAddCustomItem = (newItem) => {
     setCustomItems(prev => [...prev, newItem]);
   };
 
-  // Ajout d'un article en rabais de circulaire à la liste d'épicerie
   const handleAddDealToGrocery = (deal) => {
     const newItem = {
       id: `deal-${Date.now()}-${deal.id}`,
@@ -361,7 +329,7 @@ export default function App() {
       quantity: 1,
       unit: deal.unit?.includes('/') ? deal.unit.split('/')[0].trim() : 'unité',
       department: deal.department || 'non_perissable',
-      storeBadge: `${deal.storeName} (${deal.promoPrice} $)`,
+      storeBadge: `${deal.storeName} (${deal.promoPrice} $) me`,
       promoPrice: deal.promoPrice,
       isDeal: true
     };
@@ -372,7 +340,6 @@ export default function App() {
     setCustomItems(prev => prev.filter(item => item.id !== itemId));
   };
 
-  // Navigation fluide
   const goToStep = (stepNumber) => {
     setActiveStep(stepNumber);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -380,7 +347,6 @@ export default function App() {
 
   return (
     <div className="app-layout">
-      {/* Barre de navigation principale avec étapes, portions, statut et contrôle Admin */}
       <Navbar
         activeStep={activeStep}
         setActiveStep={goToStep}
@@ -397,7 +363,6 @@ export default function App() {
         onOpenPwaModal={() => setShowPwaModal(true)}
       />
 
-      {/* Corps principal selon l'étape active */}
       <main className="main-content-area">
         {activeStep === 0 && (
           <StepRabaisSemaine
@@ -486,7 +451,6 @@ export default function App() {
         )}
       </main>
 
-      {/* Modal Détail Recette */}
       {activeModalRecipe && (
         <RecipeDetailModal
           recipe={activeModalRecipe}
@@ -499,7 +463,6 @@ export default function App() {
         />
       )}
 
-      {/* Modal Studio Éditeur / Créateur de Recette (Réservé Admin) */}
       {isAdmin && (recipeToEdit || isCreatingNew) && (
         <RecipeEditorModal
           recipeToEdit={recipeToEdit}
@@ -512,7 +475,6 @@ export default function App() {
         />
       )}
 
-      {/* Modal Connexion / Authentification Admin (Code PIN) */}
       {showAdminAuthModal && (
         <AdminAuthModal
           isOpen={showAdminAuthModal}
@@ -521,7 +483,6 @@ export default function App() {
         />
       )}
 
-      {/* Modal Configuration Cloud DB (Firebase) - Réservé Admin */}
       {isAdmin && showCloudModal && (
         <CloudConfigModal
           isCloudActive={isCloudActive}
@@ -531,7 +492,6 @@ export default function App() {
         />
       )}
 
-      {/* Modal Guide d'installation PWA (iPhone / Android) */}
       <PwaInstallModal
         isOpen={showPwaModal}
         onClose={() => setShowPwaModal(false)}
@@ -539,7 +499,6 @@ export default function App() {
         onTriggerInstall={handleTriggerPwaInstall}
       />
 
-      {/* Footer informatif */}
       <footer className="site-footer">
         <div className="footer-container">
           <div className="footer-brand">
