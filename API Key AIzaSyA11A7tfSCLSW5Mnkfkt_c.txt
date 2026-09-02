@@ -1,0 +1,7 @@
+API Key: AIzaSyA11A7tfSCLSW5Mnkfkt_cia9s3oncI0LQ
+
+Project ID: plancha-master-2934d
+
+Auth Domain: plancha-master-2934d.firebaseapp.com
+
+App ID: 1:419482234480:web:1b1222aa550cb1dbd98eb5
