@@ -99,7 +99,7 @@ export const WEEKLY_DEALS_DATA = [
     originalPrice: '6.49 $/lb',
     discount: '-38%',
     validUntil: 'Mercredi prochain',
-    image: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1603048588665-791ca8aea617?auto=format&fit=crop&w=600&q=80',
     matchedKeywords: ['boeuf haché', 'bœuf haché', 'boeuf', 'bœuf'],
     department: 'viandes',
     isTopDeal: true
@@ -163,7 +163,7 @@ export const WEEKLY_DEALS_DATA = [
     originalPrice: '3.49 $',
     discount: '-43%',
     validUntil: 'Mercredi prochain',
-    image: 'https://images.unsplash.com/photo-1546069901-d5bfd2cbfb1f?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80',
     matchedKeywords: ['tofu', 'végé'],
     department: 'viandes',
     isTopDeal: false
@@ -293,7 +293,7 @@ export const WEEKLY_DEALS_DATA = [
     originalPrice: '2.99 $',
     discount: '-50%',
     validUntil: 'Mercredi prochain',
-    image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1504544750208-dc0358e63f7f?auto=format&fit=crop&w=600&q=80',
     matchedKeywords: ['champignons', 'brochettes', 'plancha'],
     department: 'fruits_legumes',
     isTopDeal: false
@@ -529,7 +529,7 @@ export const WEEKLY_DEALS_DATA = [
     originalPrice: '4.99 $',
     discount: '-40%',
     validUntil: 'Mercredi prochain',
-    image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=600&q=80',
     matchedKeywords: ['pois', 'maïs', 'surgelés'],
     department: 'surgeles',
     isTopDeal: false
