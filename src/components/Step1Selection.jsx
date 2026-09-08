@@ -69,7 +69,7 @@ export default function Step1Selection({
   };
 
   const isNewWeeklyRecipe = (recipe) => {
-    return Boolean(recipe?.tags?.includes('Nouveauté Semaine'));
+    return Boolean(recipe?.isNewWeekly || recipe?.tags?.includes('Nouveauté Semaine'));
   };
 
   // Toggle exclusion d'allergènes
@@ -510,7 +510,7 @@ export default function Step1Selection({
                     <span className={`badge-mode mode-${recipe.cookingMode}`}>
                       {recipe.cookingMode === 'plancha' ? '🔥 Plancha' : recipe.cookingMode === 'rapide' ? '⚡ Rapide' : '🍳 Mixte'}
                     </span>
-                    {recipe.tags?.includes('Nouveauté Semaine') && (
+                    {isNewWeeklyRecipe(recipe) && (
                       <span className="badge-new-weekly" title="Nouvelle recette ajoutée cette semaine">
                         ✨ Nouveauté
                       </span>

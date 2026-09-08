@@ -46,6 +46,10 @@ export default function RecipeEditorModal({
   const [carbs, setCarbs] = useState(recipeToEdit?.macros?.carbs || 40);
   const [fats, setFats] = useState(recipeToEdit?.macros?.fats || 18);
   const [isCompleteMeal, setIsCompleteMeal] = useState(recipeToEdit?.isCompleteMeal ?? false);
+  const [isNewWeekly, setIsNewWeekly] = useState(() => {
+    if (recipeToEdit?.isNewWeekly !== undefined) return Boolean(recipeToEdit.isNewWeekly);
+    return Array.isArray(recipeToEdit?.tags) && recipeToEdit.tags.includes('Nouveauté Semaine');
+  });
   const [sideCarbs, setSideCarbs] = useState(recipeToEdit?.sideDishSuggestion?.carbs || '');
   const [sideVeggies, setSideVeggies] = useState(recipeToEdit?.sideDishSuggestion?.veggies || '');
   const [sideTip, setSideTip] = useState(recipeToEdit?.sideDishSuggestion?.planchaTip || '');
@@ -175,6 +179,7 @@ export default function RecipeEditorModal({
         fats: parseInt(fats, 10) || 0
       },
       isCompleteMeal,
+      isNewWeekly,
       sideDishSuggestion: (!isCompleteMeal && (sideCarbs.trim() || sideVeggies.trim()))
         ? {
             carbs: sideCarbs.trim(),
@@ -187,7 +192,24 @@ export default function RecipeEditorModal({
       planchaTips: planchaTips.trim(),
       ingredients: cleanedIngredients,
       steps: cleanedSteps,
-      tags: [cookingMode === 'plancha' ? 'Plancha' : 'Rapide', 'Maison', proteinType]
+      tags: (() => {
+        let currentTags = Array.isArray(recipeToEdit?.tags) && recipeToEdit.tags.length > 0
+          ? [...recipeToEdit.tags]
+          : [cookingMode === 'plancha' ? 'Plancha' : 'Rapide', 'Maison', proteinType];
+
+        if (!currentTags.includes(proteinType)) {
+          currentTags.push(proteinType);
+        }
+
+        if (isNewWeekly) {
+          if (!currentTags.includes('Nouveauté Semaine')) {
+            currentTags.unshift('Nouveauté Semaine');
+          }
+        } else {
+          currentTags = currentTags.filter(t => t !== 'Nouveauté Semaine');
+        }
+        return currentTags;
+      })()
     };
 
     onSaveRecipe(recipeData);
@@ -250,6 +272,22 @@ export default function RecipeEditorModal({
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
               />
+            </div>
+
+            {/* Case à cocher Nouveauté de la semaine */}
+            <div className="form-group">
+              <label className="checkbox-label-styled novelty-checkbox-label" htmlFor="recipe-is-new-weekly">
+                <input
+                  type="checkbox"
+                  id="recipe-is-new-weekly"
+                  checked={isNewWeekly}
+                  onChange={(e) => setIsNewWeekly(e.target.checked)}
+                />
+                <span>
+                  <Sparkles size={16} className="text-indigo" style={{ verticalAlign: 'middle', marginRight: '6px' }} />
+                  <strong>Nouveauté de la semaine ✨</strong> (Affiche le badge animé, place la recette en haut de la liste et l'associe au filtre Nouveautés)
+                </span>
+              </label>
             </div>
 
             <div className="form-row-3cols">

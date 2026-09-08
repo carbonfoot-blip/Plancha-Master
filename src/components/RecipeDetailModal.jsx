@@ -36,6 +36,11 @@ export default function RecipeDetailModal({ recipe, portions, isSelected, isFavo
                 <>🍳 Plancha / Poêle</>
               )}
             </span>
+            {(recipe.isNewWeekly || recipe.tags?.includes('Nouveauté Semaine')) && (
+              <span className="badge-new-weekly" title="Nouvelle recette ajoutée cette semaine">
+                ✨ Nouveauté
+              </span>
+            )}
           </div>
 
           <div className="modal-header-actions">

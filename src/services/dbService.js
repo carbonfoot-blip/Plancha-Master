@@ -64,7 +64,10 @@ function mergeRecipeLists(primaryList = [], fallbackList = RECIPES_DATA) {
   // 1. D'abord insérer le catalogue officiel enrichi du code (avec féculents sans gluten, légumes et macros complets)
   fallbackList.forEach((r) => {
     if (r && r.id) {
-      map.set(r.id, { ...r });
+      map.set(r.id, {
+        ...r,
+        isNewWeekly: Boolean(r.isNewWeekly || r.tags?.includes('Nouveauté Semaine'))
+      });
     }
   });
 
@@ -74,21 +77,42 @@ function mergeRecipeLists(primaryList = [], fallbackList = RECIPES_DATA) {
       const codeRecipe = map.get(cloudRecipe.id);
       if (codeRecipe) {
         // C'est une recette du catalogue officiel : on conserve l'image personnalisée de l'utilisateur de la BD Cloud
+        const hasNoveltyInCloud = cloudRecipe.isNewWeekly !== undefined
+          ? Boolean(cloudRecipe.isNewWeekly)
+          : (Array.isArray(cloudRecipe.tags) ? cloudRecipe.tags.includes('Nouveauté Semaine') : undefined);
+        const hasNoveltyInCode = Boolean(codeRecipe.tags?.includes('Nouveauté Semaine') || codeRecipe.isNewWeekly);
+        const effectiveIsNewWeekly = hasNoveltyInCloud !== undefined ? hasNoveltyInCloud : hasNoveltyInCode;
+
+        let mergedTags = Array.isArray(cloudRecipe.tags) && cloudRecipe.tags.length > 0
+          ? [...cloudRecipe.tags]
+          : (Array.isArray(codeRecipe.tags) ? [...codeRecipe.tags] : []);
+
+        if (effectiveIsNewWeekly) {
+          if (!mergedTags.includes('Nouveauté Semaine')) mergedTags.unshift('Nouveauté Semaine');
+        } else {
+          mergedTags = mergedTags.filter(t => t !== 'Nouveauté Semaine');
+        }
+
         const mergedRecipe = {
           ...codeRecipe, // Prends tous les ingrédients complets (féculent + légume), étapes, macros et calories
           ...cloudRecipe, // Garde les données utilisateur
           image: cloudRecipe.image || codeRecipe.image, // Conserve à 100% l'image personnalisée de la BD Cloud !
           macros: codeRecipe.macros || cloudRecipe.macros, // Macros à jour avec les accompagnements
           calories: codeRecipe.calories || cloudRecipe.calories, // Calories à jour du repas complet
-          ingredients: codeRecipe.ingredients || cloudRecipe.ingredients, // Liste complète d'ingrédients
-          steps: codeRecipe.steps || cloudRecipe.steps, // Étapes complètes
-          title: codeRecipe.title || cloudRecipe.title,
-          subtitle: codeRecipe.subtitle || cloudRecipe.subtitle
+          ingredients: (Array.isArray(cloudRecipe.ingredients) && cloudRecipe.ingredients.length > 0) ? cloudRecipe.ingredients : codeRecipe.ingredients,
+          steps: (Array.isArray(cloudRecipe.steps) && cloudRecipe.steps.length > 0) ? cloudRecipe.steps : codeRecipe.steps,
+          title: cloudRecipe.title || codeRecipe.title,
+          subtitle: cloudRecipe.subtitle || codeRecipe.subtitle,
+          tags: mergedTags,
+          isNewWeekly: effectiveIsNewWeekly
         };
         map.set(cloudRecipe.id, mergedRecipe);
       } else {
         // Recette 100% personnalisée créée par l'utilisateur (rec-custom-xxx)
-        map.set(cloudRecipe.id, cloudRecipe);
+        const isNewWeekly = cloudRecipe.isNewWeekly !== undefined
+          ? Boolean(cloudRecipe.isNewWeekly)
+          : (Array.isArray(cloudRecipe.tags) && cloudRecipe.tags.includes('Nouveauté Semaine'));
+        map.set(cloudRecipe.id, { ...cloudRecipe, isNewWeekly });
       }
     }
   });
