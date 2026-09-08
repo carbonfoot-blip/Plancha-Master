@@ -156,6 +156,27 @@ export default function StepRabaisSemaine({
         </div>
       </div>
 
+      {/* Information Banner on Circulars Synchronization */}
+      <div className="deals-sync-info-banner">
+        <div className="deals-sync-left">
+          <Info size={18} className="sync-info-icon" />
+          <div className="sync-info-text">
+            <strong>Sélection intelligente des circulaires québécoises :</strong>
+            <span>
+              Les spéciaux ci-dessous sont ciblés chaque semaine pour correspondre aux ingrédients des recettes et aux lunchs familiaux. 
+              Pour feuilleter la circulaire intégrale en ligne :
+            </span>
+          </div>
+        </div>
+        <div className="deals-direct-flyers-row">
+          <a href="https://www.circulaires.com/super-c/" target="_blank" rel="noopener noreferrer" className="btn-flyer-quick">🔴 Super C</a>
+          <a href="https://www.circulaires.com/maxi/" target="_blank" rel="noopener noreferrer" className="btn-flyer-quick">🟡 Maxi</a>
+          <a href="https://www.circulaires.com/iga/" target="_blank" rel="noopener noreferrer" className="btn-flyer-quick">🔴 IGA</a>
+          <a href="https://www.circulaires.com/metro/" target="_blank" rel="noopener noreferrer" className="btn-flyer-quick">🔵 Metro</a>
+          <a href="https://www.circulaires.com/walmart/" target="_blank" rel="noopener noreferrer" className="btn-flyer-quick">🟡 Walmart</a>
+        </div>
+      </div>
+
       {/* Barre de Recherche et Filtres par Magasin */}
       <div className="rabais-filters-panel">
         <div className="rabais-search-wrapper">

@@ -226,22 +226,22 @@ export default function Step1Selection({
       </div>
 
       {/* Primary Filtering and Search Controls */}
-      <div className="selection-controls-bar">
-        {/* Search Input */}
-        <div className="search-input-wrapper">
-          <Search className="search-icon-inside" size={18} />
+      <div className="search-filter-toolbar" id="main-search-filter-toolbar">
+        {/* Search Input Box */}
+        <div className="search-bar-unified">
+          <Search className="search-bar-icon" size={18} />
           <input
             type="text"
             id="search-recipes-input"
-            className="search-recipes-field"
-            placeholder="Rechercher par titre, ingrédient (ex: poulet, saumon, mangue)..."
+            className="search-bar-field"
+            placeholder="Rechercher une recette, ingrédient (ex: poulet, saumon, mangue, riz)..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
           {searchQuery && (
             <button
               type="button"
-              className="search-clear-btn"
+              className="search-bar-clear"
               onClick={() => setSearchQuery('')}
               aria-label="Effacer la recherche"
             >
@@ -250,57 +250,61 @@ export default function Step1Selection({
           )}
         </div>
 
-        {/* Quick Filter: Favoris */}
-        <button
-          type="button"
-          id="btn-filter-only-favorites"
-          className={`btn-filter-favorites-toggle ${onlyFavorites ? 'is-active' : ''}`}
-          onClick={() => setOnlyFavorites(!onlyFavorites)}
-          title="Afficher uniquement mes recettes favorites"
-        >
-          <Heart size={16} className={onlyFavorites ? 'heart-icon-active' : ''} />
-          <span>Favoris ({favoriteCount})</span>
-        </button>
+        {/* Quick Filter Pills Row */}
+        <div className="quick-filter-pills-row">
+          {/* Quick Filter: Favoris */}
+          <button
+            type="button"
+            id="btn-filter-only-favorites"
+            className={`pill-filter-btn pill-fav-filter ${onlyFavorites ? 'is-active' : ''}`}
+            onClick={() => setOnlyFavorites(!onlyFavorites)}
+            title="Afficher uniquement mes recettes favorites"
+          >
+            <Heart size={15} className={onlyFavorites ? 'heart-icon-filled' : 'heart-icon-empty'} />
+            <span>Favoris ({favoriteCount})</span>
+          </button>
 
-        {/* Quick Cooking Mode Tabs */}
-        <div className="cooking-modes-pills" role="tablist">
-          {COOKING_MODES.map((mode) => (
-            <button
-              key={mode.id}
-              type="button"
-              id={`filter-mode-${mode.id}`}
-              className={`mode-filter-pill ${selectedMode === mode.id ? 'is-active' : ''}`}
-              onClick={() => setSelectedMode(mode.id)}
-            >
-              {mode.label}
-            </button>
-          ))}
+          {/* Quick Rabais Filter Button */}
+          <button
+            type="button"
+            id="btn-filter-only-deals"
+            className={`pill-filter-btn pill-deals-filter ${onlyOnSale ? 'is-active' : ''}`}
+            onClick={() => setOnlyOnSale(!onlyOnSale)}
+            title="Afficher uniquement les recettes avec des ingrédients en spécial cette semaine"
+          >
+            <Tag size={15} />
+            <span>🔥 En rabais ({recipes.filter(isRecipeOnSale).length})</span>
+          </button>
+
+          {/* Quick Cooking Mode Tabs */}
+          <div className="modes-segmented-control" role="tablist">
+            {COOKING_MODES.map((mode) => (
+              <button
+                key={mode.id}
+                type="button"
+                id={`filter-mode-${mode.id}`}
+                className={`segmented-btn ${selectedMode === mode.id ? 'is-active' : ''}`}
+                onClick={() => setSelectedMode(mode.id)}
+              >
+                {mode.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Advanced Filters Button */}
+          <button
+            type="button"
+            id="btn-toggle-advanced-filters"
+            className={`pill-filter-btn pill-advanced-filter ${excludedAllergens.length > 0 || selectedProtein !== 'all' || selectedTime !== 'all' ? 'has-active-filters' : ''}`}
+            onClick={() => setShowFiltersDrawer(!showFiltersDrawer)}
+          >
+            <Filter size={15} />
+            <span>Filtres avancés</span>
+            {(excludedAllergens.length > 0 || selectedProtein !== 'all' || selectedTime !== 'all') && (
+              <span className="active-filter-indicator"></span>
+            )}
+          </button>
         </div>
-
-        {/* Quick Rabais Filter Button */}
-        <button
-          type="button"
-          id="btn-filter-only-deals"
-          className={`btn-filter-deals-toggle ${onlyOnSale ? 'is-active' : ''}`}
-          onClick={() => setOnlyOnSale(!onlyOnSale)}
-          title="Afficher uniquement les recettes avec des ingrédients en spécial cette semaine"
-        >
-          <Tag size={15} />
-          <span>🔥 En rabais ({recipes.filter(isRecipeOnSale).length})</span>
-        </button>
-
-        <button
-          type="button"
-          id="btn-toggle-advanced-filters"
-          className={`btn-filter-drawer-toggle ${excludedAllergens.length > 0 || selectedProtein !== 'all' || selectedTime !== 'all' ? 'has-active-filters' : ''}`}
-          onClick={() => setShowFiltersDrawer(!showFiltersDrawer)}
-        >
-          <Filter size={16} />
-          <span>Filtres avancés</span>
-          {(excludedAllergens.length > 0 || selectedProtein !== 'all' || selectedTime !== 'all') && (
-            <span className="active-filters-dot"></span>
-          )}
-        </button>
       </div>
 
       {/* Advanced Filters Expandable Drawer */}
