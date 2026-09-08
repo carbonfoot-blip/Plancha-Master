@@ -15,7 +15,8 @@ import {
   Edit2,
   ChefHat,
   Tag,
-  Heart
+  Heart,
+  Share2
 } from 'lucide-react';
 import { PROTEIN_TYPES, COOKING_MODES, TIME_CATEGORIES, ALLERGENS_LIST } from '../data/recipes';
 import { WEEKLY_DEALS_DATA } from '../data/weeklyDeals';
@@ -25,6 +26,7 @@ export default function Step1Selection({
   selectedRecipes,
   favoriteRecipeIds = [],
   onToggleFavorite,
+  onShareFavorites,
   onToggleRecipe,
   onSelectRandom5,
   onResetMenu,
@@ -41,6 +43,7 @@ export default function Step1Selection({
   const [selectedTime, setSelectedTime] = useState('all');
   const [onlyOnSale, setOnlyOnSale] = useState(false);
   const [onlyFavorites, setOnlyFavorites] = useState(false);
+  const [favShareCopied, setFavShareCopied] = useState(false);
   const [excludedAllergens, setExcludedAllergens] = useState([]);
   const [showFiltersDrawer, setShowFiltersDrawer] = useState(false);
 
@@ -264,6 +267,27 @@ export default function Step1Selection({
             <span>Favoris ({favoriteCount})</span>
           </button>
 
+          {/* Bouton Partager les favoris */}
+          {favoriteCount > 0 && onShareFavorites && (
+            <button
+              type="button"
+              id="btn-share-favorites-pill"
+              className={`pill-filter-btn pill-share-favs ${favShareCopied ? 'is-copied' : ''}`}
+              onClick={async (e) => {
+                e.stopPropagation();
+                const res = await onShareFavorites(favoriteRecipeIds);
+                if (res && res.method === 'clipboard') {
+                  setFavShareCopied(true);
+                  setTimeout(() => setFavShareCopied(false), 3000);
+                }
+              }}
+              title="Partager vos recettes coups de cœur avec votre conjointe / famille"
+            >
+              {favShareCopied ? <Check size={14} color="#16a34a" /> : <Share2 size={14} />}
+              <span>{favShareCopied ? 'Lien favoris copié !' : 'Partager favoris'}</span>
+            </button>
+          )}
+
           {/* Quick Rabais Filter Button */}
           <button
             type="button"
@@ -452,6 +476,11 @@ export default function Step1Selection({
                     <span className={`badge-mode mode-${recipe.cookingMode}`}>
                       {recipe.cookingMode === 'plancha' ? '🔥 Plancha' : recipe.cookingMode === 'rapide' ? '⚡ Rapide' : '🍳 Mixte'}
                     </span>
+                    {recipe.tags?.includes('Nouveauté Semaine') && (
+                      <span className="badge-new-weekly" title="Nouvelle recette ajoutée cette semaine">
+                        ✨ Nouveauté
+                      </span>
+                    )}
                     {isRecipeOnSale(recipe) && (
                       <span className="badge-deal-sale" title="Ingrédient en rabais cette semaine">
                         🔥 En spécial

@@ -115,3 +115,94 @@ export async function shareMenuAndGrocery(state) {
     return { success: false, url: shareUrl };
   }
 }
+
+/**
+ * Encode la liste des IDs de recettes favorites en chaîne URL
+ */
+export function encodeFavoritesShare(favoriteIds = []) {
+  const payload = { f: favoriteIds };
+  try {
+    const jsonStr = JSON.stringify(payload);
+    const b64 = btoa(encodeURIComponent(jsonStr).replace(/%([0-9A-F]{2})/g, (match, p1) => {
+      return String.fromCharCode('0x' + p1);
+    }));
+    return b64;
+  } catch (e) {
+    console.error('Erreur encodage favoris:', e);
+    return null;
+  }
+}
+
+/**
+ * Décode la liste des IDs favoris depuis l'URL
+ */
+export function decodeFavoritesShare(rawHashOrQuery) {
+  if (!rawHashOrQuery) return null;
+
+  try {
+    let token = '';
+    if (rawHashOrQuery.includes('favs=')) {
+      const match = rawHashOrQuery.match(/favs=([^&/#]+)/);
+      if (match) token = match[1];
+    } else {
+      token = rawHashOrQuery.replace(/^[#?]/, '');
+    }
+
+    if (!token) return null;
+
+    const jsonStr = decodeURIComponent(Array.prototype.map.call(atob(token), (c) => {
+      return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+
+    const parsed = JSON.parse(jsonStr);
+    return Array.isArray(parsed.f) ? parsed.f : [];
+  } catch (e) {
+    console.warn('Lien favoris invalide:', e);
+    return null;
+  }
+}
+
+/**
+ * Génère l'URL de partage des favoris
+ */
+export function generateFavoritesShareUrl(favoriteIds = []) {
+  const token = encodeFavoritesShare(favoriteIds);
+  if (!token) return window.location.href;
+
+  const url = new URL(window.location.href);
+  url.search = '';
+  url.hash = `favs=${token}`;
+  return url.toString();
+}
+
+/**
+ * Partage les favoris via l'API native ou le presse-papier
+ */
+export async function shareFavorites(favoriteIds = []) {
+  const shareUrl = generateFavoritesShareUrl(favoriteIds);
+  const shareData = {
+    title: 'Plancha-Master : Mes Recettes Favorites ❤️',
+    text: `Voici mes ${favoriteIds.length} recettes favorites sur Plancha-Master ! Clique sur ce lien pour les importer dans tes favoris :`,
+    url: shareUrl
+  };
+
+  if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
+    try {
+      await navigator.share(shareData);
+      return { success: true, method: 'native', url: shareUrl };
+    } catch (e) {
+      if (e.name === 'AbortError') {
+        return { success: true, method: 'aborted', url: shareUrl };
+      }
+    }
+  }
+
+  try {
+    await navigator.clipboard.writeText(shareUrl);
+    return { success: true, method: 'clipboard', url: shareUrl };
+  } catch (e) {
+    console.error('Erreur copie presse-papier favoris:', e);
+    return { success: false, url: shareUrl };
+  }
+}
+

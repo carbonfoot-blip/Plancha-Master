@@ -3972,5 +3972,375 @@ export const RECIPES_DATA = [
       "Saisir la protéine sur la zone vive jusqu'à cuisson parfaite et caramélisée.",
       "Dresser les 4 assiettes avec la portion de protéine, le féculent chaud et les légumes ou la salade fraîche."
     ]
+  },
+  {
+    "id": "rec-51",
+    "title": "Bavette de bœuf marinée à l'argentine & chimichurri",
+    "subtitle": "Bavette saisie vive sur plancha, pommes de terre grelots dorées et asperges grillées au citron",
+    "proteinType": "Boeuf haché",
+    "cookingMode": "plancha",
+    "timeCategory": "Moyen",
+    "prepTime": 15,
+    "cookTime": 15,
+    "calories": 560,
+    "macros": {
+      "proteins": 42,
+      "carbs": 36,
+      "fats": 26
+    },
+    "allergens": [],
+    "tags": [
+      "Plancha Star",
+      "Bœuf",
+      "Sans Gluten",
+      "Nouveauté Semaine",
+      "Chef"
+    ],
+    "image": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
+    "description": "Une magnifique bavette de bœuf marinée aux herbes fraîches, ail et piment doux, saisie à très haute température sur la plancha. Servie avec une sauce chimichurri maison, des grelots dorés et des asperges grillées.",
+    "planchaTips": "Plancha très chaude (240°C). Saisir la bavette 3 minutes de chaque côté pour une cuisson saignante/médium-saignante, puis la laisser reposer 5 minutes sous un papier d'aluminium avant de trancher contre le grain.",
+    "ingredients": [
+      {
+        "id": "ing-rec-51-prot",
+        "name": "Bavette de bœuf fraîche du boucher",
+        "quantity": 650,
+        "unit": "g",
+        "department": "viandes"
+      },
+      {
+        "id": "ing-rec-51-carb",
+        "name": "Pommes de terre grelots lavées et coupées en 2",
+        "quantity": 500,
+        "unit": "g",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-51-veg",
+        "name": "Asperges vertes fraîches parées",
+        "quantity": 350,
+        "unit": "g",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-51-chimi",
+        "name": "Persil frais, origan, ail haché et vinaigre de vin rouge",
+        "quantity": 45,
+        "unit": "g",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-51-huile",
+        "name": "Huile d'olive extra vierge",
+        "quantity": 40,
+        "unit": "ml",
+        "department": "non_perissable"
+      }
+    ],
+    "steps": [
+      "Préparer la sauce chimichurri en mélangeant persil haché, origan, ail, vinaigre de vin rouge et 2 c. à soupe d'huile d'olive.",
+      "Préchauffer la plancha à feu très vif (230°C-240°C).",
+      "Déposer les demi-grelots et les asperges sur la zone moyenne avec un filet d'huile d'olive, sel et poivre (cuire 10-12 min).",
+      "Déposer la bavette de bœuf bien assaisonnée sur la zone vive et saisir 3 à 4 minutes par côté.",
+      "Retirer la bavette et laisser reposer 5 minutes sur une planche à découper avant de trancher en lanières fines.",
+      "Servir les tranches de bavette nappées de chimichurri avec les grelots croustillants et les asperges au jus de citron."
+    ]
+  },
+  {
+    "id": "rec-52",
+    "title": "Poulet glacé à la mangue, lime & gingembre",
+    "subtitle": "Morceaux de poulet caramélisés à la plancha, riz basmati parfumé et poivrons doux grillés",
+    "proteinType": "Poitrine de Poulet",
+    "cookingMode": "plancha",
+    "timeCategory": "Moyen",
+    "prepTime": 15,
+    "cookTime": 15,
+    "calories": 520,
+    "macros": {
+      "proteins": 38,
+      "carbs": 48,
+      "fats": 16
+    },
+    "allergens": [
+      "Soya"
+    ],
+    "tags": [
+      "Plancha Star",
+      "Poulet",
+      "Exotique",
+      "Nouveauté Semaine",
+      "Famille"
+    ],
+    "image": "https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=800&q=80",
+    "description": "Des morceaux de poulet tendres glacés dans une sauce mangue, jus de lime, gingembre râpé et miel, saisis sur la plancha jusqu'à caramélisation parfaite. Accompagné de riz basmati et d'un sauté de poivrons colorés.",
+    "planchaTips": "Plancha à 200°C. Cuire d'abord le poulet à sec avec l'huile, puis badigeonner le glaçage à la mangue dans les 2 dernières minutes pour éviter que les sucres ne brûlent sur la plaque.",
+    "ingredients": [
+      {
+        "id": "ing-rec-52-prot",
+        "name": "Poitrines ou hauts de cuisse de poulet coupés en bouchées",
+        "quantity": 600,
+        "unit": "g",
+        "department": "viandes"
+      },
+      {
+        "id": "ing-rec-52-carb",
+        "name": "Riz basmati blanc",
+        "quantity": 300,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-52-veg",
+        "name": "Poivrons rouges et jaunes émincés",
+        "quantity": 300,
+        "unit": "g",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-52-sauce",
+        "name": "Chutney de mangue, jus de 2 limes et gingembre frais",
+        "quantity": 80,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-52-huile",
+        "name": "Huile végétale et coriandre fraîche pour garnir",
+        "quantity": 25,
+        "unit": "ml",
+        "department": "non_perissable"
+      }
+    ],
+    "steps": [
+      "Cuire le riz basmati dans 2 fois son volume d'eau bouillante salée pendant 12 minutes.",
+      "Préchauffer la plancha à feu moyen-vif (200°C).",
+      "Faire sauter les lanières de poivrons sur la zone légumes avec un filet d'huile jusqu'à tendreté (6-8 min).",
+      "Saisir les morceaux de poulet assaisonnés sur la zone vive pendant 8 minutes en les remuant régulièrement.",
+      "Dans les 2 dernières minutes de cuisson, verser le mélange mangue-lime-gingembre sur le poulet et enrober jusqu'à glaçage brillant.",
+      "Servir le poulet glacé sur le riz basmati avec les poivrons grillés et la coriandre fraîche."
+    ]
+  },
+  {
+    "id": "rec-53",
+    "title": "Pavés de saumon croustillants érable, dijonnaise & sésame",
+    "subtitle": "Saumon atlantique peau croustillante, riz au jasmin et fleurettes de brocoli sautées à l'ail",
+    "proteinType": "Saumon & Poissons",
+    "cookingMode": "mixte",
+    "timeCategory": "Rapide",
+    "prepTime": 10,
+    "cookTime": 12,
+    "calories": 540,
+    "macros": {
+      "proteins": 40,
+      "carbs": 42,
+      "fats": 22
+    },
+    "allergens": [
+      "Moutarde",
+      "Sésame",
+      "Soya"
+    ],
+    "tags": [
+      "Oméga-3",
+      "Poisson",
+      "Érable du Québec",
+      "Nouveauté Semaine",
+      "Rapide"
+    ],
+    "image": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=800&q=80",
+    "description": "Pavés de saumon frais laqués d'un mélange de sirop d'érable pur, moutarde de Dijon et graines de sésame grillées. Cuit côté peau en premier sur la plancha pour un croustillant irrésistible.",
+    "planchaTips": "Plancha à 190°C bien huilée. Poser le saumon côté peau et appuyer doucement avec la spatule 15 secondes. Ne pas le bouger pendant 5 minutes pour obtenir une peau ultra croustillante.",
+    "ingredients": [
+      {
+        "id": "ing-rec-53-prot",
+        "name": "Pavés de saumon frais de l'Atlantique avec peau",
+        "quantity": 600,
+        "unit": "g",
+        "department": "viandes"
+      },
+      {
+        "id": "ing-rec-53-carb",
+        "name": "Riz au jasmin",
+        "quantity": 300,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-53-veg",
+        "name": "Fleurettes de brocoli frais",
+        "quantity": 350,
+        "unit": "g",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-53-lacquage",
+        "name": "Sirop d'érable pur, moutarde de Dijon et sauce soya",
+        "quantity": 50,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-53-sesame",
+        "name": "Graines de sésame grillées et huile d'olive",
+        "quantity": 25,
+        "unit": "g",
+        "department": "non_perissable"
+      }
+    ],
+    "steps": [
+      "Cuire le riz au jasmin à l'eau bouillante salée pendant 12 minutes.",
+      "Mélanger le sirop d'érable, la moutarde de Dijon et la sauce soya pour créer la laque.",
+      "Préchauffer la plancha à 190°C et huiler légèrement la surface.",
+      "Faire sauter les fleurettes de brocoli avec un filet d'eau et d'huile sur la zone moyenne (8 minutes sous cloche si possible).",
+      "Poser les pavés de saumon côté peau sur la zone vive. Cuire 5 minutes sans les bouger, badigeonner le dessus de laque à l'érable, puis retourner 2 minutes.",
+      "Saupoudrer de graines de sésame et servir avec le riz chaud et le brocoli croquant."
+    ]
+  },
+  {
+    "id": "rec-54",
+    "title": "Brochettes de filet de porc souvlaki & tzatziki maison",
+    "subtitle": "Cubes de porc marinés à l'origan et citron, pommes de terre grecques dorées et salade concombre-feta",
+    "proteinType": "Filet de porc",
+    "cookingMode": "plancha",
+    "timeCategory": "Moyen",
+    "prepTime": 15,
+    "cookTime": 15,
+    "calories": 490,
+    "macros": {
+      "proteins": 39,
+      "carbs": 35,
+      "fats": 19
+    },
+    "allergens": [
+      "Lactose"
+    ],
+    "tags": [
+      "Grecque",
+      "Porc",
+      "Fraîcheur",
+      "Nouveauté Semaine",
+      "Plancha"
+    ],
+    "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80",
+    "description": "Cubes de filet de porc extra-tendre marinés dans l'huile d'olive, jus de citron, ail et origan grec. Grillés à feu vif sur la plancha avec des quartiers de pommes de terre dorées et servis avec une sauce tzatziki fraîche.",
+    "planchaTips": "Plancha à 220°C. Tourner les brochettes d'un quart de tour toutes les 2-3 minutes pour marquer les 4 côtés et conserver le cœur juteux du filet de porc.",
+    "ingredients": [
+      {
+        "id": "ing-rec-54-prot",
+        "name": "Filet de porc paré coupé en cubes",
+        "quantity": 600,
+        "unit": "g",
+        "department": "viandes"
+      },
+      {
+        "id": "ing-rec-54-carb",
+        "name": "Pommes de terre Russet coupées en quartiers (style grec)",
+        "quantity": 500,
+        "unit": "g",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-54-veg",
+        "name": "Concombre anglais râpé et égoutté pour tzatziki",
+        "quantity": 250,
+        "unit": "g",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-54-tzat",
+        "name": "Yogourt grec nature, ail pressé, jus de citron et origan",
+        "quantity": 180,
+        "unit": "g",
+        "department": "produits_laitiers"
+      },
+      {
+        "id": "ing-rec-54-huile",
+        "name": "Huile d'olive grecque et sel de mer",
+        "quantity": 30,
+        "unit": "ml",
+        "department": "non_perissable"
+      }
+    ],
+    "steps": [
+      "Enfiler les cubes de filet de porc mariné sur des brochettes.",
+      "Mélanger le yogourt grec, le concombre râpé pressé, l'ail, le jus de citron, sel et filet d'huile d'olive pour le tzatziki.",
+      "Préchauffer la plancha à 220°C.",
+      "Déposer les quartiers de pommes de terre assaisonnés d'origan et jus de citron sur la zone moyenne (cuire 12-14 min en retournant souvent).",
+      "Saisir les brochettes de souvlaki sur la zone vive 8 à 10 minutes en les tournant pour dorer tous les côtés.",
+      "Servir les brochettes chaudes avec les patates grecques, le tzatziki onctueux et une rondelle de citron."
+    ]
+  },
+  {
+    "id": "rec-55",
+    "title": "Halloumi grillé, quinoa aux herbes & légumes méditerranéens",
+    "subtitle": "Tranches de fromage halloumi dorées à la plancha, courgettes, tomates cerises confites et vinaigrette balsamique",
+    "proteinType": "Végétarien",
+    "cookingMode": "rapide",
+    "timeCategory": "Rapide",
+    "prepTime": 10,
+    "cookTime": 12,
+    "calories": 470,
+    "macros": {
+      "proteins": 28,
+      "carbs": 40,
+      "fats": 22
+    },
+    "allergens": [
+      "Lactose"
+    ],
+    "tags": [
+      "Végétarien",
+      "Fromage Grillé",
+      "Méditerranéen",
+      "Nouveauté Semaine",
+      "Rapide"
+    ],
+    "image": "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80",
+    "description": "Le fromage halloumi ne fond pas à la chaleur et développe une croûte dorée croustillante exceptionnelle sur la plancha. Servi sur un lit de quinoa moelleux avec courgettes et tomates cerises éclatées au basilic.",
+    "planchaTips": "Plancha à 210°C sans matière grasse superflue (le fromage rend son propre gras). 2 minutes de chaque côté suffisent pour une belle couleur dorée.",
+    "ingredients": [
+      {
+        "id": "ing-rec-55-prot",
+        "name": "Fromage Halloumi tranché épais (1 cm)",
+        "quantity": 400,
+        "unit": "g",
+        "department": "produits_laitiers"
+      },
+      {
+        "id": "ing-rec-55-carb",
+        "name": "Quinoa blanc ou tricolore cuit",
+        "quantity": 300,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-55-veg",
+        "name": "Courgettes en rondelles et tomates cerises entières",
+        "quantity": 400,
+        "unit": "g",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-55-vinaigrette",
+        "name": "Vinaigre balsamique, basilic frais et ail",
+        "quantity": 30,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-55-huile",
+        "name": "Huile d'olive",
+        "quantity": 25,
+        "unit": "ml",
+        "department": "non_perissable"
+      }
+    ],
+    "steps": [
+      "Rincer et cuire le quinoa dans de l'eau bouillante salée pendant 12 minutes, puis égoutter.",
+      "Préchauffer la plancha à feu moyen-vif (210°C).",
+      "Faire griller les rondelles de courgettes et les tomates cerises sur la plaque avec un filet d'huile d'olive pendant 6 minutes jusqu'à ce que les tomates éclatent.",
+      "Déposer les tranches de halloumi sur la zone vive et griller 2 minutes de chaque côté jusqu'à belle coloration dorée.",
+      "Mélanger le quinoa avec les légumes grillés chauds, le basilic ciselé et le vinaigre balsamique.",
+      "Dresser les tranches de halloumi croustillantes sur le quinoa méditerranéen chaud."
+    ]
   }
 ];

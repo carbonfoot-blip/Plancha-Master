@@ -8,7 +8,7 @@ import {
   resetAllRecipesToDefaults
 } from './services/dbService';
 import { buildGroceryList, getGroceryStats } from './utils/groceryEngine';
-import { decodeShareState, shareMenuAndGrocery } from './utils/shareUtils';
+import { decodeShareState, shareMenuAndGrocery, decodeFavoritesShare, shareFavorites } from './utils/shareUtils';
 import Navbar from './components/Navbar';
 import Step1Selection from './components/Step1Selection';
 import StepRabaisSemaine from './components/StepRabaisSemaine';
@@ -21,7 +21,7 @@ import CloudConfigModal from './components/CloudConfigModal';
 import AdminAuthModal from './components/AdminAuthModal';
 import PwaInstallModal from './components/PwaInstallModal';
 import ReleaseNotesModal from './components/ReleaseNotesModal';
-import { getActiveReleaseNotes } from './data/releaseNotes';
+import { getActiveReleaseNotes, RELEASE_NOTES_DATA } from './data/releaseNotes';
 import './App.css';
 
 const LOCAL_STORAGE_KEY_RECIPES = 'plancha_menu_selected_recipes';
@@ -54,10 +54,11 @@ export default function App() {
 
   // Release notes (publiées dans les 5 derniers jours)
   const activeReleaseNotes = useMemo(() => {
-    return getActiveReleaseNotes(5);
+    return getActiveReleaseNotes(7);
   }, []);
 
   const [showReleaseNotesModal, setShowReleaseNotesModal] = useState(false);
+  const [incomingFavsMessage, setIncomingFavsMessage] = useState('');
 
   const [lastSeenReleaseId, setLastSeenReleaseId] = useState(() => {
     try {
@@ -111,10 +112,11 @@ export default function App() {
     }
   });
   const [showAdminAuthModal, setShowAdminAuthModal] = useState(false);
-
-  const [showCloudModal, setShowCloudModal] = useState(false);
+  const [showCloudConfigModal, setShowCloudConfigModal] = useState(false);
   const [showPwaModal, setShowPwaModal] = useState(false);
   const [deferredPwaPrompt, setDeferredPwaPrompt] = useState(null);
+
+  const [activeModalRecipe, setActiveModalRecipe] = useState(null);
   const [recipeToEdit, setRecipeToEdit] = useState(null);
   const [isCreatingNew, setIsCreatingNew] = useState(false);
 
@@ -168,8 +170,6 @@ export default function App() {
     return {};
   });
 
-  const [activeModalRecipe, setActiveModalRecipe] = useState(null);
-
   const fetchRecipes = async () => {
     setIsLoadingDb(true);
     try {
@@ -209,6 +209,28 @@ export default function App() {
           spread: 70,
           origin: { y: 0.4 }
         });
+      }
+    } else if (raw && raw.includes('favs=')) {
+      const importedFavs = decodeFavoritesShare(raw);
+      if (importedFavs && importedFavs.length > 0) {
+        setFavoriteRecipeIds((prev) => {
+          const merged = Array.from(new Set([...prev, ...importedFavs]));
+          try {
+            localStorage.setItem(LOCAL_STORAGE_KEY_FAVORITES, JSON.stringify(merged));
+          } catch (e) {}
+          return merged;
+        });
+
+        setActiveStep(1);
+        setIncomingFavsMessage(`🎉 ${importedFavs.length} recettes coup de cœur ont été importées et enregistrées dans vos favoris !`);
+
+        confetti({
+          particleCount: 85,
+          spread: 80,
+          origin: { y: 0.5 }
+        });
+
+        setTimeout(() => setIncomingFavsMessage(''), 7000);
       }
     }
   }, []);
@@ -439,6 +461,22 @@ export default function App() {
 
   return (
     <div className="app-layout">
+      {incomingFavsMessage && (
+        <div className="toast-favs-imported animate-slide-down" id="toast-shared-favs">
+          <div className="toast-favs-content">
+            <span className="toast-favs-text">{incomingFavsMessage}</span>
+          </div>
+          <button
+            type="button"
+            className="toast-favs-close"
+            onClick={() => setIncomingFavsMessage('')}
+            aria-label="Fermer"
+          >
+            ✕
+          </button>
+        </div>
+      )}
+
       <Navbar
         activeStep={activeStep}
         setActiveStep={goToStep}
@@ -450,7 +488,7 @@ export default function App() {
         isAdmin={isAdmin}
         onOpenAdminAuth={() => setShowAdminAuthModal(true)}
         onLockAdmin={handleLockAdmin}
-        onOpenCloudConfig={() => setShowCloudModal(true)}
+        onOpenCloudConfig={() => setShowCloudConfigModal(true)}
         onOpenNewRecipe={() => setIsCreatingNew(true)}
         onOpenPwaModal={() => setShowPwaModal(true)}
         onOpenReleaseNotes={handleOpenReleaseNotes}
@@ -478,6 +516,7 @@ export default function App() {
             selectedRecipes={selectedRecipes}
             favoriteRecipeIds={favoriteRecipeIds}
             onToggleFavorite={handleToggleFavorite}
+            onShareFavorites={shareFavorites}
             onToggleRecipe={handleToggleRecipe}
             onSelectRandom5={handleSelectRandom5}
             onResetMenu={handleResetMenu}
@@ -588,12 +627,12 @@ export default function App() {
         />
       )}
 
-      {isAdmin && showCloudModal && (
+      {isAdmin && showCloudConfigModal && (
         <CloudConfigModal
           isCloudActive={isCloudActive}
           onConfigUpdated={fetchRecipes}
           onResetDefaults={handleResetDefaults}
-          onClose={() => setShowCloudModal(false)}
+          onClose={() => setShowCloudConfigModal(false)}
         />
       )}
 
@@ -606,7 +645,7 @@ export default function App() {
 
       {showReleaseNotesModal && (
         <ReleaseNotesModal
-          releaseNotes={activeReleaseNotes}
+          releaseNotes={RELEASE_NOTES_DATA}
           onClose={() => setShowReleaseNotesModal(false)}
           onMarkAllAsRead={handleMarkAllReleasesAsRead}
         />
