@@ -545,6 +545,31 @@
   transform: translateY(-1px);
 }
 
+/* Filtre Nouveautés de la semaine */
+.pill-new-weekly-filter {
+  background: #f5f3ff;
+  border-color: #c7d2fe;
+  color: #4f46e5;
+}
+
+.pill-new-weekly-filter:hover {
+  border-color: #818cf8;
+  background: #eef2ff;
+  color: #4338ca;
+  transform: translateY(-1px);
+}
+
+.pill-new-weekly-filter.is-active {
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  border-color: #4338ca;
+  color: #ffffff;
+  box-shadow: 0 3px 10px rgba(99, 102, 241, 0.35);
+}
+
+.pill-new-weekly-filter.is-active .sparkle-icon-active {
+  animation: pulseGlow 1.5s infinite ease-in-out;
+}
+
 /* Filtre Favoris */
 .pill-fav-filter:hover {
   border-color: #fca5a5;

@@ -43,6 +43,7 @@ export default function Step1Selection({
   const [selectedTime, setSelectedTime] = useState('all');
   const [onlyOnSale, setOnlyOnSale] = useState(false);
   const [onlyFavorites, setOnlyFavorites] = useState(false);
+  const [onlyNewWeekly, setOnlyNewWeekly] = useState(false);
   const [favShareCopied, setFavShareCopied] = useState(false);
   const [excludedAllergens, setExcludedAllergens] = useState([]);
   const [showFiltersDrawer, setShowFiltersDrawer] = useState(false);
@@ -67,6 +68,10 @@ export default function Step1Selection({
     });
   };
 
+  const isNewWeeklyRecipe = (recipe) => {
+    return Boolean(recipe?.tags?.includes('Nouveauté Semaine'));
+  };
+
   // Toggle exclusion d'allergènes
   const toggleAllergenExclusion = (allergen) => {
     setExcludedAllergens(prev =>
@@ -80,14 +85,20 @@ export default function Step1Selection({
     setSelectedProtein('all');
     setSelectedMode('all');
     setSelectedTime('all');
+    setOnlyNewWeekly(false);
     setOnlyOnSale(false);
     setOnlyFavorites(false);
     setExcludedAllergens([]);
   };
 
-  // Filtrage des recettes
+  // Filtrage et tri des recettes (avec les NOUVEAUTÉS en haut de la liste)
   const filteredRecipes = useMemo(() => {
-    return recipes.filter((recipe) => {
+    const list = recipes.filter((recipe) => {
+      // Filtre Nouveautés de la semaine
+      if (onlyNewWeekly && !isNewWeeklyRecipe(recipe)) {
+        return false;
+      }
+
       // Filtre Favoris
       if (onlyFavorites && !favoriteRecipeIds.includes(recipe.id)) {
         return false;
@@ -132,11 +143,22 @@ export default function Step1Selection({
 
       return true;
     });
-  }, [recipes, searchQuery, onlyFavorites, favoriteRecipeIds, onlyOnSale, selectedProtein, selectedMode, selectedTime, excludedAllergens, activeProteinDeals]);
+
+    // Tri prioritaire : placer les nouvelles recettes de la semaine au tout début de la liste
+    return [...list].sort((a, b) => {
+      const aIsNew = isNewWeeklyRecipe(a) ? 1 : 0;
+      const bIsNew = isNewWeeklyRecipe(b) ? 1 : 0;
+      if (bIsNew !== aIsNew) {
+        return bIsNew - aIsNew; // 1 avant 0
+      }
+      return 0;
+    });
+  }, [recipes, searchQuery, onlyNewWeekly, onlyFavorites, favoriteRecipeIds, onlyOnSale, selectedProtein, selectedMode, selectedTime, excludedAllergens, activeProteinDeals]);
 
   const selectedCount = selectedRecipes.length;
   const isSelected = (id) => selectedRecipes.some(r => r.id === id);
   const favoriteCount = recipes.filter(r => favoriteRecipeIds.includes(r.id)).length;
+  const newWeeklyCount = recipes.filter(isNewWeeklyRecipe).length;
 
   return (
     <div className="step-page-container animate-fade-in" id="step-1-selection-screen">
@@ -255,6 +277,18 @@ export default function Step1Selection({
 
         {/* Quick Filter Pills Row */}
         <div className="quick-filter-pills-row">
+          {/* Quick Filter: Nouveautés de la semaine */}
+          <button
+            type="button"
+            id="btn-filter-only-new-weekly"
+            className={`pill-filter-btn pill-new-weekly-filter ${onlyNewWeekly ? 'is-active' : ''}`}
+            onClick={() => setOnlyNewWeekly(!onlyNewWeekly)}
+            title="Afficher uniquement les nouvelles recettes ajoutées cette semaine"
+          >
+            <Sparkles size={15} className={onlyNewWeekly ? 'sparkle-icon-active' : ''} />
+            <span>✨ Nouveautés de la semaine ({newWeeklyCount})</span>
+          </button>
+
           {/* Quick Filter: Favoris */}
           <button
             type="button"
@@ -434,10 +468,10 @@ export default function Step1Selection({
       {filteredRecipes.length === 0 ? (
         <div className="empty-results-box">
           <p className="empty-title">
-            {onlyFavorites ? "Aucun coup de cœur enregistré pour l'instant ❤️" : "Aucune recette ne correspond à ces critères"}
+            {onlyFavorites ? "Aucun coup de cœur enregistré pour l'instant ❤️" : onlyNewWeekly ? "Aucune nouveauté ne correspond aux critères sélectionnés ✨" : "Aucune recette ne correspond à ces critères"}
           </p>
           <p className="empty-subtitle">
-            {onlyFavorites ? "Cliquez sur l'icône cœur ❤️ sur n'importe quelle recette pour l'ajouter à vos favoris !" : "Essayez d'ajuster ou de réinitialiser vos filtres."}
+            {onlyFavorites ? "Cliquez sur l'icône cœur ❤️ sur n'importe quelle recette pour l'ajouter à vos favoris !" : onlyNewWeekly ? "Désactivez les autres filtres pour découvrir les 5 nouvelles recettes de la semaine." : "Essayez d'ajuster ou de réinitialiser vos filtres."}
           </p>
           <button
             type="button"
