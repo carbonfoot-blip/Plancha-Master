@@ -14,7 +14,9 @@ import {
   ShieldCheck,
   CheckCircle2,
   Share2,
-  Check
+  Check,
+  Heart,
+  RotateCcw
 } from 'lucide-react';
 import { GROCERY_DEPARTMENTS } from '../data/recipes';
 
@@ -32,7 +34,10 @@ export default function Step2WeeklyMenu({
   selectedRecipes,
   portions,
   setPortions,
+  favoriteRecipeIds = [],
+  onToggleFavorite,
   onRemoveRecipe,
+  onResetMenu,
   onViewRecipe,
   onGoToStep1,
   onNextStep,
@@ -84,7 +89,7 @@ export default function Step2WeeklyMenu({
           <div className="portions-card-box">
             <div className="portions-card-header">
               <Users size={16} />
-              <span>Ajuster les portions :</span>
+              <span>Portions :</span>
             </div>
             <div className="portions-card-controls">
               <button
@@ -111,6 +116,20 @@ export default function Step2WeeklyMenu({
               </button>
             </div>
           </div>
+
+          {/* Reset Menu Button */}
+          {selectedRecipes.length > 0 && onResetMenu && (
+            <button
+              type="button"
+              className="btn-toolbar-action btn-menu-reset"
+              onClick={onResetMenu}
+              title="Vider et recommencer la sélection de la semaine"
+              id="btn-menu-reset-all"
+            >
+              <RotateCcw size={15} />
+              <span>Vider le menu</span>
+            </button>
+          )}
 
           {selectedRecipes.length > 0 && (
             <button
@@ -158,16 +177,30 @@ export default function Step2WeeklyMenu({
                       <h3 className="day-name-title">{day.name}</h3>
                     </div>
 
-                    <button
-                      type="button"
-                      className="btn-remove-day-meal"
-                      onClick={() => onRemoveRecipe(recipe.id)}
-                      title="Retirer cette recette du menu"
-                      aria-label={`Retirer ${recipe.title}`}
-                      id={`btn-remove-recipe-${recipe.id}`}
-                    >
-                      <Trash2 size={16} />
-                    </button>
+                    <div className="day-card-header-actions">
+                      {/* Favorite Button */}
+                      <button
+                        type="button"
+                        className={`btn-day-fav ${favoriteRecipeIds.includes(recipe.id) ? 'is-fav' : ''}`}
+                        onClick={() => onToggleFavorite && onToggleFavorite(recipe.id)}
+                        title={favoriteRecipeIds.includes(recipe.id) ? "Retirer des favoris" : "Ajouter aux favoris"}
+                        aria-label="Favori"
+                      >
+                        <Heart size={16} className={favoriteRecipeIds.includes(recipe.id) ? 'heart-icon-filled' : 'heart-icon-empty'} />
+                      </button>
+
+                      {/* Remove Button */}
+                      <button
+                        type="button"
+                        className="btn-remove-day-meal"
+                        onClick={() => onRemoveRecipe(recipe.id)}
+                        title="Retirer cette recette du menu"
+                        aria-label={`Retirer ${recipe.title}`}
+                        id={`btn-remove-recipe-${recipe.id}`}
+                      >
+                        <Trash2 size={16} />
+                      </button>
+                    </div>
                   </div>
 
                   {/* Day Recipe Body */}

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { X, Flame, Zap, Clock, Users, AlertTriangle, CheckCircle2, ChefHat, Plus, Check, Edit2, Salad, Sparkles, Activity } from 'lucide-react';
+import { X, Flame, Zap, Clock, Users, AlertTriangle, CheckCircle2, ChefHat, Plus, Check, Edit2, Salad, Sparkles, Activity, Heart } from 'lucide-react';
 import { GROCERY_DEPARTMENTS } from '../data/recipes';
 
-export default function RecipeDetailModal({ recipe, portions, isSelected, onToggleSelect, onEditRecipe, isAdmin, onClose }) {
+export default function RecipeDetailModal({ recipe, portions, isSelected, isFavorite, onToggleFavorite, onToggleSelect, onEditRecipe, isAdmin, onClose }) {
   const [completedSteps, setCompletedSteps] = useState({});
 
   if (!recipe) return null;
@@ -38,15 +38,31 @@ export default function RecipeDetailModal({ recipe, portions, isSelected, onTogg
             </span>
           </div>
 
-          <button
-            type="button"
-            className="modal-close-btn"
-            onClick={onClose}
-            aria-label="Fermer la fenêtre"
-            id="btn-close-modal"
-          >
-            <X size={22} />
-          </button>
+          <div className="modal-header-actions">
+            {onToggleFavorite && (
+              <button
+                type="button"
+                className={`btn-modal-favorite ${isFavorite ? 'is-fav' : ''}`}
+                onClick={() => onToggleFavorite(recipe.id)}
+                aria-label={isFavorite ? "Retirer des favoris" : "Ajouter aux favoris"}
+                title={isFavorite ? "Retirer des favoris" : "Ajouter aux favoris"}
+                id="btn-modal-toggle-fav"
+              >
+                <Heart size={18} className={isFavorite ? "heart-icon-filled" : "heart-icon-empty"} />
+                <span>{isFavorite ? "Coup de cœur ❤️" : "Ajouter aux favoris"}</span>
+              </button>
+            )}
+
+            <button
+              type="button"
+              className="modal-close-btn"
+              onClick={onClose}
+              aria-label="Fermer la fenêtre"
+              id="btn-close-modal"
+            >
+              <X size={22} />
+            </button>
+          </div>
         </div>
 
         {/* Modal Hero Body */}

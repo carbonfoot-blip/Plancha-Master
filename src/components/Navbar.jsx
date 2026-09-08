@@ -148,19 +148,6 @@ export default function Navbar({
             <Smartphone size={14} />
             <span className="pwa-install-text btn-text-hide-mobile">Installer l'App</span>
           </button>
-
-          {selectedCount > 0 && (
-            <button
-              type="button"
-              className="btn-reset-light"
-              onClick={onResetMenu}
-              title="Réinitialiser la sélection"
-              id="btn-reset-selection"
-            >
-              <RefreshCw size={13} />
-              <span className="btn-reset-text">Vider</span>
-            </button>
-          )}
         </div>
       </div>
 

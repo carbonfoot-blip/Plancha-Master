@@ -14,7 +14,8 @@ import {
   RotateCcw,
   Edit2,
   ChefHat,
-  Tag
+  Tag,
+  Heart
 } from 'lucide-react';
 import { PROTEIN_TYPES, COOKING_MODES, TIME_CATEGORIES, ALLERGENS_LIST } from '../data/recipes';
 import { WEEKLY_DEALS_DATA } from '../data/weeklyDeals';
@@ -22,8 +23,11 @@ import { WEEKLY_DEALS_DATA } from '../data/weeklyDeals';
 export default function Step1Selection({
   recipes,
   selectedRecipes,
+  favoriteRecipeIds = [],
+  onToggleFavorite,
   onToggleRecipe,
   onSelectRandom5,
+  onResetMenu,
   onViewRecipe,
   onOpenNewRecipe,
   onEditRecipe,
@@ -36,6 +40,7 @@ export default function Step1Selection({
   const [selectedMode, setSelectedMode] = useState('all');
   const [selectedTime, setSelectedTime] = useState('all');
   const [onlyOnSale, setOnlyOnSale] = useState(false);
+  const [onlyFavorites, setOnlyFavorites] = useState(false);
   const [excludedAllergens, setExcludedAllergens] = useState([]);
   const [showFiltersDrawer, setShowFiltersDrawer] = useState(false);
 
@@ -73,12 +78,18 @@ export default function Step1Selection({
     setSelectedMode('all');
     setSelectedTime('all');
     setOnlyOnSale(false);
+    setOnlyFavorites(false);
     setExcludedAllergens([]);
   };
 
   // Filtrage des recettes
   const filteredRecipes = useMemo(() => {
     return recipes.filter((recipe) => {
+      // Filtre Favoris
+      if (onlyFavorites && !favoriteRecipeIds.includes(recipe.id)) {
+        return false;
+      }
+
       // Recherche textuelle
       if (searchQuery.trim()) {
         const q = searchQuery.toLowerCase();
@@ -118,10 +129,11 @@ export default function Step1Selection({
 
       return true;
     });
-  }, [recipes, searchQuery, onlyOnSale, selectedProtein, selectedMode, selectedTime, excludedAllergens, activeProteinDeals]);
+  }, [recipes, searchQuery, onlyFavorites, favoriteRecipeIds, onlyOnSale, selectedProtein, selectedMode, selectedTime, excludedAllergens, activeProteinDeals]);
 
   const selectedCount = selectedRecipes.length;
   const isSelected = (id) => selectedRecipes.some(r => r.id === id);
+  const favoriteCount = recipes.filter(r => favoriteRecipeIds.includes(r.id)).length;
 
   return (
     <div className="step-page-container animate-fade-in" id="step-1-selection-screen">
@@ -149,6 +161,19 @@ export default function Step1Selection({
               <Sparkles size={18} className="sparkle-anim" />
               <span>Générateur Magique (5 repas variés)</span>
             </button>
+
+            {selectedCount > 0 && onResetMenu && (
+              <button
+                type="button"
+                className="btn-hero-reset-selection"
+                onClick={onResetMenu}
+                title="Vider la sélection actuelle"
+                id="btn-hero-reset"
+              >
+                <RotateCcw size={16} />
+                <span>Vider la sélection ({selectedCount})</span>
+              </button>
+            )}
 
             {isAdmin && (
               <button
@@ -193,44 +218,58 @@ export default function Step1Selection({
           </div>
           <div className="progress-status-hint">
             {selectedCount === 0 && '💡 Choisissez vos 5 coups de cœur de la semaine ci-dessous.'}
-            {selectedCount > 0 && selectedCount < 5 && `Encore ${5 - selectedCount} repas à sélectionner pour compléter votre semaine.`}
-            {selectedCount === 5 && '🎉 Parfait ! Votre semaine de 5 repas est prête.'}
-            {selectedCount > 5 && `✨ Vous avez sélectionné ${selectedCount} repas.`}
+            {selectedCount > 0 && selectedCount < 5 && `Encore ${5 - selectedCount} recette${5 - selectedCount > 1 ? 's' : ''} à ajouter pour compléter vos 5 jours.`}
+            {selectedCount === 5 && '🎉 Parfait ! Vos 5 repas sont prêts pour la semaine.'}
+            {selectedCount > 5 && `Vous avez sélectionné ${selectedCount} repas.`}
           </div>
         </div>
       </div>
 
-      {/* Filter & Search Bar */}
-      <div className="filters-control-panel">
+      {/* Primary Filtering and Search Controls */}
+      <div className="selection-controls-bar">
+        {/* Search Input */}
         <div className="search-input-wrapper">
-          <Search size={18} className="search-icon" />
+          <Search className="search-icon-inside" size={18} />
           <input
             type="text"
-            id="input-search-recipes"
-            placeholder="Rechercher par titre, ingrédient (ex: poulet, citron, brocoli)..."
+            id="search-recipes-input"
+            className="search-recipes-field"
+            placeholder="Rechercher par titre, ingrédient (ex: poulet, saumon, mangue)..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="search-text-input"
           />
           {searchQuery && (
             <button
               type="button"
-              className="btn-clear-search"
+              className="search-clear-btn"
               onClick={() => setSearchQuery('')}
+              aria-label="Effacer la recherche"
             >
-              ×
+              ✕
             </button>
           )}
         </div>
 
-        {/* Cooking Modes Pills */}
-        <div className="mode-toggle-group" role="radiogroup" aria-label="Mode de cuisson">
+        {/* Quick Filter: Favoris */}
+        <button
+          type="button"
+          id="btn-filter-only-favorites"
+          className={`btn-filter-favorites-toggle ${onlyFavorites ? 'is-active' : ''}`}
+          onClick={() => setOnlyFavorites(!onlyFavorites)}
+          title="Afficher uniquement mes recettes favorites"
+        >
+          <Heart size={16} className={onlyFavorites ? 'heart-icon-active' : ''} />
+          <span>Favoris ({favoriteCount})</span>
+        </button>
+
+        {/* Quick Cooking Mode Tabs */}
+        <div className="cooking-modes-pills" role="tablist">
           {COOKING_MODES.map((mode) => (
             <button
               key={mode.id}
               type="button"
               id={`filter-mode-${mode.id}`}
-              className={`mode-toggle-btn ${selectedMode === mode.id ? 'is-active' : ''}`}
+              className={`mode-filter-pill ${selectedMode === mode.id ? 'is-active' : ''}`}
               onClick={() => setSelectedMode(mode.id)}
             >
               {mode.label}
@@ -366,8 +405,12 @@ export default function Step1Selection({
       {/* Recipes Cards Grid */}
       {filteredRecipes.length === 0 ? (
         <div className="empty-results-box">
-          <p className="empty-title">Aucune recette ne correspond à ces critères</p>
-          <p className="empty-subtitle">Essayez d'ajuster ou de réinitialiser vos filtres.</p>
+          <p className="empty-title">
+            {onlyFavorites ? "Aucun coup de cœur enregistré pour l'instant ❤️" : "Aucune recette ne correspond à ces critères"}
+          </p>
+          <p className="empty-subtitle">
+            {onlyFavorites ? "Cliquez sur l'icône cœur ❤️ sur n'importe quelle recette pour l'ajouter à vos favoris !" : "Essayez d'ajuster ou de réinitialiser vos filtres."}
+          </p>
           <button
             type="button"
             className="btn-reset-light"
@@ -380,12 +423,13 @@ export default function Step1Selection({
         <div className="recipes-cards-grid">
           {filteredRecipes.map((recipe) => {
             const selected = isSelected(recipe.id);
+            const isFav = favoriteRecipeIds.includes(recipe.id);
 
             return (
               <div
                 key={recipe.id}
                 id={`recipe-card-${recipe.id}`}
-                className={`recipe-card ${selected ? 'is-in-menu' : ''}`}
+                className={`recipe-card ${selected ? 'is-in-menu' : ''} ${isFav ? 'is-favorited-card' : ''}`}
               >
                 {/* Card Top Image & Badges */}
                 <div className="card-image-box" onClick={() => onViewRecipe(recipe)}>
@@ -410,6 +454,21 @@ export default function Step1Selection({
                       </span>
                     )}
                   </div>
+
+                  {/* Bouton Like / Favori direct */}
+                  <button
+                    type="button"
+                    className={`btn-card-favorite ${isFav ? 'is-fav' : ''}`}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      if (onToggleFavorite) onToggleFavorite(recipe.id);
+                    }}
+                    title={isFav ? "Retirer des favoris" : "Ajouter aux favoris"}
+                    aria-label={isFav ? "Retirer des favoris" : "Ajouter aux favoris"}
+                    id={`btn-fav-${recipe.id}`}
+                  >
+                    <Heart size={18} className={isFav ? 'heart-icon-filled' : 'heart-icon-empty'} />
+                  </button>
 
                   <div className="card-hover-overlay">
                     <button
@@ -539,15 +598,30 @@ export default function Step1Selection({
               </div>
             </div>
 
-            <button
-              type="button"
-              id="btn-goto-step2-floating"
-              className="btn-primary-glow floating-cta-btn"
-              onClick={onNextStep}
-            >
-              <span>Continuer : Menu de la semaine</span>
-              <ArrowRight size={18} />
-            </button>
+            <div className="floating-dock-actions">
+              {onResetMenu && (
+                <button
+                  type="button"
+                  className="btn-dock-reset"
+                  onClick={onResetMenu}
+                  title="Vider la sélection de repas"
+                  id="btn-dock-reset-selection"
+                >
+                  <RotateCcw size={15} />
+                  <span>Vider</span>
+                </button>
+              )}
+
+              <button
+                type="button"
+                id="btn-goto-step2-floating"
+                className="btn-primary-glow floating-cta-btn"
+                onClick={onNextStep}
+              >
+                <span>Continuer : Menu de la semaine</span>
+                <ArrowRight size={18} />
+              </button>
+            </div>
           </div>
         </div>
       )}

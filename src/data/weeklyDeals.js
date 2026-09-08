@@ -1,7 +1,39 @@
 /**
- * Rabais et circulaires de la semaine (Inspiré de Reebee / Flipp)
- * Épiceries du Québec : Super C, Maxi, IGA, Metro, Walmart Canada
+ * Calcule les dates de la semaine active débutant le dimanche AM
  */
+export function getCurrentWeekCycleInfo() {
+  const now = new Date();
+  const dayOfWeek = now.getDay(); // 0 = Dimanche, 1 = Lundi, ...
+  
+  // Date du dimanche le plus récent (début de la semaine de planification)
+  const sunday = new Date(now);
+  sunday.setDate(now.getDate() - dayOfWeek);
+  sunday.setHours(6, 0, 0, 0);
+
+  // Date du samedi suivant (fin de semaine)
+  const saturday = new Date(sunday);
+  saturday.setDate(sunday.getDate() + 6);
+
+  const monthsFr = [
+    'janvier', 'février', 'mars', 'avril', 'mai', 'juin',
+    'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'
+  ];
+
+  const sundayStr = `${sunday.getDate()} ${monthsFr[sunday.getMonth()]}`;
+  const saturdayStr = `${saturday.getDate()} ${monthsFr[saturday.getMonth()]} ${saturday.getFullYear()}`;
+
+  // Numéro de semaine dans l'année pour la rotation automatique
+  const startOfYear = new Date(now.getFullYear(), 0, 1);
+  const weekNumber = Math.ceil((((now - startOfYear) / 86400000) + startOfYear.getDay() + 1) / 7);
+
+  return {
+    weekNumber,
+    startDate: sundayStr,
+    endDate: saturdayStr,
+    label: `Semaine du ${sundayStr} au ${saturdayStr}`,
+    lastUpdated: `Dimanche ${sundayStr} à 06:00`
+  };
+}
 
 export const GROCERY_STORES = [
   { id: 'all', name: 'Toutes les épiceries', icon: '🛒', color: '#64748b', flyerUrl: 'https://www.circulaires.com/' },

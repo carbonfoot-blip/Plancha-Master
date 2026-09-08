@@ -29,6 +29,7 @@ const LOCAL_STORAGE_KEY_PORTIONS = 'plancha_menu_portions';
 const LOCAL_STORAGE_KEY_CHECKED = 'plancha_menu_checked_grocery';
 const LOCAL_STORAGE_KEY_CUSTOM = 'plancha_menu_custom_items';
 const LOCAL_STORAGE_KEY_EXCLUDED = 'plancha_menu_excluded_ingredients';
+const LOCAL_STORAGE_KEY_FAVORITES = 'plancha_favorite_recipe_ids';
 const LOCAL_STORAGE_KEY_IS_ADMIN = 'plancha_master_is_admin_logged';
 const LOCAL_STORAGE_KEY_LAST_SEEN_RELEASE = 'plancha_last_seen_release_id';
 const LOCAL_STORAGE_KEY_DISMISSED_BROADCAST = 'plancha_dismissed_broadcast_id';
@@ -39,6 +40,17 @@ export default function App() {
   const [recipes, setRecipes] = useState(RECIPES_DATA);
   const [isCloudActive, setIsCloudActive] = useState(false);
   const [isLoadingDb, setIsLoadingDb] = useState(true);
+
+  // Recettes favorites
+  const [favoriteRecipeIds, setFavoriteRecipeIds] = useState(() => {
+    try {
+      const saved = localStorage.getItem(LOCAL_STORAGE_KEY_FAVORITES);
+      if (saved) return JSON.parse(saved);
+    } catch (e) {
+      console.error('Erreur lecture favoris:', e);
+    }
+    return ['rec-01', 'rec-04'];
+  });
 
   // Release notes (publiées dans les 5 derniers jours)
   const activeReleaseNotes = useMemo(() => {
@@ -260,6 +272,25 @@ export default function App() {
     localStorage.setItem(LOCAL_STORAGE_KEY_EXCLUDED, JSON.stringify(excludedIngredientKeys));
   }, [excludedIngredientKeys]);
 
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY_FAVORITES, JSON.stringify(favoriteRecipeIds));
+  }, [favoriteRecipeIds]);
+
+  const handleToggleFavorite = (recipeId) => {
+    setFavoriteRecipeIds((prev) => {
+      const isFav = prev.includes(recipeId);
+      const next = isFav ? prev.filter(id => id !== recipeId) : [...prev, recipeId];
+      if (!isFav) {
+        confetti({
+          particleCount: 30,
+          spread: 50,
+          origin: { y: 0.7 }
+        });
+      }
+      return next;
+    });
+  };
+
   const selectedRecipes = useMemo(() => {
     return selectedRecipeIds
       .map(id => recipes.find(r => r.id === id))
@@ -445,8 +476,11 @@ export default function App() {
           <Step1Selection
             recipes={recipes}
             selectedRecipes={selectedRecipes}
+            favoriteRecipeIds={favoriteRecipeIds}
+            onToggleFavorite={handleToggleFavorite}
             onToggleRecipe={handleToggleRecipe}
             onSelectRandom5={handleSelectRandom5}
+            onResetMenu={handleResetMenu}
             onViewRecipe={(r) => setActiveModalRecipe(r)}
             onOpenNewRecipe={() => setIsCreatingNew(true)}
             onEditRecipe={(r) => setRecipeToEdit(r)}
@@ -461,7 +495,10 @@ export default function App() {
             selectedRecipes={selectedRecipes}
             portions={portions}
             setPortions={setPortions}
+            favoriteRecipeIds={favoriteRecipeIds}
+            onToggleFavorite={handleToggleFavorite}
             onRemoveRecipe={handleRemoveRecipe}
+            onResetMenu={handleResetMenu}
             onViewRecipe={(r) => setActiveModalRecipe(r)}
             onGoToStep1={() => goToStep(1)}
             onNextStep={() => goToStep(3)}
@@ -522,6 +559,8 @@ export default function App() {
           recipe={activeModalRecipe}
           portions={portions}
           isSelected={selectedRecipeIds.includes(activeModalRecipe.id)}
+          isFavorite={favoriteRecipeIds.includes(activeModalRecipe.id)}
+          onToggleFavorite={handleToggleFavorite}
           onToggleSelect={handleToggleRecipe}
           onEditRecipe={(r) => setRecipeToEdit(r)}
           isAdmin={isAdmin}

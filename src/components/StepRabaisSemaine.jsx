@@ -3,7 +3,8 @@ import {
   GROCERY_STORES, 
   DEAL_CATEGORIES, 
   WEEKLY_DEALS_DATA, 
-  findMatchingRecipesForDeal 
+  findMatchingRecipesForDeal,
+  getCurrentWeekCycleInfo
 } from '../data/weeklyDeals';
 import { 
   Tag, 
@@ -18,7 +19,9 @@ import {
   Info,
   Calendar,
   Layers,
-  ArrowRight
+  ArrowRight,
+  Clock,
+  RefreshCw
 } from 'lucide-react';
 
 export default function StepRabaisSemaine({
@@ -34,6 +37,8 @@ export default function StepRabaisSemaine({
   const [searchQuery, setSearchQuery] = useState('');
   const [activeDealModal, setActiveDealModal] = useState(null);
   const [addedDealIds, setAddedDealIds] = useState(new Set());
+
+  const weekInfo = useMemo(() => getCurrentWeekCycleInfo(), []);
 
   // Filtrage des rabais
   const filteredDeals = useMemo(() => {
@@ -103,16 +108,26 @@ export default function StepRabaisSemaine({
       {/* En-tête héro des rabais */}
       <div className="rabais-hero-card">
         <div className="rabais-hero-content">
-          <div className="hero-badge-tag">
-            <Tag size={16} />
-            <span>Circulaires & Spéciaux de la semaine</span>
+          <div className="hero-badge-tag-group">
+            <div className="hero-badge-tag">
+              <Tag size={16} />
+              <span>Circulaires & Spéciaux de la semaine</span>
+            </div>
+            <div className="hero-badge-date">
+              <Calendar size={14} />
+              <span>{weekInfo.label}</span>
+            </div>
+            <div className="hero-badge-refresh">
+              <RefreshCw size={13} />
+              <span>Mise à jour hebdo : Dimanche AM</span>
+            </div>
           </div>
           <h2 className="rabais-hero-title">
             Les Meilleurs Rabais d'Épicerie au Québec
           </h2>
           <p className="rabais-hero-desc">
-            Repérez les spéciaux de la semaine (Super C, Maxi, IGA, Metro, Walmart), 
-            choisissez vos recettes selon les rabais et ajoutez vos collations & lunchs 
+            Circulaires actives pour la <strong>{weekInfo.label}</strong> (Super C, Maxi, IGA, Metro, Walmart). 
+            Choisissez vos recettes selon les rabais et ajoutez vos collations & lunchs 
             directement à votre liste d'épicerie !
           </p>
 
