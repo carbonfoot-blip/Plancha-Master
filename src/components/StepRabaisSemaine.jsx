@@ -71,15 +71,14 @@ export default function StepRabaisSemaine({
 
   // Planificateur intelligent : sélectionne 5 repas optimisant les rabais
   const handleSmartPlan = () => {
-    const dealsKeywords = WEEKLY_DEALS_DATA.filter(d => d.category === 'viandes' || d.category === 'fruits_legumes')
-      .flatMap(d => d.matchedKeywords);
+    const dealsKeywords = WEEKLY_DEALS_DATA.flatMap(d => d.matchedKeywords || []);
 
     // Score chaque recette selon le nombre d'ingrédients en spécial
     const scoredRecipes = recipes.map(recipe => {
-      const text = `${recipe.title} ${recipe.proteinType} ${recipe.ingredients.map(i => i.name).join(' ')}`.toLowerCase();
+      const text = `${recipe.title} ${recipe.proteinType} ${recipe.ingredients?.map(i => i.name).join(' ') || ''}`.toLowerCase();
       let score = 0;
       dealsKeywords.forEach(k => {
-        if (text.includes(k.toLowerCase())) score += 1;
+        if (k && k.length >= 3 && text.includes(k.toLowerCase())) score += 1;
       });
       return { recipe, score };
     });
@@ -111,7 +110,7 @@ export default function StepRabaisSemaine({
           <div className="hero-badge-tag-group">
             <div className="hero-badge-tag">
               <Tag size={16} />
-              <span>Circulaires & Spéciaux de la semaine</span>
+              <span>Circulaires & Spéciaux Protéines</span>
             </div>
             <div className="hero-badge-date">
               <Calendar size={14} />
@@ -119,16 +118,15 @@ export default function StepRabaisSemaine({
             </div>
             <div className="hero-badge-refresh">
               <RefreshCw size={13} />
-              <span>Mise à jour hebdo : Dimanche AM</span>
+              <span>Mise à jour : Du Jeudi au Mercredi</span>
             </div>
           </div>
           <h2 className="rabais-hero-title">
-            Les Meilleurs Rabais d'Épicerie au Québec
+            Spéciaux Protéines en Circulaires (Québec)
           </h2>
           <p className="rabais-hero-desc">
-            Circulaires actives pour la <strong>{weekInfo.label}</strong> (Super C, Maxi, IGA, Metro, Walmart). 
-            Choisissez vos recettes selon les rabais et ajoutez vos collations & lunchs 
-            directement à votre liste d'épicerie !
+            Circulaires actives pour la période <strong>{weekInfo.label}</strong> (Super C, Maxi, IGA, Metro, Walmart). 
+            Sélectionnez vos repas à la plancha selon les rabais sur les viandes, volailles, poissons et protéines végétales !
           </p>
 
           <div className="rabais-hero-actions">
@@ -184,7 +182,7 @@ export default function StepRabaisSemaine({
           <input
             type="text"
             className="rabais-search-input"
-            placeholder="Rechercher un rabais (ex: poulet, porc, barres tendres, fromage, pommes)..."
+            placeholder="Rechercher une protéine en rabais (ex: poulet, porc, bœuf, saumon, tofu)..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />

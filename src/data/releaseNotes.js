@@ -16,8 +16,8 @@ export const RELEASE_NOTES_DATA = [
     highlights: [
       {
         icon: '🥩',
-        title: 'Spéciaux Circulaires (Semaine du 13 au 19 sept.)',
-        description: 'Gros rabais sur les protéines : Poitrines de poulet à 4,67 $/lb (Super C), Flanc de porc frais à 3,99 $/lb (Maxi), Short ribs / Faux-filet à 7,99 $/lb (Metro), Filets de saumon à 8,88 $/lb (Super C), Hauts de cuisse à 3,77 $/lb (Maxi).'
+        title: 'Spéciaux Circulaires Protéines (Du 10 au 16 sept. 2026)',
+        description: 'Sélection ciblée sur les protéines québécoises : Poitrines de poulet à 4,67 $/lb (Super C), Flanc de porc frais à 3,99 $/lb (Maxi), Short ribs / Faux-filet à 7,99 $/lb (Metro), Filets de saumon à 8,88 $/lb (Super C), Hauts de cuisse à 3,77 $/lb (Maxi), Bœuf haché à 3,97 $/lb (Walmart), Filets de porc à 3,49 $/lb (Super C), Crevettes à 5,88 $ (Super C).'
       },
       {
         icon: '🥟',

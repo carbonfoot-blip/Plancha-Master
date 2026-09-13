@@ -50,7 +50,7 @@ export default function Step1Selection({
 
   // Mots-clés des rabais sur les PROTÉINES en circulaire cette semaine
   const activeProteinDeals = useMemo(() => {
-    return WEEKLY_DEALS_DATA.filter(d => d.category === 'viandes');
+    return WEEKLY_DEALS_DATA;
   }, []);
 
   const isRecipeOnSale = (recipe) => {
