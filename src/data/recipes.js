@@ -3993,7 +3993,6 @@ export const RECIPES_DATA = [
       "Plancha Star",
       "Bœuf",
       "Sans Gluten",
-      "Nouveauté Semaine",
       "Chef"
     ],
     "image": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
@@ -4067,7 +4066,6 @@ export const RECIPES_DATA = [
       "Plancha Star",
       "Poulet",
       "Exotique",
-      "Nouveauté Semaine",
       "Famille"
     ],
     "image": "https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=800&q=80",
@@ -4143,7 +4141,6 @@ export const RECIPES_DATA = [
       "Oméga-3",
       "Poisson",
       "Érable du Québec",
-      "Nouveauté Semaine",
       "Rapide"
     ],
     "image": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=800&q=80",
@@ -4217,7 +4214,6 @@ export const RECIPES_DATA = [
       "Grecque",
       "Porc",
       "Fraîcheur",
-      "Nouveauté Semaine",
       "Plancha"
     ],
     "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80",
@@ -4291,7 +4287,6 @@ export const RECIPES_DATA = [
       "Végétarien",
       "Fromage Grillé",
       "Méditerranéen",
-      "Nouveauté Semaine",
       "Rapide"
     ],
     "image": "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80",
@@ -4341,6 +4336,442 @@ export const RECIPES_DATA = [
       "Déposer les tranches de halloumi sur la zone vive et griller 2 minutes de chaque côté jusqu'à belle coloration dorée.",
       "Mélanger le quinoa avec les légumes grillés chauds, le basilic ciselé et le vinaigre balsamique.",
       "Dresser les tranches de halloumi croustillantes sur le quinoa méditerranéen chaud."
+    ]
+  },
+  {
+    "id": "rec-56",
+    "title": "Pains baos au flanc de porc sticky grillé à la plancha",
+    "subtitle": "Flanc de porc laqué sauce soja-miel-sriracha, mayonnaise japonaise épicée et julienne de légumes croquants",
+    "proteinType": "Filet de porc",
+    "cookingMode": "plancha",
+    "timeCategory": "Moyen",
+    "prepTime": 25,
+    "cookTime": 30,
+    "calories": 680,
+    "macros": {
+      "proteins": 38,
+      "carbs": 64,
+      "fats": 32
+    },
+    "allergens": [
+      "Soya",
+      "Sésame",
+      "Gluten",
+      "Œufs",
+      "Moutarde"
+    ],
+    "tags": [
+      "Nouveauté Semaine",
+      "Plancha Star",
+      "Pains Baos",
+      "Asiatique",
+      "Porc",
+      "Street Food",
+      "Coup de Cœur"
+    ],
+    "isNewWeekly": true,
+    "image": "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=800&q=80",
+    "description": "Le flanc de porc au summum absolu de la saveur ! Tranches de 2 cm bien dorées et croustillantes sur la plancha, puis braisées et laquées sur zone douce dans une poêle avec une sauce riche (soya claire & foncée, miel, sriracha, anis étoilé et cannelle). Servi dans des pains baos vapeur ultra-moelleux avec mayonnaise japonaise Kewpie épicée, concombre et carottes en juliennes.",
+    "planchaTips": "Gestion bi-zone indispensable : Chauffer une zone à intensité moyenne-vive (210°C) pour saisir et dorer le flanc 12 à 18 minutes, et une zone à intensité faible pour déposer la poêle contenant la sauce mijotée 15 minutes.",
+    "ingredients": [
+      {
+        "id": "ing-rec-56-prot",
+        "name": "Flanc de porc frais coupé en tranches épaisses de 2 cm (environ 1 kg)",
+        "quantity": 1000,
+        "unit": "g",
+        "department": "viandes"
+      },
+      {
+        "id": "ing-rec-56-baos",
+        "name": "Pains baos moelleux (8 à 10 pains)",
+        "quantity": 10,
+        "unit": "unité",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-56-veg1",
+        "name": "Concombre anglais coupé en fines juliennes",
+        "quantity": 1,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-56-veg2",
+        "name": "Carottes fraîches pelées et coupées en juliennes",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-56-mayo",
+        "name": "Mayonnaise japonaise de type Kewpie",
+        "quantity": 125,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-56-chili",
+        "name": "Sambal Oelek ou huile infusée aux piments (chili crisp)",
+        "quantity": 25,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-56-sauce1",
+        "name": "Sauce soya claire (60 ml) et sauce soya foncée (60 ml)",
+        "quantity": 120,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-56-sauce2",
+        "name": "Miel pur d'abeille et sauce sriracha",
+        "quantity": 75,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-56-aromates",
+        "name": "Ail et gingembre frais râpés, vinaigre de riz et graines de sésame",
+        "quantity": 45,
+        "unit": "g",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-56-epices",
+        "name": "Épices pour sauce (3 anis étoilés, 2 bâtons de cannelle, poivre du Sichuan)",
+        "quantity": 15,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-56-herbes",
+        "name": "Oignons verts hachés, coriandre fraîche et piments thaïs",
+        "quantity": 40,
+        "unit": "g",
+        "department": "fruits_legumes"
+      }
+    ],
+    "steps": [
+      "Chauffer la plancha avec une zone de cuisson à intensité moyenne-vive (210°C) et une autre à intensité faible.",
+      "Couper le flanc de porc en tranches régulières de 2 cm (3/4 po) d'épaisseur et saupoudrer uniformément d'épices tout usage.",
+      "Sur la zone vive, saisir les tranches de flanc de 12 à 18 minutes en les retournant à mi-cuisson jusqu'à ce qu'elles soient bien croustillantes.",
+      "Parallèlement, déposer une poêle directement sur la zone à intensité faible. Y mélanger l'eau (125 ml), les sauces soya claire et foncée, le miel, la sriracha, le vinaigre de riz, l'ail, le gingembre, le sésame, le poivre de Sichuan, les oignons verts, les anis étoilés et les bâtons de cannelle.",
+      "Une fois les tranches de flanc bien saisies et croustillantes, les déposer dans la sauce dans la poêle. Couvrir et laisser mijoter 15 minutes pour bien imprégner la viande.",
+      "Retirer les aromates (anis étoilés et cannelle) et les tranches de flanc de la poêle. Laisser la sauce réduire quelques minutes jusqu'à ce qu'elle épaississe et devienne sirupeuse.",
+      "Couper les tranches de flanc de porc laqué selon le format désiré pour garnir les pains baos.",
+      "Dans un petit bol, mélanger la mayonnaise japonaise Kewpie et l'huile infusée aux piments (ou sambal oelek).",
+      "Faire tiédir les pains baos à la vapeur. Garnir chaque pain bao d'une tranche de flanc de porc sticky, de julienne de concombre, de julienne de carottes, d'une cuillère de sauce réduite et d'un trait de mayonnaise épicée. Garnir de coriandre fraîche.",
+      "Déguster chaud et savourer ce festin asiatique incomparable !"
+    ]
+  },
+  {
+    "id": "rec-57",
+    "title": "Côtes de bœuf coréennes (Galbi) marinées à la plancha & riz au sésame",
+    "subtitle": "Short ribs tranchées minces marinées poire asiatique, ail et huile de sésame, riz au jasmin et concombres croquants",
+    "proteinType": "Bavette de boeuf",
+    "cookingMode": "plancha",
+    "timeCategory": "Rapide",
+    "prepTime": 15,
+    "cookTime": 10,
+    "calories": 590,
+    "macros": {
+      "proteins": 44,
+      "carbs": 46,
+      "fats": 26
+    },
+    "allergens": [
+      "Soya",
+      "Sésame"
+    ],
+    "tags": [
+      "Nouveauté Semaine",
+      "Plancha Star",
+      "Bœuf",
+      "Coréen",
+      "Rapide",
+      "Familial"
+    ],
+    "isNewWeekly": true,
+    "image": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
+    "description": "Les fameuses côtes de bœuf galbi coupées à la coréenne, marinées dans un mélange savoureux de purée de poire nashi, sauce soya, cassonade, ail pressé et huile de sésame grillé. Cuites en un éclair sur une plancha fumante pour une texture tendre et caramélisée.",
+    "planchaTips": "Plancha très chaude (230°C). 2 à 3 minutes par côté suffisent amplement car la viande est tranchée mince. Laisser caraméliser sans trop remuer.",
+    "ingredients": [
+      {
+        "id": "ing-rec-57-prot",
+        "name": "Côtes de bœuf (short ribs) tranchées minces style galbi ou biftecks de flanc",
+        "quantity": 650,
+        "unit": "g",
+        "department": "viandes"
+      },
+      {
+        "id": "ing-rec-57-carb",
+        "name": "Riz au jasmin vapeur",
+        "quantity": 300,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-57-veg",
+        "name": "Concombres marinés au vinaigre de riz et oignons verts",
+        "quantity": 350,
+        "unit": "g",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-57-marinade",
+        "name": "Sauce soya, purée de poire, cassonade, ail et huile de sésame",
+        "quantity": 80,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-57-sesame",
+        "name": "Graines de sésame grillées et piments doux",
+        "quantity": 20,
+        "unit": "g",
+        "department": "non_perissable"
+      }
+    ],
+    "steps": [
+      "Faire cuire le riz au jasmin dans 2 fois son volume d'eau salée pendant 12 minutes.",
+      "Faire mariner les lamelles de bœuf dans le mélange soya, poire, ail, cassonade et huile de sésame au moins 15 minutes.",
+      "Préchauffer la plancha à très haute température (230°C).",
+      "Déposer les côtes de bœuf égouttées sur la zone très chaude et saisir 2 à 3 minutes par côté jusqu'à belle caramélisation brillante.",
+      "Faire sauter rapidement les oignons verts et les lamelles de concombre sur la zone moyenne 2 minutes.",
+      "Dresser le bœuf galbi caramélisé sur le riz chaud parsemé de graines de sésame et servir avec les concombres vinaigrés."
+    ]
+  },
+  {
+    "id": "rec-58",
+    "title": "Hauts de cuisse de poulet jerk jamaïcain & ananas grillé",
+    "subtitle": "Poulet parfumé aux épices jerk et thym frais, tranches d'ananas caramélisées à la plancha et riz aux haricots rouges",
+    "proteinType": "Poitrine de Poulet",
+    "cookingMode": "plancha",
+    "timeCategory": "Moyen",
+    "prepTime": 15,
+    "cookTime": 18,
+    "calories": 540,
+    "macros": {
+      "proteins": 42,
+      "carbs": 48,
+      "fats": 18
+    },
+    "allergens": [
+      "Soya"
+    ],
+    "tags": [
+      "Nouveauté Semaine",
+      "Plancha Star",
+      "Poulet",
+      "Caraïbes",
+      "Sans Gluten",
+      "Exotique"
+    ],
+    "isNewWeekly": true,
+    "image": "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=800&q=80",
+    "description": "Une explosion de saveurs caribéennes ! Hauts de cuisse de poulet désossés marinés aux épices jerk traditionnelles (piment de la Jamaïque, thym, lime, ail, gingembre et cassonade). Grillés sur la plancha à côté de tranches d'ananas frais caramélisées.",
+    "planchaTips": "Plancha à 210°C. Poser le poulet côté peau en premier pendant 8 minutes. Placer les tranches d'ananas sur la zone moyenne pour développer une dorure sucrée irrésistible.",
+    "ingredients": [
+      {
+        "id": "ing-rec-58-prot",
+        "name": "Hauts de cuisse de poulet désossés",
+        "quantity": 650,
+        "unit": "g",
+        "department": "viandes"
+      },
+      {
+        "id": "ing-rec-58-carb",
+        "name": "Riz blanc jasmin et haricots rouges (Rice & Peas)",
+        "quantity": 350,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-58-ananas",
+        "name": "Ananas frais coupé en tranches épaisses",
+        "quantity": 350,
+        "unit": "g",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-58-marinade",
+        "name": "Marinade jerk (piment de la Jamaïque, thym, jus de lime, ail, sauce soya, cassonade)",
+        "quantity": 60,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-58-huile",
+        "name": "Huile végétale et quartiers de lime pour servir",
+        "quantity": 25,
+        "unit": "ml",
+        "department": "non_perissable"
+      }
+    ],
+    "steps": [
+      "Enrober les hauts de cuisse de poulet de marinade jerk et laisser reposer 10 minutes.",
+      "Cuire le riz avec les haricots rouges égouttés et une pincée de thym dans l'eau salée pendant 12 minutes.",
+      "Préchauffer la plancha à 210°C.",
+      "Déposer les tranches d'ananas sur la zone moyenne et cuire 4 minutes par côté jusqu'à marquage doré.",
+      "Saisir les hauts de cuisse sur la zone vive environ 7 à 8 minutes par côté jusqu'à ce que la chair soit bien cuite et savoureusement grillée.",
+      "Servir le poulet jerk chaud avec les tranches d'ananas caramélisées, le riz aux haricots et un quartier de lime fraîche."
+    ]
+  },
+  {
+    "id": "rec-59",
+    "title": "Tacos de crevettes grillées à la lime, coriandre & salsa de maïs croquant",
+    "subtitle": "Crevettes sautées aux épices mexicaines, maïs doré à la plancha, tortillas tièdes et crème à la lime",
+    "proteinType": "Crevettes & Poissons",
+    "cookingMode": "plancha",
+    "timeCategory": "Rapide",
+    "prepTime": 12,
+    "cookTime": 8,
+    "calories": 480,
+    "macros": {
+      "proteins": 36,
+      "carbs": 52,
+      "fats": 14
+    },
+    "allergens": [
+      "Crustacés",
+      "Lactose"
+    ],
+    "tags": [
+      "Nouveauté Semaine",
+      "Plancha Star",
+      "Crevettes",
+      "Mexicain",
+      "Tacos",
+      "Rapide 15min"
+    ],
+    "isNewWeekly": true,
+    "image": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=800&q=80",
+    "description": "Des tacos festifs prêts en un clin d'œil ! Crevettes sauvages marinées au cumin, paprika fumé, ail et jus de lime, sautées 4 minutes sur la plancha. Accompagnées de grains de maïs grillés croustillants et d'avocat crémeux.",
+    "planchaTips": "Plancha très vive (220°C). Cuire les crevettes très rapidement pour préserver leur texture juteuse et croquante. Réchauffer les petites tortillas directement sur la plaque 20 secondes.",
+    "ingredients": [
+      {
+        "id": "ing-rec-59-prot",
+        "name": "Crevettes blanches décortiquées crues (taille 31-40)",
+        "quantity": 550,
+        "unit": "g",
+        "department": "viandes"
+      },
+      {
+        "id": "ing-rec-59-carb",
+        "name": "Petites tortillas de maïs ou blé (8 à 12 tortillas)",
+        "quantity": 8,
+        "unit": "unité",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-59-veg",
+        "name": "Maïs en grains doux, avocat coupé en dés et coriandre fraîche",
+        "quantity": 350,
+        "unit": "g",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-59-creme",
+        "name": "Crème sure légère (ou yogourt grec) et jus de 2 limes",
+        "quantity": 100,
+        "unit": "g",
+        "department": "produits_laitiers"
+      },
+      {
+        "id": "ing-rec-59-epices",
+        "name": "Épices mexicaines (paprika fumé, cumin, poudre d'ail) et huile d'olive",
+        "quantity": 25,
+        "unit": "g",
+        "department": "non_perissable"
+      }
+    ],
+    "steps": [
+      "Mélanger les crevettes avec les épices mexicaines, 1 c. à soupe d'huile d'olive et le jus d'une lime.",
+      "Dans un bol, mélanger la crème sure avec le jus de lime restant et une pincée de sel.",
+      "Préchauffer la plancha à 220°C.",
+      "Faire sauter les grains de maïs sur la zone moyenne avec un filet d'huile pendant 4 minutes jusqu'à belle coloration dorée.",
+      "Déposer les crevettes sur la zone vive et saisir 2 minutes de chaque côté jusqu'à ce qu'elles deviennent roses et opaques.",
+      "Réchauffer les tortillas 20 secondes sur la plancha.",
+      "Garnir les tortillas de maïs doré, de crevettes grillées, de dés d'avocat, de sauce crème à la lime et de coriandre fraîche."
+    ]
+  },
+  {
+    "id": "rec-60",
+    "title": "Brochettes de tofu croustillant satay & sauce crémeuse aux arachides",
+    "subtitle": "Cubes de tofu extra-ferme marinés au curcuma et lait de coco, poivrons rouges, nouilles de riz et sauce satay",
+    "proteinType": "Végétarien",
+    "cookingMode": "plancha",
+    "timeCategory": "Rapide",
+    "prepTime": 15,
+    "cookTime": 12,
+    "calories": 490,
+    "macros": {
+      "proteins": 30,
+      "carbs": 48,
+      "fats": 20
+    },
+    "allergens": [
+      "Soya",
+      "Arachides",
+      "Sésame"
+    ],
+    "tags": [
+      "Nouveauté Semaine",
+      "Plancha Star",
+      "Végétarien",
+      "Satay",
+      "Sans Gluten",
+      "Rapide"
+    ],
+    "isNewWeekly": true,
+    "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80",
+    "description": "Le tofu sous sa forme la plus savoureuse et croustillante ! Cubes de tofu extra-ferme marinés dans un mélange de curcuma, gingembre, sauce soya et lait de coco, grillés à la plancha sur des brochettes avec poivrons croquants. Servis avec une sauce satay onctueuse aux arachides et lime.",
+    "planchaTips": "Plancha à 210°C bien huilée. Bien égoutter et presser le tofu avant marinade pour qu'il développe une croûte croustillante et dorée sur chaque face.",
+    "ingredients": [
+      {
+        "id": "ing-rec-60-prot",
+        "name": "Tofu biologique extra-ferme coupé en gros cubes (2 blocs de 454g)",
+        "quantity": 700,
+        "unit": "g",
+        "department": "viandes"
+      },
+      {
+        "id": "ing-rec-60-carb",
+        "name": "Nouilles de riz vermicelles",
+        "quantity": 300,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-60-veg",
+        "name": "Poivrons rouges en carrés et concombres en demi-lunes",
+        "quantity": 350,
+        "unit": "g",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-60-satay",
+        "name": "Beurre d'arachide crémeux, lait de coco, sauce soya et jus de lime",
+        "quantity": 90,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-60-epices",
+        "name": "Curcuma, gingembre râpé, poudre d'ail et huile de sésame",
+        "quantity": 25,
+        "unit": "g",
+        "department": "non_perissable"
+      }
+    ],
+    "steps": [
+      "Tremper les nouilles de riz dans de l'eau bouillante 5 minutes, puis rincer à l'eau froide et égoutter.",
+      "Enfiler les cubes de tofu mariné en alternance avec les morceaux de poivrons sur des brochettes.",
+      "Dans une petite casserole ou bol, fouetter le beurre d'arachide avec le lait de coco, la sauce soya, le jus de lime et un filet d'eau chaude pour obtenir une sauce satay veloutée.",
+      "Préchauffer la plancha à 210°C et huiler généreusement.",
+      "Déposer les brochettes de tofu satay et griller 10 à 12 minutes en tournant régulièrement pour dorer les 4 faces.",
+      "Dresser les brochettes dorées sur le lit de nouilles de riz et légumes croquants, et napper généreusement de sauce satay aux arachides."
     ]
   }
 ];

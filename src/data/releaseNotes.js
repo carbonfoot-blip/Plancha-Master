@@ -5,6 +5,38 @@
 
 export const RELEASE_NOTES_DATA = [
   {
+    id: 'rel-2026-09-13',
+    date: '2026-09-13',
+    displayDate: '13 septembre 2026',
+    version: 'v2.8',
+    tag: 'Mise à jour hebdomadaire',
+    tagColor: '#10b981',
+    title: 'Spéciaux Protéines du Dimanche & Pains Baos au Flanc de Porc Sticky',
+    summary: 'Nouvelle rotation hebdomadaire : spéciaux circulaires axés sur les protéines et 5 nouvelles recettes savoureuses adaptées à la plancha.',
+    highlights: [
+      {
+        icon: '🥩',
+        title: 'Spéciaux Circulaires (Semaine du 13 au 19 sept.)',
+        description: 'Gros rabais sur les protéines : Poitrines de poulet à 4,67 $/lb (Super C), Flanc de porc frais à 3,99 $/lb (Maxi), Short ribs / Faux-filet à 7,99 $/lb (Metro), Filets de saumon à 8,88 $/lb (Super C), Hauts de cuisse à 3,77 $/lb (Maxi).'
+      },
+      {
+        icon: '🥟',
+        title: 'Pains baos au flanc de porc sticky grillé',
+        description: 'Recette vedette inspirée du livre : flanc de porc croustillant saisi à la plancha, laqué à la sauce soya, gingembre, sriracha, anis étoilé et cannelle, servi dans des pains baos moelleux avec mayo Kewpie épicée.'
+      },
+      {
+        icon: '🔥',
+        title: '4 Autres Nouvelles Recettes de la Semaine',
+        description: 'Côtes de bœuf Galbi coréennes marinées, Hauts de cuisse jerk jamaïcains & ananas grillé, Tacos de crevettes lime-coriandre salsa de maïs, et Brochettes de tofu croustillant satay arachides.'
+      },
+      {
+        icon: '✨',
+        title: 'Filtre Nouveautés & Mode Admin',
+        description: 'Retrouvez facilement les 5 nouveautés en tête de liste avec le badge vert « ✨ NOUVEAUTÉ » et activez/désactivez le flag Nouveauté pour vos recettes en mode Admin.'
+      }
+    ]
+  },
+  {
     id: 'rel-2026-09-08',
     date: '2026-09-08',
     displayDate: '8 septembre 2026',
