@@ -1066,47 +1066,90 @@ export const RECIPES_DATA = [
     "ingredients": [
       {
         "id": "ing-rec-11-prot",
-        "name": "Poitrine de Poulet (Fajitas de poulet express)",
+        "name": "Poitrines de poulet tranchées en lanières",
         "quantity": 600,
         "unit": "g",
         "department": "viandes"
       },
       {
-        "id": "ing-rec-11-carb",
-        "name": "Tortillas de maïs ou blé (féculent)",
+        "id": "ing-rec-11-tortillas",
+        "name": "Tortillas souples (maïs ou blé)",
         "quantity": 8,
         "unit": "unité",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-11-veg",
-        "name": "Poivrons tri-couleurs et Salade de maïs doux",
-        "quantity": 450,
-        "unit": "g",
+        "id": "ing-rec-11-poivron-r",
+        "name": "Poivron rouge émincé en lanières",
+        "quantity": 1,
+        "unit": "unité",
         "department": "fruits_legumes"
       },
       {
+        "id": "ing-rec-11-poivron-j",
+        "name": "Poivron jaune émincé en lanières",
+        "quantity": 1,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-11-oignon",
+        "name": "Oignon jaune moyen tranché",
+        "quantity": 1,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-11-mais",
+        "name": "Maïs doux en grains égoutté",
+        "quantity": 150,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-11-avocat",
+        "name": "Avocats mûrs coupés en dés",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-11-limes",
+        "name": "Limes pour jus et quartiers",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-11-epices",
+        "name": "Mélange d'épices à fajitas (chili, cumin, ail)",
+        "quantity": 15,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
         "id": "ing-rec-11-huile",
-        "name": "Huile d'olive ou végétale pour cuisson",
+        "name": "Huile d'olive",
         "quantity": 30,
         "unit": "ml",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-11-assaisonnement",
-        "name": "Assaisonnement du chef, sel et poivre",
-        "quantity": 10,
+        "id": "ing-rec-11-coriandre",
+        "name": "Coriandre fraîche ciselée",
+        "quantity": 15,
         "unit": "g",
-        "department": "non_perissable"
+        "department": "fruits_legumes"
       }
     ],
     "steps": [
-      "Préparer le féculent (Tortillas de maïs ou blé) et les légumes frais (Poivrons tri-couleurs et Salade de maïs doux).",
-      "Assaisonner la protéine avec les épices et l'huile.",
-      "Préchauffer la plancha ou la poêle à feu moyen-vif (210°C).",
-      "Lancer la cuisson du féculent et des légumes sur la zone moyenne jusqu'à belle dorure.",
-      "Saisir la protéine sur la zone vive jusqu'à cuisson parfaite et caramélisée.",
-      "Dresser les 4 assiettes avec la portion de protéine, le féculent chaud et les légumes ou la salade fraîche."
+      "Dans un bol, mélanger le maïs, les dés d'avocat, le jus d'une lime et la coriandre pour préparer la salsa fraîche.",
+      "Enrober les lanières de poulet avec les épices à fajitas et un filet d'huile d'olive.",
+      "Préchauffer la plancha à 210°C et huiler légèrement.",
+      "Déposer les lanières de poivrons et l'oignon sur une zone, et les lanières de poulet sur la zone vive.",
+      "Griller le poulet 6 à 8 minutes en remuant régulièrement jusqu'à belle coloration dorée. Faire dorer les poivrons à côté.",
+      "Réchauffer rapidement les tortillas 30 secondes sur la plancha.",
+      "Garnir les tortillas chaudes de poulet, poivrons fondants et salsa fraîche au maïs et avocat."
     ]
   },
   {
@@ -1140,47 +1183,75 @@ export const RECIPES_DATA = [
     "ingredients": [
       {
         "id": "ing-rec-12-prot",
-        "name": "Boeuf haché (Bowl de vermicelles au bœuf teriyaki & Fleurets de brocoli)",
+        "name": "Bœuf haché mi-maigre",
         "quantity": 500,
         "unit": "g",
         "department": "viandes"
       },
       {
         "id": "ing-rec-12-carb",
-        "name": "Vermicelles de riz sans gluten (féculent)",
+        "name": "Vermicelles de riz sans gluten",
         "quantity": 300,
         "unit": "g",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-12-veg",
-        "name": "Fleurets de brocoli frais et carottes",
-        "quantity": 400,
+        "id": "ing-rec-12-brocoli",
+        "name": "Fleurets de brocoli frais",
+        "quantity": 300,
         "unit": "g",
         "department": "fruits_legumes"
       },
       {
-        "id": "ing-rec-12-huile",
-        "name": "Huile d'olive ou végétale pour cuisson",
-        "quantity": 30,
+        "id": "ing-rec-12-carotte",
+        "name": "Carottes fraîches pelées et coupées en fines demi-lunes",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-12-teriyaki",
+        "name": "Sauce teriyaki authentique",
+        "quantity": 60,
         "unit": "ml",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-12-assaisonnement",
-        "name": "Assaisonnement du chef, sel et poivre",
+        "id": "ing-rec-12-ail",
+        "name": "Gousses d'ail émincées",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-12-sesame-huile",
+        "name": "Huile de sésame grillé",
+        "quantity": 15,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-12-sesame-graines",
+        "name": "Graines de sésame grillées",
         "quantity": 10,
         "unit": "g",
         "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-12-oignons-verts",
+        "name": "Oignons verts tranchés",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
       }
     ],
     "steps": [
-      "Préparer le féculent (Vermicelles de riz sans gluten) et les légumes frais (Fleurets de brocoli frais et carottes).",
-      "Assaisonner la protéine avec les épices et l'huile.",
-      "Préchauffer la plancha ou la poêle à feu moyen-vif (210°C).",
-      "Lancer la cuisson du féculent et des légumes sur la zone moyenne jusqu'à belle dorure.",
-      "Saisir la protéine sur la zone vive jusqu'à cuisson parfaite et caramélisée.",
-      "Dresser les 4 assiettes avec la portion de protéine, le féculent chaud et les légumes ou la salade fraîche."
+      "Plonger les vermicelles de riz dans de l'eau bouillante pendant 4 minutes, rincer à l'eau froide et égoutter.",
+      "Préchauffer la plancha à 210°C ou une grande poêle à feu vif.",
+      "Saisir les fleurets de brocoli et les demi-lunes de carottes avec l'ail et un filet d'huile pendant 5 à 6 minutes sous cloche.",
+      "Ajouter le bœuf haché, l'émietter à la spatule et le faire dorer 5 minutes.",
+      "Napper de sauce teriyaki et d'huile de sésame, et laisser caraméliser 2 minutes.",
+      "Dresser les vermicelles dans 4 bols, surmonter du bœuf teriyaki et des légumes croquants, puis garnir d'oignons verts et de graines de sésame."
     ]
   },
   {
@@ -1213,47 +1284,68 @@ export const RECIPES_DATA = [
     "ingredients": [
       {
         "id": "ing-rec-13-prot",
-        "name": "Saumon & Poissons (Pavés de truite saumonée)",
+        "name": "Pavés de truite saumonée ou de saumon avec peau",
         "quantity": 600,
         "unit": "g",
         "department": "viandes"
       },
       {
         "id": "ing-rec-13-carb",
-        "name": "Riz basmati (féculent sans gluten)",
+        "name": "Riz basmati blanc",
         "quantity": 300,
         "unit": "g",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-13-veg",
-        "name": "Courgettes grillées et tomates cerises",
-        "quantity": 400,
+        "id": "ing-rec-13-courgettes",
+        "name": "Courgettes vertes coupées en rondelles",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-13-tomates",
+        "name": "Tomates cerises entières",
+        "quantity": 200,
         "unit": "g",
         "department": "fruits_legumes"
       },
       {
+        "id": "ing-rec-13-pesto",
+        "name": "Pesto de basilic frais",
+        "quantity": 45,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-13-citron",
+        "name": "Citron jaune en quartiers",
+        "quantity": 1,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
         "id": "ing-rec-13-huile",
-        "name": "Huile d'olive ou végétale pour cuisson",
+        "name": "Huile d'olive extra-vierge",
         "quantity": 30,
         "unit": "ml",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-13-assaisonnement",
-        "name": "Assaisonnement du chef, sel et poivre",
-        "quantity": 10,
+        "id": "ing-rec-13-sel-poivre",
+        "name": "Sel et poivre du moulin",
+        "quantity": 5,
         "unit": "g",
         "department": "non_perissable"
       }
     ],
     "steps": [
-      "Préparer le féculent (Riz basmati) et les légumes frais (Courgettes grillées et tomates cerises).",
-      "Assaisonner la protéine avec les épices et l'huile.",
-      "Préchauffer la plancha ou la poêle à feu moyen-vif (210°C).",
-      "Lancer la cuisson du féculent et des légumes sur la zone moyenne jusqu'à belle dorure.",
-      "Saisir la protéine sur la zone vive jusqu'à cuisson parfaite et caramélisée.",
-      "Dresser les 4 assiettes avec la portion de protéine, le féculent chaud et les légumes ou la salade fraîche."
+      "Cuire le riz basmati dans l'eau bouillante salée pendant 12 minutes, égoutter.",
+      "Préchauffer la plancha à 200°C et huiler légèrement.",
+      "Déposer les rondelles de courgettes et les tomates cerises. Cuire 6 minutes en les retournant.",
+      "Déposer les pavés de truite côté peau. Cuire 5 minutes pour rendre la peau bien croustillante, retourner délicatement et cuire 2 minutes côté chair.",
+      "Badigeonner les courgettes et le poisson de pesto de basilic frais en fin de cuisson.",
+      "Servir sur le lit de riz basmati chaud avec un trait de jus de citron."
     ]
   },
   {
@@ -1287,47 +1379,89 @@ export const RECIPES_DATA = [
     "ingredients": [
       {
         "id": "ing-rec-14-prot",
-        "name": "Végétarien (Stir-fry de tofu croustillant)",
-        "quantity": 450,
+        "name": "Tofu biologique extra-ferme pressé et coupé en cubes",
+        "quantity": 454,
         "unit": "g",
-        "department": "produits_laitiers"
+        "department": "viandes"
       },
       {
         "id": "ing-rec-14-carb",
-        "name": "Nouilles de riz sans gluten (féculent)",
+        "name": "Nouilles de riz sans gluten",
         "quantity": 300,
         "unit": "g",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-14-veg",
-        "name": "Pois mange-tout, poivrons et carottes",
-        "quantity": 400,
+        "id": "ing-rec-14-mange-tout",
+        "name": "Pois mange-tout frais éboutés",
+        "quantity": 150,
         "unit": "g",
         "department": "fruits_legumes"
       },
       {
-        "id": "ing-rec-14-huile",
-        "name": "Huile d'olive ou végétale pour cuisson",
+        "id": "ing-rec-14-poivron",
+        "name": "Poivron rouge en lanières",
+        "quantity": 1,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-14-carotte",
+        "name": "Carottes pelées en juliennes",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-14-beurre-arachide",
+        "name": "Beurre d'arachide crémeux",
+        "quantity": 45,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-14-soya",
+        "name": "Sauce soya sans gluten ou tamari",
         "quantity": 30,
         "unit": "ml",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-14-assaisonnement",
-        "name": "Assaisonnement du chef, sel et poivre",
-        "quantity": 10,
+        "id": "ing-rec-14-erable",
+        "name": "Sirop d'érable pur",
+        "quantity": 15,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-14-fecule",
+        "name": "Fécule de maïs (pour enrober le tofu)",
+        "quantity": 15,
         "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-14-huile-sesame",
+        "name": "Huile de sésame grillé",
+        "quantity": 15,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-14-huile-cuisson",
+        "name": "Huile végétale pour cuisson",
+        "quantity": 25,
+        "unit": "ml",
         "department": "non_perissable"
       }
     ],
     "steps": [
-      "Préparer le féculent (Nouilles de riz sans gluten) et les légumes frais (Pois mange-tout, poivrons et carottes).",
-      "Assaisonner la protéine avec les épices et l'huile.",
-      "Préchauffer la plancha ou la poêle à feu moyen-vif (210°C).",
-      "Lancer la cuisson du féculent et des légumes sur la zone moyenne jusqu'à belle dorure.",
-      "Saisir la protéine sur la zone vive jusqu'à cuisson parfaite et caramélisée.",
-      "Dresser les 4 assiettes avec la portion de protéine, le féculent chaud et les légumes ou la salade fraîche."
+      "Cuire les nouilles de riz selon les instructions de l'emballage, rincer et égoutter.",
+      "Enrober les cubes de tofu de fécule de maïs pour assurer une belle croûte dorée.",
+      "Fouetter le beurre d'arachide, la sauce soya, le sirop d'érable et un filet d'eau tiède pour la sauce.",
+      "Chauffer la plancha à 210°C avec l'huile végétale. Dorer les cubes de tofu sur toutes leurs faces pendant 8 à 10 minutes.",
+      "Faire sauter les pois mange-tout, les juliennes de carottes et le poivron à côté du tofu 4 à 5 minutes.",
+      "Napper le tofu et les légumes de la sauce crémeuse à l'arachide et d'huile de sésame, puis mélanger avec les nouilles de riz chaudes."
     ]
   },
   {
@@ -1361,47 +1495,82 @@ export const RECIPES_DATA = [
     "ingredients": [
       {
         "id": "ing-rec-15-prot",
-        "name": "Porc haché (Boulettes de porc banh mi)",
+        "name": "Porc haché maigre",
         "quantity": 500,
         "unit": "g",
         "department": "viandes"
       },
       {
         "id": "ing-rec-15-carb",
-        "name": "Vermicelles de riz sans gluten (féculent)",
+        "name": "Vermicelles de riz minces",
         "quantity": 300,
         "unit": "g",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-15-veg",
-        "name": "Carottes, concombres et fèves germées",
-        "quantity": 350,
+        "id": "ing-rec-15-carottes",
+        "name": "Carottes pelées et râpées",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-15-concombre",
+        "name": "Concombre anglais en demi-lunes",
+        "quantity": 1,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-15-germes",
+        "name": "Fèves germées fraîches (soya)",
+        "quantity": 150,
         "unit": "g",
         "department": "fruits_legumes"
       },
       {
-        "id": "ing-rec-15-huile",
-        "name": "Huile d'olive ou végétale pour cuisson",
+        "id": "ing-rec-15-hoisin",
+        "name": "Sauce hoisin",
         "quantity": 30,
         "unit": "ml",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-15-assaisonnement",
-        "name": "Assaisonnement du chef, sel et poivre",
-        "quantity": 10,
-        "unit": "g",
+        "id": "ing-rec-15-soya",
+        "name": "Sauce soya claire",
+        "quantity": 15,
+        "unit": "ml",
         "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-15-vinaigre",
+        "name": "Vinaigre de riz",
+        "quantity": 30,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-15-huile-sesame",
+        "name": "Huile de sésame grillé",
+        "quantity": 15,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-15-coriandre",
+        "name": "Coriandre fraîche ciselée",
+        "quantity": 15,
+        "unit": "g",
+        "department": "fruits_legumes"
       }
     ],
     "steps": [
-      "Préparer le féculent (Vermicelles de riz sans gluten) et les légumes frais (Carottes, concombres et fèves germées).",
-      "Assaisonner la protéine avec les épices et l'huile.",
-      "Préchauffer la plancha ou la poêle à feu moyen-vif (210°C).",
-      "Lancer la cuisson du féculent et des légumes sur la zone moyenne jusqu'à belle dorure.",
-      "Saisir la protéine sur la zone vive jusqu'à cuisson parfaite et caramélisée.",
-      "Dresser les 4 assiettes avec la portion de protéine, le féculent chaud et les légumes ou la salade fraîche."
+      "Former de petites boulettes de porc avec le porc haché, une cuillère de sauce hoisin et un trait d'huile de sésame.",
+      "Mariner les carottes râpées dans le vinaigre de riz et une pincée de sel pendant 10 minutes.",
+      "Cuire les vermicelles de riz dans l'eau bouillante 3 minutes, rincer à l'eau froide.",
+      "Chauffer la plancha à 200°C. Saisir les boulettes de porc 8 à 10 minutes en les roulant régulièrement.",
+      "Laquer les boulettes avec le reste de sauce hoisin et sauce soya en toute fin de cuisson.",
+      "Dresser les bols avec les vermicelles, les carottes marinées, le concombre, les fèves germées, les boulettes bien dorées et la coriandre."
     ]
   },
   {
@@ -1434,47 +1603,81 @@ export const RECIPES_DATA = [
     "ingredients": [
       {
         "id": "ing-rec-16-prot",
-        "name": "Filet de porc (Brochettes de porc grecques)",
+        "name": "Filet de porc coupé en cubes de 3 cm",
         "quantity": 600,
         "unit": "g",
         "department": "viandes"
       },
       {
         "id": "ing-rec-16-carb",
-        "name": "Pommes de terre grelots au citron (sans gluten)",
+        "name": "Pommes de terre grelots lavées et coupées en deux",
         "quantity": 600,
         "unit": "g",
         "department": "fruits_legumes"
       },
       {
-        "id": "ing-rec-16-veg",
-        "name": "Salade de concombres, tomates et tzatziki",
-        "quantity": 350,
-        "unit": "g",
+        "id": "ing-rec-16-concombre",
+        "name": "Concombre anglais râpé et égoutté",
+        "quantity": 1,
+        "unit": "unité",
         "department": "fruits_legumes"
       },
       {
+        "id": "ing-rec-16-tomates",
+        "name": "Tomates de serre coupées en quartiers",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-16-yogourt",
+        "name": "Yogourt grec nature 10%",
+        "quantity": 175,
+        "unit": "ml",
+        "department": "produits_laitiers"
+      },
+      {
+        "id": "ing-rec-16-citrons",
+        "name": "Citrons pour jus et zeste",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-16-ail",
+        "name": "Gousses d'ail pressées",
+        "quantity": 3,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-16-origan",
+        "name": "Origan grec séché",
+        "quantity": 10,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
         "id": "ing-rec-16-huile",
-        "name": "Huile d'olive ou végétale pour cuisson",
-        "quantity": 30,
+        "name": "Huile d'olive extra-vierge",
+        "quantity": 45,
         "unit": "ml",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-16-assaisonnement",
-        "name": "Assaisonnement du chef, sel et poivre",
-        "quantity": 10,
+        "id": "ing-rec-16-sel-poivre",
+        "name": "Sel de mer et poivre noir",
+        "quantity": 5,
         "unit": "g",
         "department": "non_perissable"
       }
     ],
     "steps": [
-      "Préparer le féculent (Pommes de terre grelots au citron) et les légumes frais (Salade de concombres, tomates et tzatziki).",
-      "Assaisonner la protéine avec les épices et l'huile.",
-      "Préchauffer la plancha ou la poêle à feu moyen-vif (210°C).",
-      "Lancer la cuisson du féculent et des légumes sur la zone moyenne jusqu'à belle dorure.",
-      "Saisir la protéine sur la zone vive jusqu'à cuisson parfaite et caramélisée.",
-      "Dresser les 4 assiettes avec la portion de protéine, le féculent chaud et les légumes ou la salade fraîche."
+      "Mélanger les cubes de porc avec l'origan, la moitié de l'ail, le jus d'un citron et 30 ml d'huile d'olive. Enfiler sur des brochettes.",
+      "Préparer le tzatziki : mélanger le concombre râpé pressé avec le yogourt grec, l'ail restant, un filet d'huile d'olive et du sel.",
+      "Préchauffer la plancha à 210°C. Déposer les demi-grelots avec un filet d'huile et cuire 15 minutes en remuant.",
+      "Ajouter les brochettes de porc à côté et griller 10 minutes en tournant régulièrement jusqu'à cuisson rosée parfaite.",
+      "Servir les brochettes chaudes avec les grelots dorés au citron, les quartiers de tomates fraîches et la sauce tzatziki."
     ]
   },
   {
@@ -1508,47 +1711,74 @@ export const RECIPES_DATA = [
     "ingredients": [
       {
         "id": "ing-rec-17-prot",
-        "name": "Poitrine de Poulet (Escalopes de poulet parmigiana)",
+        "name": "Poitrines de poulet tranchées en escalopes fines",
         "quantity": 600,
         "unit": "g",
         "department": "viandes"
       },
       {
         "id": "ing-rec-17-carb",
-        "name": "Pâtes penne (féculent)",
+        "name": "Pâtes penne de blé dur",
         "quantity": 350,
         "unit": "g",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-17-veg",
-        "name": "Salade romaine César et tomates cerises",
+        "id": "ing-rec-17-sauce",
+        "name": "Coulis de tomate marinara à l'ail",
         "quantity": 300,
-        "unit": "g",
-        "department": "fruits_legumes"
-      },
-      {
-        "id": "ing-rec-17-huile",
-        "name": "Huile d'olive ou végétale pour cuisson",
-        "quantity": 30,
         "unit": "ml",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-17-assaisonnement",
-        "name": "Assaisonnement du chef, sel et poivre",
-        "quantity": 10,
+        "id": "ing-rec-17-mozzarella",
+        "name": "Fromage mozzarella râpé",
+        "quantity": 150,
         "unit": "g",
+        "department": "produits_laitiers"
+      },
+      {
+        "id": "ing-rec-17-parmesan",
+        "name": "Fromage parmesan râpé",
+        "quantity": 30,
+        "unit": "g",
+        "department": "produits_laitiers"
+      },
+      {
+        "id": "ing-rec-17-romaine",
+        "name": "Cœur de laitue romaine émincé",
+        "quantity": 1,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-17-tomates",
+        "name": "Tomates cerises fraîches",
+        "quantity": 150,
+        "unit": "g",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-17-cesar",
+        "name": "Vinaigrette César classique",
+        "quantity": 45,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-17-huile",
+        "name": "Huile d'olive",
+        "quantity": 30,
+        "unit": "ml",
         "department": "non_perissable"
       }
     ],
     "steps": [
-      "Préparer le féculent (Pâtes penne) et les légumes frais (Salade romaine César et tomates cerises).",
-      "Assaisonner la protéine avec les épices et l'huile.",
-      "Préchauffer la plancha ou la poêle à feu moyen-vif (210°C).",
-      "Lancer la cuisson du féculent et des légumes sur la zone moyenne jusqu'à belle dorure.",
-      "Saisir la protéine sur la zone vive jusqu'à cuisson parfaite et caramélisée.",
-      "Dresser les 4 assiettes avec la portion de protéine, le féculent chaud et les légumes ou la salade fraîche."
+      "Cuire les penne dans de l'eau bouillante salée, égoutter et mélanger avec la sauce marinara chaude.",
+      "Préchauffer la plancha à 210°C et huiler.",
+      "Saisir les escalopes de poulet 3 minutes d'un côté. Les retourner, garnir chacune de mozzarella et de parmesan, puis couvrir d'une cloche 3 minutes pour faire fondre le fromage.",
+      "Mélanger la laitue romaine, les tomates cerises et la vinaigrette César pour la salade.",
+      "Servir chaque escalope fondante sur les penne marinara avec la salade César croquante."
     ]
   },
   {
@@ -1581,47 +1811,68 @@ export const RECIPES_DATA = [
     "ingredients": [
       {
         "id": "ing-rec-18-prot",
-        "name": "Végétarien (Brochettes d'halloumi)",
+        "name": "Fromage halloumi coupé en gros cubes",
         "quantity": 350,
         "unit": "g",
         "department": "produits_laitiers"
       },
       {
         "id": "ing-rec-18-carb",
-        "name": "Riz basmati aux herbes (féculent sans gluten)",
+        "name": "Riz basmati aux fines herbes",
         "quantity": 300,
         "unit": "g",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-18-veg",
-        "name": "Courgettes, poivrons et champignons grillés",
-        "quantity": 450,
+        "id": "ing-rec-18-courgettes",
+        "name": "Courgettes vertes en rondelles épaisses",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-18-poivron",
+        "name": "Poivron rouge coupé en carrés",
+        "quantity": 1,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-18-champignons",
+        "name": "Champignons blancs de Paris coupés en deux",
+        "quantity": 200,
         "unit": "g",
         "department": "fruits_legumes"
       },
       {
+        "id": "ing-rec-18-herbes",
+        "name": "Herbes de Provence séchées",
+        "quantity": 10,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
         "id": "ing-rec-18-huile",
-        "name": "Huile d'olive ou végétale pour cuisson",
-        "quantity": 30,
+        "name": "Huile d'olive extra-vierge",
+        "quantity": 40,
         "unit": "ml",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-18-assaisonnement",
-        "name": "Assaisonnement du chef, sel et poivre",
-        "quantity": 10,
-        "unit": "g",
-        "department": "non_perissable"
+        "id": "ing-rec-18-citron",
+        "name": "Citron jaune en quartiers",
+        "quantity": 1,
+        "unit": "unité",
+        "department": "fruits_legumes"
       }
     ],
     "steps": [
-      "Préparer le féculent (Riz basmati aux herbes) et les légumes frais (Courgettes, poivrons et champignons grillés).",
-      "Assaisonner la protéine avec les épices et l'huile.",
-      "Préchauffer la plancha ou la poêle à feu moyen-vif (210°C).",
-      "Lancer la cuisson du féculent et des légumes sur la zone moyenne jusqu'à belle dorure.",
-      "Saisir la protéine sur la zone vive jusqu'à cuisson parfaite et caramélisée.",
-      "Dresser les 4 assiettes avec la portion de protéine, le féculent chaud et les légumes ou la salade fraîche."
+      "Cuire le riz basmati dans l'eau salée 12 minutes avec une pincée d'herbes de Provence.",
+      "Enfiler les cubes d'halloumi, les carrés de poivron et les champignons sur des pics à brochette.",
+      "Préchauffer la plancha à 210°C et huiler généreusement.",
+      "Déposer les brochettes et les rondelles de courgettes sur la plaque.",
+      "Griller 3 à 4 minutes de chaque côté jusqu'à ce que l'halloumi soit magnifiquement doré et croustillant sans fondre.",
+      "Arroser d'un filet de jus de citron et servir avec le riz chaud aux herbes."
     ]
   },
   {
@@ -1652,47 +1903,88 @@ export const RECIPES_DATA = [
     "ingredients": [
       {
         "id": "ing-rec-19-prot",
-        "name": "Dinde & Volailles (Chili express à la dinde)",
+        "name": "Dinde hachée maigre",
         "quantity": 500,
         "unit": "g",
         "department": "viandes"
       },
       {
         "id": "ing-rec-19-carb",
-        "name": "Riz blanc jasmin (féculent sans gluten)",
+        "name": "Riz blanc jasmin",
         "quantity": 300,
         "unit": "g",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-19-veg",
-        "name": "Salade verte d'avocat, tomates et maïs doux",
-        "quantity": 350,
-        "unit": "g",
-        "department": "fruits_legumes"
-      },
-      {
-        "id": "ing-rec-19-huile",
-        "name": "Huile d'olive ou végétale pour cuisson",
-        "quantity": 30,
+        "id": "ing-rec-19-haricots",
+        "name": "Haricots noirs en conserve rincés et égouttés",
+        "quantity": 398,
         "unit": "ml",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-19-assaisonnement",
-        "name": "Assaisonnement du chef, sel et poivre",
+        "id": "ing-rec-19-mais",
+        "name": "Maïs en grains doux",
+        "quantity": 150,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-19-tomates",
+        "name": "Tomates en dés en conserve ou coulis",
+        "quantity": 398,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-19-avocats",
+        "name": "Avocats mûrs coupés en dés",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-19-mesclun",
+        "name": "Feuilles de mesclun fraîches",
+        "quantity": 150,
+        "unit": "g",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-19-chili-chili",
+        "name": "Poudre de chili mexicain",
         "quantity": 10,
         "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-19-chili-cumin",
+        "name": "Cumin moulu",
+        "quantity": 5,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-19-lime",
+        "name": "Lime pour jus",
+        "quantity": 1,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-19-huile",
+        "name": "Huile végétale pour cuisson",
+        "quantity": 25,
+        "unit": "ml",
         "department": "non_perissable"
       }
     ],
     "steps": [
-      "Préparer le féculent (Riz blanc jasmin) et les légumes frais (Salade verte d'avocat, tomates et maïs doux).",
-      "Assaisonner la protéine avec les épices et l'huile.",
-      "Préchauffer la plancha ou la poêle à feu moyen-vif (210°C).",
-      "Lancer la cuisson du féculent et des légumes sur la zone moyenne jusqu'à belle dorure.",
-      "Saisir la protéine sur la zone vive jusqu'à cuisson parfaite et caramélisée.",
-      "Dresser les 4 assiettes avec la portion de protéine, le féculent chaud et les légumes ou la salade fraîche."
+      "Cuire le riz jasmin dans l'eau bouillante 12 minutes.",
+      "Dans une grande sauteuse ou sur plaque creuse, faire dorer la dinde hachée avec l'huile et les épices 5 minutes.",
+      "Ajouter les tomates en dés, les haricots noirs et le maïs. Laisser mijoter 8 minutes à feu moyen.",
+      "Préparer la salade avec le mesclun, les dés d'avocat, un filet d'huile et le jus de lime.",
+      "Servir le chili de dinde fumant sur le riz blanc avec la salade d'avocat rafraîchissante."
     ]
   },
   {
@@ -1727,47 +2019,75 @@ export const RECIPES_DATA = [
     "ingredients": [
       {
         "id": "ing-rec-20-prot",
-        "name": "Crevettes & Fruits de mer (Wok de crevettes au sésame)",
+        "name": "Grosses crevettes crues décortiquées et déveinées (31/40)",
         "quantity": 500,
         "unit": "g",
         "department": "viandes"
       },
       {
         "id": "ing-rec-20-carb",
-        "name": "Vermicelles de riz sans gluten (féculent)",
+        "name": "Vermicelles de riz sans gluten",
         "quantity": 300,
         "unit": "g",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-20-veg",
-        "name": "Fleurets de brocoli et pois mange-tout frais",
-        "quantity": 400,
+        "id": "ing-rec-20-brocoli",
+        "name": "Fleurets de brocoli frais coupés fins",
+        "quantity": 300,
         "unit": "g",
         "department": "fruits_legumes"
       },
       {
-        "id": "ing-rec-20-huile",
-        "name": "Huile d'olive ou végétale pour cuisson",
+        "id": "ing-rec-20-mange-tout",
+        "name": "Pois mange-tout frais",
+        "quantity": 150,
+        "unit": "g",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-20-soya",
+        "name": "Sauce tamari ou soya",
         "quantity": 30,
         "unit": "ml",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-20-assaisonnement",
-        "name": "Assaisonnement du chef, sel et poivre",
+        "id": "ing-rec-20-sesame-huile",
+        "name": "Huile de sésame grillé",
+        "quantity": 15,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-20-ail",
+        "name": "Gousses d'ail émincées",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-20-gingembre",
+        "name": "Gingembre frais râpé",
+        "quantity": 15,
+        "unit": "g",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-20-sesame-graines",
+        "name": "Graines de sésame blanc",
         "quantity": 10,
         "unit": "g",
         "department": "non_perissable"
       }
     ],
     "steps": [
-      "Préparer le féculent (Vermicelles de riz sans gluten) et les légumes frais (Fleurets de brocoli et pois mange-tout frais).",
-      "Assaisonner la protéine avec les épices et l'huile.",
-      "Préchauffer la plancha ou la poêle à feu moyen-vif (210°C).",
-      "Lancer la cuisson du féculent et des légumes sur la zone moyenne jusqu'à belle dorure.",
-      "Saisir la protéine sur la zone vive jusqu'à cuisson parfaite et caramélisée.",
-      "Dresser les 4 assiettes avec la portion de protéine, le féculent chaud et les légumes ou la salade fraîche."
+      "Tremper les vermicelles de riz dans l'eau chaude 5 minutes, rincer et égoutter.",
+      "Préchauffer la plancha à 220°C.",
+      "Saisir les fleurets de brocoli et les pois mange-tout 4 minutes avec un filet d'eau et d'ail sous cloche.",
+      "Ajouter les crevettes, le gingembre et l'huile de sésame. Cuire 2 à 3 minutes en remuant vivement jusqu'à ce que les crevettes soient roses.",
+      "Déglacer avec la sauce soya et incorporer les vermicelles de riz pour bien les réchauffer.",
+      "Parsemer de graines de sésame grillées et servir sans attendre."
     ]
   },
   {
@@ -1798,47 +2118,75 @@ export const RECIPES_DATA = [
     "ingredients": [
       {
         "id": "ing-rec-21-prot",
-        "name": "Poitrine de Poulet (Poulet glacé à la mangue)",
+        "name": "Poitrines de poulet coupées en escalopes ou aiguillettes",
         "quantity": 600,
         "unit": "g",
         "department": "viandes"
       },
       {
         "id": "ing-rec-21-carb",
-        "name": "Riz au jasmin (féculent sans gluten)",
+        "name": "Riz parfumé au jasmin",
         "quantity": 300,
         "unit": "g",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-21-veg",
-        "name": "Salade de chou et poivrons à la lime",
-        "quantity": 350,
+        "id": "ing-rec-21-chutney",
+        "name": "Chutney de mangue doux",
+        "quantity": 60,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-21-chou",
+        "name": "Mélange de chou rouge et chou blanc râpé",
+        "quantity": 250,
         "unit": "g",
         "department": "fruits_legumes"
       },
       {
+        "id": "ing-rec-21-poivron",
+        "name": "Poivron rouge taillé en fines lanières",
+        "quantity": 1,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-21-limes",
+        "name": "Limes pour jus et quartiers",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
         "id": "ing-rec-21-huile",
-        "name": "Huile d'olive ou végétale pour cuisson",
+        "name": "Huile végétale",
         "quantity": 30,
         "unit": "ml",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-21-assaisonnement",
-        "name": "Assaisonnement du chef, sel et poivre",
-        "quantity": 10,
+        "id": "ing-rec-21-coriandre",
+        "name": "Coriandre fraîche hachée",
+        "quantity": 15,
+        "unit": "g",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-21-sel-poivre",
+        "name": "Sel et poivre du moulin",
+        "quantity": 5,
         "unit": "g",
         "department": "non_perissable"
       }
     ],
     "steps": [
-      "Préparer le féculent (Riz au jasmin) et les légumes frais (Salade de chou et poivrons à la lime).",
-      "Assaisonner la protéine avec les épices et l'huile.",
-      "Préchauffer la plancha ou la poêle à feu moyen-vif (210°C).",
-      "Lancer la cuisson du féculent et des légumes sur la zone moyenne jusqu'à belle dorure.",
-      "Saisir la protéine sur la zone vive jusqu'à cuisson parfaite et caramélisée.",
-      "Dresser les 4 assiettes avec la portion de protéine, le féculent chaud et les légumes ou la salade fraîche."
+      "Cuire le riz jasmin dans de l'eau salée 12 minutes.",
+      "Mélanger le chou râpé, les lanières de poivron, le jus d'une lime, la coriandre et un filet d'huile pour la salade croquante.",
+      "Préchauffer la plancha à 210°C.",
+      "Saisir le poulet 4 minutes d'un côté. Retourner et badigeonner généreusement de chutney de mangue.",
+      "Poursuivre la cuisson 3 minutes jusqu'à caramélisation brillante du glaçage.",
+      "Servir le poulet caramélisé avec le riz jasmin chaud et la salade de chou fraîche à la lime."
     ]
   },
   {
@@ -1869,47 +2217,81 @@ export const RECIPES_DATA = [
     "ingredients": [
       {
         "id": "ing-rec-22-prot",
-        "name": "Dinde & Volailles (Bols express à la dinde)",
+        "name": "Dinde hachée maigre",
         "quantity": 500,
         "unit": "g",
         "department": "viandes"
       },
       {
         "id": "ing-rec-22-carb",
-        "name": "Riz brun ou blanc (féculent sans gluten)",
+        "name": "Riz brun à grains entiers",
         "quantity": 300,
         "unit": "g",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-22-veg",
-        "name": "Concombres, avocat et tomates cerises",
-        "quantity": 400,
+        "id": "ing-rec-22-concombre",
+        "name": "Concombre anglais coupé en dés",
+        "quantity": 1,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-22-avocats",
+        "name": "Avocats mûrs coupés en cubes",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-22-tomates",
+        "name": "Tomates cerises coupées en deux",
+        "quantity": 150,
         "unit": "g",
         "department": "fruits_legumes"
       },
       {
+        "id": "ing-rec-22-ail-ail",
+        "name": "Poudre d'ail",
+        "quantity": 5,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-22-ail-origan",
+        "name": "Origan séché",
+        "quantity": 5,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-22-citron",
+        "name": "Jus de citron frais",
+        "quantity": 15,
+        "unit": "ml",
+        "department": "fruits_legumes"
+      },
+      {
         "id": "ing-rec-22-huile",
-        "name": "Huile d'olive ou végétale pour cuisson",
+        "name": "Huile d'olive extra-vierge",
         "quantity": 30,
         "unit": "ml",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-22-assaisonnement",
-        "name": "Assaisonnement du chef, sel et poivre",
-        "quantity": 10,
+        "id": "ing-rec-22-sel-poivre",
+        "name": "Sel de mer et poivre",
+        "quantity": 5,
         "unit": "g",
         "department": "non_perissable"
       }
     ],
     "steps": [
-      "Préparer le féculent (Riz brun ou blanc) et les légumes frais (Concombres, avocat et tomates cerises).",
-      "Assaisonner la protéine avec les épices et l'huile.",
-      "Préchauffer la plancha ou la poêle à feu moyen-vif (210°C).",
-      "Lancer la cuisson du féculent et des légumes sur la zone moyenne jusqu'à belle dorure.",
-      "Saisir la protéine sur la zone vive jusqu'à cuisson parfaite et caramélisée.",
-      "Dresser les 4 assiettes avec la portion de protéine, le féculent chaud et les légumes ou la salade fraîche."
+      "Cuire le riz brun à l'eau bouillante salée environ 25 minutes, égoutter.",
+      "Chauffer la plancha ou une poêle à 200°C avec 15 ml d'huile.",
+      "Saisir la dinde hachée avec la poudre d'ail, l'origan, sel et poivre en l'émiettant pendant 6 à 8 minutes.",
+      "Préparer la garniture fraîche : mélanger concombre, avocat, tomates cerises avec un filet d'huile d'olive et jus de citron.",
+      "Composer les 4 bols : déposer le riz brun tiède, la dinde dorée savoureuse et la salade fraîche d'avocat et concombre."
     ]
   },
   {
@@ -1942,47 +2324,74 @@ export const RECIPES_DATA = [
     "ingredients": [
       {
         "id": "ing-rec-23-prot",
-        "name": "Boeuf haché (Bols au bœuf style fajita)",
+        "name": "Bœuf haché mi-maigre",
         "quantity": 500,
         "unit": "g",
         "department": "viandes"
       },
       {
         "id": "ing-rec-23-carb",
-        "name": "Riz blanc au jasmin (féculent sans gluten)",
+        "name": "Riz blanc au jasmin",
         "quantity": 300,
         "unit": "g",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-23-veg",
-        "name": "Poivrons tri-couleurs, oignons et salsa",
-        "quantity": 400,
-        "unit": "g",
+        "id": "ing-rec-23-poivron-r",
+        "name": "Poivron rouge tranché en lanières",
+        "quantity": 1,
+        "unit": "unité",
         "department": "fruits_legumes"
       },
       {
-        "id": "ing-rec-23-huile",
-        "name": "Huile d'olive ou végétale pour cuisson",
-        "quantity": 30,
+        "id": "ing-rec-23-poivron-v",
+        "name": "Poivron vert tranché en lanières",
+        "quantity": 1,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-23-oignon",
+        "name": "Oignon jaune moyen émincé",
+        "quantity": 1,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-23-cheddar",
+        "name": "Fromage cheddar fort râpé",
+        "quantity": 150,
+        "unit": "g",
+        "department": "produits_laitiers"
+      },
+      {
+        "id": "ing-rec-23-salsa",
+        "name": "Salsa douce ou moyenne",
+        "quantity": 125,
         "unit": "ml",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-23-assaisonnement",
-        "name": "Assaisonnement du chef, sel et poivre",
-        "quantity": 10,
+        "id": "ing-rec-23-epices",
+        "name": "Épices tex-mex (chili, cumin, paprika fumé)",
+        "quantity": 15,
         "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-23-huile",
+        "name": "Huile végétale",
+        "quantity": 25,
+        "unit": "ml",
         "department": "non_perissable"
       }
     ],
     "steps": [
-      "Préparer le féculent (Riz blanc au jasmin) et les légumes frais (Poivrons tri-couleurs, oignons et salsa).",
-      "Assaisonner la protéine avec les épices et l'huile.",
-      "Préchauffer la plancha ou la poêle à feu moyen-vif (210°C).",
-      "Lancer la cuisson du féculent et des légumes sur la zone moyenne jusqu'à belle dorure.",
-      "Saisir la protéine sur la zone vive jusqu'à cuisson parfaite et caramélisée.",
-      "Dresser les 4 assiettes avec la portion de protéine, le féculent chaud et les légumes ou la salade fraîche."
+      "Cuire le riz jasmin dans l'eau salée 12 minutes.",
+      "Préchauffer la plancha à 210°C.",
+      "Faire revenir les lanières de poivrons et d'oignon 6 minutes avec un filet d'huile jusqu'à belle caramélisation.",
+      "Saisir le bœuf haché avec les épices tex-mex pendant 6 minutes à côté des légumes.",
+      "Dans chaque bol, déposer une portion de riz chaud, garnir de bœuf savoureux, de poivrons rôtis, d'une généreuse cuillère de salsa et de cheddar râpé qui fond immédiatement."
     ]
   },
   {
@@ -2016,47 +2425,82 @@ export const RECIPES_DATA = [
     "ingredients": [
       {
         "id": "ing-rec-24-prot",
-        "name": "Végétarien (Bols de tofu Bang Bang)",
-        "quantity": 450,
+        "name": "Tofu biologique extra-ferme pressé en dés",
+        "quantity": 454,
         "unit": "g",
-        "department": "produits_laitiers"
+        "department": "viandes"
       },
       {
         "id": "ing-rec-24-carb",
-        "name": "Riz au jasmin (féculent sans gluten)",
+        "name": "Riz au jasmin",
         "quantity": 300,
         "unit": "g",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-24-veg",
-        "name": "Concombres marinés, carottes et chou rouge",
-        "quantity": 400,
-        "unit": "g",
+        "id": "ing-rec-24-concombre",
+        "name": "Concombre anglais tranché en fines rondelles",
+        "quantity": 1,
+        "unit": "unité",
         "department": "fruits_legumes"
       },
       {
-        "id": "ing-rec-24-huile",
-        "name": "Huile d'olive ou végétale pour cuisson",
+        "id": "ing-rec-24-carottes",
+        "name": "Carottes fraîches râpées",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-24-mayo",
+        "name": "Mayonnaise",
+        "quantity": 60,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-24-sriracha",
+        "name": "Sauce sriracha ou chili doux",
         "quantity": 30,
         "unit": "ml",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-24-assaisonnement",
-        "name": "Assaisonnement du chef, sel et poivre",
+        "id": "ing-rec-24-vinaigre",
+        "name": "Vinaigre de riz",
+        "quantity": 25,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-24-fecule",
+        "name": "Fécule de maïs",
+        "quantity": 20,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-24-huile",
+        "name": "Huile végétale pour friture légère",
+        "quantity": 30,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-24-sesame",
+        "name": "Graines de sésame grillées",
         "quantity": 10,
         "unit": "g",
         "department": "non_perissable"
       }
     ],
     "steps": [
-      "Préparer le féculent (Riz au jasmin) et les légumes frais (Concombres marinés, carottes et chou rouge).",
-      "Assaisonner la protéine avec les épices et l'huile.",
-      "Préchauffer la plancha ou la poêle à feu moyen-vif (210°C).",
-      "Lancer la cuisson du féculent et des légumes sur la zone moyenne jusqu'à belle dorure.",
-      "Saisir la protéine sur la zone vive jusqu'à cuisson parfaite et caramélisée.",
-      "Dresser les 4 assiettes avec la portion de protéine, le féculent chaud et les légumes ou la salade fraîche."
+      "Cuire le riz jasmin à point.",
+      "Enrober les dés de tofu de fécule de maïs. Mélanger la mayonnaise et la sriracha pour créer la sauce Bang Bang.",
+      "Mariner les rondelles de concombres dans le vinaigre de riz et une pincée de sel 10 minutes.",
+      "Préchauffer la plancha à 220°C avec l'huile. Dorer les dés de tofu 8 à 10 minutes jusqu'à ce qu'ils soient hyper croustillants.",
+      "Mélanger délicatement le tofu doré avec la moitié de la sauce Bang Bang.",
+      "Dresser sur le riz jasmin avec les concombres marinés, les carottes râpées, un filet de sauce restante et des graines de sésame."
     ]
   },
   {
@@ -2090,47 +2534,67 @@ export const RECIPES_DATA = [
     "ingredients": [
       {
         "id": "ing-rec-25-prot",
-        "name": "Porc haché (Sandwichs de porc BBQ)",
+        "name": "Porc haché maigre cuisiné ou effiloché",
         "quantity": 500,
         "unit": "g",
         "department": "viandes"
       },
       {
-        "id": "ing-rec-25-carb",
-        "name": "Patates douces en frites (féculent sans gluten)",
+        "id": "ing-rec-25-pains",
+        "name": "Pains à burger briochés",
+        "quantity": 4,
+        "unit": "unité",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-25-patates",
+        "name": "Patates douces taillées en frites",
         "quantity": 500,
         "unit": "g",
         "department": "fruits_legumes"
       },
       {
-        "id": "ing-rec-25-veg",
-        "name": "Salade de chou crémeuse québécoise",
+        "id": "ing-rec-25-chou",
+        "name": "Salade de chou fraîche",
         "quantity": 250,
         "unit": "g",
         "department": "fruits_legumes"
       },
       {
-        "id": "ing-rec-25-huile",
-        "name": "Huile d'olive ou végétale pour cuisson",
+        "id": "ing-rec-25-bbq",
+        "name": "Sauce BBQ fumée",
+        "quantity": 80,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-25-vinaigrette",
+        "name": "Vinaigrette crémeuse pour salade de chou",
         "quantity": 30,
         "unit": "ml",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-25-assaisonnement",
-        "name": "Assaisonnement du chef, sel et poivre",
-        "quantity": 10,
+        "id": "ing-rec-25-huile",
+        "name": "Huile d'olive",
+        "quantity": 30,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-25-paprika",
+        "name": "Paprika fumé",
+        "quantity": 5,
         "unit": "g",
         "department": "non_perissable"
       }
     ],
     "steps": [
-      "Préparer le féculent (Patates douces en frites) et les légumes frais (Salade de chou crémeuse québécoise).",
-      "Assaisonner la protéine avec les épices et l'huile.",
-      "Préchauffer la plancha ou la poêle à feu moyen-vif (210°C).",
-      "Lancer la cuisson du féculent et des légumes sur la zone moyenne jusqu'à belle dorure.",
-      "Saisir la protéine sur la zone vive jusqu'à cuisson parfaite et caramélisée.",
-      "Dresser les 4 assiettes avec la portion de protéine, le féculent chaud et les légumes ou la salade fraîche."
+      "Préchauffer la plancha à 200°C. Déposer les frites de patates douces avec l'huile d'olive et le paprika fumé. Cuire 15 minutes en remuant.",
+      "Saisir le porc haché à côté pendant 6 minutes, égoutter le surplus de gras si désiré, puis incorporer la sauce BBQ.",
+      "Mélanger la salade de chou avec sa vinaigrette crémeuse.",
+      "Griller rapidement l'intérieur des pains briochés 1 minute sur la plaque.",
+      "Garnir les pains de porc BBQ juteux et d'une touche de salade de chou, et accompagner des frites de patates douces bien dorées."
     ]
   },
   {
@@ -2164,47 +2628,75 @@ export const RECIPES_DATA = [
     "ingredients": [
       {
         "id": "ing-rec-26-prot",
-        "name": "Poitrine de Poulet (Sauté de poulet au miel et cajous)",
+        "name": "Poitrines de poulet coupées en bouchées",
         "quantity": 600,
         "unit": "g",
         "department": "viandes"
       },
       {
         "id": "ing-rec-26-carb",
-        "name": "Riz au jasmin (féculent sans gluten)",
+        "name": "Riz blanc jasmin",
         "quantity": 300,
         "unit": "g",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-26-veg",
-        "name": "Fleurets de brocoli frais et carottes",
-        "quantity": 350,
+        "id": "ing-rec-26-cajous",
+        "name": "Noix de cajou grillées non salées",
+        "quantity": 80,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-26-brocoli",
+        "name": "Fleurets de brocoli frais",
+        "quantity": 300,
         "unit": "g",
         "department": "fruits_legumes"
       },
       {
-        "id": "ing-rec-26-huile",
-        "name": "Huile d'olive ou végétale pour cuisson",
+        "id": "ing-rec-26-carottes",
+        "name": "Carottes tranchées en fines rondelles",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-26-miel",
+        "name": "Miel pur d'abeille",
+        "quantity": 45,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-26-soya",
+        "name": "Sauce soya claire",
         "quantity": 30,
         "unit": "ml",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-26-assaisonnement",
-        "name": "Assaisonnement du chef, sel et poivre",
-        "quantity": 10,
-        "unit": "g",
+        "id": "ing-rec-26-ail",
+        "name": "Gousses d'ail émincées",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-26-huile",
+        "name": "Huile végétale pour cuisson",
+        "quantity": 30,
+        "unit": "ml",
         "department": "non_perissable"
       }
     ],
     "steps": [
-      "Préparer le féculent (Riz au jasmin) et les légumes frais (Fleurets de brocoli frais et carottes).",
-      "Assaisonner la protéine avec les épices et l'huile.",
-      "Préchauffer la plancha ou la poêle à feu moyen-vif (210°C).",
-      "Lancer la cuisson du féculent et des légumes sur la zone moyenne jusqu'à belle dorure.",
-      "Saisir la protéine sur la zone vive jusqu'à cuisson parfaite et caramélisée.",
-      "Dresser les 4 assiettes avec la portion de protéine, le féculent chaud et les légumes ou la salade fraîche."
+      "Cuire le riz jasmin dans l'eau salée 12 minutes.",
+      "Mélanger le miel, la sauce soya et l'ail dans un petit bol.",
+      "Chauffer la plancha à 210°C. Saisir le poulet 5 minutes avec l'huile jusqu'à coloration dorée.",
+      "Ajouter les brocolis et rondelles de carottes à côté avec 2 c. à soupe d'eau sous cloche pendant 4 minutes.",
+      "Verser la sauce miel-soya sur le poulet et les légumes, ajouter les noix de cajou et mélanger 2 minutes pour laquer.",
+      "Servir bien chaud sur le riz jasmin fumant."
     ]
   },
   {
@@ -2235,47 +2727,67 @@ export const RECIPES_DATA = [
     "ingredients": [
       {
         "id": "ing-rec-27-prot",
-        "name": "Poitrine de Poulet (Poulet au poivre et citron)",
+        "name": "Poitrines de poulet tranchées en deux sur l'épaisseur",
         "quantity": 600,
         "unit": "g",
         "department": "viandes"
       },
       {
         "id": "ing-rec-27-carb",
-        "name": "Pommes de terre grelots rôties (sans gluten)",
+        "name": "Pommes de terre grelots coupées en deux",
         "quantity": 600,
         "unit": "g",
         "department": "fruits_legumes"
       },
       {
-        "id": "ing-rec-27-veg",
-        "name": "Fèves vertes fraîches éboutées",
+        "id": "ing-rec-27-feves",
+        "name": "Haricots verts frais éboutés",
         "quantity": 350,
         "unit": "g",
         "department": "fruits_legumes"
       },
       {
+        "id": "ing-rec-27-citrons",
+        "name": "Citrons (jus et zeste)",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-27-poivre",
+        "name": "Poivre noir concassé du moulin",
+        "quantity": 10,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-27-ail",
+        "name": "Gousses d'ail hachées",
+        "quantity": 3,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
         "id": "ing-rec-27-huile",
-        "name": "Huile d'olive ou végétale pour cuisson",
-        "quantity": 30,
+        "name": "Huile d'olive extra-vierge",
+        "quantity": 40,
         "unit": "ml",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-27-assaisonnement",
-        "name": "Assaisonnement du chef, sel et poivre",
-        "quantity": 10,
+        "id": "ing-rec-27-sel",
+        "name": "Sel de mer",
+        "quantity": 5,
         "unit": "g",
         "department": "non_perissable"
       }
     ],
     "steps": [
-      "Préparer le féculent (Pommes de terre grelots rôties) et les légumes frais (Fèves vertes fraîches éboutées).",
-      "Assaisonner la protéine avec les épices et l'huile.",
-      "Préchauffer la plancha ou la poêle à feu moyen-vif (210°C).",
-      "Lancer la cuisson du féculent et des légumes sur la zone moyenne jusqu'à belle dorure.",
-      "Saisir la protéine sur la zone vive jusqu'à cuisson parfaite et caramélisée.",
-      "Dresser les 4 assiettes avec la portion de protéine, le féculent chaud et les légumes ou la salade fraîche."
+      "Enrober le poulet d'huile d'olive, d'ail, de zeste de citron et d'une généreuse croûte de poivre noir concassé.",
+      "Préchauffer la plancha à 200°C. Poser les demi-grelots avec de l'huile et cuire 15 minutes en les retournant.",
+      "Ajouter les haricots verts à côté 7 minutes avant la fin de cuisson des grelots.",
+      "Déposer les morceaux de poulet sur la zone vive et griller 4 minutes de chaque côté jusqu'à cuisson complète.",
+      "Arroser le poulet et les légumes de jus de citron frais directement sur la plaque avant de servir."
     ]
   },
   {
@@ -2308,47 +2820,89 @@ export const RECIPES_DATA = [
     "ingredients": [
       {
         "id": "ing-rec-28-prot",
-        "name": "Boeuf haché (Sauté de bœuf vietnamien (Bò Lúc Lắc))",
+        "name": "Bœuf à bifteck (surlonge ou contre-filet) coupé en cubes de 2 cm",
         "quantity": 600,
         "unit": "g",
         "department": "viandes"
       },
       {
         "id": "ing-rec-28-carb",
-        "name": "Riz rouge ou jasmin (féculent sans gluten)",
+        "name": "Riz jasmin ou riz rouge",
         "quantity": 300,
         "unit": "g",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-28-veg",
-        "name": "Rondelles de concombres et tomates fraîches",
-        "quantity": 350,
+        "id": "ing-rec-28-concombre",
+        "name": "Concombre anglais en tranches",
+        "quantity": 1,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-28-tomates",
+        "name": "Tomates de serre en rondelles",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-28-cresson",
+        "name": "Cresson frais ou feuilles de laitue",
+        "quantity": 100,
         "unit": "g",
         "department": "fruits_legumes"
       },
       {
-        "id": "ing-rec-28-huile",
-        "name": "Huile d'olive ou végétale pour cuisson",
+        "id": "ing-rec-28-soya",
+        "name": "Sauce soya claire",
         "quantity": 30,
         "unit": "ml",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-28-assaisonnement",
-        "name": "Assaisonnement du chef, sel et poivre",
-        "quantity": 10,
+        "id": "ing-rec-28-huitres",
+        "name": "Sauce aux huîtres ou sauce Maggi",
+        "quantity": 15,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-28-ail",
+        "name": "Gousses d'ail émincées finement",
+        "quantity": 4,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-28-beurre",
+        "name": "Beurre doux",
+        "quantity": 15,
         "unit": "g",
+        "department": "produits_laitiers"
+      },
+      {
+        "id": "ing-rec-28-lime",
+        "name": "Jus de lime frais",
+        "quantity": 15,
+        "unit": "ml",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-28-huile",
+        "name": "Huile végétale pour friture vive",
+        "quantity": 25,
+        "unit": "ml",
         "department": "non_perissable"
       }
     ],
     "steps": [
-      "Préparer le féculent (Riz rouge ou jasmin) et les légumes frais (Rondelles de concombres et tomates fraîches).",
-      "Assaisonner la protéine avec les épices et l'huile.",
-      "Préchauffer la plancha ou la poêle à feu moyen-vif (210°C).",
-      "Lancer la cuisson du féculent et des légumes sur la zone moyenne jusqu'à belle dorure.",
-      "Saisir la protéine sur la zone vive jusqu'à cuisson parfaite et caramélisée.",
-      "Dresser les 4 assiettes avec la portion de protéine, le féculent chaud et les légumes ou la salade fraîche."
+      "Cuire le riz à l'eau bouillante salée 12 minutes.",
+      "Mariner les cubes de bœuf avec la sauce soya, la sauce aux huîtres et l'ail 15 minutes.",
+      "Dresser les assiettes avec un lit de cresson, des rondelles de tomates et de concombre.",
+      "Chauffer la plancha à intensité maximale (230°C).",
+      "Saisir les cubes de bœuf avec l'huile 2 à 3 minutes en les secouant vivement pour les caraméliser à l'extérieur tout en gardant le cœur tendre.",
+      "Ajouter une noisette de beurre et un filet de jus de lime, puis verser le bœuf fumant sur la salade et servir avec le riz."
     ]
   },
   {
@@ -2382,47 +2936,75 @@ export const RECIPES_DATA = [
     "ingredients": [
       {
         "id": "ing-rec-29-prot",
-        "name": "Poitrine de Poulet (Bols de poulet au miel et à l’ail)",
+        "name": "Poitrines de poulet coupées en bouchées",
         "quantity": 600,
         "unit": "g",
         "department": "viandes"
       },
       {
         "id": "ing-rec-29-carb",
-        "name": "Riz au jasmin (féculent sans gluten)",
+        "name": "Riz blanc au jasmin",
         "quantity": 300,
         "unit": "g",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-29-veg",
-        "name": "Pois mange-tout frais et carottes",
-        "quantity": 350,
+        "id": "ing-rec-29-pois",
+        "name": "Pois mange-tout frais",
+        "quantity": 200,
         "unit": "g",
         "department": "fruits_legumes"
       },
       {
-        "id": "ing-rec-29-huile",
-        "name": "Huile d'olive ou végétale pour cuisson",
-        "quantity": 30,
+        "id": "ing-rec-29-carottes",
+        "name": "Carottes pelées en juliennes",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-29-miel",
+        "name": "Miel pur d'abeille",
+        "quantity": 60,
         "unit": "ml",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-29-assaisonnement",
-        "name": "Assaisonnement du chef, sel et poivre",
+        "id": "ing-rec-29-soya",
+        "name": "Sauce soya",
+        "quantity": 45,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-29-ail",
+        "name": "Gousses d'ail pressées",
+        "quantity": 4,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-29-sesame-huile",
+        "name": "Huile de sésame grillé",
+        "quantity": 15,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-29-sesame-graines",
+        "name": "Graines de sésame grillées",
         "quantity": 10,
         "unit": "g",
         "department": "non_perissable"
       }
     ],
     "steps": [
-      "Préparer le féculent (Riz au jasmin) et les légumes frais (Pois mange-tout frais et carottes).",
-      "Assaisonner la protéine avec les épices et l'huile.",
-      "Préchauffer la plancha ou la poêle à feu moyen-vif (210°C).",
-      "Lancer la cuisson du féculent et des légumes sur la zone moyenne jusqu'à belle dorure.",
-      "Saisir la protéine sur la zone vive jusqu'à cuisson parfaite et caramélisée.",
-      "Dresser les 4 assiettes avec la portion de protéine, le féculent chaud et les légumes ou la salade fraîche."
+      "Cuire le riz jasmin dans l'eau salée 12 minutes.",
+      "Mélanger le miel, la sauce soya, l'ail pressé et l'huile de sésame pour créer la sauce miel-ail.",
+      "Préchauffer la plancha à 210°C.",
+      "Faire sauter les bouchées de poulet 5 minutes jusqu'à belle coloration.",
+      "Ajouter les pois mange-tout et les carottes, verser la sauce et cuire 3 minutes pour épaissir la sauce et napper le tout.",
+      "Servir dans 4 bols sur le riz jasmin et parsemer de graines de sésame."
     ]
   },
   {
@@ -2455,47 +3037,81 @@ export const RECIPES_DATA = [
     "ingredients": [
       {
         "id": "ing-rec-30-prot",
-        "name": "Poitrine de Poulet (Poulet grillé à la grecque)",
+        "name": "Poitrines de poulet tranchées en escalopes",
         "quantity": 600,
         "unit": "g",
         "department": "viandes"
       },
       {
         "id": "ing-rec-30-carb",
-        "name": "Pommes de terre grelots au citron (sans gluten)",
+        "name": "Pommes de terre grelots coupées en deux",
         "quantity": 500,
         "unit": "g",
         "department": "fruits_legumes"
       },
       {
-        "id": "ing-rec-30-veg",
-        "name": "Salade grecque concombres, tomates et feta",
-        "quantity": 400,
-        "unit": "g",
+        "id": "ing-rec-30-concombre",
+        "name": "Concombre anglais coupé en dés",
+        "quantity": 1,
+        "unit": "unité",
         "department": "fruits_legumes"
       },
       {
+        "id": "ing-rec-30-tomates",
+        "name": "Tomates de serre mûres coupées en dés",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-30-feta",
+        "name": "Fromage feta émietté",
+        "quantity": 100,
+        "unit": "g",
+        "department": "produits_laitiers"
+      },
+      {
+        "id": "ing-rec-30-citrons",
+        "name": "Citrons (jus et quartiers)",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-30-origan",
+        "name": "Origan grec séché",
+        "quantity": 10,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
         "id": "ing-rec-30-huile",
-        "name": "Huile d'olive ou végétale pour cuisson",
-        "quantity": 30,
+        "name": "Huile d'olive extra-vierge",
+        "quantity": 45,
         "unit": "ml",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-30-assaisonnement",
-        "name": "Assaisonnement du chef, sel et poivre",
-        "quantity": 10,
+        "id": "ing-rec-30-ail",
+        "name": "Gousses d'ail pressées",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-30-sel-poivre",
+        "name": "Sel de mer et poivre du moulin",
+        "quantity": 5,
         "unit": "g",
         "department": "non_perissable"
       }
     ],
     "steps": [
-      "Préparer le féculent (Pommes de terre grelots au citron) et les légumes frais (Salade grecque concombres, tomates et feta).",
-      "Assaisonner la protéine avec les épices et l'huile.",
-      "Préchauffer la plancha ou la poêle à feu moyen-vif (210°C).",
-      "Lancer la cuisson du féculent et des légumes sur la zone moyenne jusqu'à belle dorure.",
-      "Saisir la protéine sur la zone vive jusqu'à cuisson parfaite et caramélisée.",
-      "Dresser les 4 assiettes avec la portion de protéine, le féculent chaud et les légumes ou la salade fraîche."
+      "Mariner le poulet avec l'origan, l'ail, le jus d'un citron et l'huile d'olive 10 minutes.",
+      "Déposer les demi-grelots sur la plancha à 200°C et cuire 15 minutes jusqu'à ce qu'ils soient croustillants.",
+      "Préparer la salade grecque : mélanger le concombre, les tomates et la feta avec de l'origan et un filet d'huile.",
+      "Saisir les escalopes de poulet 4 minutes de chaque côté sur la zone vive.",
+      "Servir le poulet doré et juteux avec les grelots au citron et la salade grecque bien fraîche."
     ]
   },
   {
@@ -2526,47 +3142,74 @@ export const RECIPES_DATA = [
     "ingredients": [
       {
         "id": "ing-rec-31-prot",
-        "name": "Poitrine de Poulet (Poulet tikka au chutney de mangues)",
+        "name": "Poitrines de poulet coupées en cubes de 3 cm",
         "quantity": 600,
         "unit": "g",
         "department": "viandes"
       },
       {
         "id": "ing-rec-31-carb",
-        "name": "Riz basmati (féculent sans gluten)",
+        "name": "Riz basmati blanc",
         "quantity": 300,
         "unit": "g",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-31-veg",
-        "name": "Fleurets de chou-fleur et haricots verts",
-        "quantity": 400,
+        "id": "ing-rec-31-chou-fleur",
+        "name": "Fleurets de chou-fleur frais coupés petits",
+        "quantity": 300,
         "unit": "g",
         "department": "fruits_legumes"
       },
       {
+        "id": "ing-rec-31-haricots",
+        "name": "Haricots verts frais éboutés",
+        "quantity": 150,
+        "unit": "g",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-31-yogourt",
+        "name": "Yogourt grec nature",
+        "quantity": 60,
+        "unit": "ml",
+        "department": "produits_laitiers"
+      },
+      {
+        "id": "ing-rec-31-tikka",
+        "name": "Pâte ou poudre d'épices tikka masala",
+        "quantity": 20,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-31-chutney",
+        "name": "Chutney de mangue",
+        "quantity": 60,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
         "id": "ing-rec-31-huile",
-        "name": "Huile d'olive ou végétale pour cuisson",
+        "name": "Huile végétale pour cuisson",
         "quantity": 30,
         "unit": "ml",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-31-assaisonnement",
-        "name": "Assaisonnement du chef, sel et poivre",
-        "quantity": 10,
+        "id": "ing-rec-31-coriandre",
+        "name": "Coriandre fraîche ciselée",
+        "quantity": 15,
         "unit": "g",
-        "department": "non_perissable"
+        "department": "fruits_legumes"
       }
     ],
     "steps": [
-      "Préparer le féculent (Riz basmati) et les légumes frais (Fleurets de chou-fleur et haricots verts).",
-      "Assaisonner la protéine avec les épices et l'huile.",
-      "Préchauffer la plancha ou la poêle à feu moyen-vif (210°C).",
-      "Lancer la cuisson du féculent et des légumes sur la zone moyenne jusqu'à belle dorure.",
-      "Saisir la protéine sur la zone vive jusqu'à cuisson parfaite et caramélisée.",
-      "Dresser les 4 assiettes avec la portion de protéine, le féculent chaud et les légumes ou la salade fraîche."
+      "Mélanger le yogourt et les épices tikka, puis enrober les cubes de poulet.",
+      "Cuire le riz basmati dans l'eau salée 12 minutes.",
+      "Préchauffer la plancha à 210°C. Saisir les fleurets de chou-fleur et haricots 6 minutes sous cloche.",
+      "Déposer le poulet tikka et faire griller 8 à 10 minutes en remuant pour dorer chaque face.",
+      "Servir le poulet tikka parfumé avec le riz basmati, les légumes rôtis et une belle cuillère de chutney de mangue sucré."
     ]
   },
   {
@@ -2597,47 +3240,74 @@ export const RECIPES_DATA = [
     "ingredients": [
       {
         "id": "ing-rec-32-prot",
-        "name": "Dinde & Volailles (Bols burrito à la dinde)",
+        "name": "Dinde hachée maigre",
         "quantity": 500,
         "unit": "g",
         "department": "viandes"
       },
       {
         "id": "ing-rec-32-carb",
-        "name": "Riz brun et haricots noirs (féculent sans gluten)",
-        "quantity": 300,
+        "name": "Riz brun à grains entiers",
+        "quantity": 250,
         "unit": "g",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-32-veg",
-        "name": "Tomates fraîches, maïs doux, avocat et laitue",
-        "quantity": 400,
-        "unit": "g",
-        "department": "fruits_legumes"
-      },
-      {
-        "id": "ing-rec-32-huile",
-        "name": "Huile d'olive ou végétale pour cuisson",
-        "quantity": 30,
+        "id": "ing-rec-32-haricots",
+        "name": "Haricots noirs en conserve rincés",
+        "quantity": 398,
         "unit": "ml",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-32-assaisonnement",
-        "name": "Assaisonnement du chef, sel et poivre",
-        "quantity": 10,
+        "id": "ing-rec-32-mais",
+        "name": "Maïs doux en grains",
+        "quantity": 150,
         "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-32-tomates",
+        "name": "Tomates fraîches coupées en dés",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-32-avocats",
+        "name": "Avocats mûrs coupés en dés",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-32-epices",
+        "name": "Épices tex-mex (chili, cumin, poudre d'ail)",
+        "quantity": 15,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-32-limes",
+        "name": "Limes pour jus et quartiers",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-32-huile",
+        "name": "Huile végétale",
+        "quantity": 25,
+        "unit": "ml",
         "department": "non_perissable"
       }
     ],
     "steps": [
-      "Préparer le féculent (Riz brun et haricots noirs) et les légumes frais (Tomates fraîches, maïs doux, avocat et laitue).",
-      "Assaisonner la protéine avec les épices et l'huile.",
-      "Préchauffer la plancha ou la poêle à feu moyen-vif (210°C).",
-      "Lancer la cuisson du féculent et des légumes sur la zone moyenne jusqu'à belle dorure.",
-      "Saisir la protéine sur la zone vive jusqu'à cuisson parfaite et caramélisée.",
-      "Dresser les 4 assiettes avec la portion de protéine, le féculent chaud et les légumes ou la salade fraîche."
+      "Cuire le riz brun environ 25 minutes dans de l'eau bouillante salée, égoutter.",
+      "Préparer la salsa : mélanger les tomates en dés, le maïs, les dés d'avocat, le jus d'une lime et une pincée de sel.",
+      "Chauffer la plancha ou poêle à 200°C. Saisir la dinde hachée avec les épices et l'huile 6 minutes.",
+      "Ajouter les haricots noirs pour les réchauffer 2 minutes avec la dinde.",
+      "Assembler les bols burrito : fond de riz brun chaud, dinde assaisonnée aux haricots et salsa fraîche maïs-avocat."
     ]
   },
   {
@@ -2670,47 +3340,81 @@ export const RECIPES_DATA = [
     "ingredients": [
       {
         "id": "ing-rec-33-prot",
-        "name": "Dinde & Volailles (Sandwichs de dinde sur pain plat)",
+        "name": "Dinde hachée maigre cuisinée",
         "quantity": 500,
         "unit": "g",
         "department": "viandes"
       },
       {
-        "id": "ing-rec-33-carb",
-        "name": "Patates douces en frites (féculent sans gluten)",
+        "id": "ing-rec-33-pains",
+        "name": "Pains plats ou pains naans moelleux",
+        "quantity": 4,
+        "unit": "unité",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-33-patates",
+        "name": "Patates douces coupées en frites",
         "quantity": 450,
         "unit": "g",
         "department": "fruits_legumes"
       },
       {
-        "id": "ing-rec-33-veg",
-        "name": "Salade de mesclun et guacamole d'avocat",
-        "quantity": 300,
+        "id": "ing-rec-33-avocats",
+        "name": "Avocats mûrs écrasés pour guacamole",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-33-mesclun",
+        "name": "Mesclun ou salade verte",
+        "quantity": 100,
         "unit": "g",
         "department": "fruits_legumes"
       },
       {
+        "id": "ing-rec-33-lime",
+        "name": "Jus de lime frais",
+        "quantity": 15,
+        "unit": "ml",
+        "department": "fruits_legumes"
+      },
+      {
         "id": "ing-rec-33-huile",
-        "name": "Huile d'olive ou végétale pour cuisson",
-        "quantity": 30,
+        "name": "Huile d'olive",
+        "quantity": 35,
         "unit": "ml",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-33-assaisonnement",
-        "name": "Assaisonnement du chef, sel et poivre",
-        "quantity": 10,
+        "id": "ing-rec-33-epices-ail",
+        "name": "Poudre d'ail",
+        "quantity": 5,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-33-epices-cumin",
+        "name": "Cumin moulu",
+        "quantity": 5,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-33-sel-poivre",
+        "name": "Sel de mer et poivre",
+        "quantity": 5,
         "unit": "g",
         "department": "non_perissable"
       }
     ],
     "steps": [
-      "Préparer le féculent (Patates douces en frites) et les légumes frais (Salade de mesclun et guacamole d'avocat).",
-      "Assaisonner la protéine avec les épices et l'huile.",
-      "Préchauffer la plancha ou la poêle à feu moyen-vif (210°C).",
-      "Lancer la cuisson du féculent et des légumes sur la zone moyenne jusqu'à belle dorure.",
-      "Saisir la protéine sur la zone vive jusqu'à cuisson parfaite et caramélisée.",
-      "Dresser les 4 assiettes avec la portion de protéine, le féculent chaud et les légumes ou la salade fraîche."
+      "Préchauffer la plancha à 200°C. Rôtir les frites de patates douces avec 20 ml d'huile d'olive 14 minutes jusqu'à belle dorure.",
+      "Faire sauter la dinde hachée avec les épices, sel et poivre pendant 6 minutes.",
+      "Écraser les avocats avec le jus de lime et une pincée de sel pour faire le guacamole minute.",
+      "Chauffer les pains plats 1 minute sur la plaque.",
+      "Tartiner les pains de guacamole frais, ajouter le mesclun et la dinde chaude, et servir avec les frites de patates douces."
     ]
   },
   {
@@ -2744,47 +3448,81 @@ export const RECIPES_DATA = [
     "ingredients": [
       {
         "id": "ing-rec-34-prot",
-        "name": "Porc haché (Quesadillas au porc effiloché)",
+        "name": "Porc effiloché cuit ou porc haché assaisonné BBQ",
         "quantity": 400,
         "unit": "g",
         "department": "viandes"
       },
       {
+        "id": "ing-rec-34-tortillas",
+        "name": "Grandes tortillas souples",
+        "quantity": 4,
+        "unit": "unité",
+        "department": "non_perissable"
+      },
+      {
         "id": "ing-rec-34-carb",
-        "name": "Tortillas et Riz mexicain (féculent)",
-        "quantity": 350,
+        "name": "Riz blanc au jasmin",
+        "quantity": 250,
         "unit": "g",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-34-veg",
-        "name": "Salade de chou râpée à la lime et maïs",
-        "quantity": 300,
-        "unit": "g",
-        "department": "fruits_legumes"
-      },
-      {
-        "id": "ing-rec-34-huile",
-        "name": "Huile d'olive ou végétale pour cuisson",
+        "id": "ing-rec-34-coulis",
+        "name": "Coulis ou pâte de tomate pour le riz",
         "quantity": 30,
         "unit": "ml",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-34-assaisonnement",
-        "name": "Assaisonnement du chef, sel et poivre",
-        "quantity": 10,
+        "id": "ing-rec-34-fromage",
+        "name": "Fromage râpé tex-mex",
+        "quantity": 200,
         "unit": "g",
+        "department": "produits_laitiers"
+      },
+      {
+        "id": "ing-rec-34-chou",
+        "name": "Chou vert et rouge râpé pour salade",
+        "quantity": 250,
+        "unit": "g",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-34-mais",
+        "name": "Maïs en grains doux",
+        "quantity": 100,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-34-limes",
+        "name": "Limes pour jus et quartiers",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-34-bbq",
+        "name": "Sauce BBQ",
+        "quantity": 60,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-34-huile",
+        "name": "Huile végétale",
+        "quantity": 20,
+        "unit": "ml",
         "department": "non_perissable"
       }
     ],
     "steps": [
-      "Préparer le féculent (Tortillas et Riz mexicain) et les légumes frais (Salade de chou râpée à la lime et maïs).",
-      "Assaisonner la protéine avec les épices et l'huile.",
-      "Préchauffer la plancha ou la poêle à feu moyen-vif (210°C).",
-      "Lancer la cuisson du féculent et des légumes sur la zone moyenne jusqu'à belle dorure.",
-      "Saisir la protéine sur la zone vive jusqu'à cuisson parfaite et caramélisée.",
-      "Dresser les 4 assiettes avec la portion de protéine, le féculent chaud et les légumes ou la salade fraîche."
+      "Cuire le riz dans 500 ml d'eau avec le coulis de tomate et une pincée de sel 12 minutes pour faire le riz rouge mexicain.",
+      "Mélanger le chou râpé, le maïs, le jus d'une lime et un filet d'huile pour la salade croquante.",
+      "Préchauffer la plancha à 190°C. Déposer les tortillas, parsemer de fromage râpé, de porc BBQ et replier en deux.",
+      "Griller 3 minutes par face jusqu'à ce que la tortilla soit croustillante et le fromage parfaitement fondu.",
+      "Couper en pointes et servir avec le riz mexicain et la salade de chou à la lime."
     ]
   },
   {
@@ -2817,47 +3555,74 @@ export const RECIPES_DATA = [
     "ingredients": [
       {
         "id": "ing-rec-35-prot",
-        "name": "Boeuf haché (Taquitos croustillants au bœuf)",
+        "name": "Bœuf haché mi-maigre",
         "quantity": 500,
         "unit": "g",
         "department": "viandes"
       },
       {
-        "id": "ing-rec-35-carb",
-        "name": "Tortillas de maïs pur (féculent sans gluten)",
+        "id": "ing-rec-35-tortillas",
+        "name": "Petites tortillas de maïs",
         "quantity": 8,
         "unit": "unité",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-35-veg",
-        "name": "Salade de laitue iceberg, tomates et guacamole",
-        "quantity": 350,
+        "id": "ing-rec-35-fromage",
+        "name": "Fromage cheddar râpé",
+        "quantity": 150,
+        "unit": "g",
+        "department": "produits_laitiers"
+      },
+      {
+        "id": "ing-rec-35-iceberg",
+        "name": "Laitue iceberg émincée",
+        "quantity": 150,
         "unit": "g",
         "department": "fruits_legumes"
       },
       {
-        "id": "ing-rec-35-huile",
-        "name": "Huile d'olive ou végétale pour cuisson",
-        "quantity": 30,
-        "unit": "ml",
+        "id": "ing-rec-35-tomates",
+        "name": "Tomates en dés",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-35-avocats",
+        "name": "Avocats mûrs pour guacamole",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-35-epices",
+        "name": "Épices à tacos (chili, cumin, origan)",
+        "quantity": 15,
+        "unit": "g",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-35-assaisonnement",
-        "name": "Assaisonnement du chef, sel et poivre",
-        "quantity": 10,
-        "unit": "g",
+        "id": "ing-rec-35-lime",
+        "name": "Jus de lime frais",
+        "quantity": 15,
+        "unit": "ml",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-35-huile",
+        "name": "Huile végétale pour cuisson",
+        "quantity": 30,
+        "unit": "ml",
         "department": "non_perissable"
       }
     ],
     "steps": [
-      "Préparer le féculent (Tortillas de maïs pur) et les légumes frais (Salade de laitue iceberg, tomates et guacamole).",
-      "Assaisonner la protéine avec les épices et l'huile.",
-      "Préchauffer la plancha ou la poêle à feu moyen-vif (210°C).",
-      "Lancer la cuisson du féculent et des légumes sur la zone moyenne jusqu'à belle dorure.",
-      "Saisir la protéine sur la zone vive jusqu'à cuisson parfaite et caramélisée.",
-      "Dresser les 4 assiettes avec la portion de protéine, le féculent chaud et les légumes ou la salade fraîche."
+      "Cuire le bœuf haché avec les épices à tacos 6 minutes dans une poêle.",
+      "Réchauffer les tortillas de maïs 20 secondes pour les assouplir. Déposer une ligne de bœuf et de cheddar au centre, puis rouler serré.",
+      "Préchauffer la plancha à 210°C avec l'huile. Déposer les taquitos couture vers le bas.",
+      "Cuire 6 à 8 minutes en les roulant sur chaque face jusqu'à ce qu'ils soient hyper croustillants.",
+      "Servir les taquitos croustillants avec la laitue iceberg, les dés de tomates fraîches et la purée d'avocat à la lime."
     ]
   },
   {
@@ -2888,47 +3653,67 @@ export const RECIPES_DATA = [
     "ingredients": [
       {
         "id": "ing-rec-36-prot",
-        "name": "Poitrine de Poulet (Poulet fumé au bois de pommier)",
+        "name": "Poitrines de poulet épaisses",
         "quantity": 600,
         "unit": "g",
         "department": "viandes"
       },
       {
         "id": "ing-rec-36-carb",
-        "name": "Pommes de terre grelots rôties (sans gluten)",
+        "name": "Pommes de terre grelots coupées en deux",
         "quantity": 600,
         "unit": "g",
         "department": "fruits_legumes"
       },
       {
-        "id": "ing-rec-36-veg",
-        "name": "Choux de Bruxelles coupés en deux rôtis",
+        "id": "ing-rec-36-choux",
+        "name": "Choux de Bruxelles frais coupés en deux",
         "quantity": 400,
         "unit": "g",
         "department": "fruits_legumes"
       },
       {
-        "id": "ing-rec-36-huile",
-        "name": "Huile d'olive ou végétale pour cuisson",
-        "quantity": 30,
+        "id": "ing-rec-36-epices-paprika",
+        "name": "Paprika fumé",
+        "quantity": 10,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-36-epices-cassonade",
+        "name": "Cassonade dorée",
+        "quantity": 15,
         "unit": "ml",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-36-assaisonnement",
-        "name": "Assaisonnement du chef, sel et poivre",
-        "quantity": 10,
+        "id": "ing-rec-36-ail",
+        "name": "Gousses d'ail émincées",
+        "quantity": 3,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-36-huile",
+        "name": "Huile d'olive",
+        "quantity": 40,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-36-sel-poivre",
+        "name": "Sel de mer et poivre du moulin",
+        "quantity": 5,
         "unit": "g",
         "department": "non_perissable"
       }
     ],
     "steps": [
-      "Préparer le féculent (Pommes de terre grelots rôties) et les légumes frais (Choux de Bruxelles coupés en deux rôtis).",
-      "Assaisonner la protéine avec les épices et l'huile.",
-      "Préchauffer la plancha ou la poêle à feu moyen-vif (210°C).",
-      "Lancer la cuisson du féculent et des légumes sur la zone moyenne jusqu'à belle dorure.",
-      "Saisir la protéine sur la zone vive jusqu'à cuisson parfaite et caramélisée.",
-      "Dresser les 4 assiettes avec la portion de protéine, le féculent chaud et les légumes ou la salade fraîche."
+      "Enrober les morceaux de poulet d'huile et d'épices barbecue fumées.",
+      "Préchauffer la plancha à 200°C.",
+      "Déposer les demi-grelots et les choux de Bruxelles face coupée contre la plaque avec l'huile et l'ail. Cuire 15 minutes en remuant.",
+      "Déposer les poitrines de poulet sur la zone vive et cuire 6 minutes par côté jusqu'à cuisson complète et croûte caramélisée.",
+      "Servir le poulet fumé juteux avec les grelots dorés et les choux de Bruxelles rôtis et croustillants."
     ]
   },
   {
@@ -2962,47 +3747,89 @@ export const RECIPES_DATA = [
     "ingredients": [
       {
         "id": "ing-rec-37-prot",
-        "name": "Poitrine de Poulet (Fajitas de poulet grillé fiesta)",
+        "name": "Poitrines de poulet tranchées en lanières",
         "quantity": 600,
         "unit": "g",
         "department": "viandes"
       },
       {
-        "id": "ing-rec-37-carb",
-        "name": "Tortillas souples (féculent)",
+        "id": "ing-rec-37-tortillas",
+        "name": "Tortillas de blé ou maïs",
         "quantity": 8,
         "unit": "unité",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-37-veg",
-        "name": "Poivrons tri-couleurs, oignons et salade avocat",
-        "quantity": 450,
+        "id": "ing-rec-37-poivron-r",
+        "name": "Poivron rouge en lanières",
+        "quantity": 1,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-37-poivron-j",
+        "name": "Poivron jaune en lanières",
+        "quantity": 1,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-37-poivron-v",
+        "name": "Poivron vert en lanières",
+        "quantity": 1,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-37-oignon",
+        "name": "Oignon rouge tranché",
+        "quantity": 1,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-37-avocats",
+        "name": "Avocats mûrs en tranches",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-37-laitue",
+        "name": "Feuilles de laitue romaine émincées",
+        "quantity": 100,
         "unit": "g",
         "department": "fruits_legumes"
       },
       {
-        "id": "ing-rec-37-huile",
-        "name": "Huile d'olive ou végétale pour cuisson",
-        "quantity": 30,
-        "unit": "ml",
+        "id": "ing-rec-37-epices",
+        "name": "Épices pour fajitas (chili, cumin, ail)",
+        "quantity": 15,
+        "unit": "g",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-37-assaisonnement",
-        "name": "Assaisonnement du chef, sel et poivre",
-        "quantity": 10,
-        "unit": "g",
+        "id": "ing-rec-37-limes",
+        "name": "Limes pour jus et quartiers",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-37-huile",
+        "name": "Huile d'olive",
+        "quantity": 30,
+        "unit": "ml",
         "department": "non_perissable"
       }
     ],
     "steps": [
-      "Préparer le féculent (Tortillas souples) et les légumes frais (Poivrons tri-couleurs, oignons et salade avocat).",
-      "Assaisonner la protéine avec les épices et l'huile.",
-      "Préchauffer la plancha ou la poêle à feu moyen-vif (210°C).",
-      "Lancer la cuisson du féculent et des légumes sur la zone moyenne jusqu'à belle dorure.",
-      "Saisir la protéine sur la zone vive jusqu'à cuisson parfaite et caramélisée.",
-      "Dresser les 4 assiettes avec la portion de protéine, le féculent chaud et les légumes ou la salade fraîche."
+      "Assaisonner le poulet avec les épices à fajitas et un filet d'huile.",
+      "Préchauffer la plancha à 210°C.",
+      "Faire revenir le trio de poivrons et l'oignon rouge 6 minutes jusqu'à ce qu'ils soient tendres et légèrement roussis.",
+      "Saisir le poulet 6 minutes à côté des légumes en remuant à la spatule.",
+      "Réchauffer les tortillas 30 secondes sur la plaque.",
+      "Servir le poulet et les légumes fumants dans les tortillas avec les tranches d'avocat, la laitue et un trait de lime."
     ]
   },
   {
@@ -3036,47 +3863,68 @@ export const RECIPES_DATA = [
     "ingredients": [
       {
         "id": "ing-rec-38-prot",
-        "name": "Porc haché (Linguines crémeuses au bacon & Fleurets de brocoli vapeur)",
-        "quantity": 300,
+        "name": "Bacon fumé de qualité tranché en lardons",
+        "quantity": 250,
         "unit": "g",
         "department": "viandes"
       },
       {
         "id": "ing-rec-38-carb",
-        "name": "Pâtes linguines (féculent)",
+        "name": "Pâtes linguines",
         "quantity": 350,
         "unit": "g",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-38-veg",
-        "name": "Fleurets de brocoli frais et tomates cerises",
-        "quantity": 350,
+        "id": "ing-rec-38-brocoli",
+        "name": "Fleurets de brocoli frais",
+        "quantity": 300,
         "unit": "g",
         "department": "fruits_legumes"
       },
       {
-        "id": "ing-rec-38-huile",
-        "name": "Huile d'olive ou végétale pour cuisson",
-        "quantity": 30,
-        "unit": "ml",
-        "department": "non_perissable"
+        "id": "ing-rec-38-tomates",
+        "name": "Tomates cerises coupées en deux",
+        "quantity": 150,
+        "unit": "g",
+        "department": "fruits_legumes"
       },
       {
-        "id": "ing-rec-38-assaisonnement",
-        "name": "Assaisonnement du chef, sel et poivre",
-        "quantity": 10,
+        "id": "ing-rec-38-creme",
+        "name": "Crème champêtre 15% ou crème 35%",
+        "quantity": 180,
+        "unit": "ml",
+        "department": "produits_laitiers"
+      },
+      {
+        "id": "ing-rec-38-parmesan",
+        "name": "Fromage parmesan fraîchement râpé",
+        "quantity": 50,
+        "unit": "g",
+        "department": "produits_laitiers"
+      },
+      {
+        "id": "ing-rec-38-ail",
+        "name": "Gousses d'ail émincées",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-38-poivre",
+        "name": "Poivre noir concassé du moulin",
+        "quantity": 5,
         "unit": "g",
         "department": "non_perissable"
       }
     ],
     "steps": [
-      "Préparer le féculent (Pâtes linguines) et les légumes frais (Fleurets de brocoli frais et tomates cerises).",
-      "Assaisonner la protéine avec les épices et l'huile.",
-      "Préchauffer la plancha ou la poêle à feu moyen-vif (210°C).",
-      "Lancer la cuisson du féculent et des légumes sur la zone moyenne jusqu'à belle dorure.",
-      "Saisir la protéine sur la zone vive jusqu'à cuisson parfaite et caramélisée.",
-      "Dresser les 4 assiettes avec la portion de protéine, le féculent chaud et les légumes ou la salade fraîche."
+      "Cuire les linguines dans de l'eau bouillante salée 10 minutes al dente.",
+      "Cuire les fleurets de brocoli à la vapeur ou sur la plancha sous cloche avec 3 c. à soupe d'eau pendant 4 minutes.",
+      "Faire dorer les lardons de bacon sur la plancha ou dans une sauteuse jusqu'à ce qu'ils soient bien croustillants.",
+      "Dans une poêle, chauffer la crème avec l'ail, le parmesan et le poivre noir concassé.",
+      "Ajouter les linguines égouttées, les lardons croustillants, les brocolis et les tomates cerises dans la sauce.",
+      "Bien enrober et servir immédiatement chaud et crémeux."
     ]
   },
   {
@@ -3111,47 +3959,82 @@ export const RECIPES_DATA = [
     "ingredients": [
       {
         "id": "ing-rec-39-prot",
-        "name": "Boeuf haché (Burgers de bœuf grillé)",
+        "name": "Bœuf haché mi-maigre façonné en 4 galettes",
         "quantity": 600,
         "unit": "g",
         "department": "viandes"
       },
       {
-        "id": "ing-rec-39-carb",
-        "name": "Patates douces en frites (féculent sans gluten)",
-        "quantity": 600,
+        "id": "ing-rec-39-pains",
+        "name": "Pains à burger briochés",
+        "quantity": 4,
+        "unit": "unité",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-39-cheddar",
+        "name": "Tranches de fromage cheddar vieilli",
+        "quantity": 4,
+        "unit": "tranche",
+        "department": "produits_laitiers"
+      },
+      {
+        "id": "ing-rec-39-patates",
+        "name": "Patates douces taillées en frites",
+        "quantity": 500,
         "unit": "g",
         "department": "fruits_legumes"
       },
       {
-        "id": "ing-rec-39-veg",
-        "name": "Salade de chou croquante et laitue tomate",
-        "quantity": 300,
+        "id": "ing-rec-39-chou",
+        "name": "Salade de chou croquante",
+        "quantity": 250,
         "unit": "g",
         "department": "fruits_legumes"
       },
       {
-        "id": "ing-rec-39-huile",
-        "name": "Huile d'olive ou végétale pour cuisson",
+        "id": "ing-rec-39-laitue",
+        "name": "Feuilles de laitue fraîche",
+        "quantity": 4,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-39-tomate",
+        "name": "Tomate de serre en rondelles",
+        "quantity": 1,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-39-vinaigrette",
+        "name": "Vinaigrette crémeuse pour salade de chou",
         "quantity": 30,
         "unit": "ml",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-39-assaisonnement",
-        "name": "Assaisonnement du chef, sel et poivre",
-        "quantity": 10,
+        "id": "ing-rec-39-huile",
+        "name": "Huile végétale",
+        "quantity": 30,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-39-sel-poivre",
+        "name": "Sel de mer et poivre du moulin",
+        "quantity": 5,
         "unit": "g",
         "department": "non_perissable"
       }
     ],
     "steps": [
-      "Préparer le féculent (Patates douces en frites) et les légumes frais (Salade de chou croquante et laitue tomate).",
-      "Assaisonner la protéine avec les épices et l'huile.",
-      "Préchauffer la plancha ou la poêle à feu moyen-vif (210°C).",
-      "Lancer la cuisson du féculent et des légumes sur la zone moyenne jusqu'à belle dorure.",
-      "Saisir la protéine sur la zone vive jusqu'à cuisson parfaite et caramélisée.",
-      "Dresser les 4 assiettes avec la portion de protéine, le féculent chaud et les légumes ou la salade fraîche."
+      "Préchauffer la plancha à 210°C. Déposer les frites de patates douces avec l'huile et cuire 14 minutes en remuant.",
+      "Mélanger la salade de chou avec sa vinaigrette.",
+      "Déposer les galettes de bœuf sur la zone vive et cuire 3 minutes. Retourner, saler, poivrer et déposer une tranche de cheddar sur chaque galette.",
+      "Couvrir d'une cloche 2 minutes pour faire fondre le fromage.",
+      "Toaster l'intérieur des pains briochés 1 minute sur la plaque.",
+      "Monter les burgers avec laitue, tomate, galette au cheddar fondant et servir avec les frites de patates douces et salade de chou."
     ]
   },
   {
@@ -3184,47 +4067,74 @@ export const RECIPES_DATA = [
     "ingredients": [
       {
         "id": "ing-rec-40-prot",
-        "name": "Boeuf haché (Enchiladas gratinées au bœuf)",
+        "name": "Bœuf haché mi-maigre",
         "quantity": 500,
         "unit": "g",
         "department": "viandes"
       },
       {
-        "id": "ing-rec-40-carb",
-        "name": "Tortillas de maïs et Haricots rouges (féculent sans gluten)",
-        "quantity": 350,
-        "unit": "g",
+        "id": "ing-rec-40-tortillas",
+        "name": "Petites tortillas de maïs",
+        "quantity": 8,
+        "unit": "unité",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-40-veg",
-        "name": "Salade de maïs doux, poivrons rouges et avocat",
-        "quantity": 350,
-        "unit": "g",
-        "department": "fruits_legumes"
-      },
-      {
-        "id": "ing-rec-40-huile",
-        "name": "Huile d'olive ou végétale pour cuisson",
-        "quantity": 30,
+        "id": "ing-rec-40-haricots",
+        "name": "Haricots rouges en conserve rincés",
+        "quantity": 398,
         "unit": "ml",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-40-assaisonnement",
-        "name": "Assaisonnement du chef, sel et poivre",
-        "quantity": 10,
+        "id": "ing-rec-40-sauce",
+        "name": "Sauce enchilada ou coulis de tomate épicé",
+        "quantity": 300,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-40-fromage",
+        "name": "Mélange de fromage tex-mex râpé",
+        "quantity": 180,
         "unit": "g",
+        "department": "produits_laitiers"
+      },
+      {
+        "id": "ing-rec-40-mais",
+        "name": "Maïs doux en grains",
+        "quantity": 150,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-40-poivron",
+        "name": "Poivron rouge coupé en dés",
+        "quantity": 1,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-40-avocat",
+        "name": "Avocat mûr en dés",
+        "quantity": 1,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-40-huile",
+        "name": "Huile végétale",
+        "quantity": 25,
+        "unit": "ml",
         "department": "non_perissable"
       }
     ],
     "steps": [
-      "Préparer le féculent (Tortillas de maïs et Haricots rouges) et les légumes frais (Salade de maïs doux, poivrons rouges et avocat).",
-      "Assaisonner la protéine avec les épices et l'huile.",
-      "Préchauffer la plancha ou la poêle à feu moyen-vif (210°C).",
-      "Lancer la cuisson du féculent et des légumes sur la zone moyenne jusqu'à belle dorure.",
-      "Saisir la protéine sur la zone vive jusqu'à cuisson parfaite et caramélisée.",
-      "Dresser les 4 assiettes avec la portion de protéine, le féculent chaud et les légumes ou la salade fraîche."
+      "Faire revenir le bœuf haché avec la moitié de la sauce enchilada et les haricots rouges 6 minutes.",
+      "Garnir les tortillas de maïs de viande et haricots, rouler et déposer dans un plat allant sur la zone tiède de la plancha ou au four.",
+      "Napper du reste de sauce enchilada, parsemer de fromage tex-mex et laisser gratiner 8 minutes.",
+      "Préparer la salade de maïs frais avec le poivron rouge et l'avocat en dés.",
+      "Servir les enchiladas gratinées brûlantes avec la salade croquante de maïs."
     ]
   },
   {
@@ -3259,47 +4169,75 @@ export const RECIPES_DATA = [
     "ingredients": [
       {
         "id": "ing-rec-41-prot",
-        "name": "Porc haché (Riz frit maison style resto chinois)",
-        "quantity": 300,
+        "name": "Porc haché maigre",
+        "quantity": 350,
         "unit": "g",
         "department": "viandes"
       },
       {
         "id": "ing-rec-41-carb",
-        "name": "Riz blanc froid de la veille (féculent sans gluten)",
+        "name": "Riz blanc cuit et refroidi (idéalement de la veille)",
         "quantity": 600,
         "unit": "g",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-41-veg",
-        "name": "Petits pois, fleurets de brocoli et oignons verts",
-        "quantity": 350,
+        "id": "ing-rec-41-oeufs",
+        "name": "Gros œufs frais battus",
+        "quantity": 3,
+        "unit": "unité",
+        "department": "produits_laitiers"
+      },
+      {
+        "id": "ing-rec-41-petits-pois",
+        "name": "Petits pois surgelés ou frais",
+        "quantity": 150,
         "unit": "g",
         "department": "fruits_legumes"
       },
       {
-        "id": "ing-rec-41-huile",
-        "name": "Huile d'olive ou végétale pour cuisson",
-        "quantity": 30,
+        "id": "ing-rec-41-brocoli",
+        "name": "Fleurets de brocoli hachés menu",
+        "quantity": 150,
+        "unit": "g",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-41-oignons-verts",
+        "name": "Oignons verts tranchés",
+        "quantity": 3,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-41-soya",
+        "name": "Sauce soya claire",
+        "quantity": 45,
         "unit": "ml",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-41-assaisonnement",
-        "name": "Assaisonnement du chef, sel et poivre",
-        "quantity": 10,
-        "unit": "g",
+        "id": "ing-rec-41-sesame-huile",
+        "name": "Huile de sésame grillé",
+        "quantity": 20,
+        "unit": "ml",
         "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-41-ail",
+        "name": "Gousses d'ail émincées",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
       }
     ],
     "steps": [
-      "Préparer le féculent (Riz blanc froid de la veille) et les légumes frais (Petits pois, fleurets de brocoli et oignons verts).",
-      "Assaisonner la protéine avec les épices et l'huile.",
-      "Préchauffer la plancha ou la poêle à feu moyen-vif (210°C).",
-      "Lancer la cuisson du féculent et des légumes sur la zone moyenne jusqu'à belle dorure.",
-      "Saisir la protéine sur la zone vive jusqu'à cuisson parfaite et caramélisée.",
-      "Dresser les 4 assiettes avec la portion de protéine, le féculent chaud et les légumes ou la salade fraîche."
+      "Préchauffer la plancha à 210°C et huiler.",
+      "Faire sauter le porc haché avec l'ail 4 minutes jusqu'à belle dorure.",
+      "Ajouter les brocolis et petits pois à côté, faire sauter 3 minutes.",
+      "Verser les œufs battus sur un coin de la plaque pour faire des œufs brouillés express.",
+      "Ajouter le riz froid sur la plaque, arroser de sauce soya et d'huile de sésame, et mélanger vigoureusement tous les ingrédients avec deux spatules pendant 4 minutes.",
+      "Ajouter les oignons verts en finition et servir bien chaud."
     ]
   },
   {
@@ -3335,47 +4273,82 @@ export const RECIPES_DATA = [
     "ingredients": [
       {
         "id": "ing-rec-42-prot",
-        "name": "Boeuf haché (Smash tacos style Big Mac)",
+        "name": "Bœuf haché mi-maigre",
         "quantity": 500,
         "unit": "g",
         "department": "viandes"
       },
       {
-        "id": "ing-rec-42-carb",
-        "name": "Pommes de terre grelots rissolées (sans gluten)",
+        "id": "ing-rec-42-tortillas",
+        "name": "Petites tortillas de farine ou maïs",
+        "quantity": 8,
+        "unit": "unité",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-42-cheddar",
+        "name": "Tranches de fromage cheddar fondu",
+        "quantity": 8,
+        "unit": "tranche",
+        "department": "produits_laitiers"
+      },
+      {
+        "id": "ing-rec-42-grelots",
+        "name": "Pommes de terre grelots coupées en deux",
         "quantity": 500,
         "unit": "g",
         "department": "fruits_legumes"
       },
       {
-        "id": "ing-rec-42-veg",
-        "name": "Laitue iceberg émincée, tomates et cornichons",
-        "quantity": 300,
+        "id": "ing-rec-42-iceberg",
+        "name": "Laitue iceberg finement émincée",
+        "quantity": 200,
         "unit": "g",
         "department": "fruits_legumes"
       },
       {
-        "id": "ing-rec-42-huile",
-        "name": "Huile d'olive ou végétale pour cuisson",
-        "quantity": 30,
+        "id": "ing-rec-42-cornichons",
+        "name": "Cornichons à l'aneth tranchés",
+        "quantity": 100,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-42-oignon",
+        "name": "Oignon jaune haché très finement",
+        "quantity": 1,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-42-sauce",
+        "name": "Sauce style Big Mac (mayonnaise, relish sucrée, moutarde)",
+        "quantity": 80,
         "unit": "ml",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-42-assaisonnement",
-        "name": "Assaisonnement du chef, sel et poivre",
-        "quantity": 10,
+        "id": "ing-rec-42-huile",
+        "name": "Huile végétale",
+        "quantity": 25,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-42-sel-poivre",
+        "name": "Sel et poivre du moulin",
+        "quantity": 5,
         "unit": "g",
         "department": "non_perissable"
       }
     ],
     "steps": [
-      "Préparer le féculent (Pommes de terre grelots rissolées) et les légumes frais (Laitue iceberg émincée, tomates et cornichons).",
-      "Assaisonner la protéine avec les épices et l'huile.",
-      "Préchauffer la plancha ou la poêle à feu moyen-vif (210°C).",
-      "Lancer la cuisson du féculent et des légumes sur la zone moyenne jusqu'à belle dorure.",
-      "Saisir la protéine sur la zone vive jusqu'à cuisson parfaite et caramélisée.",
-      "Dresser les 4 assiettes avec la portion de protéine, le féculent chaud et les légumes ou la salade fraîche."
+      "Préchauffer la plancha à 210°C. Faire rôtir les demi-grelots avec l'huile 14 minutes jusqu'à belle dorure.",
+      "Étaler une fine couche de bœuf haché cru directement sur chaque tortilla avec les doigts, saler et poivrer.",
+      "Déposer la tortilla côté viande contre la plancha brûlante et presser fermement 2 minutes pour smasher.",
+      "Retourner, déposer une tranche de cheddar sur la viande cuite et laisser dorer la tortilla 1 minute sous cloche.",
+      "Garnir chaque smash taco de laitue iceberg, dés d'oignons, tranches de cornichons et généreuse sauce Big Mac.",
+      "Servir chaud avec les grelots rôtis."
     ]
   },
   {
@@ -3408,48 +4381,76 @@ export const RECIPES_DATA = [
     "planchaTips": "Plancha à 210°C. Cuire le féculent et les légumes sur la zone moyenne et saisir la protéine sur la zone vive pour un timing de service parfait.",
     "ingredients": [
       {
-        "id": "ing-rec-43-prot",
-        "name": "Végétarien (Quesadillas vide-frigo)",
-        "quantity": 350,
+        "id": "ing-rec-43-fromage",
+        "name": "Fromage mozzarella et cheddar râpés",
+        "quantity": 200,
         "unit": "g",
-        "department": "viandes"
+        "department": "produits_laitiers"
+      },
+      {
+        "id": "ing-rec-43-tortillas",
+        "name": "Grandes tortillas de blé",
+        "quantity": 4,
+        "unit": "unité",
+        "department": "non_perissable"
       },
       {
         "id": "ing-rec-43-carb",
-        "name": "Tortillas et Riz basmati doré (féculent)",
-        "quantity": 300,
+        "name": "Riz basmati blanc cuit",
+        "quantity": 250,
         "unit": "g",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-43-veg",
-        "name": "Poivrons, courgettes et salade verte du frigo",
-        "quantity": 350,
+        "id": "ing-rec-43-courgette",
+        "name": "Courgette verte coupée en demi-lunes",
+        "quantity": 1,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-43-poivron",
+        "name": "Poivron rouge émincé",
+        "quantity": 1,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-43-mesclun",
+        "name": "Salade de mesclun fraîche",
+        "quantity": 150,
         "unit": "g",
         "department": "fruits_legumes"
       },
       {
-        "id": "ing-rec-43-huile",
-        "name": "Huile d'olive ou végétale pour cuisson",
+        "id": "ing-rec-43-vinaigrette",
+        "name": "Vinaigrette maison à l'huile d'olive",
         "quantity": 30,
         "unit": "ml",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-43-assaisonnement",
-        "name": "Assaisonnement du chef, sel et poivre",
-        "quantity": 10,
+        "id": "ing-rec-43-huile",
+        "name": "Huile d'olive pour cuisson",
+        "quantity": 25,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-43-sel-poivre",
+        "name": "Sel de mer et poivre",
+        "quantity": 5,
         "unit": "g",
         "department": "non_perissable"
       }
     ],
     "steps": [
-      "Préparer le féculent (Tortillas et Riz basmati doré) et les légumes frais (Poivrons, courgettes et salade verte du frigo).",
-      "Assaisonner la protéine avec les épices et l'huile.",
-      "Préchauffer la plancha ou la poêle à feu moyen-vif (210°C).",
-      "Lancer la cuisson du féculent et des légumes sur la zone moyenne jusqu'à belle dorure.",
-      "Saisir la protéine sur la zone vive jusqu'à cuisson parfaite et caramélisée.",
-      "Dresser les 4 assiettes avec la portion de protéine, le féculent chaud et les légumes ou la salade fraîche."
+      "Préchauffer la plancha à 190°C.",
+      "Faire sauter la courgette et le poivron 4 minutes avec un filet d'huile.",
+      "Réchauffer le riz basmati sur la zone moyenne avec un filet d'huile.",
+      "Déposer les tortillas, garnir la moitié de fromage râpé et de légumes sautés, puis replier en deux.",
+      "Cuire 3 minutes de chaque côté jusqu'à ce que les quesadillas soient bien croustillantes et dorées.",
+      "Couper en pointes et servir avec le riz doré et la salade verte assaisonnée."
     ]
   },
   {
@@ -3484,47 +4485,75 @@ export const RECIPES_DATA = [
     "ingredients": [
       {
         "id": "ing-rec-44-prot",
-        "name": "Porc haché (Burritos déjeuner au chorizo)",
+        "name": "Chair de saucisse chorizo ou italienne",
         "quantity": 350,
         "unit": "g",
         "department": "viandes"
       },
       {
-        "id": "ing-rec-44-carb",
-        "name": "Hashbrowns pommes de terre rissolées (sans gluten)",
-        "quantity": 300,
-        "unit": "g",
+        "id": "ing-rec-44-oeufs",
+        "name": "Gros œufs frais battus",
+        "quantity": 6,
+        "unit": "unité",
+        "department": "produits_laitiers"
+      },
+      {
+        "id": "ing-rec-44-tortillas",
+        "name": "Grandes tortillas souples",
+        "quantity": 4,
+        "unit": "unité",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-44-veg",
-        "name": "Tomates fraîches en dés, avocat et salsa",
-        "quantity": 300,
+        "id": "ing-rec-44-hashbrowns",
+        "name": "Pommes de terre râpées pour hashbrowns ou galettes de patates",
+        "quantity": 400,
         "unit": "g",
         "department": "fruits_legumes"
       },
       {
-        "id": "ing-rec-44-huile",
-        "name": "Huile d'olive ou végétale pour cuisson",
-        "quantity": 30,
+        "id": "ing-rec-44-cheddar",
+        "name": "Fromage cheddar râpé",
+        "quantity": 120,
+        "unit": "g",
+        "department": "produits_laitiers"
+      },
+      {
+        "id": "ing-rec-44-tomates",
+        "name": "Tomates fraîches coupées en dés",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-44-avocats",
+        "name": "Avocats mûrs coupés en tranches",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-44-salsa",
+        "name": "Salsa douce",
+        "quantity": 80,
         "unit": "ml",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-44-assaisonnement",
-        "name": "Assaisonnement du chef, sel et poivre",
-        "quantity": 10,
+        "id": "ing-rec-44-beurre",
+        "name": "Beurre doux ou huile",
+        "quantity": 30,
         "unit": "g",
-        "department": "non_perissable"
+        "department": "produits_laitiers"
       }
     ],
     "steps": [
-      "Préparer le féculent (Hashbrowns pommes de terre rissolées) et les légumes frais (Tomates fraîches en dés, avocat et salsa).",
-      "Assaisonner la protéine avec les épices et l'huile.",
-      "Préchauffer la plancha ou la poêle à feu moyen-vif (210°C).",
-      "Lancer la cuisson du féculent et des légumes sur la zone moyenne jusqu'à belle dorure.",
-      "Saisir la protéine sur la zone vive jusqu'à cuisson parfaite et caramélisée.",
-      "Dresser les 4 assiettes avec la portion de protéine, le féculent chaud et les légumes ou la salade fraîche."
+      "Préchauffer la plancha à 200°C avec le beurre.",
+      "Déposer les pommes de terre râpées en galettes et dorer 5 minutes par face jusqu'à texture ultra-croustillante.",
+      "Saisir le chorizo en l'émiettant pendant 5 minutes.",
+      "Verser les œufs battus à côté pour préparer des œufs brouillés crémeux.",
+      "Déposer dans les tortillas : chorizo, œufs, cheddar, dés de tomates et tranches d'avocat. Rouler en burrito.",
+      "Toaster les burritos 1 minute de chaque côté sur la plancha et servir avec la salsa et les hashbrowns dorés."
     ]
   },
   {
@@ -3559,47 +4588,82 @@ export const RECIPES_DATA = [
     "ingredients": [
       {
         "id": "ing-rec-45-prot",
-        "name": "Boeuf haché (Smash burgers au garam masala)",
+        "name": "Bœuf haché mi-maigre",
         "quantity": 600,
         "unit": "g",
         "department": "viandes"
       },
       {
-        "id": "ing-rec-45-carb",
-        "name": "Pommes de terre Russet en wedges (sans gluten)",
+        "id": "ing-rec-45-pains",
+        "name": "Pains à burger briochés",
+        "quantity": 4,
+        "unit": "unité",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-45-patates",
+        "name": "Pommes de terre Russet coupées en wedges",
         "quantity": 600,
         "unit": "g",
         "department": "fruits_legumes"
       },
       {
-        "id": "ing-rec-45-veg",
-        "name": "Bébés épinards au beurre et oignons caramélisés",
-        "quantity": 350,
+        "id": "ing-rec-45-epinards",
+        "name": "Bébés épinards frais",
+        "quantity": 200,
         "unit": "g",
         "department": "fruits_legumes"
       },
       {
+        "id": "ing-rec-45-oignon",
+        "name": "Gros oignon jaune tranché fin pour caraméliser",
+        "quantity": 1,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-45-cheddar",
+        "name": "Tranches de cheddar fort",
+        "quantity": 4,
+        "unit": "tranche",
+        "department": "produits_laitiers"
+      },
+      {
+        "id": "ing-rec-45-garam",
+        "name": "Garam masala moulu",
+        "quantity": 10,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-45-beurre",
+        "name": "Beurre doux",
+        "quantity": 25,
+        "unit": "g",
+        "department": "produits_laitiers"
+      },
+      {
         "id": "ing-rec-45-huile",
-        "name": "Huile d'olive ou végétale pour cuisson",
+        "name": "Huile végétale",
         "quantity": 30,
         "unit": "ml",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-45-assaisonnement",
-        "name": "Assaisonnement du chef, sel et poivre",
-        "quantity": 10,
+        "id": "ing-rec-45-sel-poivre",
+        "name": "Sel de mer et poivre du moulin",
+        "quantity": 5,
         "unit": "g",
         "department": "non_perissable"
       }
     ],
     "steps": [
-      "Préparer le féculent (Pommes de terre Russet en wedges) et les légumes frais (Bébés épinards au beurre et oignons caramélisés).",
-      "Assaisonner la protéine avec les épices et l'huile.",
-      "Préchauffer la plancha ou la poêle à feu moyen-vif (210°C).",
-      "Lancer la cuisson du féculent et des légumes sur la zone moyenne jusqu'à belle dorure.",
-      "Saisir la protéine sur la zone vive jusqu'à cuisson parfaite et caramélisée.",
-      "Dresser les 4 assiettes avec la portion de protéine, le féculent chaud et les légumes ou la salade fraîche."
+      "Préchauffer la plancha à 210°C. Faire rôtir les patates wedges avec l'huile 15 minutes en remuant.",
+      "Faire fondre le beurre sur une zone et caraméliser les oignons tranchés avec une pincée de garam masala 10 minutes.",
+      "Façonner 4 boules de bœuf haché assaisonné au garam masala. Les déposer sur la plaque vive et les écraser avec une spatule.",
+      "Cuire 2 minutes, retourner, couvrir de cheddar fort et laisser fondre sous cloche 1 minute.",
+      "Faire tomber les bébés épinards 1 minute avec un filet de beurre.",
+      "Garnir les pains grillés des galettes smashées épicées, des oignons caramélisés et des épinards, puis servir avec les wedges croustillantes."
     ]
   },
   {
@@ -3633,47 +4697,82 @@ export const RECIPES_DATA = [
     "ingredients": [
       {
         "id": "ing-rec-46-prot",
-        "name": "Boeuf haché (Bulgogi de bœuf coréen)",
+        "name": "Bœuf à bifteck tranché très finement style bulgogi",
         "quantity": 600,
         "unit": "g",
         "department": "viandes"
       },
       {
         "id": "ing-rec-46-carb",
-        "name": "Riz blanc collant au jasmin (sans gluten)",
-        "quantity": 350,
+        "name": "Riz au jasmin ou calrose",
+        "quantity": 300,
         "unit": "g",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-46-veg",
-        "name": "Feuilles de laitue Boston, concombres et kimchi",
-        "quantity": 400,
-        "unit": "g",
+        "id": "ing-rec-46-laitue",
+        "name": "Feuilles de laitue Boston pour rouler",
+        "quantity": 1,
+        "unit": "pomme",
         "department": "fruits_legumes"
       },
       {
-        "id": "ing-rec-46-huile",
-        "name": "Huile d'olive ou végétale pour cuisson",
-        "quantity": 30,
+        "id": "ing-rec-46-concombre",
+        "name": "Concombre anglais en fines rondelles",
+        "quantity": 1,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-46-soya",
+        "name": "Sauce soya",
+        "quantity": 45,
         "unit": "ml",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-46-assaisonnement",
-        "name": "Assaisonnement du chef, sel et poivre",
+        "id": "ing-rec-46-poire",
+        "name": "Purée de poire ou cassonade",
+        "quantity": 25,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-46-sesame-huile",
+        "name": "Huile de sésame grillé",
+        "quantity": 20,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-46-ail",
+        "name": "Gousses d'ail pressées",
+        "quantity": 3,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-46-sesame-graines",
+        "name": "Graines de sésame grillées",
         "quantity": 10,
         "unit": "g",
         "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-46-oignons-verts",
+        "name": "Oignons verts tranchés",
+        "quantity": 3,
+        "unit": "unité",
+        "department": "fruits_legumes"
       }
     ],
     "steps": [
-      "Préparer le féculent (Riz blanc collant au jasmin) et les légumes frais (Feuilles de laitue Boston, concombres et kimchi).",
-      "Assaisonner la protéine avec les épices et l'huile.",
-      "Préchauffer la plancha ou la poêle à feu moyen-vif (210°C).",
-      "Lancer la cuisson du féculent et des légumes sur la zone moyenne jusqu'à belle dorure.",
-      "Saisir la protéine sur la zone vive jusqu'à cuisson parfaite et caramélisée.",
-      "Dresser les 4 assiettes avec la portion de protéine, le féculent chaud et les légumes ou la salade fraîche."
+      "Cuire le riz au jasmin à point.",
+      "Mariner les fines lamelles de bœuf avec la sauce soya, la purée de poire, l'ail et l'huile de sésame 15 minutes.",
+      "Préchauffer la plancha à 220°C.",
+      "Déposer le bœuf en couche unique et saisir vivement 3 à 4 minutes sans le bouillir.",
+      "Parsemer des graines de sésame et des oignons verts.",
+      "Servir avec le riz chaud, les feuilles de laitue Boston croquantes pour confectionner des bouchées et les rondelles de concombre frais."
     ]
   },
   {
@@ -3707,47 +4806,68 @@ export const RECIPES_DATA = [
     "ingredients": [
       {
         "id": "ing-rec-47-prot",
-        "name": "Poitrine de Poulet (Yakitori de poulet teriyaki)",
+        "name": "Hauts de cuisse ou poitrines de poulet en cubes",
         "quantity": 600,
         "unit": "g",
         "department": "viandes"
       },
       {
+        "id": "ing-rec-47-poireaux",
+        "name": "Blancs de poireaux ou gros oignons verts coupés en tronçons",
+        "quantity": 3,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
         "id": "ing-rec-47-carb",
-        "name": "Riz à sushi ou basmati (sans gluten)",
+        "name": "Riz blanc calrose ou jasmin",
         "quantity": 300,
         "unit": "g",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-47-veg",
-        "name": "Fleurets de brocoli frais et blancs de poireaux",
-        "quantity": 400,
+        "id": "ing-rec-47-brocoli",
+        "name": "Fleurets de brocoli frais",
+        "quantity": 300,
         "unit": "g",
         "department": "fruits_legumes"
       },
       {
-        "id": "ing-rec-47-huile",
-        "name": "Huile d'olive ou végétale pour cuisson",
-        "quantity": 30,
+        "id": "ing-rec-47-teriyaki",
+        "name": "Sauce teriyaki authentique",
+        "quantity": 80,
         "unit": "ml",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-47-assaisonnement",
-        "name": "Assaisonnement du chef, sel et poivre",
+        "id": "ing-rec-47-sesame-huile",
+        "name": "Huile de sésame",
+        "quantity": 15,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-47-ail",
+        "name": "Gousse d'ail émincée",
+        "quantity": 1,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-47-sesame-graines",
+        "name": "Graines de sésame blanc",
         "quantity": 10,
         "unit": "g",
         "department": "non_perissable"
       }
     ],
     "steps": [
-      "Préparer le féculent (Riz à sushi ou basmati) et les légumes frais (Fleurets de brocoli frais et blancs de poireaux).",
-      "Assaisonner la protéine avec les épices et l'huile.",
-      "Préchauffer la plancha ou la poêle à feu moyen-vif (210°C).",
-      "Lancer la cuisson du féculent et des légumes sur la zone moyenne jusqu'à belle dorure.",
-      "Saisir la protéine sur la zone vive jusqu'à cuisson parfaite et caramélisée.",
-      "Dresser les 4 assiettes avec la portion de protéine, le féculent chaud et les légumes ou la salade fraîche."
+      "Cuire le riz dans de l'eau salée 12 minutes.",
+      "Monter des brochettes en alternant les cubes de poulet et les tronçons de poireaux.",
+      "Préchauffer la plancha à 210°C. Saisir les fleurets de brocoli avec un filet d'eau sous cloche 4 minutes.",
+      "Déposer les brochettes de poulet et griller 8 à 10 minutes en tournant régulièrement.",
+      "Badigeonner généreusement de sauce teriyaki sur toutes les faces pendant les 2 dernières minutes pour glacer.",
+      "Dresser sur le riz avec les brocolis et saupoudrer de graines de sésame."
     ]
   },
   {
@@ -3781,47 +4901,74 @@ export const RECIPES_DATA = [
     "ingredients": [
       {
         "id": "ing-rec-48-prot",
-        "name": "Dinde & Volailles (Pizzas pains plats à la dinde tex-mex & Salade croquante)",
-        "quantity": 450,
+        "name": "Dinde hachée maigre cuisinée avec cumin et chili",
+        "quantity": 400,
         "unit": "g",
         "department": "viandes"
       },
       {
-        "id": "ing-rec-48-carb",
-        "name": "Pains plats ou naan et Maïs (féculent)",
-        "quantity": 350,
-        "unit": "g",
+        "id": "ing-rec-48-pains",
+        "name": "Pains plats de type naan ou lavash",
+        "quantity": 4,
+        "unit": "unité",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-48-veg",
-        "name": "Salade verte de concombres et poivrons frais",
-        "quantity": 300,
-        "unit": "g",
-        "department": "fruits_legumes"
-      },
-      {
-        "id": "ing-rec-48-huile",
-        "name": "Huile d'olive ou végétale pour cuisson",
-        "quantity": 30,
+        "id": "ing-rec-48-sauce",
+        "name": "Coulis de tomate ou sauce pizza",
+        "quantity": 120,
         "unit": "ml",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-48-assaisonnement",
-        "name": "Assaisonnement du chef, sel et poivre",
-        "quantity": 10,
+        "id": "ing-rec-48-mais",
+        "name": "Maïs doux en grains",
+        "quantity": 120,
         "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-48-fromage",
+        "name": "Fromage mozzarella râpé",
+        "quantity": 180,
+        "unit": "g",
+        "department": "produits_laitiers"
+      },
+      {
+        "id": "ing-rec-48-concombre",
+        "name": "Concombre anglais coupé en dés",
+        "quantity": 1,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-48-poivron",
+        "name": "Poivron rouge coupé en dés",
+        "quantity": 1,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-48-mesclun",
+        "name": "Feuilles de mesclun fraîches",
+        "quantity": 100,
+        "unit": "g",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-48-vinaigrette",
+        "name": "Vinaigrette maison",
+        "quantity": 30,
+        "unit": "ml",
         "department": "non_perissable"
       }
     ],
     "steps": [
-      "Préparer le féculent (Pains plats ou naan et Maïs) et les légumes frais (Salade verte de concombres et poivrons frais).",
-      "Assaisonner la protéine avec les épices et l'huile.",
-      "Préchauffer la plancha ou la poêle à feu moyen-vif (210°C).",
-      "Lancer la cuisson du féculent et des légumes sur la zone moyenne jusqu'à belle dorure.",
-      "Saisir la protéine sur la zone vive jusqu'à cuisson parfaite et caramélisée.",
-      "Dresser les 4 assiettes avec la portion de protéine, le féculent chaud et les légumes ou la salade fraîche."
+      "Préchauffer la plancha à 200°C.",
+      "Tartiner chaque pain plat de sauce tomate, parsemer de dinde hachée assaisonnée, de grains de maïs et de mozzarella râpée.",
+      "Déposer les pizzas sur la plancha et couvrir d'une cloche 4 à 5 minutes jusqu'à ce que le fond soit croustillant et le fromage bien gratiné.",
+      "Préparer la salade croquante en mélangeant le mesclun, le concombre et le poivron avec la vinaigrette.",
+      "Couper les pizzas en pointes et servir avec la salade fraîche."
     ]
   },
   {
@@ -3855,47 +5002,81 @@ export const RECIPES_DATA = [
     "ingredients": [
       {
         "id": "ing-rec-49-prot",
-        "name": "Dinde & Volailles (Tacos de dinde minute)",
+        "name": "Dinde hachée maigre",
         "quantity": 500,
         "unit": "g",
         "department": "viandes"
       },
       {
+        "id": "ing-rec-49-tortillas",
+        "name": "Petites tortillas souples",
+        "quantity": 8,
+        "unit": "unité",
+        "department": "non_perissable"
+      },
+      {
         "id": "ing-rec-49-carb",
-        "name": "Tortillas et Riz mexicain (féculent sans gluten)",
-        "quantity": 350,
+        "name": "Riz blanc au jasmin",
+        "quantity": 250,
         "unit": "g",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-49-veg",
-        "name": "Laitue émincée, tomates en dés et crème sure",
-        "quantity": 300,
-        "unit": "g",
-        "department": "fruits_legumes"
-      },
-      {
-        "id": "ing-rec-49-huile",
-        "name": "Huile d'olive ou végétale pour cuisson",
+        "id": "ing-rec-49-coulis",
+        "name": "Pâte ou coulis de tomate pour le riz",
         "quantity": 30,
         "unit": "ml",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-49-assaisonnement",
-        "name": "Assaisonnement du chef, sel et poivre",
-        "quantity": 10,
+        "id": "ing-rec-49-iceberg",
+        "name": "Cœur de laitue iceberg finement émincé",
+        "quantity": 150,
         "unit": "g",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-49-tomates",
+        "name": "Tomates fraîches coupées en dés",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-49-creme",
+        "name": "Crème sure légère ou yogourt grec",
+        "quantity": 100,
+        "unit": "ml",
+        "department": "produits_laitiers"
+      },
+      {
+        "id": "ing-rec-49-cheddar",
+        "name": "Fromage cheddar râpé",
+        "quantity": 100,
+        "unit": "g",
+        "department": "produits_laitiers"
+      },
+      {
+        "id": "ing-rec-49-epices",
+        "name": "Épices mexicaines (chili, cumin, ail)",
+        "quantity": 15,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-49-huile",
+        "name": "Huile végétale",
+        "quantity": 20,
+        "unit": "ml",
         "department": "non_perissable"
       }
     ],
     "steps": [
-      "Préparer le féculent (Tortillas et Riz mexicain) et les légumes frais (Laitue émincée, tomates en dés et crème sure).",
-      "Assaisonner la protéine avec les épices et l'huile.",
-      "Préchauffer la plancha ou la poêle à feu moyen-vif (210°C).",
-      "Lancer la cuisson du féculent et des légumes sur la zone moyenne jusqu'à belle dorure.",
-      "Saisir la protéine sur la zone vive jusqu'à cuisson parfaite et caramélisée.",
-      "Dresser les 4 assiettes avec la portion de protéine, le féculent chaud et les légumes ou la salade fraîche."
+      "Cuire le riz dans de l'eau avec le coulis de tomate et du sel pour créer le riz mexicain 12 minutes.",
+      "Chauffer la plancha à 200°C. Faire sauter la dinde hachée avec les épices et l'huile pendant 6 minutes.",
+      "Réchauffer les tortillas 20 secondes sur la plaque.",
+      "Garnir les tortillas chaudes de dinde assaisonnée, de cheddar, de laitue iceberg croquante, de dés de tomates fraîches et d'une touche de crème sure.",
+      "Servir les tacos avec le riz mexicain chaud."
     ]
   },
   {
@@ -3930,47 +5111,82 @@ export const RECIPES_DATA = [
     "ingredients": [
       {
         "id": "ing-rec-50-prot",
-        "name": "Poitrine de Poulet (Salade de poulet à l’érable)",
+        "name": "Poitrines de poulet tranchées en escalopes",
         "quantity": 600,
         "unit": "g",
         "department": "viandes"
       },
       {
         "id": "ing-rec-50-carb",
-        "name": "Pommes de terre grelots rôties (sans gluten)",
+        "name": "Pommes de terre grelots coupées en deux",
         "quantity": 500,
         "unit": "g",
         "department": "fruits_legumes"
       },
       {
-        "id": "ing-rec-50-veg",
-        "name": "Mesclun, tranches de pommes Honeycrisp et pacanes",
-        "quantity": 350,
+        "id": "ing-rec-50-mesclun",
+        "name": "Mélange de mesclun ou roquette",
+        "quantity": 150,
         "unit": "g",
         "department": "fruits_legumes"
       },
       {
-        "id": "ing-rec-50-huile",
-        "name": "Huile d'olive ou végétale pour cuisson",
-        "quantity": 30,
+        "id": "ing-rec-50-pommes",
+        "name": "Pommes du Québec (Honeycrisp ou McIntosh) en tranches",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-50-pacanes",
+        "name": "Noix de pacanes grillées",
+        "quantity": 50,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-50-erable",
+        "name": "Sirop d'érable pur",
+        "quantity": 45,
         "unit": "ml",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-50-assaisonnement",
-        "name": "Assaisonnement du chef, sel et poivre",
-        "quantity": 10,
+        "id": "ing-rec-50-dijon",
+        "name": "Moutarde de Dijon",
+        "quantity": 20,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-50-vinaigre",
+        "name": "Vinaigre de cidre de pomme",
+        "quantity": 25,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-50-huile",
+        "name": "Huile d'olive extra-vierge",
+        "quantity": 45,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-50-sel-poivre",
+        "name": "Sel de mer et poivre du moulin",
+        "quantity": 5,
         "unit": "g",
         "department": "non_perissable"
       }
     ],
     "steps": [
-      "Préparer le féculent (Pommes de terre grelots rôties) et les légumes frais (Mesclun, tranches de pommes Honeycrisp et pacanes).",
-      "Assaisonner la protéine avec les épices et l'huile.",
-      "Préchauffer la plancha ou la poêle à feu moyen-vif (210°C).",
-      "Lancer la cuisson du féculent et des légumes sur la zone moyenne jusqu'à belle dorure.",
-      "Saisir la protéine sur la zone vive jusqu'à cuisson parfaite et caramélisée.",
-      "Dresser les 4 assiettes avec la portion de protéine, le féculent chaud et les légumes ou la salade fraîche."
+      "Fouetter le sirop d'érable, la moutarde de Dijon, le vinaigre de cidre et l'huile d'olive pour la vinaigrette érable-dijon.",
+      "Préchauffer la plancha à 200°C. Faire rôtir les demi-grelots avec un filet d'huile 14 minutes jusqu'à belle dorure.",
+      "Badigeonner le poulet d'un peu de vinaigrette et griller 4 minutes de chaque côté sur la zone vive.",
+      "Trancher les poitrines en lanières.",
+      "Dresser les assiettes : lit de mesclun, tranches de pommes fraîches du Québec, pacanes croquantes, grelots rôtis chauds et lanières de poulet.",
+      "Arroser du reste de vinaigrette à l'érable et déguster."
     ]
   },
   {
@@ -4001,7 +5217,7 @@ export const RECIPES_DATA = [
     "ingredients": [
       {
         "id": "ing-rec-51-prot",
-        "name": "Bavette de bœuf fraîche du boucher",
+        "name": "Bavette de bœuf marinée à l'ail et huile d'olive",
         "quantity": 650,
         "unit": "g",
         "department": "viandes"
@@ -4014,24 +5230,45 @@ export const RECIPES_DATA = [
         "department": "fruits_legumes"
       },
       {
-        "id": "ing-rec-51-veg",
-        "name": "Asperges vertes fraîches parées",
-        "quantity": 350,
+        "id": "ing-rec-51-persil",
+        "name": "Persil plat frais haché",
+        "quantity": 30,
         "unit": "g",
         "department": "fruits_legumes"
       },
       {
-        "id": "ing-rec-51-chimi",
-        "name": "Persil frais, origan, ail haché et vinaigre de vin rouge",
-        "quantity": 45,
+        "id": "ing-rec-51-origan",
+        "name": "Origan séché",
+        "quantity": 5,
         "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-51-ail",
+        "name": "Gousses d'ail émincées finement",
+        "quantity": 3,
+        "unit": "unité",
         "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-51-vinaigre",
+        "name": "Vinaigre de vin rouge",
+        "quantity": 25,
+        "unit": "ml",
+        "department": "non_perissable"
       },
       {
         "id": "ing-rec-51-huile",
-        "name": "Huile d'olive extra vierge",
-        "quantity": 40,
+        "name": "Huile d'olive extra-vierge",
+        "quantity": 60,
         "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-51-flocons",
+        "name": "Flocons de piment chili rouge",
+        "quantity": 3,
+        "unit": "g",
         "department": "non_perissable"
       }
     ],
@@ -4074,38 +5311,66 @@ export const RECIPES_DATA = [
     "ingredients": [
       {
         "id": "ing-rec-52-prot",
-        "name": "Poitrines ou hauts de cuisse de poulet coupés en bouchées",
-        "quantity": 600,
+        "name": "Hauts de cuisse ou poitrines de poulet désossés",
+        "quantity": 650,
         "unit": "g",
         "department": "viandes"
       },
       {
         "id": "ing-rec-52-carb",
-        "name": "Riz basmati blanc",
+        "name": "Riz au jasmin parfumé",
         "quantity": 300,
         "unit": "g",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-52-veg",
-        "name": "Poivrons rouges et jaunes émincés",
-        "quantity": 300,
+        "id": "ing-rec-52-poivron-r",
+        "name": "Poivron rouge émincé en lanières",
+        "quantity": 1,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-52-poivron-j",
+        "name": "Poivron jaune émincé en lanières",
+        "quantity": 1,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-52-chutney",
+        "name": "Chutney ou purée de mangue douce",
+        "quantity": 60,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-52-limes",
+        "name": "Limes pour jus et quartiers",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-52-gingembre",
+        "name": "Gingembre frais râpé",
+        "quantity": 15,
         "unit": "g",
         "department": "fruits_legumes"
       },
       {
-        "id": "ing-rec-52-sauce",
-        "name": "Chutney de mangue, jus de 2 limes et gingembre frais",
-        "quantity": 80,
+        "id": "ing-rec-52-huile",
+        "name": "Huile végétale pour cuisson",
+        "quantity": 25,
         "unit": "ml",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-52-huile",
-        "name": "Huile végétale et coriandre fraîche pour garnir",
-        "quantity": 25,
-        "unit": "ml",
-        "department": "non_perissable"
+        "id": "ing-rec-52-coriandre",
+        "name": "Coriandre fraîche pour garnir",
+        "quantity": 15,
+        "unit": "g",
+        "department": "fruits_legumes"
       }
     ],
     "steps": [
@@ -4156,30 +5421,51 @@ export const RECIPES_DATA = [
       },
       {
         "id": "ing-rec-53-carb",
-        "name": "Riz au jasmin",
+        "name": "Riz basmati blanc",
         "quantity": 300,
         "unit": "g",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-53-veg",
-        "name": "Fleurettes de brocoli frais",
+        "id": "ing-rec-53-asperges",
+        "name": "Asperges fraîches éboutées",
         "quantity": 350,
         "unit": "g",
         "department": "fruits_legumes"
       },
       {
-        "id": "ing-rec-53-lacquage",
-        "name": "Sirop d'érable pur, moutarde de Dijon et sauce soya",
-        "quantity": 50,
+        "id": "ing-rec-53-erable",
+        "name": "Sirop d'érable pur du Québec",
+        "quantity": 30,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-53-dijon",
+        "name": "Moutarde de Dijon",
+        "quantity": 15,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-53-soya",
+        "name": "Sauce soya sans gluten ou tamari",
+        "quantity": 15,
         "unit": "ml",
         "department": "non_perissable"
       },
       {
         "id": "ing-rec-53-sesame",
-        "name": "Graines de sésame grillées et huile d'olive",
-        "quantity": 25,
+        "name": "Graines de sésame grillées",
+        "quantity": 15,
         "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-53-huile",
+        "name": "Huile d'olive",
+        "quantity": 25,
+        "unit": "ml",
         "department": "non_perissable"
       }
     ],
@@ -4222,37 +5508,65 @@ export const RECIPES_DATA = [
     "ingredients": [
       {
         "id": "ing-rec-54-prot",
-        "name": "Filet de porc paré coupé en cubes",
-        "quantity": 600,
+        "name": "Filet de porc coupé en cubes de 3 cm",
+        "quantity": 650,
         "unit": "g",
         "department": "viandes"
       },
       {
         "id": "ing-rec-54-carb",
-        "name": "Pommes de terre Russet coupées en quartiers (style grec)",
-        "quantity": 500,
-        "unit": "g",
+        "name": "Pitas grecs moelleux",
+        "quantity": 4,
+        "unit": "unité",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-54-concombre",
+        "name": "Concombre anglais râpé et égoutté",
+        "quantity": 1,
+        "unit": "unité",
         "department": "fruits_legumes"
       },
       {
-        "id": "ing-rec-54-veg",
-        "name": "Concombre anglais râpé et égoutté pour tzatziki",
-        "quantity": 250,
-        "unit": "g",
-        "department": "fruits_legumes"
-      },
-      {
-        "id": "ing-rec-54-tzat",
-        "name": "Yogourt grec nature, ail pressé, jus de citron et origan",
-        "quantity": 180,
+        "id": "ing-rec-54-yogourt",
+        "name": "Yogourt grec nature 10%",
+        "quantity": 175,
         "unit": "g",
         "department": "produits_laitiers"
       },
       {
-        "id": "ing-rec-54-huile",
-        "name": "Huile d'olive grecque et sel de mer",
-        "quantity": 30,
+        "id": "ing-rec-54-ail",
+        "name": "Gousses d'ail pressées",
+        "quantity": 3,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-54-citron",
+        "name": "Jus de citron frais",
+        "quantity": 25,
         "unit": "ml",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-54-origan",
+        "name": "Origan grec séché",
+        "quantity": 10,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-54-huile",
+        "name": "Huile d'olive extra-vierge",
+        "quantity": 45,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-54-sel",
+        "name": "Sel de mer et poivre",
+        "quantity": 5,
+        "unit": "g",
         "department": "non_perissable"
       }
     ],
@@ -4295,8 +5609,8 @@ export const RECIPES_DATA = [
     "ingredients": [
       {
         "id": "ing-rec-55-prot",
-        "name": "Fromage Halloumi tranché épais (1 cm)",
-        "quantity": 400,
+        "name": "Fromage Halloumi à griller coupé en tranches épaisses",
+        "quantity": 350,
         "unit": "g",
         "department": "produits_laitiers"
       },
@@ -4308,23 +5622,44 @@ export const RECIPES_DATA = [
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-55-veg",
-        "name": "Courgettes en rondelles et tomates cerises entières",
-        "quantity": 400,
+        "id": "ing-rec-55-courgettes",
+        "name": "Courgettes en rondelles",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-55-tomates",
+        "name": "Tomates cerises entières",
+        "quantity": 200,
         "unit": "g",
         "department": "fruits_legumes"
       },
       {
-        "id": "ing-rec-55-vinaigrette",
-        "name": "Vinaigre balsamique, basilic frais et ail",
-        "quantity": 30,
+        "id": "ing-rec-55-balsamique",
+        "name": "Vinaigre balsamique",
+        "quantity": 20,
         "unit": "ml",
         "department": "non_perissable"
       },
       {
+        "id": "ing-rec-55-basilic",
+        "name": "Basilic frais ciselé",
+        "quantity": 15,
+        "unit": "g",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-55-ail",
+        "name": "Gousse d'ail pressée",
+        "quantity": 1,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
         "id": "ing-rec-55-huile",
         "name": "Huile d'olive",
-        "quantity": 25,
+        "quantity": 30,
         "unit": "ml",
         "department": "non_perissable"
       }
@@ -4361,7 +5696,6 @@ export const RECIPES_DATA = [
       "Moutarde"
     ],
     "tags": [
-      "Nouveauté Semaine",
       "Plancha Star",
       "Pains Baos",
       "Asiatique",
@@ -4369,34 +5703,34 @@ export const RECIPES_DATA = [
       "Street Food",
       "Coup de Cœur"
     ],
-    "isNewWeekly": true,
+    "isNewWeekly": false,
     "image": "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=800&q=80",
     "description": "Le flanc de porc au summum absolu de la saveur ! Tranches de 2 cm bien dorées et croustillantes sur la plancha, puis braisées et laquées sur zone douce dans une poêle avec une sauce riche (soya claire & foncée, miel, sriracha, anis étoilé et cannelle). Servi dans des pains baos vapeur ultra-moelleux avec mayonnaise japonaise Kewpie épicée, concombre et carottes en juliennes.",
     "planchaTips": "Gestion bi-zone indispensable : Chauffer une zone à intensité moyenne-vive (210°C) pour saisir et dorer le flanc 12 à 18 minutes, et une zone à intensité faible pour déposer la poêle contenant la sauce mijotée 15 minutes.",
     "ingredients": [
       {
         "id": "ing-rec-56-prot",
-        "name": "Flanc de porc frais coupé en tranches épaisses de 2 cm (environ 1 kg)",
+        "name": "Flanc de porc frais coupé en tranches épaisses de 2 cm",
         "quantity": 1000,
         "unit": "g",
         "department": "viandes"
       },
       {
         "id": "ing-rec-56-baos",
-        "name": "Pains baos moelleux (8 à 10 pains)",
+        "name": "Pains baos moelleux",
         "quantity": 10,
         "unit": "unité",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-56-veg1",
+        "id": "ing-rec-56-concombre",
         "name": "Concombre anglais coupé en fines juliennes",
         "quantity": 1,
         "unit": "unité",
         "department": "fruits_legumes"
       },
       {
-        "id": "ing-rec-56-veg2",
+        "id": "ing-rec-56-carottes",
         "name": "Carottes fraîches pelées et coupées en juliennes",
         "quantity": 2,
         "unit": "unité",
@@ -4410,44 +5744,86 @@ export const RECIPES_DATA = [
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-56-chili",
-        "name": "Sambal Oelek ou huile infusée aux piments (chili crisp)",
-        "quantity": 25,
+        "id": "ing-rec-56-sriracha",
+        "name": "Sauce sriracha",
+        "quantity": 30,
         "unit": "ml",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-56-sauce1",
-        "name": "Sauce soya claire (60 ml) et sauce soya foncée (60 ml)",
-        "quantity": 120,
+        "id": "ing-rec-56-soya-claire",
+        "name": "Sauce soya claire",
+        "quantity": 60,
         "unit": "ml",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-56-sauce2",
-        "name": "Miel pur d'abeille et sauce sriracha",
-        "quantity": 75,
+        "id": "ing-rec-56-soya-foncee",
+        "name": "Sauce soya foncée",
+        "quantity": 60,
         "unit": "ml",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-56-aromates",
-        "name": "Ail et gingembre frais râpés, vinaigre de riz et graines de sésame",
+        "id": "ing-rec-56-miel",
+        "name": "Miel pur d'abeille",
         "quantity": 45,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-56-ail",
+        "name": "Gousses d'ail râpées",
+        "quantity": 3,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-56-gingembre",
+        "name": "Gingembre frais râpé",
+        "quantity": 15,
         "unit": "g",
         "department": "fruits_legumes"
       },
       {
-        "id": "ing-rec-56-epices",
-        "name": "Épices pour sauce (3 anis étoilés, 2 bâtons de cannelle, poivre du Sichuan)",
+        "id": "ing-rec-56-vinaigre",
+        "name": "Vinaigre de riz",
         "quantity": 15,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-56-sesame",
+        "name": "Graines de sésame grillées",
+        "quantity": 10,
         "unit": "g",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-56-herbes",
-        "name": "Oignons verts hachés, coriandre fraîche et piments thaïs",
-        "quantity": 40,
+        "id": "ing-rec-56-anis",
+        "name": "Anis étoilé (badiane)",
+        "quantity": 3,
+        "unit": "unité",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-56-cannelle",
+        "name": "Bâtons de cannelle",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-56-oignons-verts",
+        "name": "Oignons verts tranchés",
+        "quantity": 3,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-56-coriandre",
+        "name": "Coriandre fraîche",
+        "quantity": 15,
         "unit": "g",
         "department": "fruits_legumes"
       }
@@ -4485,50 +5861,91 @@ export const RECIPES_DATA = [
       "Sésame"
     ],
     "tags": [
-      "Nouveauté Semaine",
       "Plancha Star",
       "Bœuf",
       "Coréen",
       "Rapide",
       "Familial"
     ],
-    "isNewWeekly": true,
+    "isNewWeekly": false,
     "image": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
     "description": "Les fameuses côtes de bœuf galbi coupées à la coréenne, marinées dans un mélange savoureux de purée de poire nashi, sauce soya, cassonade, ail pressé et huile de sésame grillé. Cuites en un éclair sur une plancha fumante pour une texture tendre et caramélisée.",
     "planchaTips": "Plancha très chaude (230°C). 2 à 3 minutes par côté suffisent amplement car la viande est tranchée mince. Laisser caraméliser sans trop remuer.",
     "ingredients": [
       {
         "id": "ing-rec-57-prot",
-        "name": "Côtes de bœuf (short ribs) tranchées minces style galbi ou biftecks de flanc",
-        "quantity": 650,
+        "name": "Côtes de bœuf coupées mince style coréen (Galbi ou flanken)",
+        "quantity": 800,
         "unit": "g",
         "department": "viandes"
       },
       {
         "id": "ing-rec-57-carb",
-        "name": "Riz au jasmin vapeur",
+        "name": "Riz blanc au jasmin ou calrose",
         "quantity": 300,
         "unit": "g",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-57-veg",
-        "name": "Concombres marinés au vinaigre de riz et oignons verts",
-        "quantity": 350,
-        "unit": "g",
+        "id": "ing-rec-57-concombre",
+        "name": "Concombre anglais en fines rondelles",
+        "quantity": 1,
+        "unit": "unité",
         "department": "fruits_legumes"
       },
       {
-        "id": "ing-rec-57-marinade",
-        "name": "Sauce soya, purée de poire, cassonade, ail et huile de sésame",
-        "quantity": 80,
+        "id": "ing-rec-57-vinaigre",
+        "name": "Vinaigre de riz",
+        "quantity": 30,
         "unit": "ml",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-57-sesame",
-        "name": "Graines de sésame grillées et piments doux",
-        "quantity": 20,
+        "id": "ing-rec-57-oignons-verts",
+        "name": "Oignons verts tranchés",
+        "quantity": 3,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-57-soya",
+        "name": "Sauce soya",
+        "quantity": 45,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-57-poire",
+        "name": "Purée de poire asiatique ou compote",
+        "quantity": 30,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-57-cassonade",
+        "name": "Cassonade dorée",
+        "quantity": 15,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-57-ail",
+        "name": "Gousses d'ail émincées",
+        "quantity": 3,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-57-sesame-huile",
+        "name": "Huile de sésame grillé",
+        "quantity": 15,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-57-sesame-graines",
+        "name": "Graines de sésame grillées",
+        "quantity": 15,
         "unit": "g",
         "department": "non_perissable"
       }
@@ -4561,49 +5978,90 @@ export const RECIPES_DATA = [
       "Soya"
     ],
     "tags": [
-      "Nouveauté Semaine",
       "Plancha Star",
       "Poulet",
       "Caraïbes",
       "Sans Gluten",
       "Exotique"
     ],
-    "isNewWeekly": true,
+    "isNewWeekly": false,
     "image": "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=800&q=80",
     "description": "Une explosion de saveurs caribéennes ! Hauts de cuisse de poulet désossés marinés aux épices jerk traditionnelles (piment de la Jamaïque, thym, lime, ail, gingembre et cassonade). Grillés sur la plancha à côté de tranches d'ananas frais caramélisées.",
     "planchaTips": "Plancha à 210°C. Poser le poulet côté peau en premier pendant 8 minutes. Placer les tranches d'ananas sur la zone moyenne pour développer une dorure sucrée irrésistible.",
     "ingredients": [
       {
         "id": "ing-rec-58-prot",
-        "name": "Hauts de cuisse de poulet désossés",
-        "quantity": 650,
+        "name": "Hauts de cuisse de poulet désossés sans peau",
+        "quantity": 700,
         "unit": "g",
         "department": "viandes"
       },
       {
         "id": "ing-rec-58-carb",
-        "name": "Riz blanc jasmin et haricots rouges (Rice & Peas)",
-        "quantity": 350,
+        "name": "Riz blanc au jasmin",
+        "quantity": 250,
         "unit": "g",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-58-ananas",
-        "name": "Ananas frais coupé en tranches épaisses",
-        "quantity": 350,
-        "unit": "g",
-        "department": "fruits_legumes"
-      },
-      {
-        "id": "ing-rec-58-marinade",
-        "name": "Marinade jerk (piment de la Jamaïque, thym, jus de lime, ail, sauce soya, cassonade)",
-        "quantity": 60,
+        "id": "ing-rec-58-haricots",
+        "name": "Haricots rouges en conserve rincés",
+        "quantity": 398,
         "unit": "ml",
         "department": "non_perissable"
       },
       {
+        "id": "ing-rec-58-ananas",
+        "name": "Tranches d'ananas frais ou en conserve égoutté",
+        "quantity": 400,
+        "unit": "g",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-58-soya",
+        "name": "Sauce soya",
+        "quantity": 30,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-58-cassonade",
+        "name": "Cassonade",
+        "quantity": 15,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-58-epices-allspice",
+        "name": "Piment de la Jamaïque (allspice)",
+        "quantity": 5,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-58-epices-thym",
+        "name": "Thym séché",
+        "quantity": 5,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-58-ail",
+        "name": "Gousses d'ail pressées",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-58-limes",
+        "name": "Limes pour jus et quartiers",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
         "id": "ing-rec-58-huile",
-        "name": "Huile végétale et quartiers de lime pour servir",
+        "name": "Huile végétale pour cuisson",
         "quantity": 25,
         "unit": "ml",
         "department": "non_perissable"
@@ -4638,51 +6096,92 @@ export const RECIPES_DATA = [
       "Lactose"
     ],
     "tags": [
-      "Nouveauté Semaine",
       "Plancha Star",
       "Crevettes",
       "Mexicain",
       "Tacos",
       "Rapide 15min"
     ],
-    "isNewWeekly": true,
+    "isNewWeekly": false,
     "image": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=800&q=80",
     "description": "Des tacos festifs prêts en un clin d'œil ! Crevettes sauvages marinées au cumin, paprika fumé, ail et jus de lime, sautées 4 minutes sur la plancha. Accompagnées de grains de maïs grillés croustillants et d'avocat crémeux.",
     "planchaTips": "Plancha très vive (220°C). Cuire les crevettes très rapidement pour préserver leur texture juteuse et croquante. Réchauffer les petites tortillas directement sur la plaque 20 secondes.",
     "ingredients": [
       {
         "id": "ing-rec-59-prot",
-        "name": "Crevettes blanches décortiquées crues (taille 31-40)",
-        "quantity": 550,
+        "name": "Grosses crevettes crues décortiquées et déveinées (31/40)",
+        "quantity": 500,
         "unit": "g",
         "department": "viandes"
       },
       {
-        "id": "ing-rec-59-carb",
-        "name": "Petites tortillas de maïs ou blé (8 à 12 tortillas)",
+        "id": "ing-rec-59-tortillas",
+        "name": "Petites tortillas de maïs ou blé",
         "quantity": 8,
         "unit": "unité",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-59-veg",
-        "name": "Maïs en grains doux, avocat coupé en dés et coriandre fraîche",
-        "quantity": 350,
+        "id": "ing-rec-59-mais",
+        "name": "Maïs doux en grains égoutté",
+        "quantity": 150,
         "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-59-avocats",
+        "name": "Avocats mûrs coupés en dés",
+        "quantity": 2,
+        "unit": "unité",
         "department": "fruits_legumes"
       },
       {
         "id": "ing-rec-59-creme",
-        "name": "Crème sure légère (ou yogourt grec) et jus de 2 limes",
+        "name": "Crème sure légère ou yogourt grec",
         "quantity": 100,
         "unit": "g",
         "department": "produits_laitiers"
       },
       {
-        "id": "ing-rec-59-epices",
-        "name": "Épices mexicaines (paprika fumé, cumin, poudre d'ail) et huile d'olive",
-        "quantity": 25,
+        "id": "ing-rec-59-limes",
+        "name": "Limes pour jus et quartiers",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-59-coriandre",
+        "name": "Coriandre fraîche ciselée",
+        "quantity": 15,
         "unit": "g",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-59-paprika-paprika",
+        "name": "Paprika fumé",
+        "quantity": 5,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-59-paprika-cumin",
+        "name": "Cumin moulu",
+        "quantity": 5,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-59-ail",
+        "name": "Poudre d'ail",
+        "quantity": 5,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-59-huile",
+        "name": "Huile d'olive",
+        "quantity": 25,
+        "unit": "ml",
         "department": "non_perissable"
       }
     ],
@@ -4717,21 +6216,20 @@ export const RECIPES_DATA = [
       "Sésame"
     ],
     "tags": [
-      "Nouveauté Semaine",
       "Plancha Star",
       "Végétarien",
       "Satay",
       "Sans Gluten",
       "Rapide"
     ],
-    "isNewWeekly": true,
+    "isNewWeekly": false,
     "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80",
     "description": "Le tofu sous sa forme la plus savoureuse et croustillante ! Cubes de tofu extra-ferme marinés dans un mélange de curcuma, gingembre, sauce soya et lait de coco, grillés à la plancha sur des brochettes avec poivrons croquants. Servis avec une sauce satay onctueuse aux arachides et lime.",
     "planchaTips": "Plancha à 210°C bien huilée. Bien égoutter et presser le tofu avant marinade pour qu'il développe une croûte croustillante et dorée sur chaque face.",
     "ingredients": [
       {
         "id": "ing-rec-60-prot",
-        "name": "Tofu biologique extra-ferme coupé en gros cubes (2 blocs de 454g)",
+        "name": "Tofu biologique extra-ferme pressé et coupé en gros cubes",
         "quantity": 700,
         "unit": "g",
         "department": "viandes"
@@ -4744,24 +6242,73 @@ export const RECIPES_DATA = [
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-60-veg",
-        "name": "Poivrons rouges en carrés et concombres en demi-lunes",
-        "quantity": 350,
-        "unit": "g",
+        "id": "ing-rec-60-poivrons",
+        "name": "Poivrons rouges coupés en carrés",
+        "quantity": 2,
+        "unit": "unité",
         "department": "fruits_legumes"
       },
       {
-        "id": "ing-rec-60-satay",
-        "name": "Beurre d'arachide crémeux, lait de coco, sauce soya et jus de lime",
-        "quantity": 90,
+        "id": "ing-rec-60-concombre",
+        "name": "Concombre anglais coupé en demi-lunes",
+        "quantity": 1,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-60-beurre-arachide",
+        "name": "Beurre d'arachide crémeux",
+        "quantity": 60,
         "unit": "ml",
         "department": "non_perissable"
       },
       {
-        "id": "ing-rec-60-epices",
-        "name": "Curcuma, gingembre râpé, poudre d'ail et huile de sésame",
-        "quantity": 25,
+        "id": "ing-rec-60-lait-coco",
+        "name": "Lait de coco",
+        "quantity": 60,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-60-soya",
+        "name": "Sauce soya ou tamari",
+        "quantity": 15,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-60-lime",
+        "name": "Jus de lime frais",
+        "quantity": 15,
+        "unit": "ml",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-60-curcuma",
+        "name": "Curcuma moulu",
+        "quantity": 5,
         "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-60-gingembre",
+        "name": "Gingembre frais râpé",
+        "quantity": 15,
+        "unit": "g",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-60-ail",
+        "name": "Poudre d'ail",
+        "quantity": 5,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-60-huile-sesame",
+        "name": "Huile de sésame grillé",
+        "quantity": 15,
+        "unit": "ml",
         "department": "non_perissable"
       }
     ],
@@ -4772,6 +6319,609 @@ export const RECIPES_DATA = [
       "Préchauffer la plancha à 210°C et huiler généreusement.",
       "Déposer les brochettes de tofu satay et griller 10 à 12 minutes en tournant régulièrement pour dorer les 4 faces.",
       "Dresser les brochettes dorées sur le lit de nouilles de riz et légumes croquants, et napper généreusement de sauce satay aux arachides."
+    ]
+  },
+  {
+    "id": "rec-61",
+    "title": "Smash burgers au bacon fumé & oignons caramélisés à l'érable sur la plancha",
+    "subtitle": "Bœuf haché croustillant smashé sur plaque brûlante, bacon croustillant, cheddar fort, oignons doux à l'érable et sauce secrète",
+    "proteinType": "Boeuf haché",
+    "cookingMode": "plancha",
+    "timeCategory": "Rapide",
+    "prepTime": 15,
+    "cookTime": 10,
+    "calories": 690,
+    "macros": {
+      "proteins": 46,
+      "carbs": 48,
+      "fats": 34
+    },
+    "allergens": [
+      "Gluten",
+      "Lactose",
+      "Moutarde",
+      "Œufs"
+    ],
+    "tags": [
+      "Nouveauté Semaine",
+      "Plancha Star",
+      "Smash Burger",
+      "Familial",
+      "Coup de Cœur",
+      "Street Food"
+    ],
+    "isNewWeekly": true,
+    "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80",
+    "description": "Le burger ultime à la plancha québécoise ! Des boules de bœuf haché frais écrasées à froid sur plaque à 230°C pour développer une croûte dentelée irrésistiblement caramélisée. Garnies de bacon croustillant, cheddar fort fondu sous cloche, oignons fondants mijotés au sirop d'érable et sauce maison relevée dans un pain brioché doré au beurre.",
+    "planchaTips": "Chauffer la plancha à 230°C. Smasher les boules de bœuf fermement avec une spatule rigide et du papier parchemin pendant 10 secondes. Ne plus toucher avant de retourner à 2 minutes.",
+    "ingredients": [
+      {
+        "id": "ing-rec-61-boeuf",
+        "name": "Bœuf haché mi-maigre façonné en 4 boules de 150g",
+        "quantity": 600,
+        "unit": "g",
+        "department": "viandes"
+      },
+      {
+        "id": "ing-rec-61-bacon",
+        "name": "Tranches de bacon fumé de dos ou régulier",
+        "quantity": 8,
+        "unit": "tranche",
+        "department": "viandes"
+      },
+      {
+        "id": "ing-rec-61-pains",
+        "name": "Pains à burger briochés",
+        "quantity": 4,
+        "unit": "unité",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-61-cheddar",
+        "name": "Fromage cheddar fort en tranches",
+        "quantity": 4,
+        "unit": "tranche",
+        "department": "produits_laitiers"
+      },
+      {
+        "id": "ing-rec-61-oignon",
+        "name": "Gros oignon jaune émincé finement",
+        "quantity": 1,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-61-erable",
+        "name": "Sirop d'érable pur du Québec",
+        "quantity": 30,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-61-beurre",
+        "name": "Beurre doux",
+        "quantity": 20,
+        "unit": "g",
+        "department": "produits_laitiers"
+      },
+      {
+        "id": "ing-rec-61-mayo",
+        "name": "Mayonnaise",
+        "quantity": 60,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-61-relish",
+        "name": "Relish sucrée",
+        "quantity": 15,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-61-ketchup",
+        "name": "Ketchup",
+        "quantity": 15,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-61-laitue",
+        "name": "Feuilles de laitue fraîche",
+        "quantity": 4,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-61-sel-poivre",
+        "name": "Sel de mer et poivre noir du moulin",
+        "quantity": 5,
+        "unit": "g",
+        "department": "non_perissable"
+      }
+    ],
+    "steps": [
+      "Préparer la sauce burger en mélangeant la mayonnaise, la relish sucrée et le ketchup.",
+      "Préchauffer la plancha à 220°C. Faire dorer les tranches de bacon sur une zone pendant 6 minutes jusqu'à croustillant.",
+      "Sur la zone moyenne avec le beurre, faire caraméliser l'oignon émincé 8 minutes avec le sirop d'érable.",
+      "Déposer les 4 boules de bœuf sur la zone vive. Couvrir de papier parchemin et écraser de tout votre poids avec la spatule pour former une galette mince. Saler et poivrer généreusement.",
+      "Cuire 2 minutes jusqu'à croûte bien foncée, décoller d'un coup sec à la spatule, retourner et poser immédiatement le cheddar sur chaque galette. Couvrir d'une cloche 1 minute.",
+      "Toaster les pains briochés 1 minute sur la plaque beurrée.",
+      "Monter les smash burgers : base de pain, sauce secrète, laitue, galette au cheddar fondant, deux tranches de bacon croustillant, oignons à l'érable et chapeau de pain."
+    ]
+  },
+  {
+    "id": "rec-62",
+    "title": "Pavés de saumon laqués miel & sauce soya sur plancha, asperges et riz jasmin",
+    "subtitle": "Saumon croustillant côté peau laqué au miel et gingembre, asperges vertes rôties et riz au jasmin",
+    "proteinType": "Saumon & Poissons",
+    "cookingMode": "plancha",
+    "timeCategory": "Rapide",
+    "prepTime": 10,
+    "cookTime": 12,
+    "calories": 590,
+    "macros": {
+      "proteins": 44,
+      "carbs": 54,
+      "fats": 20
+    },
+    "allergens": [
+      "Soya",
+      "Sésame"
+    ],
+    "tags": [
+      "Nouveauté Semaine",
+      "Plancha Star",
+      "Sans Gluten",
+      "Oméga-3",
+      "Repas Équilibré",
+      "Rapide"
+    ],
+    "isNewWeekly": true,
+    "image": "https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=800&q=80",
+    "description": "Une cuisson de saumon digne des plus grands restaurants à la plancha : peau ultra-croustillante, chair nacrée et fondante laquée en fin de cuisson d'un glaçage brillant au miel, sauce soya, gingembre et sésame. Accompagné d'asperges fraîches grillées et de riz jasmin parfumé.",
+    "planchaTips": "Plancha à 200°C bien huilée. Bien éponger la peau du saumon au papier essuie-tout avant de cuire. Cuire 5 à 6 minutes côté peau sans y toucher pour un croustillant parfait.",
+    "ingredients": [
+      {
+        "id": "ing-rec-62-saumon",
+        "name": "Pavés de saumon frais de l'Atlantique avec peau",
+        "quantity": 600,
+        "unit": "g",
+        "department": "viandes"
+      },
+      {
+        "id": "ing-rec-62-riz",
+        "name": "Riz parfumé au jasmin",
+        "quantity": 300,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-62-asperges",
+        "name": "Asperges fraîches éboutées",
+        "quantity": 350,
+        "unit": "g",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-62-miel",
+        "name": "Miel pur d'abeille",
+        "quantity": 45,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-62-soya",
+        "name": "Sauce soya sans gluten ou tamari",
+        "quantity": 30,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-62-gingembre",
+        "name": "Gingembre frais râpé",
+        "quantity": 15,
+        "unit": "g",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-62-ail",
+        "name": "Gousses d'ail pressées",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-62-sesame",
+        "name": "Graines de sésame grillées",
+        "quantity": 10,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-62-huile",
+        "name": "Huile d'olive",
+        "quantity": 25,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-62-oignons-verts",
+        "name": "Oignons verts tranchés finement",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      }
+    ],
+    "steps": [
+      "Cuire le riz jasmin dans de l'eau salée 12 minutes, réserver au chaud.",
+      "Dans un petit bol, fouetter le miel, la sauce soya, l'ail pressé et le gingembre frais râpé pour la laque.",
+      "Préchauffer la plancha à 200°C et huiler légèrement.",
+      "Déposer les asperges avec un filet d'huile d'olive et sel, les faire rouler 8 minutes.",
+      "Déposer les pavés de saumon côté peau. Cuire 5 à 6 minutes côté peau sans bouger jusqu'à peau croustillante et chair cuite aux deux tiers.",
+      "Retourner délicatement le saumon, napper généreusement de sauce au miel et cuire 2 minutes pour laquer.",
+      "Dresser le riz jasmin chaud, les pavés de saumon laqués et les asperges rôties, puis garnir de graines de sésame et oignons verts."
+    ]
+  },
+  {
+    "id": "rec-63",
+    "title": "Brochettes de poulet souvlaki au citron & origan, tzatziki frais et pitas grillés",
+    "subtitle": "Bouchées de poulet marinées à l'huile d'olive, ail et origan grec, tzatziki maison au concombre et pain pita doré",
+    "proteinType": "Poitrine de Poulet",
+    "cookingMode": "plancha",
+    "timeCategory": "Rapide",
+    "prepTime": 15,
+    "cookTime": 12,
+    "calories": 590,
+    "macros": {
+      "proteins": 48,
+      "carbs": 52,
+      "fats": 18
+    },
+    "allergens": [
+      "Lactose",
+      "Gluten"
+    ],
+    "tags": [
+      "Nouveauté Semaine",
+      "Plancha Star",
+      "Méditerranéen",
+      "Familial",
+      "Brochettes",
+      "Coup de Cœur"
+    ],
+    "isNewWeekly": true,
+    "image": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
+    "description": "Le grand classique méditerranéen adoré de toute la famille : cubes de poitrine de poulet marinés dans l'huile d'olive extra-vierge, jus de citron, ail et origan grec séché, cuits à la plancha pour une chair juteuse et grillée. Servis avec un tzatziki maison à l'ail et concombre pressé et des pitas chauds.",
+    "planchaTips": "Plancha à 210°C. Retourner les brochettes toutes les 3 minutes pour une dorure uniforme. Chauffer les pitas avec un filet d'huile 1 minute pour les rendre moelleux.",
+    "ingredients": [
+      {
+        "id": "ing-rec-63-poulet",
+        "name": "Poitrines de poulet coupées en cubes de 3 cm",
+        "quantity": 600,
+        "unit": "g",
+        "department": "viandes"
+      },
+      {
+        "id": "ing-rec-63-pitas",
+        "name": "Pains pitas grecs moelleux",
+        "quantity": 4,
+        "unit": "unité",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-63-concombre",
+        "name": "Concombre anglais râpé et pressé",
+        "quantity": 1,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-63-yogourt",
+        "name": "Yogourt grec nature 10%",
+        "quantity": 175,
+        "unit": "ml",
+        "department": "produits_laitiers"
+      },
+      {
+        "id": "ing-rec-63-citron",
+        "name": "Jus de citron frais",
+        "quantity": 30,
+        "unit": "ml",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-63-ail",
+        "name": "Gousses d'ail pressées",
+        "quantity": 3,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-63-origan",
+        "name": "Origan grec séché",
+        "quantity": 10,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-63-huile",
+        "name": "Huile d'olive extra-vierge",
+        "quantity": 45,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-63-tomates",
+        "name": "Tomates de serre tranchées",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-63-oignon",
+        "name": "Oignon rouge tranché finement",
+        "quantity": 1,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-63-sel-poivre",
+        "name": "Sel de mer et poivre noir du moulin",
+        "quantity": 5,
+        "unit": "g",
+        "department": "non_perissable"
+      }
+    ],
+    "steps": [
+      "Dans un bol, mélanger le poulet avec 30 ml d'huile d'olive, le jus de citron, 2 gousses d'ail pressées, l'origan, sel et poivre. Enfiler sur des brochettes.",
+      "Préparer le tzatziki : mélanger le concombre râpé bien essoré avec le yogourt grec, 1 gousse d'ail pressée, un filet d'huile d'olive et une pincée de sel.",
+      "Préchauffer la plancha à 210°C et huiler.",
+      "Déposer les brochettes de poulet et cuire 10 à 12 minutes en tournant d'un quart de tour toutes les 3 minutes.",
+      "Déposer les pains pitas sur la zone moyenne 1 minute par côté pour les tiédir et les dorer légèrement.",
+      "Servir les brochettes bien chaudes avec les pitas dorés, le tzatziki crémeux, les tranches de tomates et l'oignon rouge."
+    ]
+  },
+  {
+    "id": "rec-64",
+    "title": "Côtelettes de porc glacées érable & moutarde à l'ancienne, grelots rôtis et haricots",
+    "subtitle": "Côtelettes épaisses caramélisées à la plancha, pommes de terre grelots croustillantes et fèves vertes à l'ail",
+    "proteinType": "Filet de porc",
+    "cookingMode": "plancha",
+    "timeCategory": "Moyen",
+    "prepTime": 12,
+    "cookTime": 18,
+    "calories": 610,
+    "macros": {
+      "proteins": 45,
+      "carbs": 54,
+      "fats": 22
+    },
+    "allergens": [
+      "Moutarde"
+    ],
+    "tags": [
+      "Nouveauté Semaine",
+      "Plancha Star",
+      "Terroir Québécois",
+      "Sans Gluten",
+      "Confort",
+      "Repas Équilibré"
+    ],
+    "isNewWeekly": true,
+    "image": "https://images.unsplash.com/photo-1432139555190-58524dae6a55?auto=format&fit=crop&w=800&q=80",
+    "description": "Les meilleures côtelettes de porc du Québec : coupe du centre avec os saisies sur plancha chaude, laquées d'un sirop d'érable pur réduit avec moutarde de Meaux à l'ancienne et moutarde de Dijon. Servies avec des demi-grelots bien rissolés et des haricots verts croquants à l'ail.",
+    "planchaTips": "Mettre les demi-grelots en premier sur la plancha à 200°C (15-18 min). Ne glacer les côtelettes qu'au dernier moment (dernière minute) pour éviter que le sucre de l'érable ne noircisse.",
+    "ingredients": [
+      {
+        "id": "ing-rec-64-porc",
+        "name": "Côtelettes de porc coupe du centre avec os",
+        "quantity": 4,
+        "unit": "unité (600g)",
+        "department": "viandes"
+      },
+      {
+        "id": "ing-rec-64-grelots",
+        "name": "Pommes de terre grelots coupées en 2",
+        "quantity": 600,
+        "unit": "g",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-64-haricots",
+        "name": "Haricots verts frais éboutés",
+        "quantity": 350,
+        "unit": "g",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-64-erable",
+        "name": "Sirop d'érable pur québécois",
+        "quantity": 45,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-64-moutarde-anc",
+        "name": "Moutarde à l'ancienne en grains",
+        "quantity": 30,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-64-dijon",
+        "name": "Moutarde de Dijon",
+        "quantity": 15,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-64-ail",
+        "name": "Gousses d'ail émincées",
+        "quantity": 3,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-64-huile",
+        "name": "Huile d'olive",
+        "quantity": 35,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-64-thym",
+        "name": "Thym séché ou romarin frais",
+        "quantity": 5,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-64-sel-poivre",
+        "name": "Sel de mer et poivre du moulin",
+        "quantity": 5,
+        "unit": "g",
+        "department": "non_perissable"
+      }
+    ],
+    "steps": [
+      "Dans un bol, mélanger le sirop d'érable, la moutarde à l'ancienne, la moutarde de Dijon et une pincée de thym.",
+      "Préchauffer la plancha à 200°C et huiler.",
+      "Poser les demi-grelots côté plat avec l'huile et l'ail. Cuire 15 minutes en remuant régulièrement pour les faire rissoler.",
+      "Déposer les haricots verts à côté des grelots 8 minutes avant la fin de cuisson, saler et poivrer.",
+      "Saisir les côtelettes de porc sur la zone vive 5 minutes de chaque côté.",
+      "Badigeonner généreusement les deux faces du porc avec le glaçage érable-moutarde lors de la dernière minute de cuisson.",
+      "Dresser les côtelettes laquées et brillantes avec les grelots dorés et les haricots croquants."
+    ]
+  },
+  {
+    "id": "rec-65",
+    "title": "Fajitas de bavette de bœuf marinée à la lime & cumin sur plancha vive, poivrons et guacamole",
+    "subtitle": "Lanières de bavette de bœuf saisies vives à 230°C, trio de poivrons fondants, tortillas de maïs et guacamole maison",
+    "proteinType": "Boeuf haché",
+    "cookingMode": "plancha",
+    "timeCategory": "Rapide",
+    "prepTime": 15,
+    "cookTime": 8,
+    "calories": 620,
+    "macros": {
+      "proteins": 46,
+      "carbs": 50,
+      "fats": 24
+    },
+    "allergens": [],
+    "tags": [
+      "Nouveauté Semaine",
+      "Plancha Star",
+      "Tex-Mex",
+      "Festif",
+      "Sans Gluten",
+      "Coup de Cœur"
+    ],
+    "isNewWeekly": true,
+    "image": "https://images.unsplash.com/photo-1534352956036-cd81e27dd615?auto=format&fit=crop&w=800&q=80",
+    "description": "Le summum du spectacle et des saveurs sur plaque : de la bavette de bœuf persillée tranchée finement contre le grain, marinée à la lime fraîche, cumin, ail et piment doux, saisie à feu vif 2 à 3 minutes pour une caramélisation intense et une tendreté incomparable. Servie avec un monticule de poivrons colorés, oignons doux, tortillas chaudes et guacamole crémeux.",
+    "planchaTips": "Température maximale (230°C). Saisir les lanières de bavette très rapidement (2 min) sans les surcuire pour préserver leur jutosité. Réchauffer les tortillas sous cloche.",
+    "ingredients": [
+      {
+        "id": "ing-rec-65-boeuf",
+        "name": "Bavette de bœuf tranchée en fines lanières contre le grain",
+        "quantity": 600,
+        "unit": "g",
+        "department": "viandes"
+      },
+      {
+        "id": "ing-rec-65-tortillas",
+        "name": "Petites tortillas de maïs ou blé sans gluten",
+        "quantity": 8,
+        "unit": "unité",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-65-poivron-r",
+        "name": "Poivron rouge émincé en lanières",
+        "quantity": 1,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-65-poivron-j",
+        "name": "Poivron jaune émincé en lanières",
+        "quantity": 1,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-65-poivron-v",
+        "name": "Poivron vert émincé en lanières",
+        "quantity": 1,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-65-oignon",
+        "name": "Gros oignon rouge émincé",
+        "quantity": 1,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-65-avocats",
+        "name": "Avocats mûrs pour guacamole",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-65-limes",
+        "name": "Limes pour jus et quartiers",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-65-cumin",
+        "name": "Cumin moulu",
+        "quantity": 5,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-65-chili",
+        "name": "Poudre de chili mexicain doux",
+        "quantity": 5,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-65-huile",
+        "name": "Huile végétale pour friture vive",
+        "quantity": 30,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-65-coriandre",
+        "name": "Coriandre fraîche ciselée",
+        "quantity": 15,
+        "unit": "g",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-65-sel-poivre",
+        "name": "Sel de mer et poivre du moulin",
+        "quantity": 5,
+        "unit": "g",
+        "department": "non_perissable"
+      }
+    ],
+    "steps": [
+      "Mariner les lanières de bavette avec 15 ml d'huile, le jus d'une lime, le cumin, le chili doux, sel et poivre.",
+      "Écraser les avocats avec le jus d'une demi-lime et de la coriandre pour préparer le guacamole frais.",
+      "Chauffer la plancha à 230°C. Faire griller le trio de poivrons et l'oignon rouge 6 minutes jusqu'à ce qu'ils soient légèrement noircis et fondants.",
+      "Pousser les poivrons sur la zone moyenne. Jeter les lanières de bavette sur la zone très vive et remuer vivement 2 à 3 minutes pour caraméliser.",
+      "Chauffer les tortillas 30 secondes sur la plaque.",
+      "Servir la bavette fumante et les poivrons dorés dans les tortillas chaudes avec le guacamole maison et des quartiers de lime."
     ]
   }
 ];

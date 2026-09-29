@@ -5,12 +5,44 @@
 
 export const RELEASE_NOTES_DATA = [
   {
+    id: 'rel-2026-09-28',
+    date: '2026-09-28',
+    displayDate: '28 septembre 2026',
+    version: 'v2.9',
+    tag: 'Mise à jour majeure',
+    tagColor: '#10b981',
+    title: '5 Nouvelles Recettes Stars, Spéciaux Circulaires & Refonte 100% Ingrédients Séparés',
+    summary: 'Spéciaux protéines à jour, 5 nouvelles recettes vedettes sur plancha et refonte complète des ingrédients de toutes les recettes pour des listes d\'épicerie irréprochables.',
+    highlights: [
+      {
+        icon: '🥩',
+        title: 'Spéciaux Circulaires Protéines (Du 24 au 30 sept. 2026)',
+        description: 'Sélection ciblée sur les meilleures aubaines québécoises : Poitrines de poulet à 4,77 $/lb (Super C), Bœuf haché familial à 3,88 $/lb (Maxi), Bavette de bœuf marinée à 8,99 $/lb (Metro), Filet de porc à 3,49 $/lb (Super C), Côtelettes de porc à 2,88 $/lb (Maxi), Filets de saumon frais à 8,97 $/lb (Super C), Bacon fumé à 4,44 $ (Super C), Tofu extra-ferme à 1,99 $ (Maxi).'
+      },
+      {
+        icon: '🍔',
+        title: '5 Nouvelles Recettes Vedettes à la Plancha',
+        description: 'Smash burgers au bacon fumé & oignons caramélisés à l\'érable, Pavés de saumon laqués miel & sauce soya sur plancha, Brochettes de poulet souvlaki au citron & tzatziki frais en pita, Côtelettes de porc glacées érable & moutarde à l\'ancienne, et Fajitas de bavette de bœuf marinée à la lime & cumin.'
+      },
+      {
+        icon: '🛒',
+        title: 'Refonte intégrale : 100% Ingrédients Séparés & Précis',
+        description: 'Éradication de tous les ingrédients groupés ou vagues sur l\'ensemble des 65 recettes du catalogue. Finis les mélanges mystères ou légumes combinés : chaque sauce, épice, condiment, féculent et légume est désormais séparé avec sa quantité exacte et son rayon d\'épicerie attitré !'
+      },
+      {
+        icon: '✨',
+        title: 'Rotation des Nouveautés',
+        description: 'Les 5 recettes de la semaine précédente intègrent le grand livre de recettes régulier, laissant la place exclusive du badge « ✨ NOUVEAUTÉ » aux 5 nouvelles créations.'
+      }
+    ]
+  },
+  {
     id: 'rel-2026-09-13',
     date: '2026-09-13',
     displayDate: '13 septembre 2026',
     version: 'v2.8',
     tag: 'Mise à jour hebdomadaire',
-    tagColor: '#10b981',
+    tagColor: '#3b82f6',
     title: 'Spéciaux Protéines du Dimanche & Pains Baos au Flanc de Porc Sticky',
     summary: 'Nouvelle rotation hebdomadaire : spéciaux circulaires axés sur les protéines et 5 nouvelles recettes savoureuses adaptées à la plancha.',
     highlights: [
@@ -134,4 +166,3 @@ export function getActiveReleaseNotes(maxAgeDays = 7) {
 
   return active.length > 0 ? active : [RELEASE_NOTES_DATA[0]];
 }
-
