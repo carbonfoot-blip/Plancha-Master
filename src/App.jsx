@@ -21,6 +21,9 @@ import CloudConfigModal from './components/CloudConfigModal';
 import AdminAuthModal from './components/AdminAuthModal';
 import PwaInstallModal from './components/PwaInstallModal';
 import ReleaseNotesModal from './components/ReleaseNotesModal';
+import AuthModal from './components/AuthModal';
+import SubscriptionModal from './components/SubscriptionModal';
+import { getStoredUser, updateUserSubscription, logoutUser } from './services/authService';
 import { getActiveReleaseNotes, RELEASE_NOTES_DATA } from './data/releaseNotes';
 import './App.css';
 
@@ -104,10 +107,17 @@ export default function App() {
     }
   };
 
+  const [user, setUser] = useState(() => getStoredUser());
+  const [showAuthModal, setShowAuthModal] = useState(false);
+  const [authModalInitialView, setAuthModalInitialView] = useState('login');
+  const [showSubscriptionModal, setShowSubscriptionModal] = useState(false);
+
   const [isAdmin, setIsAdmin] = useState(() => {
     try {
+      const stored = getStoredUser();
+      if (stored?.role === 'admin') return true;
       return localStorage.getItem(LOCAL_STORAGE_KEY_IS_ADMIN) === 'true';
-    } catch (e) {
+    } catch (_e) {
       return false;
     }
   });
@@ -259,7 +269,7 @@ export default function App() {
     setIsAdmin(true);
     try {
       localStorage.setItem(LOCAL_STORAGE_KEY_IS_ADMIN, 'true');
-    } catch (e) {}
+    } catch (_e) {}
     confetti({
       particleCount: 40,
       spread: 60,
@@ -271,7 +281,31 @@ export default function App() {
     setIsAdmin(false);
     try {
       localStorage.setItem(LOCAL_STORAGE_KEY_IS_ADMIN, 'false');
-    } catch (e) {}
+    } catch (_e) {}
+  };
+
+  const handleAuthSuccess = (loggedUser) => {
+    setUser(loggedUser);
+    if (loggedUser.role === 'admin') {
+      setIsAdmin(true);
+      try {
+        localStorage.setItem(LOCAL_STORAGE_KEY_IS_ADMIN, 'true');
+      } catch (_e) {}
+    }
+  };
+
+  const handleLogout = async () => {
+    const defaultUser = await logoutUser();
+    setUser(defaultUser);
+    setIsAdmin(false);
+    try {
+      localStorage.setItem(LOCAL_STORAGE_KEY_IS_ADMIN, 'false');
+    } catch (_e) {}
+  };
+
+  const handleUpgradePlan = (planType) => {
+    const updated = updateUserSubscription(planType, user);
+    setUser(updated);
   };
 
   useEffect(() => {
@@ -454,7 +488,13 @@ export default function App() {
     setCustomItems(prev => prev.filter(item => item.id !== itemId));
   };
 
+  const isPremiumUser = Boolean(isAdmin || user?.plan === 'premium');
+
   const goToStep = (stepNumber) => {
+    if (stepNumber >= 2 && !isPremiumUser) {
+      setShowSubscriptionModal(true);
+      return;
+    }
     setActiveStep(stepNumber);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -496,6 +536,13 @@ export default function App() {
         activeReleaseNotes={activeReleaseNotes}
         showBroadcastBanner={showBroadcastBanner}
         onDismissBroadcast={handleDismissBroadcast}
+        user={user}
+        onOpenAuth={(view) => {
+          setAuthModalInitialView(view || 'login');
+          setShowAuthModal(true);
+        }}
+        onOpenSubscription={() => setShowSubscriptionModal(true)}
+        onLogout={handleLogout}
       />
 
       <main className="main-content-area">
@@ -651,23 +698,74 @@ export default function App() {
         />
       )}
 
+      <AuthModal
+        isOpen={showAuthModal}
+        initialView={authModalInitialView}
+        onAuthSuccess={handleAuthSuccess}
+        onClose={() => setShowAuthModal(false)}
+      />
+
+      <SubscriptionModal
+        isOpen={showSubscriptionModal}
+        currentUser={user}
+        onUpgradePlan={handleUpgradePlan}
+        onOpenAuth={(view) => {
+          setAuthModalInitialView(view || 'register');
+          setShowAuthModal(true);
+        }}
+        onClose={() => setShowSubscriptionModal(false)}
+      />
+
       <footer className="site-footer">
         <div className="footer-container">
           <div className="footer-brand">
             <strong>Plancha-Master</strong> — Planificateur de repas familiaux & épicerie hebdomadaire
           </div>
           <p className="footer-text">
-            Base de données Cloud partagée • Protection par Mode Administrateur • Liens directs Super C, Maxi, IGA, Metro & Walmart
+            Base de données Cloud partagée • Sécurisé par authentification & rôles • Forfaits 2.99$/mois ou 24.99$/an
           </p>
-          {!isAdmin && (
-            <button
-              type="button"
-              className="footer-admin-link"
-              onClick={() => setShowAdminAuthModal(true)}
-            >
-              🔒 Espace Administrateur
-            </button>
-          )}
+          <div className="footer-links-row">
+            {!user?.isLoggedIn ? (
+              <button
+                type="button"
+                className="footer-link-btn"
+                onClick={() => {
+                  setAuthModalInitialView('login');
+                  setShowAuthModal(true);
+                }}
+              >
+                👤 Connexion / S'inscrire
+              </button>
+            ) : (
+              <button
+                type="button"
+                className="footer-link-btn"
+                onClick={handleLogout}
+              >
+                🚪 Déconnexion ({user.displayName || user.email})
+              </button>
+            )}
+
+            {user?.plan !== 'premium' && !isAdmin && (
+              <button
+                type="button"
+                className="footer-link-btn text-gold"
+                onClick={() => setShowSubscriptionModal(true)}
+              >
+                ⭐ Forfaits Premium (2.99$/mois ou 24.99$/an)
+              </button>
+            )}
+
+            {!isAdmin && (
+              <button
+                type="button"
+                className="footer-admin-link"
+                onClick={() => setShowAdminAuthModal(true)}
+              >
+                🔒 Espace Administrateur (PIN de secours)
+              </button>
+            )}
+          </div>
         </div>
       </footer>
     </div>
