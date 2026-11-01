@@ -6,7 +6,7 @@
 
 ## 📌 Métadonnées
 - **ID de la Spécification :** SPEC-002
-- **Statut :** `En revue`
+- **Statut :** `Terminé`
 - **Auteur :** Félix-Antoine Legault / Antigravity Agent
 - **Date de création :** 2026-11-01
 - **Branche Git cible :** `feature/nouveautes-5-recettes`
@@ -67,9 +67,9 @@
 ---
 
 ## 4. ✅ Critères d'Acceptation
-- [ ] Le catalogue compte désormais 70 recettes officielles.
-- [ ] Exactement 5 recettes possèdent `isNewWeekly: true` et `'Nouveauté Semaine'`.
-- [ ] Le filtre « ✨ Nouveautés » sur l'Étape 1 affiche les 5 nouvelles recettes en tête de liste.
-- [ ] Les release notes affichent la version `v3.0` avec les 5 nouvelles recettes.
-- [ ] `npm.cmd run lint` (Oxlint) ne rapporte aucune erreur (`0 errors`).
-- [ ] `npm.cmd run build` (Vite) compile avec succès sans avertissement bloquant.
+- [x] Le catalogue compte désormais 70 recettes officielles.
+- [x] Exactement 5 recettes possèdent `isNewWeekly: true` et `'Nouveauté Semaine'`.
+- [x] Le filtre « ✨ Nouveautés » sur l'Étape 1 affiche les 5 nouvelles recettes en tête de liste.
+- [x] Les release notes affichent la version `v3.0` avec les 5 nouvelles recettes.
+- [x] `npm.cmd run lint` (Oxlint) ne rapporte aucune erreur (`0 errors`).
+- [x] `npm.cmd run build` (Vite) compile avec succès sans avertissement bloquant.
