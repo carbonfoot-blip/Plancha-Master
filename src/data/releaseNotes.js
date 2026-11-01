@@ -5,6 +5,38 @@
 
 export const RELEASE_NOTES_DATA = [
   {
+    id: 'rel-2026-11-01',
+    date: '2026-11-01',
+    displayDate: '1er novembre 2026',
+    version: 'v3.0',
+    tag: 'Mise à jour majeure',
+    tagColor: '#10b981',
+    title: '5 Nouvelles Recettes Stars sur Plancha & Rotation des Nouveautés',
+    summary: 'Arrivée de 5 nouvelles recettes exclusives adaptées à la plancha québécoise, catalogue étendu à 70 repas complets et rotation exclusive du badge Nouveauté.',
+    highlights: [
+      {
+        icon: '✨',
+        title: '5 Nouvelles Recettes Exclusives sur Plancha',
+        description: 'Brochettes de poulet teriyaki & ananas caramélisé, Bavette de bœuf marinée à l\'ail noir & romarin, Médaillons de filet de porc au poivre de Madagascar & miel, Crevettes géantes & pétoncles sautés ail-lime-coriandre, et Burgers d\'halloumi grillé croustillant & pesto de poivrons.'
+      },
+      {
+        icon: '🥩',
+        title: 'Spéciaux Circulaires Protéines de la Semaine',
+        description: 'Sélection des meilleures aubaines québécoises pour vos repas : Poitrines de poulet frais à 4,77 $/lb (Super C), Bavette de bœuf marinée AAA à 8,99 $/lb (Metro), Filets de porc frais du Québec à 3,49 $/lb (Super C), Crevettes blanches crues à 5,99 $ (Maxi) et Fromage Halloumi à griller à 4,79 $ (Super C).'
+      },
+      {
+        icon: '🔄',
+        title: 'Rotation Stricte des Nouveautés',
+        description: 'Les 5 nouvelles recettes profitent désormais en exclusivité du badge vert « ✨ NOUVEAUTÉ » et du tri prioritaire en tête de sélection. Les 5 créations précédentes intègrent le grand catalogue permanent (70 recettes au total).'
+      },
+      {
+        icon: '🥗',
+        title: '100% Ingrédients Séparés & Précis',
+        description: 'Comme l\'ensemble du catalogue, chaque nouvelle recette intègre son féculent sans gluten, ses légumes frais, sauces et aromates soigneusement séparés avec quantités exactes et rayons d\'épicerie attitrés.'
+      }
+    ]
+  },
+  {
     id: 'rel-2026-09-28',
     date: '2026-09-28',
     displayDate: '28 septembre 2026',

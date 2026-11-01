@@ -6343,14 +6343,13 @@ export const RECIPES_DATA = [
       "Œufs"
     ],
     "tags": [
-      "Nouveauté Semaine",
       "Plancha Star",
       "Smash Burger",
       "Familial",
       "Coup de Cœur",
       "Street Food"
     ],
-    "isNewWeekly": true,
+    "isNewWeekly": false,
     "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80",
     "description": "Le burger ultime à la plancha québécoise ! Des boules de bœuf haché frais écrasées à froid sur plaque à 230°C pour développer une croûte dentelée irrésistiblement caramélisée. Garnies de bacon croustillant, cheddar fort fondu sous cloche, oignons fondants mijotés au sirop d'érable et sauce maison relevée dans un pain brioché doré au beurre.",
     "planchaTips": "Chauffer la plancha à 230°C. Smasher les boules de bœuf fermement avec une spatule rigide et du papier parchemin pendant 10 secondes. Ne plus toucher avant de retourner à 2 minutes.",
@@ -6470,14 +6469,13 @@ export const RECIPES_DATA = [
       "Sésame"
     ],
     "tags": [
-      "Nouveauté Semaine",
       "Plancha Star",
       "Sans Gluten",
       "Oméga-3",
       "Repas Équilibré",
       "Rapide"
     ],
-    "isNewWeekly": true,
+    "isNewWeekly": false,
     "image": "https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=800&q=80",
     "description": "Une cuisson de saumon digne des plus grands restaurants à la plancha : peau ultra-croustillante, chair nacrée et fondante laquée en fin de cuisson d'un glaçage brillant au miel, sauce soya, gingembre et sésame. Accompagné d'asperges fraîches grillées et de riz jasmin parfumé.",
     "planchaTips": "Plancha à 200°C bien huilée. Bien éponger la peau du saumon au papier essuie-tout avant de cuire. Cuire 5 à 6 minutes côté peau sans y toucher pour un croustillant parfait.",
@@ -6583,14 +6581,13 @@ export const RECIPES_DATA = [
       "Gluten"
     ],
     "tags": [
-      "Nouveauté Semaine",
       "Plancha Star",
       "Méditerranéen",
       "Familial",
       "Brochettes",
       "Coup de Cœur"
     ],
-    "isNewWeekly": true,
+    "isNewWeekly": false,
     "image": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
     "description": "Le grand classique méditerranéen adoré de toute la famille : cubes de poitrine de poulet marinés dans l'huile d'olive extra-vierge, jus de citron, ail et origan grec séché, cuits à la plancha pour une chair juteuse et grillée. Servis avec un tzatziki maison à l'ail et concombre pressé et des pitas chauds.",
     "planchaTips": "Plancha à 210°C. Retourner les brochettes toutes les 3 minutes pour une dorure uniforme. Chauffer les pitas avec un filet d'huile 1 minute pour les rendre moelleux.",
@@ -6701,14 +6698,13 @@ export const RECIPES_DATA = [
       "Moutarde"
     ],
     "tags": [
-      "Nouveauté Semaine",
       "Plancha Star",
       "Terroir Québécois",
       "Sans Gluten",
       "Confort",
       "Repas Équilibré"
     ],
-    "isNewWeekly": true,
+    "isNewWeekly": false,
     "image": "https://images.unsplash.com/photo-1432139555190-58524dae6a55?auto=format&fit=crop&w=800&q=80",
     "description": "Les meilleures côtelettes de porc du Québec : coupe du centre avec os saisies sur plancha chaude, laquées d'un sirop d'érable pur réduit avec moutarde de Meaux à l'ancienne et moutarde de Dijon. Servies avec des demi-grelots bien rissolés et des haricots verts croquants à l'ail.",
     "planchaTips": "Mettre les demi-grelots en premier sur la plancha à 200°C (15-18 min). Ne glacer les côtelettes qu'au dernier moment (dernière minute) pour éviter que le sucre de l'érable ne noircisse.",
@@ -6811,14 +6807,13 @@ export const RECIPES_DATA = [
     },
     "allergens": [],
     "tags": [
-      "Nouveauté Semaine",
       "Plancha Star",
       "Tex-Mex",
       "Festif",
       "Sans Gluten",
       "Coup de Cœur"
     ],
-    "isNewWeekly": true,
+    "isNewWeekly": false,
     "image": "https://images.unsplash.com/photo-1534352956036-cd81e27dd615?auto=format&fit=crop&w=800&q=80",
     "description": "Le summum du spectacle et des saveurs sur plaque : de la bavette de bœuf persillée tranchée finement contre le grain, marinée à la lime fraîche, cumin, ail et piment doux, saisie à feu vif 2 à 3 minutes pour une caramélisation intense et une tendreté incomparable. Servie avec un monticule de poivrons colorés, oignons doux, tortillas chaudes et guacamole crémeux.",
     "planchaTips": "Température maximale (230°C). Saisir les lanières de bavette très rapidement (2 min) sans les surcuire pour préserver leur jutosité. Réchauffer les tortillas sous cloche.",
@@ -6922,6 +6917,604 @@ export const RECIPES_DATA = [
       "Pousser les poivrons sur la zone moyenne. Jeter les lanières de bavette sur la zone très vive et remuer vivement 2 à 3 minutes pour caraméliser.",
       "Chauffer les tortillas 30 secondes sur la plaque.",
       "Servir la bavette fumante et les poivrons dorés dans les tortillas chaudes avec le guacamole maison et des quartiers de lime."
+    ]
+  }
+,
+  {
+    "id": "rec-66",
+    "title": "Brochettes de poulet teriyaki & ananas caramélisé sur plancha, riz jasmin et edamames",
+    "subtitle": "Cubes de poulet juteux marinés au teriyaki maison, morceaux d'ananas frais dorés à vif, riz jasmin vapeur et edamames croquants",
+    "proteinType": "Poitrine de Poulet",
+    "cookingMode": "plancha",
+    "timeCategory": "Rapide",
+    "prepTime": 15,
+    "cookTime": 12,
+    "calories": 580,
+    "macros": {
+      "proteins": 47,
+      "carbs": 55,
+      "fats": 16
+    },
+    "allergens": [
+      "Soya",
+      "Sésame"
+    ],
+    "tags": [
+      "Nouveauté Semaine",
+      "Plancha Star",
+      "Asiatique",
+      "Familial",
+      "Brochettes",
+      "Rapide"
+    ],
+    "isNewWeekly": true,
+    "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80",
+    "description": "Une explosion de saveurs sucrées-salées irrésistible pour toute la famille. Des cubes de poitrine de poulet marinés dans une sauce teriyaki maison au gingembre, à l'ail et au mirin, alternés sur brochettes avec des cubes d'ananas frais qui caramélisent sous la chaleur vive de la plancha. Servi avec du riz jasmin parfumé et des fèves edamames assaisonnées au sésame grillé.",
+    "planchaTips": "Chauffer la plancha à 210°C. Saisir les brochettes 3 minutes de chaque côté. Badigeonner d'un supplément de sauce teriyaki dans les 2 dernières minutes pour créer un laquage brillant sans brûler les sucres.",
+    "ingredients": [
+      {
+        "id": "ing-rec-66-poulet",
+        "name": "Poitrines de poulet frais coupées en gros cubes",
+        "quantity": 600,
+        "unit": "g",
+        "department": "viandes"
+      },
+      {
+        "id": "ing-rec-66-ananas",
+        "name": "Ananas frais pelé et coupé en cubes de 3 cm",
+        "quantity": 350,
+        "unit": "g",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-66-riz",
+        "name": "Riz blanc au jasmin",
+        "quantity": 300,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-66-edamames",
+        "name": "Fèves edamames écossées",
+        "quantity": 200,
+        "unit": "g",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-66-soya",
+        "name": "Sauce soya sans gluten ou tamari",
+        "quantity": 45,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-66-erable",
+        "name": "Sirop d'érable pur du Québec",
+        "quantity": 30,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-66-mirin",
+        "name": "Vinaigre de riz doux ou mirin",
+        "quantity": 15,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-66-ail",
+        "name": "Gousses d'ail râpées",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-66-gingembre",
+        "name": "Gingembre frais râpé",
+        "quantity": 15,
+        "unit": "g",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-66-sesame",
+        "name": "Huile et graines de sésame grillées",
+        "quantity": 15,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-66-oignons-verts",
+        "name": "Oignons verts émincés",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      }
+    ],
+    "steps": [
+      "Cuire le riz jasmin dans l'eau bouillante salée 12 minutes, égoutter et garder au chaud.",
+      "Dans un bol, mélanger la sauce soya, le sirop d'érable, le mirin, l'ail râpé, le gingembre et l'huile de sésame pour former la sauce teriyaki.",
+      "Enfiler alternativement les cubes de poulet et les morceaux d'ananas frais sur des brochettes en bois préalablement trempées.",
+      "Préchauffer la plancha à 210°C et huiler légèrement la plaque.",
+      "Déposer les brochettes et cuire 10 à 12 minutes en les retournant d'un quart de tour toutes les 3 minutes.",
+      "Badigeonner généreusement de sauce teriyaki réservée pendant les 2 dernières minutes pour glacer l'ananas et le poulet.",
+      "Chauffer rapidement les edamames 2 minutes sur la zone moyenne avec une pincée de sel.",
+      "Dresser le riz jasmin fumant avec les brochettes laquées, parsemer de graines de sésame grillées et d'oignons verts."
+    ]
+  },
+  {
+    "id": "rec-67",
+    "title": "Bavette de bœuf marinée à l'ail noir & romarin sur plancha vive, frites de patates douces et maïs grillé",
+    "subtitle": "Pièce de bavette persillée saisie 2 minutes par face à 230°C, frites croustillantes de patates douces au paprika et épis de maïs rissolés au beurre",
+    "proteinType": "Bavette de boeuf",
+    "cookingMode": "plancha",
+    "timeCategory": "Rapide",
+    "prepTime": 15,
+    "cookTime": 10,
+    "calories": 650,
+    "macros": {
+      "proteins": 48,
+      "carbs": 50,
+      "fats": 26
+    },
+    "allergens": [
+      "Lactose"
+    ],
+    "tags": [
+      "Nouveauté Semaine",
+      "Plancha Star",
+      "Sans Gluten",
+      "Bœuf AAA",
+      "Coup de Cœur",
+      "Festif"
+    ],
+    "isNewWeekly": true,
+    "image": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
+    "description": "La reine des coupes de bœuf pour la plancha ! Une bavette d'aloyau québécoise marinée avec de l'ail noir, du romarin frais, de l'huile d'olive et une touche de vinaigre balsamique. Saisie à très haute température pour obtenir une belle croûte caramélisée tout en gardant un cœur saignant ou médium-saignant ultra-tendre. Accompagnée de frites de patates douces dorées et de maïs doux badigeonné de beurre aux herbes.",
+    "planchaTips": "Température maximale (230°C). Saisir la bavette 2 à 3 minutes par face sans la piquer. Laisser reposer 5 minutes sous papier aluminium avant de trancher obligatoirement contre le grain en biais.",
+    "ingredients": [
+      {
+        "id": "ing-rec-67-bavette",
+        "name": "Bavette de bœuf d'aloyau AAA québécoise",
+        "quantity": 650,
+        "unit": "g",
+        "department": "viandes"
+      },
+      {
+        "id": "ing-rec-67-patates-douces",
+        "name": "Patates douces pelées coupées en frites",
+        "quantity": 600,
+        "unit": "g",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-67-mais",
+        "name": "Grains de maïs doux frais ou décongelés",
+        "quantity": 300,
+        "unit": "g",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-67-ail",
+        "name": "Gousses d'ail émincées ou pâte d'ail noir",
+        "quantity": 3,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-67-romarin",
+        "name": "Romarin frais haché",
+        "quantity": 10,
+        "unit": "g",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-67-balsamique",
+        "name": "Vinaigre balsamique de Modène",
+        "quantity": 20,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-67-huile",
+        "name": "Huile d'olive extra-vierge",
+        "quantity": 40,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-67-beurre",
+        "name": "Beurre salé du Québec",
+        "quantity": 25,
+        "unit": "g",
+        "department": "produits_laitiers"
+      },
+      {
+        "id": "ing-rec-67-paprika",
+        "name": "Paprika fumé espagnol doux",
+        "quantity": 5,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-67-sel-poivre",
+        "name": "Fleur de sel et poivre noir concassé",
+        "quantity": 5,
+        "unit": "g",
+        "department": "non_perissable"
+      }
+    ],
+    "steps": [
+      "Dans un plat creux, mariner la bavette de bœuf avec l'huile d'olive, l'ail, le romarin haché, le vinaigre balsamique et du poivre concassé pendant 15 minutes.",
+      "Préchauffer la plancha à 220°C sur une zone et 230°C sur l'autre zone.",
+      "Sur la zone à 220°C, déposer les frites de patates douces avec un filet d'huile et le paprika fumé. Cuire 12 à 14 minutes en remuant régulièrement pour les rendre croustillantes.",
+      "Ajouter les grains de maïs avec le beurre salé à côté des patates douces et faire sauter 6 minutes jusqu'à belle coloration dorée.",
+      "Déposer la bavette égouttée sur la zone très chaude (230°C). Saisir 2 minutes 30 secondes sans y toucher, retourner et saisir 2 minutes sur l'autre face.",
+      "Retirer la bavette et la laisser reposer 5 minutes sur une planche tiède sous une feuille d'aluminium.",
+      "Trancher la bavette finement contre le sens des fibres musculaires et saupoudrer de fleur de sel.",
+      "Servir immédiatement avec les frites de patates douces croustillantes et le maïs rissolé au beurre."
+    ]
+  },
+  {
+    "id": "rec-68",
+    "title": "Médaillons de filet de porc au poivre de Madagascar & miel sur plancha, pommes rissolées et haricots verts",
+    "subtitle": "Filet de porc tendre tranché en médaillons épais, saisis au beurre et glacés miel-moutarde, pommes de terre grelots croustillantes et haricots verts croquants",
+    "proteinType": "Filet de porc",
+    "cookingMode": "plancha",
+    "timeCategory": "Moyen",
+    "prepTime": 15,
+    "cookTime": 15,
+    "calories": 580,
+    "macros": {
+      "proteins": 46,
+      "carbs": 48,
+      "fats": 20
+    },
+    "allergens": [
+      "Lactose",
+      "Moutarde"
+    ],
+    "tags": [
+      "Nouveauté Semaine",
+      "Plancha Star",
+      "Sans Gluten",
+      "Terroir Québécois",
+      "Familial",
+      "Confort"
+    ],
+    "isNewWeekly": true,
+    "image": "https://images.unsplash.com/photo-1602470520998-f4a52199a3d6?auto=format&fit=crop&w=800&q=80",
+    "description": "Une recette gourmande et économique qui met en valeur le filet de porc du Québec. Coupé en médaillons de 2,5 cm, le porc est enrobé d'une marinade légère au miel sauvage, poivre concassé et moutarde de Dijon, puis doré sur la plaque chaude avec du beurre moussant. Servi avec des pommes de terre grelots rissolées à l'ail et des haricots verts frais tout juste sautés.",
+    "planchaTips": "Démarrer les grelots 10 minutes avant le porc. Cuire les médaillons 3 à 4 minutes par côté sur zone moyenne (200°C) pour conserver un cœur légèrement rosé et ultra-juteux.",
+    "ingredients": [
+      {
+        "id": "ing-rec-68-porc",
+        "name": "Filets de porc parés coupés en médaillons de 2,5 cm",
+        "quantity": 650,
+        "unit": "g",
+        "department": "viandes"
+      },
+      {
+        "id": "ing-rec-68-grelots",
+        "name": "Pommes de terre grelots coupées en deux",
+        "quantity": 600,
+        "unit": "g",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-68-haricots",
+        "name": "Haricots verts fins frais éboutés",
+        "quantity": 350,
+        "unit": "g",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-68-miel",
+        "name": "Miel de fleurs sauvages liquide",
+        "quantity": 30,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-68-dijon",
+        "name": "Moutarde de Dijon de qualité",
+        "quantity": 20,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-68-beurre",
+        "name": "Beurre doux",
+        "quantity": 25,
+        "unit": "g",
+        "department": "produits_laitiers"
+      },
+      {
+        "id": "ing-rec-68-huile",
+        "name": "Huile d'olive",
+        "quantity": 25,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-68-ail",
+        "name": "Gousses d'ail pressées",
+        "quantity": 3,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-68-poivre",
+        "name": "Poivre noir ou vert de Madagascar concassé",
+        "quantity": 5,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-68-persil",
+        "name": "Persil plat frais ciselé",
+        "quantity": 10,
+        "unit": "g",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-68-sel",
+        "name": "Sel de mer fin",
+        "quantity": 5,
+        "unit": "g",
+        "department": "non_perissable"
+      }
+    ],
+    "steps": [
+      "Mélanger le miel, la moutarde de Dijon, la moitié de l'huile d'olive et le poivre concassé. Enrober les médaillons de porc de cette marinade.",
+      "Préchauffer la plancha à 200°C et graisser avec un peu d'huile d'olive.",
+      "Poser les demi-grelots côté plat sur la plaque avec l'ail pressé et une noisette de beurre. Laisser rissoler 12 à 15 minutes en remuant régulièrement jusqu'à tendreté dorée.",
+      "Déposer les haricots verts à côté des grelots 8 minutes avant la fin, assaisonner de sel et rouler sur la plaque.",
+      "Déposer les médaillons de filet de porc sur la zone chaude et cuire 3 à 4 minutes par côté en arrosant avec les sucs de cuisson et le reste de marinade.",
+      "Vérifier la cuisson : la viande doit être dorée à l'extérieur et délicatement rosée à cœur.",
+      "Dresser les médaillons nappés de leur jus au miel et poivre, accompagnés des grelots rissolés et des haricots verts croquants, parsemés de persil frais."
+    ]
+  },
+  {
+    "id": "rec-69",
+    "title": "Crevettes géantes & pétoncles sautés à l'ail, lime & coriandre sur plancha, quinoa et légumes du soleil",
+    "subtitle": "Fruits de mer flambés sur plaque brûlante, quinoa blanc moelleux, courgettes et poivrons rôtis à l'huile d'olive extra-vierge",
+    "proteinType": "Crevettes & Fruits de mer",
+    "cookingMode": "plancha",
+    "timeCategory": "Rapide",
+    "prepTime": 12,
+    "cookTime": 8,
+    "calories": 520,
+    "macros": {
+      "proteins": 42,
+      "carbs": 48,
+      "fats": 14
+    },
+    "allergens": [
+      "Crustacés",
+      "Mollusques"
+    ],
+    "tags": [
+      "Nouveauté Semaine",
+      "Plancha Star",
+      "Fruits de Mer",
+      "Sans Gluten",
+      "Léger & Santé",
+      "Rapide"
+    ],
+    "isNewWeekly": true,
+    "image": "https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?auto=format&fit=crop&w=800&q=80",
+    "description": "Le festival des fruits de mer sur plaque chauffante ! Des grosses crevettes crues déveinées et de gros pétoncles saisis à feu très vif pour former une croûte dorée sans surcuire. Déglacés d'un trait de jus de lime fraîche avec une tombée d'ail pressé et de coriandre fraîche. Servis sur un lit de quinoa parfumé aux herbes avec des tranches de courgettes et poivrons grillés.",
+    "planchaTips": "Plancha très chaude (220°C). Éponger soigneusement les crevettes et pétoncles avec du papier absorbant pour éviter qu'ils ne bouillent. Cuire seulement 90 secondes de chaque côté. Déglacer à la lime au tout dernier instant.",
+    "ingredients": [
+      {
+        "id": "ing-rec-69-crevettes",
+        "name": "Grosses crevettes blanches crues 16-20 décortiquées",
+        "quantity": 400,
+        "unit": "g",
+        "department": "viandes"
+      },
+      {
+        "id": "ing-rec-69-petoncles",
+        "name": "Gros pétoncles frais bien épongés",
+        "quantity": 250,
+        "unit": "g",
+        "department": "viandes"
+      },
+      {
+        "id": "ing-rec-69-quinoa",
+        "name": "Quinoa blanc ou tricolore rincé",
+        "quantity": 250,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-69-courgettes",
+        "name": "Courgettes vertes coupées en rondelles",
+        "quantity": 350,
+        "unit": "g",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-69-poivron",
+        "name": "Poivron rouge émincé en lanières",
+        "quantity": 1,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-69-limes",
+        "name": "Limes pour jus frais et quartiers",
+        "quantity": 2,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-69-ail",
+        "name": "Gousses d'ail pressées",
+        "quantity": 4,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-69-huile",
+        "name": "Huile d'olive extra-vierge",
+        "quantity": 35,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-69-coriandre",
+        "name": "Coriandre fraîche hachée",
+        "quantity": 15,
+        "unit": "g",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-69-flocons-piment",
+        "name": "Flocons de piment chili doux",
+        "quantity": 3,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-69-sel-poivre",
+        "name": "Sel de mer et poivre blanc du moulin",
+        "quantity": 5,
+        "unit": "g",
+        "department": "non_perissable"
+      }
+    ],
+    "steps": [
+      "Cuire le quinoa dans 500 ml d'eau salée à couvert pendant 15 minutes jusqu'à absorption complète, égrainer à la fourchette.",
+      "Préchauffer la plancha à 220°C et huiler légèrement.",
+      "Déposer les rondelles de courgettes et les lanières de poivron sur une moitié de plancha avec un filet d'huile, sel et poivre. Griller 6 à 8 minutes en remuant.",
+      "Bien sécher les crevettes et les pétoncles sur un essuie-tout.",
+      "Jeter les crevettes et les pétoncles sur la zone très vive de la plaque. Cuire 90 secondes sans remuer pour obtenir une croûte dorée.",
+      "Retourner les fruits de mer, ajouter immédiatement l'ail pressé, les flocons de piment chili et cuire encore 60 à 90 secondes.",
+      "Presser le jus d'une lime sur les fruits de mer pour déglacer la plaque et retirer aussitôt du feu.",
+      "Servir sur le lit de quinoa avec les légumes grillés du soleil, garnir de coriandre fraîche et de quartiers de lime."
+    ]
+  },
+  {
+    "id": "rec-70",
+    "title": "Burgers de fromage Halloumi grillé croustillant & pesto de poivrons rouges, roquette et frites de courge",
+    "subtitle": "Tranches épaisses d'halloumi saisies et dorées sur plaque, pesto maison aux poivrons et amandes, oignons caramélisés et frites de courge butternut",
+    "proteinType": "Végétarien",
+    "cookingMode": "plancha",
+    "timeCategory": "Rapide",
+    "prepTime": 15,
+    "cookTime": 12,
+    "calories": 620,
+    "macros": {
+      "proteins": 32,
+      "carbs": 52,
+      "fats": 28
+    },
+    "allergens": [
+      "Lactose",
+      "Gluten",
+      "Fruits à coque"
+    ],
+    "tags": [
+      "Nouveauté Semaine",
+      "Plancha Star",
+      "Végétarien",
+      "Fromage Grillé",
+      "Gourmand",
+      "Coup de Cœur"
+    ],
+    "isNewWeekly": true,
+    "image": "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80",
+    "description": "Une création végétarienne ultra-savoureuse et festive ! Le fromage halloumi développe sur la plancha une croûte dorée croustillante incomparable tout en restant fondant à l'intérieur. Monté dans des pains briochés avec un pesto crémeux aux poivrons rouges rôtis et amandes, des oignons caramélisés à la plaque, de la roquette fraîche poivrée et servi avec des frites de courge butternut rôties.",
+    "planchaTips": "Chauffer la plancha à 210°C sans trop graisser car le fromage relâche ses propres sucs. Dorer l'halloumi 2 à 3 minutes par face jusqu'à une belle couleur noisette éclatante.",
+    "ingredients": [
+      {
+        "id": "ing-rec-70-halloumi",
+        "name": "Fromage Halloumi tranché en 8 tranches épaisses",
+        "quantity": 500,
+        "unit": "g",
+        "department": "produits_laitiers"
+      },
+      {
+        "id": "ing-rec-70-pains",
+        "name": "Pains à burger briochés",
+        "quantity": 4,
+        "unit": "unité",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-70-courge",
+        "name": "Courge butternut pelée coupée en bâtonnets frites",
+        "quantity": 500,
+        "unit": "g",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-70-poivrons-grilles",
+        "name": "Poivrons rouges grillés en bocal bien égouttés",
+        "quantity": 200,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-70-amandes",
+        "name": "Amandes effilées ou concassées",
+        "quantity": 30,
+        "unit": "g",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-70-roquette",
+        "name": "Roquette sauvage fraîche lavée",
+        "quantity": 100,
+        "unit": "g",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-70-oignon",
+        "name": "Gros oignon jaune doux émincé finement",
+        "quantity": 1,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-70-huile",
+        "name": "Huile d'olive extra-vierge",
+        "quantity": 35,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-70-ail",
+        "name": "Gousse d'ail",
+        "quantity": 1,
+        "unit": "unité",
+        "department": "fruits_legumes"
+      },
+      {
+        "id": "ing-rec-70-balsamique",
+        "name": "Vinaigre balsamique",
+        "quantity": 15,
+        "unit": "ml",
+        "department": "non_perissable"
+      },
+      {
+        "id": "ing-rec-70-sel-poivre",
+        "name": "Sel de mer et poivre noir du moulin",
+        "quantity": 5,
+        "unit": "g",
+        "department": "non_perissable"
+      }
+    ],
+    "steps": [
+      "Préparer le pesto de poivrons : mixer au robot les poivrons grillés égouttés avec les amandes, la gousse d'ail, 15 ml d'huile d'olive, sel et poivre jusqu'à consistance tartinable.",
+      "Préchauffer la plancha à 210°C.",
+      "Sur une zone, cuire les frites de courge butternut avec un filet d'huile et sel pendant 12 minutes en les retournant régulièrement jusqu'à ce qu'elles soient tendres et dorées.",
+      "Faire caraméliser l'oignon émincé avec un trait de vinaigre balsamique pendant 8 minutes.",
+      "Déposer les tranches épaisses d'halloumi sur la zone chaude bien nette. Cuire 2 à 3 minutes par face jusqu'à formation d'une croûte bien dorée.",
+      "Toaster rapidement les pains briochés 1 minute sur la plaque chaude.",
+      "Monter les burgers : étaler généreusement le pesto de poivrons sur la base des pains, déposer un lit de roquette fraîche, deux tranches d'halloumi grillé bien chaud, les oignons caramélisés fondants et refermer avec le chapeau.",
+      "Servir avec les frites de courge butternut dorées."
     ]
   }
 ];
