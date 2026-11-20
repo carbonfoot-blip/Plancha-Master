@@ -5,6 +5,39 @@
 
 export const RELEASE_NOTES_DATA = [
   {
+    id: 'rel-2026-11-20',
+    date: '2026-11-20',
+    displayDate: '20 novembre 2026',
+    version: 'v3.1',
+    tag: 'Mise à jour majeure',
+    tagColor: '#10b981',
+    title: '10 Nouvelles Recettes Stars sur Plancha : Protéines Variées & Nouveautés Exclusives',
+    summary: 'Arrivée de 10 nouvelles recettes équilibrées (protéine + féculent + légume) couvrant une vaste diversité de viandes, volailles, poissons, fruits de mer et végétarien, portant le catalogue à 80 repas complets, avec rotation exclusive du badge Nouveauté.',
+    highlights: [
+      {
+        icon: '✨',
+        title: '10 Nouvelles Recettes Complètes & Équilibrées',
+        description: 'Pavés de saumon croustillants érable & Dijon, Tacos de bavette de bœuf au chimichurri, Hauts de cuisse de poulet au paprika fumé, Brochettes de crevettes géantes ail & lime, Smash burgers de porc haché au gingembre, Médaillons de filet de porc miel & moutarde à l\'ancienne, Escalopes de dinde au pesto de basilic, Pavés de tofu croustillants au cari jaune, Koftas de bœuf haché à la menthe, et Filets de morue dorés au beurre blanc citronné & câpres.'
+      },
+      {
+        icon: '🥩',
+        title: 'Diversité Maximale de Protéines',
+        description: 'Un éventail complet pour plaire à toute la famille : Saumon frais de l\'Atlantique, Bavette de bœuf AAA québécoise, Hauts de cuisse de poulet désossés, Crevettes blanches 16/20, Porc haché maigre, Filet de porc tendre, Escalopes fines de dinde, Tofu extra-ferme biologique, Bœuf haché assaisonné et Filets épais de morue fraîche.'
+      },
+      {
+        icon: '🥗',
+        title: 'Trio Équilibré : Protéine + Féculent + Légume',
+        description: 'Chaque recette intègre rigoureusement son féculent (riz basmati, tortillas de maïs, grelots rissolés, quinoa, patates douces, orzo, pitas, riz sauvage) et ses légumes frais rôtis ou sautés à la plaque (asperges, poivrons, courgettes, haricots verts, épinards, brocoli, concombre, champignons).'
+      },
+      {
+        icon: '🔄',
+        title: 'Rotation Stricte des Nouveautés',
+        description: 'Seules ces 10 nouvelles créations bénéficient du badge vert « ✨ NOUVEAUTÉ » et s\'affichent en tête de sélection. L\'ensemble des créations précédentes demeure accessible dans le grand catalogue permanent (80 recettes au total).'
+      }
+    ]
+  },
+
+  {
     id: 'rel-2026-11-01',
     date: '2026-11-01',
     displayDate: '1er novembre 2026',

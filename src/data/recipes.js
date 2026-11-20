@@ -6940,14 +6940,13 @@ export const RECIPES_DATA = [
       "Sésame"
     ],
     "tags": [
-      "Nouveauté Semaine",
       "Plancha Star",
       "Asiatique",
       "Familial",
       "Brochettes",
       "Rapide"
     ],
-    "isNewWeekly": true,
+    "isNewWeekly": false,
     "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80",
     "description": "Une explosion de saveurs sucrées-salées irrésistible pour toute la famille. Des cubes de poitrine de poulet marinés dans une sauce teriyaki maison au gingembre, à l'ail et au mirin, alternés sur brochettes avec des cubes d'ananas frais qui caramélisent sous la chaleur vive de la plancha. Servi avec du riz jasmin parfumé et des fèves edamames assaisonnées au sésame grillé.",
     "planchaTips": "Chauffer la plancha à 210°C. Saisir les brochettes 3 minutes de chaque côté. Badigeonner d'un supplément de sauce teriyaki dans les 2 dernières minutes pour créer un laquage brillant sans brûler les sucres.",
@@ -7060,14 +7059,13 @@ export const RECIPES_DATA = [
       "Lactose"
     ],
     "tags": [
-      "Nouveauté Semaine",
       "Plancha Star",
       "Sans Gluten",
       "Bœuf AAA",
       "Coup de Cœur",
       "Festif"
     ],
-    "isNewWeekly": true,
+    "isNewWeekly": false,
     "image": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
     "description": "La reine des coupes de bœuf pour la plancha ! Une bavette d'aloyau québécoise marinée avec de l'ail noir, du romarin frais, de l'huile d'olive et une touche de vinaigre balsamique. Saisie à très haute température pour obtenir une belle croûte caramélisée tout en gardant un cœur saignant ou médium-saignant ultra-tendre. Accompagnée de frites de patates douces dorées et de maïs doux badigeonné de beurre aux herbes.",
     "planchaTips": "Température maximale (230°C). Saisir la bavette 2 à 3 minutes par face sans la piquer. Laisser reposer 5 minutes sous papier aluminium avant de trancher obligatoirement contre le grain en biais.",
@@ -7174,14 +7172,13 @@ export const RECIPES_DATA = [
       "Moutarde"
     ],
     "tags": [
-      "Nouveauté Semaine",
       "Plancha Star",
       "Sans Gluten",
       "Terroir Québécois",
       "Familial",
       "Confort"
     ],
-    "isNewWeekly": true,
+    "isNewWeekly": false,
     "image": "https://images.unsplash.com/photo-1602470520998-f4a52199a3d6?auto=format&fit=crop&w=800&q=80",
     "description": "Une recette gourmande et économique qui met en valeur le filet de porc du Québec. Coupé en médaillons de 2,5 cm, le porc est enrobé d'une marinade légère au miel sauvage, poivre concassé et moutarde de Dijon, puis doré sur la plaque chaude avec du beurre moussant. Servi avec des pommes de terre grelots rissolées à l'ail et des haricots verts frais tout juste sautés.",
     "planchaTips": "Démarrer les grelots 10 minutes avant le porc. Cuire les médaillons 3 à 4 minutes par côté sur zone moyenne (200°C) pour conserver un cœur légèrement rosé et ultra-juteux.",
@@ -7294,14 +7291,13 @@ export const RECIPES_DATA = [
       "Mollusques"
     ],
     "tags": [
-      "Nouveauté Semaine",
       "Plancha Star",
       "Fruits de Mer",
       "Sans Gluten",
       "Léger & Santé",
       "Rapide"
     ],
-    "isNewWeekly": true,
+    "isNewWeekly": false,
     "image": "https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?auto=format&fit=crop&w=800&q=80",
     "description": "Le festival des fruits de mer sur plaque chauffante ! Des grosses crevettes crues déveinées et de gros pétoncles saisis à feu très vif pour former une croûte dorée sans surcuire. Déglacés d'un trait de jus de lime fraîche avec une tombée d'ail pressé et de coriandre fraîche. Servis sur un lit de quinoa parfumé aux herbes avec des tranches de courgettes et poivrons grillés.",
     "planchaTips": "Plancha très chaude (220°C). Éponger soigneusement les crevettes et pétoncles avec du papier absorbant pour éviter qu'ils ne bouillent. Cuire seulement 90 secondes de chaque côté. Déglacer à la lime au tout dernier instant.",
@@ -7416,14 +7412,13 @@ export const RECIPES_DATA = [
       "Fruits à coque"
     ],
     "tags": [
-      "Nouveauté Semaine",
       "Plancha Star",
       "Végétarien",
       "Fromage Grillé",
       "Gourmand",
       "Coup de Cœur"
     ],
-    "isNewWeekly": true,
+    "isNewWeekly": false,
     "image": "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80",
     "description": "Une création végétarienne ultra-savoureuse et festive ! Le fromage halloumi développe sur la plancha une croûte dorée croustillante incomparable tout en restant fondant à l'intérieur. Monté dans des pains briochés avec un pesto crémeux aux poivrons rouges rôtis et amandes, des oignons caramélisés à la plaque, de la roquette fraîche poivrée et servi avec des frites de courge butternut rôties.",
     "planchaTips": "Chauffer la plancha à 210°C sans trop graisser car le fromage relâche ses propres sucs. Dorer l'halloumi 2 à 3 minutes par face jusqu'à une belle couleur noisette éclatante.",
@@ -7516,5 +7511,1145 @@ export const RECIPES_DATA = [
       "Monter les burgers : étaler généreusement le pesto de poivrons sur la base des pains, déposer un lit de roquette fraîche, deux tranches d'halloumi grillé bien chaud, les oignons caramélisés fondants et refermer avec le chapeau.",
       "Servir avec les frites de courge butternut dorées."
     ]
+  },
+  {
+      "id": "rec-71",
+      "title": "Pavés de saumon croustillants au sirop d'érable & moutarde de Dijon, riz basmati et asperges grillées au citron",
+      "subtitle": "Saumon de l'Atlantique saisi côté peau sur plancha vive avec un laquage érable-Dijon, riz basmati parfumé et pointes d'asperges citronnées",
+      "proteinType": "Saumon & Poissons",
+      "cookingMode": "plancha",
+      "timeCategory": "Rapide",
+      "prepTime": 15,
+      "cookTime": 10,
+      "calories": 590,
+      "macros": {
+          "proteins": 44,
+          "carbs": 52,
+          "fats": 22
+      },
+      "allergens": [
+          "Moutarde",
+          "Soya"
+      ],
+      "tags": [
+          "Nouveauté Semaine",
+          "Plancha Star",
+          "Saumon & Poissons",
+          "Sans Gluten",
+          "Repas Équilibré",
+          "Rapide"
+      ],
+      "isNewWeekly": true,
+      "image": "https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=800&q=80",
+      "description": "Un grand classique québécois sublimé à la plancha ! Des pavés de saumon frais saisis côté peau pour une texture ultra-croustillante, nappés d'une réduction onctueuse de sirop d'érable pur, moutarde de Dijon et tamari. Accompagnés d'un riz basmati léger aux herbes fraîches et de tendres pointes d'asperges grillées à sec déglacées au jus de citron.",
+      "planchaTips": "Chauffer la plancha à 200°C. Déposer le saumon côté peau d'abord et presser légèrement pendant 30 secondes pour éviter qu'il ne se rétracte. Cuire 6 minutes côté peau, puis 3 minutes sur l'autre face. Badigeonner de glaçage érable-Dijon au dernier moment.",
+      "ingredients": [
+          {
+              "id": "ing-rec-71-saumon",
+              "name": "Pavés de saumon frais de l'Atlantique (avec peau)",
+              "quantity": 600,
+              "unit": "g",
+              "department": "viandes"
+          },
+          {
+              "id": "ing-rec-71-riz",
+              "name": "Riz basmati blanc (féculent)",
+              "quantity": 300,
+              "unit": "g",
+              "department": "non_perissable"
+          },
+          {
+              "id": "ing-rec-71-asperges",
+              "name": "Botte d'asperges vertes fraîches parées (légume)",
+              "quantity": 400,
+              "unit": "g",
+              "department": "fruits_legumes"
+          },
+          {
+              "id": "ing-rec-71-erable",
+              "name": "Sirop d'érable pur du Québec",
+              "quantity": 45,
+              "unit": "ml",
+              "department": "non_perissable"
+          },
+          {
+              "id": "ing-rec-71-moutarde",
+              "name": "Moutarde de Dijon crémeuse",
+              "quantity": 30,
+              "unit": "ml",
+              "department": "non_perissable"
+          },
+          {
+              "id": "ing-rec-71-tamari",
+              "name": "Sauce soya sans gluten (tamari)",
+              "quantity": 15,
+              "unit": "ml",
+              "department": "non_perissable"
+          },
+          {
+              "id": "ing-rec-71-citron",
+              "name": "Citron jaune frais (jus et quartiers à griller)",
+              "quantity": 1,
+              "unit": "unité",
+              "department": "fruits_legumes"
+          },
+          {
+              "id": "ing-rec-71-ail",
+              "name": "Gousses d'ail pressées",
+              "quantity": 2,
+              "unit": "unité",
+              "department": "fruits_legumes"
+          },
+          {
+              "id": "ing-rec-71-huile",
+              "name": "Huile d'olive extra-vierge",
+              "quantity": 25,
+              "unit": "ml",
+              "department": "non_perissable"
+          },
+          {
+              "id": "ing-rec-71-aneth",
+              "name": "Aneth frais haché",
+              "quantity": 10,
+              "unit": "g",
+              "department": "fruits_legumes"
+          },
+          {
+              "id": "ing-rec-71-sel-poivre",
+              "name": "Sel kasher et poivre rose concassé",
+              "quantity": 4,
+              "unit": "g",
+              "department": "non_perissable"
+          }
+      ],
+      "steps": [
+          "Rincer le riz basmati à l'eau froide puis le cuire 12 minutes dans une casserole d'eau bouillante salée. Égoutter, incorporer l'aneth frais haché et garder au chaud.",
+          "Dans un ramequin, fouetter le sirop d'érable, la moutarde de Dijon, le tamari, l'ail pressé et la moitié de l'huile d'olive.",
+          "Préchauffer la plancha à 200°C et huiler légèrement la surface avec un papier absorbant.",
+          "Sur la zone légumes, déposer les asperges parées, arroser d'un filet d'huile, saler et poivrer. Laisser dorer 8 à 10 minutes en les roulant régulièrement.",
+          "Sur la zone principale bien chaude, déposer les pavés de saumon côté peau vers le bas. Cuire 6 minutes sans y toucher pour rendre la peau parfaitement croustillante.",
+          "Retourner délicatement les pavés et poursuivre la cuisson 3 à 4 minutes selon l'épaisseur.",
+          "Badigeonner généreusement le saumon de glaçage érable-moutarde durant la dernière minute de cuisson et griller 2 demi-citrons face coupée contre la plaque.",
+          "Dresser le riz basmati à l'aneth dans les assiettes, déposer un pavé de saumon laqué, entourer d'asperges grillées et d'un quartier de citron chaud."
+      ]
+  },
+  {
+      "id": "rec-72",
+      "title": "Tacos de bavette de bœuf marinée au chimichurri, galettes de maïs et poivrons sautés à la plancha",
+      "subtitle": "Bavette persillée tranchée finement, poivrons tricolores caramélisés, sauce chimichurri fraîche aux herbes et tortillas de maïs chaudes",
+      "proteinType": "Boeuf",
+      "cookingMode": "plancha",
+      "timeCategory": "Rapide",
+      "prepTime": 15,
+      "cookTime": 8,
+      "calories": 640,
+      "macros": {
+          "proteins": 46,
+          "carbs": 48,
+          "fats": 28
+      },
+      "allergens": [],
+      "tags": [
+          "Nouveauté Semaine",
+          "Plancha Star",
+          "Boeuf",
+          "Sans Gluten",
+          "Tex-Mex",
+          "Rapide"
+      ],
+      "isNewWeekly": true,
+      "image": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=800&q=80",
+      "description": "Une explosion de saveurs latino-américaines ! Une magnifique bavette de bœuf marinée à l'origan et à la lime, saisie 2 minutes à très haute température pour conserver tout son jus, puis émincée contre le grain. Servie dans des galettes de maïs réchauffées sur la plaque avec une julienne de poivrons fondants et une sauce chimichurri maison ultra-fraîche.",
+      "planchaTips": "Monter la plancha à 230°C. Saisir la bavette entière 2 minutes par face pour une cuisson saignante idéale. Laisser reposer la viande sur une planche tiède 5 minutes avant de la trancher pour redistribuer les sucs.",
+      "ingredients": [
+          {
+              "id": "ing-rec-72-bavette",
+              "name": "Bavette d'aloyau de bœuf AAA du Québec (protéine)",
+              "quantity": 600,
+              "unit": "g",
+              "department": "viandes"
+          },
+          {
+              "id": "ing-rec-72-tortillas",
+              "name": "Tortillas souples 100% farine de maïs (féculent sans gluten)",
+              "quantity": 8,
+              "unit": "unité",
+              "department": "non_perissable"
+          },
+          {
+              "id": "ing-rec-72-poivrons",
+              "name": "Poivrons tricolores émincés en lanières (légume)",
+              "quantity": 3,
+              "unit": "unité",
+              "department": "fruits_legumes"
+          },
+          {
+              "id": "ing-rec-72-oignon-rouge",
+              "name": "Gros oignon rouge en demi-lunes",
+              "quantity": 1,
+              "unit": "unité",
+              "department": "fruits_legumes"
+          },
+          {
+              "id": "ing-rec-72-persil",
+              "name": "Persil plat frais haché finement",
+              "quantity": 30,
+              "unit": "g",
+              "department": "fruits_legumes"
+          },
+          {
+              "id": "ing-rec-72-coriandre",
+              "name": "Coriandre fraîche hachée",
+              "quantity": 20,
+              "unit": "g",
+              "department": "fruits_legumes"
+          },
+          {
+              "id": "ing-rec-72-origan",
+              "name": "Origan séché",
+              "quantity": 5,
+              "unit": "g",
+              "department": "non_perissable"
+          },
+          {
+              "id": "ing-rec-72-ail",
+              "name": "Gousses d'ail pelées et hachées",
+              "quantity": 3,
+              "unit": "unité",
+              "department": "fruits_legumes"
+          },
+          {
+              "id": "ing-rec-72-lime",
+              "name": "Limes fraîches (jus pour marinade et quartiers)",
+              "quantity": 2,
+              "unit": "unité",
+              "department": "fruits_legumes"
+          },
+          {
+              "id": "ing-rec-72-vinaigre-cidre",
+              "name": "Vinaigre de vin rouge ou cidre",
+              "quantity": 20,
+              "unit": "ml",
+              "department": "non_perissable"
+          },
+          {
+              "id": "ing-rec-72-huile",
+              "name": "Huile d'olive extra-vierge",
+              "quantity": 40,
+              "unit": "ml",
+              "department": "non_perissable"
+          },
+          {
+              "id": "ing-rec-72-flocons-piment",
+              "name": "Pincée de flocons de piment chili et sel de mer",
+              "quantity": 4,
+              "unit": "g",
+              "department": "non_perissable"
+          }
+      ],
+      "steps": [
+          "Préparer le chimichurri : mélanger dans un bol le persil, la coriandre, l'ail haché, l'origan, le vinaigre, le jus d'une lime, 30 ml d'huile d'olive, les flocons de piment et le sel.",
+          "Badigeonner la bavette de bœuf avec 2 cuillères de chimichurri et laisser tempérer 10 minutes.",
+          "Préchauffer la plancha à 230°C.",
+          "Déposer les lanières de poivrons et l'oignon rouge sur la zone légumes avec un filet d'huile. Faire sauter vivement à la spatule 6 à 7 minutes jusqu'à ce qu'ils soient tendres et légèrement grillés.",
+          "Saisir la bavette sur la zone très chaude 2 à 3 minutes par face. Retirer immédiatement sur une planche et laisser reposer 5 minutes sous un papier d'aluminium.",
+          "Pendant le repos de la viande, déposer les tortillas de maïs sur la plaque chaude 30 secondes de chaque côté pour les assouplir et les réchauffer.",
+          "Trancher la bavette en fines lamelles en coupant perpendiculairement au sens des fibres.",
+          "Garnir chaque tortilla chaude avec les poivrons sautés, les tranches de bavette juteuse, napper généreusement de chimichurri frais et servir avec des quartiers de lime."
+      ]
+  },
+  {
+      "id": "rec-73",
+      "title": "Hauts de cuisse de poulet croustillants au paprika fumé & ail, grelots rissolés et courgettes dorées",
+      "subtitle": "Poulet doré et juteux assaisonné au paprika espagnol, pommes de terre grelots croustillantes et rondelles de courgettes caramélisées",
+      "proteinType": "Poitrine de Poulet",
+      "cookingMode": "plancha",
+      "timeCategory": "Moyen",
+      "prepTime": 15,
+      "cookTime": 16,
+      "calories": 570,
+      "macros": {
+          "proteins": 45,
+          "carbs": 42,
+          "fats": 24
+      },
+      "allergens": [],
+      "tags": [
+          "Nouveauté Semaine",
+          "Plancha Star",
+          "Volaille",
+          "Sans Gluten",
+          "Familial",
+          "Confort"
+      ],
+      "isNewWeekly": true,
+      "image": "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=800&q=80",
+      "description": "Une recette réconfortante et pleine de saveurs pour les soirs de semaine. Des hauts de cuisse de poulet désossés marinés avec du paprika fumé doux, de l'ail et du thym, grillés jusqu'à ce que la peau soit bien dorée tout en conservant une viande moelleuse à souhait. Servis avec des demi-pommes de terre grelots rissolées à l'huile d'olive et de belles tranches de courgettes fondantes.",
+      "planchaTips": "Chauffer la plancha à 210°C. Démarrer les pommes de terre en premier sur la zone moyenne (elles prennent 15 minutes). Cuire le poulet 7 minutes côté peau puis 6 minutes de l'autre côté jusqu'à cuisson complète.",
+      "ingredients": [
+          {
+              "id": "ing-rec-73-poulet",
+              "name": "Hauts de cuisse de poulet frais désossés (protéine)",
+              "quantity": 650,
+              "unit": "g",
+              "department": "viandes"
+          },
+          {
+              "id": "ing-rec-73-grelots",
+              "name": "Pommes de terre grelots lavées et coupées en deux (féculent)",
+              "quantity": 500,
+              "unit": "g",
+              "department": "fruits_legumes"
+          },
+          {
+              "id": "ing-rec-73-courgettes",
+              "name": "Courgettes vertes en biseaux épais (légume)",
+              "quantity": 2,
+              "unit": "unité",
+              "department": "fruits_legumes"
+          },
+          {
+              "id": "ing-rec-73-tomates-cerises",
+              "name": "Tomates cerises fraîches sur grappe",
+              "quantity": 200,
+              "unit": "g",
+              "department": "fruits_legumes"
+          },
+          {
+              "id": "ing-rec-73-paprika-fume",
+              "name": "Paprika fumé doux (pimentón)",
+              "quantity": 10,
+              "unit": "g",
+              "department": "non_perissable"
+          },
+          {
+              "id": "ing-rec-73-poudre-ail",
+              "name": "Ail en poudre et gousse d'ail hachée",
+              "quantity": 10,
+              "unit": "g",
+              "department": "non_perissable"
+          },
+          {
+              "id": "ing-rec-73-thym",
+              "name": "Thym frais effeuillé",
+              "quantity": 10,
+              "unit": "g",
+              "department": "fruits_legumes"
+          },
+          {
+              "id": "ing-rec-73-huile",
+              "name": "Huile d'olive extra-vierge",
+              "quantity": 35,
+              "unit": "ml",
+              "department": "non_perissable"
+          },
+          {
+              "id": "ing-rec-73-sel-poivre",
+              "name": "Sel de mer fin et poivre noir moulu",
+              "quantity": 5,
+              "unit": "g",
+              "department": "non_perissable"
+          }
+      ],
+      "steps": [
+          "Dans un grand bol, enrober les hauts de cuisse de poulet avec 20 ml d'huile d'olive, le paprika fumé, l'ail, la moitié du thym, du sel et du poivre.",
+          "Précuire les demi-pommes de terre grelots 5 minutes au micro-ondes ou à la vapeur pour accélérer le rissolage sur la plancha.",
+          "Préchauffer la plancha à 210°C.",
+          "Déposer les grelots côté coupé sur la zone moyenne avec un filet d'huile et le reste de thym. Laisser rissoler 12 à 14 minutes jusqu'à une belle croûte dorée croustillante.",
+          "Sur la zone vive, déposer les hauts de cuisse de poulet côté peau. Cuire 7 à 8 minutes, puis retourner et cuire encore 6 à 7 minutes jusqu'à ce que la température interne atteigne 74°C.",
+          "Ajouter les courgettes en biseaux et les tomates cerises à côté du poulet 6 minutes avant la fin de cuisson, en les retournant à mi-cuisson.",
+          "Disposer harmonieusement dans les assiettes le poulet croustillant et juteux, les grelots dorés et les courgettes caramélisées."
+      ]
+  },
+  {
+      "id": "rec-74",
+      "title": "Brochettes de crevettes géantes sautées à l'ail & lime, quinoa parfumé et poêlée de légumes méditerranéens",
+      "subtitle": "Grosses crevettes saisies 3 minutes sur plaque brûlante, quinoa cuit au bouillon de légumes et méli-mélo de courgettes et poivrons rôtis",
+      "proteinType": "Crevettes",
+      "cookingMode": "plancha",
+      "timeCategory": "Rapide",
+      "prepTime": 15,
+      "cookTime": 8,
+      "calories": 490,
+      "macros": {
+          "proteins": 40,
+          "carbs": 50,
+          "fats": 14
+      },
+      "allergens": [
+          "Fruits de mer"
+      ],
+      "tags": [
+          "Nouveauté Semaine",
+          "Plancha Star",
+          "Crevettes",
+          "Sans Gluten",
+          "Santé & Léger",
+          "Rapide"
+      ],
+      "isNewWeekly": true,
+      "image": "https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?auto=format&fit=crop&w=800&q=80",
+      "description": "Un souper sain, vibrant et prêt en moins de 25 minutes ! De grosses crevettes blanches crues enfilées sur brochettes, assaisonnées d'ail, de zeste de lime et d'huile d'olive, saisies vivement pour obtenir une coloration dorée et une chair ferme et juteuse. Accompagnées de quinoa blanc moelleux et d'une tombée de légumes du soleil grillés à la plancha.",
+      "planchaTips": "Chauffer la plancha à 220°C. La crevette cuit très vite : 2 minutes sur la première face jusqu'à ce qu'elle devienne rose-orangée, 1 minute 30 sur l'autre face. Déglacer d'un trait de jus de lime au moment de retirer de la plaque.",
+      "ingredients": [
+          {
+              "id": "ing-rec-74-crevettes",
+              "name": "Grosses crevettes blanches crues déveinées 16/20 (protéine)",
+              "quantity": 600,
+              "unit": "g",
+              "department": "viandes"
+          },
+          {
+              "id": "ing-rec-74-quinoa",
+              "name": "Quinoa blanc biologique (féculent sans gluten)",
+              "quantity": 250,
+              "unit": "g",
+              "department": "non_perissable"
+          },
+          {
+              "id": "ing-rec-74-poivrons-jaunes",
+              "name": "Poivrons jaunes coupés en carrés de 2 cm (légume)",
+              "quantity": 2,
+              "unit": "unité",
+              "department": "fruits_legumes"
+          },
+          {
+              "id": "ing-rec-74-courgettes",
+              "name": "Courgettes coupées en demi-rondelles (légume)",
+              "quantity": 2,
+              "unit": "unité",
+              "department": "fruits_legumes"
+          },
+          {
+              "id": "ing-rec-74-limes",
+              "name": "Limes fraîches pour jus et zeste",
+              "quantity": 2,
+              "unit": "unité",
+              "department": "fruits_legumes"
+          },
+          {
+              "id": "ing-rec-74-ail",
+              "name": "Gousses d'ail râpées",
+              "quantity": 3,
+              "unit": "unité",
+              "department": "fruits_legumes"
+          },
+          {
+              "id": "ing-rec-74-coriandre",
+              "name": "Coriandre fraîche hachée",
+              "quantity": 20,
+              "unit": "g",
+              "department": "fruits_legumes"
+          },
+          {
+              "id": "ing-rec-74-huile",
+              "name": "Huile d'olive extra-vierge",
+              "quantity": 30,
+              "unit": "ml",
+              "department": "non_perissable"
+          },
+          {
+              "id": "ing-rec-74-sel-poivre",
+              "name": "Fleur de sel et poivre blanc",
+              "quantity": 4,
+              "unit": "g",
+              "department": "non_perissable"
+          }
+      ],
+      "steps": [
+          "Rincer le quinoa abondamment et le cuire 14 minutes dans 500 ml d'eau bouillante salée. Égoutter, aérer à la fourchette et incorporer la coriandre et le zeste de lime.",
+          "Enfiler les crevettes sur des brochettes en bois. Les badigeonner d'huile d'olive, d'ail râpé, de sel et de poivre.",
+          "Préchauffer la plancha à 220°C.",
+          "Cuire les dés de poivrons et demi-rondelles de courgettes sur la plaque avec un filet d'huile pendant 7 à 8 minutes en les remuant souvent jusqu'à belle caramélisation.",
+          "Déposer les brochettes de crevettes sur la zone bien chaude. Cuire 2 minutes sans bouger, puis retourner pour 1 à 2 minutes.",
+          "Arroser les crevettes du jus d'une lime directement sur la plaque pour créer une vapeur aromatique instantanée.",
+          "Dresser un lit de quinoa parfumé, recouvrir de légumes méditerranéens et poser les brochettes de crevettes dorées sur le dessus."
+      ]
+  },
+  {
+      "id": "rec-75",
+      "title": "Smash burgers de porc haché au gingembre & érable, frites de patates douces et salade de chou croquante",
+      "subtitle": "Galettes de porc haché du Québec écrasées sur plaque très chaude pour une croûte caramélisée, frites croustillantes et salade croquante au sésame",
+      "proteinType": "Porc haché",
+      "cookingMode": "plancha",
+      "timeCategory": "Rapide",
+      "prepTime": 15,
+      "cookTime": 10,
+      "calories": 630,
+      "macros": {
+          "proteins": 38,
+          "carbs": 62,
+          "fats": 25
+      },
+      "allergens": [
+          "Gluten",
+          "Sésame",
+          "Soya"
+      ],
+      "tags": [
+          "Nouveauté Semaine",
+          "Plancha Star",
+          "Porc haché",
+          "Burgers",
+          "Familial",
+          "Coup de Cœur"
+      ],
+      "isNewWeekly": true,
+      "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80",
+      "description": "Le burger réinventé à la façon québéco-asiatique ! Des boules de porc haché assaisonné écrasées à la presse sur la plaque ultra-brûlante pour obtenir une réaction de Maillard intense et des bords dentelés ultra-croustillants. Glacées d'un trait d'érable et soya, servies dans des pains briochés avec une salade de chou croquante et des frites de patates douces dorées à la plancha.",
+      "planchaTips": "Chauffer la plancha à 230°C. Déposer des boules de porc de 120 g et presser immédiatement avec une spatule rigide (utilisez un papier parchemin entre la viande et la spatule pour éviter que ça colle). Cuire 3 minutes, retourner et glacer 2 minutes.",
+      "ingredients": [
+          {
+              "id": "ing-rec-75-porc",
+              "name": "Porc haché maigre du Québec (protéine)",
+              "quantity": 600,
+              "unit": "g",
+              "department": "viandes"
+          },
+          {
+              "id": "ing-rec-75-pains",
+              "name": "Pains briochés à burger (féculent)",
+              "quantity": 4,
+              "unit": "unité",
+              "department": "non_perissable"
+          },
+          {
+              "id": "ing-rec-75-patates-douces",
+              "name": "Patates douces pelées et taillées en frites (féculent)",
+              "quantity": 500,
+              "unit": "g",
+              "department": "fruits_legumes"
+          },
+          {
+              "id": "ing-rec-75-chou-rave",
+              "name": "Chou blanc et rouge râpé en salade croquante (légume)",
+              "quantity": 300,
+              "unit": "g",
+              "department": "fruits_legumes"
+          },
+          {
+              "id": "ing-rec-75-oignons-verts",
+              "name": "Oignons verts finement émincés",
+              "quantity": 3,
+              "unit": "unité",
+              "department": "fruits_legumes"
+          },
+          {
+              "id": "ing-rec-75-gingembre",
+              "name": "Gingembre frais râpé",
+              "quantity": 15,
+              "unit": "g",
+              "department": "fruits_legumes"
+          },
+          {
+              "id": "ing-rec-75-erable",
+              "name": "Sirop d'érable pur du Québec",
+              "quantity": 30,
+              "unit": "ml",
+              "department": "non_perissable"
+          },
+          {
+              "id": "ing-rec-75-tamari",
+              "name": "Sauce soya ou tamari",
+              "quantity": 25,
+              "unit": "ml",
+              "department": "non_perissable"
+          },
+          {
+              "id": "ing-rec-75-mayo",
+              "name": "Mayonnaise légère et filet d'huile de sésame",
+              "quantity": 30,
+              "unit": "ml",
+              "department": "non_perissable"
+          },
+          {
+              "id": "ing-rec-75-huile",
+              "name": "Huile végétale pour la cuisson",
+              "quantity": 20,
+              "unit": "ml",
+              "department": "non_perissable"
+          },
+          {
+              "id": "ing-rec-75-sel-poivre",
+              "name": "Sel kasher et poivre blanc moulu",
+              "quantity": 4,
+              "unit": "g",
+              "department": "non_perissable"
+          }
+      ],
+      "steps": [
+          "Assaisonner le porc haché avec le gingembre râpé, la moitié des oignons verts, sel et poivre. Former 4 boules régulières sans trop tasser la viande.",
+          "Préparer la salade de chou en mélangeant le chou émincé avec la mayonnaise, l'huile de sésame et les oignons verts restants.",
+          "Préchauffer la plancha à 220°C.",
+          "Sur une zone, cuire les bâtonnets de patates douces avec un filet d'huile pendant 12 minutes en les retournant régulièrement jusqu'à ce qu'ils soient bien dorés.",
+          "Sur la zone vive, déposer les 4 boules de porc et les écraser fermement à la spatule pour créer de fines galettes bien larges.",
+          "Cuire 3 minutes sans bouger pour développer une croûte brune intense. Retourner, napper du mélange sirop d'érable et sauce soya, puis cuire encore 2 minutes.",
+          "Toaster rapidement l'intérieur des pains briochés 1 minute sur la plaque.",
+          "Assembler les burgers avec une couche de salade de chou croquante, la galette de porc smashée caramélisée et servir avec les frites de patates douces."
+      ]
+  },
+  {
+      "id": "rec-76",
+      "title": "Médaillons de filet de porc glacés au miel & moutarde à l'ancienne, écrasé de patates douces et haricots verts",
+      "subtitle": "Filet de porc tendre tranché en médaillons épais, sauce moutardée au miel de trèfle, patates douces fondantes et haricots verts sautés à l'ail",
+      "proteinType": "Filet de porc",
+      "cookingMode": "plancha",
+      "timeCategory": "Moyen",
+      "prepTime": 15,
+      "cookTime": 14,
+      "calories": 540,
+      "macros": {
+          "proteins": 46,
+          "carbs": 46,
+          "fats": 18
+      },
+      "allergens": [
+          "Moutarde",
+          "Lactose"
+      ],
+      "tags": [
+          "Nouveauté Semaine",
+          "Plancha Star",
+          "Filet de porc",
+          "Sans Gluten",
+          "Terroir",
+          "Confort"
+      ],
+      "isNewWeekly": true,
+      "image": "https://images.unsplash.com/photo-1602470520998-f4a52199a3d6?auto=format&fit=crop&w=800&q=80",
+      "description": "Le filet de porc du Québec dans toute sa splendeur ! Tranché en médaillons généreux de 3 cm, le porc développe sur la plancha une belle croûte dorée au beurre et au miel tout en conservant une texture juteuse et rosée au centre. Accompagné d'un écrasé soyeux de patates douces parfumées à la muscade et de haricots verts frais tout juste sautés.",
+      "planchaTips": "Chauffer la plancha à 200°C. Saisir les médaillons 3 minutes par face avec un peu de beurre moussant pour arroser la viande. Glacer avec le mélange miel et moutarde à l'ancienne durant la dernière minute.",
+      "ingredients": [
+          {
+              "id": "ing-rec-76-filet-porc",
+              "name": "Filet de porc frais du Québec paré et coupé en médaillons de 3 cm (protéine)",
+              "quantity": 650,
+              "unit": "g",
+              "department": "viandes"
+          },
+          {
+              "id": "ing-rec-76-patates-douces",
+              "name": "Patates douces pelées coupées en cubes (féculent)",
+              "quantity": 550,
+              "unit": "g",
+              "department": "fruits_legumes"
+          },
+          {
+              "id": "ing-rec-76-haricots-verts",
+              "name": "Haricots verts frais éboutés (légume)",
+              "quantity": 350,
+              "unit": "g",
+              "department": "fruits_legumes"
+          },
+          {
+              "id": "ing-rec-76-miel",
+              "name": "Miel pur liquide",
+              "quantity": 30,
+              "unit": "ml",
+              "department": "non_perissable"
+          },
+          {
+              "id": "ing-rec-76-moutarde-ancienne",
+              "name": "Moutarde à l'ancienne en grains",
+              "quantity": 30,
+              "unit": "ml",
+              "department": "non_perissable"
+          },
+          {
+              "id": "ing-rec-76-beurre",
+              "name": "Beurre salé",
+              "quantity": 25,
+              "unit": "g",
+              "department": "produits_laitiers"
+          },
+          {
+              "id": "ing-rec-76-ail",
+              "name": "Gousses d'ail émincées",
+              "quantity": 2,
+              "unit": "unité",
+              "department": "fruits_legumes"
+          },
+          {
+              "id": "ing-rec-76-muscade",
+              "name": "Pincée de muscade moulue, sel et poivre noir",
+              "quantity": 4,
+              "unit": "g",
+              "department": "non_perissable"
+          }
+      ],
+      "steps": [
+          "Faire cuire les cubes de patates douces dans l'eau bouillante salée 15 minutes. Égoutter, écraser à la fourchette avec 10 g de beurre, une pincée de muscade, sel et poivre. Garder au chaud.",
+          "Mélanger dans un bol le miel, la moutarde à l'ancienne et une cuillère à soupe d'eau tiède pour assouplir le glaçage.",
+          "Préchauffer la plancha à 200°C.",
+          "Faire sauter les haricots verts sur la zone moyenne avec un filet d'huile et l'ail émincé pendant 8 à 10 minutes en les remuant souvent jusqu'à ce qu'ils soient tendres-croquants.",
+          "Sur la zone chaude, faire fondre le reste du beurre et déposer les médaillons de filet de porc. Cuire 3 à 4 minutes par face en arrosant du beurre de cuisson.",
+          "Badigeonner les médaillons avec le glaçage miel-moutarde sur les deux faces durant la dernière minute.",
+          "Dresser un généreux lit d'écrasé de patates douces, déposer les médaillons laqués et accompagner des haricots verts dorés à l'ail."
+      ]
+  },
+  {
+      "id": "rec-77",
+      "title": "Escalopes de dinde marinées au pesto de basilic & citron, orzo aux épinards et tomates rôties sur plaque",
+      "subtitle": "Fines escalopes de dinde saisies 3 minutes par face, pâtes orzo crémeuses aux jeunes épinards tombés et tomates raisins éclatées",
+      "proteinType": "Dinde & Volailles",
+      "cookingMode": "plancha",
+      "timeCategory": "Rapide",
+      "prepTime": 15,
+      "cookTime": 10,
+      "calories": 520,
+      "macros": {
+          "proteins": 45,
+          "carbs": 50,
+          "fats": 16
+      },
+      "allergens": [
+          "Gluten",
+          "Lactose"
+      ],
+      "tags": [
+          "Nouveauté Semaine",
+          "Plancha Star",
+          "Dinde & Volailles",
+          "Méditerranéen",
+          "Rapide",
+          "Santé & Léger"
+      ],
+      "isNewWeekly": true,
+      "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80",
+      "description": "Une façon savoureuse et rapide de cuisiner la dinde ! De fines escalopes marinées dans un pesto de basilic frais avec du zeste de citron, grillées à la plancha pour une chair tendre et savoureuse. Accompagnées de pâtes orzo mélangées à de jeunes épinards fondus et de petites tomates raisins rôties directement sur la plaque jusqu'à éclatement.",
+      "planchaTips": "Chauffer la plancha à 210°C. Les escalopes de dinde étant très minces, ne pas dépasser 3 minutes de cuisson par côté afin qu'elles restent parfaitement juteuses.",
+      "ingredients": [
+          {
+              "id": "ing-rec-77-dinde",
+              "name": "Escalopes de dinde fraîches tranchées finement (protéine)",
+              "quantity": 600,
+              "unit": "g",
+              "department": "viandes"
+          },
+          {
+              "id": "ing-rec-77-orzo",
+              "name": "Pâtes orzo (féculent)",
+              "quantity": 280,
+              "unit": "g",
+              "department": "non_perissable"
+          },
+          {
+              "id": "ing-rec-77-epinards",
+              "name": "Jeunes épinards frais lavés (légume)",
+              "quantity": 200,
+              "unit": "g",
+              "department": "fruits_legumes"
+          },
+          {
+              "id": "ing-rec-77-tomates-raisins",
+              "name": "Tomates raisins entières (légume)",
+              "quantity": 250,
+              "unit": "g",
+              "department": "fruits_legumes"
+          },
+          {
+              "id": "ing-rec-77-pesto",
+              "name": "Pesto de basilic frais au parmesan",
+              "quantity": 45,
+              "unit": "ml",
+              "department": "non_perissable"
+          },
+          {
+              "id": "ing-rec-77-citron",
+              "name": "Citron jaune (zeste et jus)",
+              "quantity": 1,
+              "unit": "unité",
+              "department": "fruits_legumes"
+          },
+          {
+              "id": "ing-rec-77-parmesan",
+              "name": "Fromage parmesan râpé",
+              "quantity": 30,
+              "unit": "g",
+              "department": "produits_laitiers"
+          },
+          {
+              "id": "ing-rec-77-huile",
+              "name": "Huile d'olive extra-vierge",
+              "quantity": 25,
+              "unit": "ml",
+              "department": "non_perissable"
+          },
+          {
+              "id": "ing-rec-77-sel-poivre",
+              "name": "Sel de mer et poivre noir du moulin",
+              "quantity": 4,
+              "unit": "g",
+              "department": "non_perissable"
+          }
+      ],
+      "steps": [
+          "Faire cuire les pâtes orzo 9 minutes dans de l'eau bouillante salée. Égoutter, mélanger avec la moitié du pesto de basilic et le parmesan râpé.",
+          "Enrober les escalopes de dinde avec le reste de pesto, le zeste de citron, sel et poivre.",
+          "Préchauffer la plancha à 210°C.",
+          "Déposer les tomates raisins sur la zone moyenne avec un filet d'huile d'olive. Cuire 6 minutes en remuant jusqu'à ce que la peau se flétrisse et caramélise.",
+          "Faire tomber les jeunes épinards 1 minute sur la plaque avec une spatule, puis les incorporer immédiatement dans l'orzo chaud réservé.",
+          "Saisir les escalopes de dinde sur la zone vive 3 minutes par face en arrosant d'un filet de jus de citron au moment de retourner.",
+          "Dresser l'orzo crémeux aux épinards et parmesan, déposer l'escalope de dinde grillée et parsemer de tomates raisins rôties."
+      ]
+  },
+  {
+      "id": "rec-78",
+      "title": "Pavés de tofu croustillants au cari doux & lait de coco, riz au jasmin et fleurets de brocoli au sésame",
+      "subtitle": "Tofu extra-ferme doré et croustillant sur plaque avec sauce onctueuse au cari jaune, riz jasmin parfumé et brocoli croquant sauté",
+      "proteinType": "Tofu",
+      "cookingMode": "plancha",
+      "timeCategory": "Rapide",
+      "prepTime": 15,
+      "cookTime": 12,
+      "calories": 480,
+      "macros": {
+          "proteins": 28,
+          "carbs": 54,
+          "fats": 18
+      },
+      "allergens": [
+          "Soya",
+          "Sésame"
+      ],
+      "tags": [
+          "Nouveauté Semaine",
+          "Plancha Star",
+          "Tofu",
+          "Végétarien",
+          "Sans Gluten",
+          "Santé & Léger"
+      ],
+      "isNewWeekly": true,
+      "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80",
+      "description": "Une recette végétarienne savoureuse qui convertira même les sceptiques du tofu ! Des tranches épaisses de tofu extra-ferme du Québec bien égouttées, dorées sur plaque avec une fine pellicule de fécule pour un croustillant parfait, déglacées d'un coulis au cari doux et lait de coco. Accompagnées de riz jasmin vaporeux et de fleurets de brocoli saisis au sésame grillé.",
+      "planchaTips": "Chauffer la plancha à 210°C. Bien presser le tofu entre deux linges propres avant la cuisson. Cuire 4 à 5 minutes par face sans déplacer les pavés pour obtenir une croûte bien croustillante avant de retourner.",
+      "ingredients": [
+          {
+              "id": "ing-rec-78-tofu",
+              "name": "Blocs de tofu extra-ferme biologique pressés et tranchés (protéine)",
+              "quantity": 500,
+              "unit": "g",
+              "department": "produits_laitiers"
+          },
+          {
+              "id": "ing-rec-78-riz",
+              "name": "Riz blanc au jasmin (féculent sans gluten)",
+              "quantity": 300,
+              "unit": "g",
+              "department": "non_perissable"
+          },
+          {
+              "id": "ing-rec-78-brocoli",
+              "name": "Pieds de brocoli coupés en petits fleurets (légume)",
+              "quantity": 400,
+              "unit": "g",
+              "department": "fruits_legumes"
+          },
+          {
+              "id": "ing-rec-78-carottes",
+              "name": "Carottes fraîches taillées en julienne fine (légume)",
+              "quantity": 2,
+              "unit": "unité",
+              "department": "fruits_legumes"
+          },
+          {
+              "id": "ing-rec-78-lait-coco",
+              "name": "Lait de coco régulier",
+              "quantity": 150,
+              "unit": "ml",
+              "department": "non_perissable"
+          },
+          {
+              "id": "ing-rec-78-poudre-cari",
+              "name": "Poudre de cari jaune doux",
+              "quantity": 10,
+              "unit": "g",
+              "department": "non_perissable"
+          },
+          {
+              "id": "ing-rec-78-fecule",
+              "name": "Fécule de maïs pour enrober le tofu",
+              "quantity": 25,
+              "unit": "g",
+              "department": "non_perissable"
+          },
+          {
+              "id": "ing-rec-78-tamari",
+              "name": "Sauce tamari sans gluten",
+              "quantity": 30,
+              "unit": "ml",
+              "department": "non_perissable"
+          },
+          {
+              "id": "ing-rec-78-huile-sesame",
+              "name": "Huile de sésame grillé et graines de sésame",
+              "quantity": 15,
+              "unit": "ml",
+              "department": "non_perissable"
+          },
+          {
+              "id": "ing-rec-78-huile-cuisson",
+              "name": "Huile végétale pour la cuisson",
+              "quantity": 25,
+              "unit": "ml",
+              "department": "non_perissable"
+          },
+          {
+              "id": "ing-rec-78-sel",
+              "name": "Sel de mer fin",
+              "quantity": 3,
+              "unit": "g",
+              "department": "non_perissable"
+          }
+      ],
+      "steps": [
+          "Cuire le riz jasmin dans l'eau bouillante 12 minutes, égoutter et maintenir au chaud.",
+          "Trancher le tofu en pavés de 1,5 cm, les saupoudrer légèrement de fécule de maïs, sel et une pincée de cari.",
+          "Mélanger dans un bol le lait de coco, la poudre de cari restante et la sauce tamari.",
+          "Préchauffer la plancha à 210°C et huiler la surface généreusement.",
+          "Sauter les fleurets de brocoli et les juliennes de carottes sur la zone légumes avec un filet d'huile de sésame et 2 cuillères d'eau pour créer de la vapeur pendant 7 à 8 minutes.",
+          "Déposer les pavés de tofu sur la zone vive. Laisser dorer 4 à 5 minutes par face jusqu'à formation d'une croûte dorée très croustillante.",
+          "Verser délicatement le mélange lait de coco et cari autour des pavés pour enrober le tofu dans les dernières 60 secondes.",
+          "Servir le riz jasmin avec les pavés de tofu bien laqués, les légumes croquants au brocoli et saupoudrer de graines de sésame."
+      ]
+  },
+  {
+      "id": "rec-79",
+      "title": "Koftas de bœuf haché aux herbes & menthe, pains pitas chauds, sauce tzatziki et salade croquante",
+      "subtitle": "Brochettes de bœuf haché assaisonnées au cumin, menthe et coriandre, pitas moelleux toastés sur plaque et salade concombre-poivron",
+      "proteinType": "Boeuf haché",
+      "cookingMode": "plancha",
+      "timeCategory": "Rapide",
+      "prepTime": 15,
+      "cookTime": 10,
+      "calories": 610,
+      "macros": {
+          "proteins": 42,
+          "carbs": 52,
+          "fats": 26
+      },
+      "allergens": [
+          "Gluten",
+          "Lactose"
+      ],
+      "tags": [
+          "Nouveauté Semaine",
+          "Plancha Star",
+          "Boeuf haché",
+          "Moyen-Orient",
+          "Familial",
+          "Brochettes"
+      ],
+      "isNewWeekly": true,
+      "image": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
+      "description": "Un grand classique convivial du Moyen-Orient parfaitement taillé pour la plancha ! Du bœuf haché frais mélangé avec de la menthe fraîche, du persil, de l'oignon râpé, du cumin et une pointe de cannelle, moulé autour de brochettes plates et grillé pour obtenir une surface caramélisée et un cœur juteux. Servi avec des pains pitas chauffés à la plaque, une sauce tzatziki fraîche et une salade croquante.",
+      "planchaTips": "Chauffer la plancha à 210°C. Bien presser la viande sur les brochettes pour éviter qu'elle ne se fende. Cuire 8 à 10 minutes en tournant régulièrement pour dorer les 4 faces sans brûler.",
+      "ingredients": [
+          {
+              "id": "ing-rec-79-boeuf",
+              "name": "Bœuf haché mi-maigre du Québec (protéine)",
+              "quantity": 600,
+              "unit": "g",
+              "department": "viandes"
+          },
+          {
+              "id": "ing-rec-79-pitas",
+              "name": "Pains pitas grecs moelleux (féculent)",
+              "quantity": 4,
+              "unit": "unité",
+              "department": "non_perissable"
+          },
+          {
+              "id": "ing-rec-79-concombre",
+              "name": "Concombre libanais en dés croquants (légume)",
+              "quantity": 2,
+              "unit": "unité",
+              "department": "fruits_legumes"
+          },
+          {
+              "id": "ing-rec-79-poivron-jaune",
+              "name": "Poivron jaune coupé en dés (légume)",
+              "quantity": 1,
+              "unit": "unité",
+              "department": "fruits_legumes"
+          },
+          {
+              "id": "ing-rec-79-oignon-rouge",
+              "name": "Oignon rouge finement haché",
+              "quantity": 1,
+              "unit": "unité",
+              "department": "fruits_legumes"
+          },
+          {
+              "id": "ing-rec-79-menthe",
+              "name": "Menthe fraîche hachée",
+              "quantity": 15,
+              "unit": "g",
+              "department": "fruits_legumes"
+          },
+          {
+              "id": "ing-rec-79-persil",
+              "name": "Persil plat frais haché",
+              "quantity": 20,
+              "unit": "g",
+              "department": "fruits_legumes"
+          },
+          {
+              "id": "ing-rec-79-cumin-cannelle",
+              "name": "Mélange cumin moulu, coriandre et pincée de cannelle",
+              "quantity": 8,
+              "unit": "g",
+              "department": "non_perissable"
+          },
+          {
+              "id": "ing-rec-79-tzatziki",
+              "name": "Sauce tzatziki au yogourt grec et ail",
+              "quantity": 120,
+              "unit": "g",
+              "department": "produits_laitiers"
+          },
+          {
+              "id": "ing-rec-79-huile",
+              "name": "Huile d'olive extra-vierge",
+              "quantity": 25,
+              "unit": "ml",
+              "department": "non_perissable"
+          },
+          {
+              "id": "ing-rec-79-sel-poivre",
+              "name": "Sel de mer et poivre noir moulu",
+              "quantity": 4,
+              "unit": "g",
+              "department": "non_perissable"
+          }
+      ],
+      "steps": [
+          "Dans un grand bol, malaxer le bœuf haché avec la moitié de l'oignon haché, la menthe, le persil, les épices, sel et poivre. Façonner 8 boudins réguliers autour de brochettes.",
+          "Préparer la salade croquante en mélangeant les dés de concombre, poivron jaune, le reste de l'oignon rouge, un filet d'huile d'olive, sel et poivre.",
+          "Préchauffer la plancha à 210°C et huiler légèrement.",
+          "Déposer les koftas de bœuf sur la plaque bien chaude. Cuire 8 à 10 minutes en les tournant d'un quart de tour toutes les 2 minutes pour obtenir un brunissement uniforme.",
+          "Chauffer les pains pitas 1 minute de chaque côté sur la plaque pour qu'ils deviennent souples et chauds.",
+          "Étaler une généreuse cuillère de tzatziki sur chaque pita chaud, déposer deux koftas grillés, garnir de salade croquante au concombre et refermer légèrement."
+      ]
+  },
+  {
+      "id": "rec-80",
+      "title": "Filets de morue fraîche dorés au beurre blanc citronné & câpres, riz sauvage et poêlée de champignons",
+      "subtitle": "Morue délicatement dorée sur plaque avec sauce acidulée aux câpres et beurre mousseux, riz sauvage parfumé et champignons cremini sautés",
+      "proteinType": "Saumon & Poissons",
+      "cookingMode": "plancha",
+      "timeCategory": "Rapide",
+      "prepTime": 15,
+      "cookTime": 10,
+      "calories": 490,
+      "macros": {
+          "proteins": 40,
+          "carbs": 48,
+          "fats": 15
+      },
+      "allergens": [
+          "Lactose"
+      ],
+      "tags": [
+          "Nouveauté Semaine",
+          "Plancha Star",
+          "Saumon & Poissons",
+          "Sans Gluten",
+          "Santé & Léger",
+          "Rapide"
+      ],
+      "isNewWeekly": true,
+      "image": "https://images.unsplash.com/photo-1534352956036-cd81e27dd615?auto=format&fit=crop&w=800&q=80",
+      "description": "La finesse du poisson blanc sublimée à la plancha ! Des filets épais de morue fraîche du Québec saisis avec un voile d'huile et dorés au beurre moussant, rehaussés d'un trait de jus de citron frais et de câpres salines. Accompagnés d'un mélange de riz brun et sauvage aux fines herbes et d'une belle poêlée de champignons cremini sautés à l'ail et persil.",
+      "planchaTips": "Chauffer la plancha à 195°C (chaleur modérée pour le poisson délicat). Utiliser une spatule large et fine pour retourner les filets de morue délicatement sans les briser. Cuire 4 minutes sur la première face puis 3 minutes sur la seconde face.",
+      "ingredients": [
+          {
+              "id": "ing-rec-80-morue",
+              "name": "Filets de morue fraîche épaisse sans peau (protéine)",
+              "quantity": 600,
+              "unit": "g",
+              "department": "viandes"
+          },
+          {
+              "id": "ing-rec-80-riz-sauvage",
+              "name": "Mélange de riz brun et riz sauvage (féculent sans gluten)",
+              "quantity": 280,
+              "unit": "g",
+              "department": "non_perissable"
+          },
+          {
+              "id": "ing-rec-80-champignons",
+              "name": "Champignons cremini tranchés (légume)",
+              "quantity": 300,
+              "unit": "g",
+              "department": "fruits_legumes"
+          },
+          {
+              "id": "ing-rec-80-haricots-jaunes",
+              "name": "Haricots jaunes frais éboutés (légume)",
+              "quantity": 250,
+              "unit": "g",
+              "department": "fruits_legumes"
+          },
+          {
+              "id": "ing-rec-80-beurre",
+              "name": "Beurre salé",
+              "quantity": 30,
+              "unit": "g",
+              "department": "produits_laitiers"
+          },
+          {
+              "id": "ing-rec-70-capres",
+              "name": "Câpres égouttées",
+              "quantity": 25,
+              "unit": "g",
+              "department": "non_perissable"
+          },
+          {
+              "id": "ing-rec-80-citron",
+              "name": "Citron jaune frais (zeste et jus)",
+              "quantity": 1,
+              "unit": "unité",
+              "department": "fruits_legumes"
+          },
+          {
+              "id": "ing-rec-80-persil",
+              "name": "Persil frais haché",
+              "quantity": 15,
+              "unit": "g",
+              "department": "fruits_legumes"
+          },
+          {
+              "id": "ing-rec-80-ail",
+              "name": "Gousses d'ail hachées",
+              "quantity": 2,
+              "unit": "unité",
+              "department": "fruits_legumes"
+          },
+          {
+              "id": "ing-rec-80-huile",
+              "name": "Huile d'olive extra-vierge",
+              "quantity": 20,
+              "unit": "ml",
+              "department": "non_perissable"
+          },
+          {
+              "id": "ing-rec-80-sel-poivre",
+              "name": "Sel de mer fin et poivre blanc moulu",
+              "quantity": 4,
+              "unit": "g",
+              "department": "non_perissable"
+          }
+      ],
+      "steps": [
+          "Faire cuire le riz brun et sauvage selon les indications de l'emballage (environ 25 minutes). Égoutter, ajouter un filet d'huile d'olive, persil et garder au chaud.",
+          "Éponger soigneusement les filets de morue avec du papier absorbant, saler et poivrer légèrement.",
+          "Préchauffer la plancha à 195°C.",
+          "Faire sauter les champignons tranchés et les haricots jaunes sur la zone légumes avec un filet d'huile et l'ail pendant 7 à 8 minutes en les remuant souvent.",
+          "Sur la zone poisson bien huilée, déposer les filets de morue. Laisser cuire 4 minutes sans les déplacer pour obtenir une surface dorée.",
+          "Retourner délicatement avec une spatule plate. Déposer le beurre sur la plaque autour du poisson, ajouter les câpres et le jus de citron. Arroser le poisson de ce beurre blanc moussant pendant les 3 dernières minutes de cuisson.",
+          "Dresser le riz sauvage dans les assiettes avec les champignons et haricots dorés, déposer le filet de morue et napper du beurre au citron et câpres."
+      ]
   }
 ];
